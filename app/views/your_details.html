@@ -1,0 +1,291 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+  <div class="grid-row">
+    <div class="column-full">
+      
+  
+  <div class="secondary-bar">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="logged_out">Log Out</a></li>
+  
+    </ul>
+  </div>
+</div>
+  </div>
+
+      <h1 class="heading-xlarge">
+        Your account
+        <span class="heading-secondary"></span>
+      </h1>{{releaseVersion | log }}
+
+<div class="main-content">            
+
+
+    <div class="grid-row">
+      
+      <div class="column-full summary-nav-wrapper">   
+  <ul>
+    <li class="">
+      <a id="open_claims" href="open_claims" class="menu-item ">Open claims</a>
+    </li>
+
+    <li class="">
+      <a id="previous_claims" href="previous_claims" class="menu-item ">Previous claims</a>
+    </li>
+
+    <li class="selected"> 
+      
+        <a id="your details" href="your_details" class="menu-item">
+          Your details <i class="fa fa-exclamation-circle"></i>
+        </a>
+      
+    </li>
+
+    
+      
+    
+    <li class="">
+      <a id="Payee details" href="payee_details" class="menu-item">
+        Payee details
+      </a>
+    </li>
+    
+     </li>
+  </ul> 
+
+
+
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Your personal details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          Mr J Smith<br>
+          
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+        </tr>
+        
+      
+      <tr>
+        <td>
+        Address        </td>
+        <td>
+          12 Water Street<br>
+          Town in Leeds<br>
+          Leeds<br>
+          LS1 2AB
+      </td>
+      <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          Email address
+        </td>
+        <td>
+          john@123accounting.com
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+        <tr>
+        <td>
+          Employer phone number
+        </td>
+        <td>
+          0123 456 7891
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Preferred contact method
+        </td>
+        <td>
+          Email
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+  </table>
+
+
+
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Your employment details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Employment status
+        </td>
+        <td>
+          Employed<br>
+          
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Exporter name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+Company name        </td>
+        <td>
+          123 Accounting<br>
+          
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Producer name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        Company Address        </td>
+        <td>
+          14 Water Street<br>
+          Town in Leeds<br>
+          Leeds<br>
+          LS1 2AB
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Importer name</span>
+      </tr>
+      <tr>
+        <td>
+          Employer name
+        </td>
+        <td>
+          Mrs A Non<br>
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Importer name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Employer email address
+        </td>
+        <td>
+          anon@123accounting.com
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+        <tr>
+        <td>
+          Employer phone number
+        </td>
+        <td>
+          0123 456 7891
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Preferred contact method
+        </td>
+        <td>
+          Email
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Recovery facilities name</span>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+  </table>
+
+  </div>
+
+
+</div>  
+
+
+ 
+
+  
+  </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

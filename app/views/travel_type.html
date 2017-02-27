@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Travel payments
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+      <div class="grid-row">
+    <div class="column-full">
+      
+  
+  <div class="secondary-bar">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="logged_out">Log Out</a></li>
+  
+    </ul>
+  </div>
+</div>
+  </div>
+
+    <form action="travel_type" method="post" class="form">
+
+    <h1 class="form-title heading-large">What type of travel are you claiming for?</h1>
+
+    <fieldset class="form-group">
+      <!-- <legend class="form-label-bold" for="claim">What are you claiming for?</legend> -->
+      
+      <label class="block-label" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="claim" value="travel1">
+        One off travel
+      </label>
+      <label class="block-label" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="claim" value="travel2">
+        Regular travel to and from work
+      </label>
+    </fieldset>
+        
+    <div class="form-group">
+      <input type="submit" class="button" value="Continue">
+    </div>
+
+</main>
+
+{% endblock %}

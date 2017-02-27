@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+  <div class="grid-row">
+    <div class="column-full">
+
+    <div class="secondary-bar">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="logged_out">Log Out</a></li>
+  
+    </ul>
+  </div>
+  
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+       <h1 class="form-title heading-large">Make a claim</h1>
+
+      <h2 class="heading-medium">Use this service to:</h2>
+
+      <ul class="list list-bullet">
+        <li>add your bank and payee details</li>
+        <li>fill in your claim forms</li>
+        <li>submit your receipt(s)</li>
+      </ul>
+
+      <h2 class="heading-medium">Before you start</h2>
+
+      <p>To use this service you will need to have:</p>
+      <ul class="list list-bullet">
+        <li>your bank details</li>
+        <li>any other payee or supplier details</li>
+        <li>receipts for your claims</li>
+        <li>your employer’s consent to verify your receipts</li>
+      </ul>
+      
+      <p>You can only use this service if you have returned your declaration.</p>
+
+      <p>
+        <a class="button button-start" href="claim_type" role="button">Start now</a>
+      </p>
+
+  
+    </div>
+    <div class="column-third">
+
+      
+    </div>
+  </div>
+      
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
