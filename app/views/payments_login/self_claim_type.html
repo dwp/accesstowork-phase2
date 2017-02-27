@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim type
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+  <div class="grid-row">
+    <div class="column-full">
+      
+  
+  <div class="secondary-bar">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="logged_out">Log Out</a></li>
+  
+    </ul>
+  </div>
+</div>
+  </div>
+  
+    <form class="form" method="post">
+
+    <h1 class="form-title heading-large">What are you claiming for?</h1>
+
+    <fieldset class="form-group">
+      <!-- <legend class="form-label-bold" for="claim">What are you claiming for?</legend> -->
+      
+      <label class="block-label" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="claimtype" value="Travel">
+        Travel
+      </label>
+      <label class="block-label" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="claimtype" value="Oneoff">
+        Equipment or adaptation
+      </label>
+      <label class="block-label" for="radio-inline-3">
+        <input id="radio-inline-3" type="radio" name="claimtype" value="Support">
+        Support work
+      </label>
+    </fieldset>
+        
+    <div class="form-group">
+      <input type="submit" class="button" value="Continue">
+    </div>
+
+</main>
+
+{% endblock %}
