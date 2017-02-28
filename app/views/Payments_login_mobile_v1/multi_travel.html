@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Single travel payment
+  Multiple travel payment
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,6 @@
       </p>
     </div>
 
-    
   <div class="grid-row">
     <div class="column-full">
       
@@ -31,11 +30,13 @@
 </div>
   </div>
 
-        <h1 class="form-title heading-large">Your one off travel claim details</h1>
+        <h1 class="form-title heading-large">Your regular travel claim details</h1>
+
+        <!-- <h2 class="heading-medium">What period of travel are you claiming for?</h2> -->
 
           <div class="form-group">
             <fieldset>
-              <legend class="form-label-bold">Date of travel</legend>
+              <legend class="form-label-bold">First day of travel</legend>
               
               <div class="form-date">
                 
@@ -55,8 +56,37 @@
             </fieldset>
           </div>
 
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label-bold">Last day of travel</legend>
+              
+              <div class="form-date">
+                
+                <div class="form-group form-group-day">
+                  <label for="dob-day">Day</label>
+                  <input type="text" class="form-control" id="dob-day" maxlength="2" name="dob-day">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="dob-month">Month</label>
+                  <input type="text" class="form-control" id="dob-month" maxlength="2" name="dob-month">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="dob-year">Year</label>
+                  <input type="text" class="form-control" id="dob-year" maxlength="4" name="dob-year">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+              <label class="form-label-bold" for="days-worked">How many days do you work each week?</label>
+              <input type="text" class="form-control" id="daysworked">
+          </div>    
+
+
            <div class="form-group">
-              <label class="form-label-bold" for="reasons" id="">
+              <label class="form-label-bold" for="reasons" id="travelreason">
                 Reason for travel
               </label>
              
@@ -65,17 +95,17 @@
 
             <div class="form-group">
               <label class="form-label-bold" for="number-of-journeys">Total number of journeys</label>
-              <p class="form-hint">List all journeys made on the date given above.</p>
+              <p class="form-hint">List all journeys made between the dates given above</p>
               <input type="text" class="form-control" id="email">
             </div>
 
             <div class="form-group">
               <label class="form-label-bold" for="cost-of-ttravel">Total cost of travel</label>
-              <p class="form-hint">Total cost of all journeys made on the date given above.</p>
+              <p class="form-hint">Total cost of all journeys made between the dates given above</p>
               <input type="text" class="form-control" id="email">
             </div>        
 
-          <p> <a class="button" href="/Payments_login_desktop_v1/select_payee">Continue</a></p>
+          <p> <a class="button" href="/Payments_login_mobile_v1/select_payee">Continue</a></p>
 
          </div>
          

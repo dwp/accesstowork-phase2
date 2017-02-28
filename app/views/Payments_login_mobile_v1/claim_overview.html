@@ -17,54 +17,13 @@
           </p>
         </div>
 
-         <div class="secondary-bar">
-    <ul class="external-links">
-      <li class="main-nav-link"><a href="logged_out">Log Out</a></li>
-  
-    </ul>
-  </div>
-</div>
-
-<h1 class="heading-xlarge">
-        Your account
-        <span class="heading-secondary"></span>
-      </h1>{{releaseVersion | log }}
-
-<div class="main-content">        
 
 
-    <div class="grid-row">
-      
-      <div class="column-full summary-nav-wrapper">   
-  <ul>
-   <li class="selected">
-      <a id="Open_claims" href="open_claims" class="menu-item ">Open claims</a>
-    </li>
+     <div class="grid-row">
+     
 
-    <li class="">
-      <a id="edit_record" href="previous_claims" class="menu-item ">Previous claims</a>
-    </li>
+          <main id="content" role="main">
 
-    <li class=" "> 
-      
-        <a id="your details" href="your_details" class="menu-item">
-          Your details <i class="fa fa-exclamation-circle"></i>
-        </a>
-      
-    </li>
-
-    
-      
-    
-    <li class="">
-      <a id="Payee details" href="payee_details" class="menu-item">
-        Payee details
-      </a>
-    </li>
-    
-     </li>
-  </ul> 
-    
           <h1 class="heading-large">
             Review and send your claim
           </h1>
@@ -74,6 +33,12 @@
     <thead>
       <tr>
         <th colspan="2">
+          <h2 class="heading-medium">
+            Your previous claims made
+          </h2>
+          <h2 class="heading-medium">
+            February 2017
+          </h2>
         </th>
         <th>
         </th>
@@ -138,23 +103,22 @@ Multi Travel        </td>
 
 
           <div class="form-group">
-            <p><a href="/Payments_login_desktop_v1/claim_type">Add another claim</a></p>
+            <p><a href="/payments_login_mobile_v1/claim_type">Add another claim</a></p>
           </div>
-            <h2 class="heading-medium">Now send your claim</h2>
+            
+         <h2 class="heading-medium">Now send your claim</h2>
 
           <p>Your claim will now be sent to your employer for verifying.</p>
 
-          <fieldset>
+       <fieldset>
           <legend class="form-label-bold dec-legend" id="app">By sending this claim you agree that:</legend>
 
+          <div class="form-group">
             <ul class="list-bullet" aria-labelledby="app">
               <li>the information in this claim is correct as far as you know</li>
               <li>you'll tell the Access to Work unit about any changes to your condition or circumstances, eg if your place of work changes</li>
               <li>you agree to the <a href="email">email terms</a></li>
             </ul>
-
-          <div class="form-group">
-
 
             <div class="application-notice help-notice">
               <p>It might be a criminal offence if you knowingly give false information or don't report anything that would affect your grant, eg if your condition improves or you change where you work.</p>
@@ -163,11 +127,23 @@ Multi Travel        </td>
 
         </fieldset>
 
-          <div class="form-group">
-            <a href="/payments-v1/what-happens-next" class="button">Agree and send claim</a>
-          </div>         
-         
 
+
+
+          <div class="form-group">
+            <a href="/Payments_login_mobile_v1/confirmation" class="button">Agree and send claim</a>
+          </div>
+
+      </main>
+
+                  
+    </div>
+         
+         <div class="column-one-third">
+
+         </div>
+
+  </div>    
 </main>
 
 {% endblock %}

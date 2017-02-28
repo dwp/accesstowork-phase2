@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Single travel payment
+  One off claim
 {% endblock %}
 
 {% block content %}
@@ -17,8 +17,7 @@
       </p>
     </div>
 
-    
-  <div class="grid-row">
+      <div class="grid-row">
     <div class="column-full">
       
   
@@ -31,11 +30,14 @@
 </div>
   </div>
 
-        <h1 class="form-title heading-large">Your one off travel claim details</h1>
+    <div class="grid-row">
+    <div class="column-two-thirds">
 
-          <div class="form-group">
+        <h1 class="form-title heading-large">Your equipment or adaptation claim details</h1>
+
+        <div class="form-group">
             <fieldset>
-              <legend class="form-label-bold">Date of travel</legend>
+              <legend class="form-label-bold">Date of purchase</legend>
               
               <div class="form-date">
                 
@@ -53,29 +55,24 @@
                 </div>
               </div>
             </fieldset>
+          </div>  
+
+          <div class="form-group">
+            <label class="form-label-bold" for="item-purchased">What item are you claiming for?</label>
+            <input type="text" class="form-control" id="item-purchased">
           </div>
 
-           <div class="form-group">
-              <label class="form-label-bold" for="reasons" id="">
-                Reason for travel
-              </label>
-             
-              <textarea class="form-control" id="reasons" name="reasons"></textarea>
-            </div>
+          <div class="form-group">
+            <label class="form-label-bold" for="item-number">How many of this item are you claiming for?</label>
+            <input type="text" class="form-control" id="item-number">
+          </div>
 
-            <div class="form-group">
-              <label class="form-label-bold" for="number-of-journeys">Total number of journeys</label>
-              <p class="form-hint">List all journeys made on the date given above.</p>
-              <input type="text" class="form-control" id="email">
-            </div>
+          <div class="form-group">
+            <label class="form-label-bold" for="item-price">Cost of the item</label>
+            <input type="text" class="form-control" id="item-price">
+          </div>
 
-            <div class="form-group">
-              <label class="form-label-bold" for="cost-of-ttravel">Total cost of travel</label>
-              <p class="form-hint">Total cost of all journeys made on the date given above.</p>
-              <input type="text" class="form-control" id="email">
-            </div>        
-
-          <p> <a class="button" href="/Payments_login_desktop_v1/select_payee">Continue</a></p>
+          <p> <a class="button" href="/Payments_login_mobile_v1/select_payee">Continue</a></p>
 
          </div>
          
