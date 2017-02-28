@@ -60,40 +60,79 @@ router.post('/payments-v1/self-travel-type', function (req, res) {
 /// DESKTOP LOGIN ///
 
 /// EMPLOYED ROUTES ///
-router.post('/Payments_login_desktop_v1/employment_type', function (req, res) {
+router.post('/payments_login_desktop_v1/employment_type', function (req, res) {
         if (req.body.claimtype === 'employed') {
-          res.redirect('/Payments_login_desktop_v1/aboutyou_employed')
+          res.redirect('/payments_login_desktop_v1/aboutyou_employed')
         } else {
-          res.redirect('/Payments_login_desktop_v1/aboutyou_selfemployed')
+          res.redirect('/payments_login_desktop_v1/aboutyou_selfemployed')
         }
       });
 
-router.post('/Payments_login_desktop_v1/claim_type', function (req, res) {
+router.post('/payments_login_desktop_v1/claim_type', function (req, res) {
           if (req.body.claimtype === 'Travel') {
-            res.redirect('/Payments_login_desktop_v1/travel_type')
+            res.redirect('/payments_login_desktop_v1/travel_type')
           } else if (req.body.claimtype ==='Support') {
-            res.redirect('/Payments_login_desktop_v1/support_details')
+            res.redirect('/payments_login_desktop_v1/support_details')
           } else {
-            res.redirect('/Payments_login_desktop_v1/one_off_claim')
+            res.redirect('/payments_login_desktop_v1/one_off_claim')
           }
         });
 
-router.post('/Payments_login_desktop_v1/travel_type', function (req, res) {
+router.post('/payments_login_desktop_v1/travel_type', function (req, res) {
         if (req.body.claim === 'travel1') {
-          res.redirect('/Payments_login_desktop_v1/single_travel')
+          res.redirect('/payments_login_desktop_v1/single_travel')
         } else {
-          res.redirect('/Payments_login_desktop_v1/multi_travel')
+          res.redirect('/payments_login_desktop_v1/multi_travel')
         }
       });
 
 /// SELF EMPLOYED ROUTES ///
-router.post('/Payments_login_desktop_v1/self_claim_type', function (req, res) {
+router.post('/payments_login_desktop_v1/self_claim_type', function (req, res) {
           if (req.body.claimtype === 'Travel') {
-            res.redirect('/Payments_login_desktop_v1/travel_type')
+            res.redirect('/payments_login_desktop_v1/travel_type')
           } else if (req.body.claimtype ==='Support') {
-            res.redirect('/Payments_login_desktop_v1/support_details')
+            res.redirect('/payments_login_desktop_v1/support_details')
           } else {
-            res.redirect('/Payments_login_desktop_v1/self_oneoff')
+            res.redirect('/payments_login_desktop_v1/self_oneoff')
+          }
+        });
+
+
+/// EMPLOYED ROUTES MOBILE ///
+router.post('/payments_login_mobile_v1/employment_type', function (req, res) {
+        if (req.body.claimtype === 'employed') {
+          res.redirect('/payments_login_mobile_v1/aboutyou_employed')
+        } else {
+          res.redirect('/payments_login_mobile_v1/aboutyou_selfemployed')
+        }
+      });
+
+router.post('/payments_login_mobile_v1/claim_type', function (req, res) {
+          if (req.body.claimtype === 'Travel') {
+            res.redirect('/payments_login_mobile_v1/travel_type')
+          } else if (req.body.claimtype ==='Support') {
+            res.redirect('/payments_login_mobile_v1/support_details')
+          } else {
+            res.redirect('/payments_login_mobile_v1/one_off_claim')
+          }
+        });
+
+router.post('/payments_login_mobile_v1/travel_type', function (req, res) {
+        if (req.body.claim === 'travel1') {
+          res.redirect('/payments_login_mobile_v1/single_travel')
+        } else {
+          res.redirect('/payments_login_mobile_v1/multi_travel')
+        }
+      });
+
+/// SELF EMPLOYED ROUTES MOBILE ///
+router.post('/payments_login_mobile_v1/self_claim_type', function (req, res) {
+          if (req.body.claimtype === 'Travel') {
+            res.redirect('/payments_login_mobile_v1/travel_type')
+          } else if (req.body.claimtype ==='Support') {
+            res.redirect('/payments_login_mobile_v1/support_details')
+          } else {
+            res.redirect('/payments_login_mobile_v1/self_oneoff')
           }
         });
 
