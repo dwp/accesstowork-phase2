@@ -35,6 +35,7 @@ $path: "/public/images/";
   background-color: $grey-3;
   overflow: hidden;
   
+
   .main-nav-wrapper{
     width: 100%;
     
@@ -44,7 +45,7 @@ $path: "/public/images/";
       margin: 0;
     }
     
-    li{
+    li {
       float: left;
 
       a {
@@ -83,7 +84,7 @@ $path: "/public/images/";
 }
 
 
-nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
+.nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
     float: left;
     list-style: none;
     margin: 0;
