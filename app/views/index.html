@@ -1,16 +1,35 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-	Access To Work - Prototype
+  GOV.UK prototype kit
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
 <<<<<<< HEAD
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Access to work payments
+        <span class="heading-secondary">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+      </p>
+
+      <p>
+        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+      </p>
+=======
 
 	<h2 class="heading-xlarge">Prototypes</h2>
 
+<<<<<<< HEAD
+      
+>>>>>>> origin/master
+=======
 
 
 	<h3 class="heading-large">Payments designs</h3>
@@ -18,26 +37,6 @@
 		<li> <a href="/payments-v1/start">Payments journey - Version 1;</a> initial prototype for payments journey</li>
 		<!-- <li> <a href="/payments-v2/start">Payments journey - Version 2</a> </li> -->
 	</ul>
-=======
-  <div class="grid-row">
-    <div class="column-full">
-
-      <h1 class="heading-xlarge">
-        Access to work payments
-        <span class="heading-secondary">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This is a new prototype kit for the Access To Work phase 2 development
-      </p>
-
-      <h2 class="heading-medium">Verions</h2>
-
-      <ul class="lsi list-bullet">
-      	<li><a href="payments-v1/start">Payments journeny version 1,</a> initial prototype for payments journey including content review</li>
-      	<li><a href="payments_login_desktop_v1/Start_page">Payments login (desktop) v1,</a> initial payments journey including a login for user account in desktop style</li>
-      	<li><a href="payments_login_mobile_v1/Start_page">Payments login (mobile) v1,</a> initial payments journey including a login for user account in mobile style</li>
-
-      </ul>	
 >>>>>>> origin/master
 
 	<h3 class="heading-large">Payments Log in designs</h3>
@@ -50,16 +49,45 @@
 		<li> <a href="/Payments_login_desktop_v1/start_page">Payments Log in desktop;</a> initial prototype for payments log in journey</li>
 		<!-- <li> <a href="/payments-v2/start">Payments journey - Version 2</a> </li> -->
 	</ul>
+>>>>>>> parent of e0c7e77... Merge remote-tracking branch 'origin/master'
 
+      <h2 class="heading-medium">About this page</h2>
+
+      <p>We recommend you add links to your prototype to this page, rather than delete it.
+        You'll find this page in the kit at '/app/views/index.html'.</p>
+      <p>You can change the service name by editing the file '/app/config.js'.</p>
+
+			<h2 class="heading-medium">Examples and documentation</h2>
+
+			<ul class="list list-bullet">
+				<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
+				<li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
+			</ul>
+
+      <h2 class="heading-medium">Other resources</h2>
+
+			<ul class="list list-bullet">
+				<li>
+					<a href="https://govuk-elements.herokuapp.com/snippets/">
+						Guide to GOV.UK Elements
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/service-manual">
+						Service design manual
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/design-principles">
+						Government Digital Service Design Principles
+					</a>
+				</li>
+			</ul>
+
+    </div>
+  </div>
 </main>
 
-<div class="show-pages" style="display:none">
-	<div class="tag"></div>
-	<ul class="pages"></ul>
-</div>
-
 {% endblock %}
 
-{% block page_script %}
-{# <script type="text/javascript" src="/public/javascripts/homepage.js"></script> #}
-{% endblock %}
+
