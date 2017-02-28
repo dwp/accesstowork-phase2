@@ -7,9 +7,12 @@ router.get('/', function (req, res) {
 })
 
 // add your routes here
+<<<<<<< HEAD
+=======
 
 /// DESKTOP ROUTES ///
 
+>>>>>>> parent of e0c7e77... Merge remote-tracking branch 'origin/master'
 
 /// EMPLOYED ROUTES ///
 router.post('/Payments_login_desktop_v1/employment_type', function (req, res) {
@@ -49,6 +52,8 @@ router.post('/Payments_login_desktop_v1/self_claim_type', function (req, res) {
           }
         });
 
+<<<<<<< HEAD
+=======
 
 
 /// MOBILE ROUTES ///
@@ -92,6 +97,7 @@ router.post('/Payments_login_mobile_v1/self_claim_type', function (req, res) {
         });
 
 
+>>>>>>> parent of e0c7e77... Merge remote-tracking branch 'origin/master'
 
 
 module.exports = router
