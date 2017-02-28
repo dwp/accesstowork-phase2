@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your details
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+      <h1 class="form-title heading-large">About you</h1>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="full-name">Full name</label>
+          <input type="text" class="form-control" id="full-name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="atw-ref">Access to Work reference number</label>
+          <p class="form-hint">You can find this on your declaration.</p>
+          <input type="text" class="form-control" id="atw-ref">
+        </div>
+
+        <div class="form-group">
+           <label  class="form-label-bold" for="employer-name">Employer&rsquo;s name</label>
+           <input type="text" class="form-control" id="email-address">  
+        </div>
+
+        <div class="form-group">
+           <label  class="form-label-bold" for="email-address">Employer&rsquo;s email address</label>
+           <input type="text" class="form-control" id="email-address">  
+        </div>
+
+        
+        <p> <a class="button" href="/payments-v1/bank-account">Continue</a></p>
+
+</main>
+
+{% endblock %}
