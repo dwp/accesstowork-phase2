@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+
+  <div class="grid-row">
+    <div class="column-full">
+      
+  
+  <div class="secondary-bar">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="logged_out">Log Out</a></li>
+  
+    </ul>
+  </div>
+</div>
+  </div>
+
+  <div class="form-group">
+            <p><a href="/Payments_login_mobile_v1//your_account">Back</a></p>
+          </div>
+
+      <h1 class="heading-xlarge">
+        Your account
+        <span class="heading-secondary"></span>
+      </h1>{{releaseVersion | log }}
+
+<div class="main-content">        
+
+
+    <div class="grid-row">
+      
+      <div class="column-full summary-nav-wrapper">   
+
+
+
+
+<p class="lede" style="margin-top: 30px">
+  You have no open claims.
+</p>
+    
+<div class="form-group">
+      <p> <a class="button" href="/Payments_login_mobile_v1/start_new_claim">Start new claim</a></p>
+     </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
