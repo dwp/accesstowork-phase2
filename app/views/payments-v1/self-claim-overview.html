@@ -19,7 +19,7 @@
 
      <div class="grid-row">
      
-      <div class="column-two-thirds">
+      <div class="column-full">
 
           <main id="content" role="main">
 
@@ -27,27 +27,83 @@
             Review and send your claim
           </h1>
 
-          <table class="check-your-answers">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>30 November to 1 December 2016</td>
+                <td class="numeric">Travel - while in work work</td>
+                <td class="numeric">£50</td>
+                <td class="change-answer">
+                  <a href="/payments-v1/single-travel">
+                    Change <span class="visuallyhidden">Type of travel</span>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>1 November to 30 November 2016</td>
+                <td class="numeric">Travel - to and from work</td>
+                <td class="numeric">£240</td>
+                <td class="change-answer">
+                  <a href="/payments-v1/multi-travel">
+                    Change <span class="visuallyhidden">Type of travel</span>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+               <td>1 December to 31 December 2016</td>
+                <td class="numeric">Travel - to and from work</td>
+                <td class="numeric">£260</td>
+                <td class="change-answer">
+                  <a href="/payments-v1/multi-travel">
+                    Change <span class="visuallyhidden">Type of travel</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+         <!-- <table class="check-your-answers">
 
             <thead>
               <tr>
-                <th colspan="2">
+                <th colspan="1">
                   <h2 class="heading-medium">
                     Date
                   </h2>
                 </th>
-                <th>
+                <th colspan="2">
+                  <h2 class="heading-medium">
+                   Type
+                   </h2>
+                </th>
+                 <th colspan="3">
+                  <h2 class="heading-medium">
+                   Ammount
+                   </h2>
                 </th>
               </tr>
             </thead>
+            
 
             <tbody>
+
               <tr>
                 <td>
                   22 November to 26 November 2016
                 </td>
                 <td>
                   Travel
+                </td>
+                <td>
+                  £50
                 </td>
                 <td class="change-answer">
                   <a href="/payments-v1/single-travel">
@@ -68,7 +124,7 @@
                   </a>
                 </td>
               </tr>
-              <!-- <tr>
+               <tr>
                 <td>
                   Site of export
                 </td>
@@ -124,17 +180,17 @@
                     Change <span class="visuallyhidden">Recovery site name</span>
                   </a>
                 </td>
-              </tr> -->
+              </tr> 
             </tbody>
-          </table>
+          </table> -->
 
           <div class="form-group">
             <p><a href="/payments-v1/claim-type">Add another claim</a></p>
           </div>
             
-          <!-- <h2 class="heading-medium">Now send your claim</h2>
+          <h2 class="heading-medium">Now send your claim</h2>
 
-           <p>Your claim will be sent to </p> -->
+          <p>Your claim will now be sent to your employer for verifying.</p>
 
           <fieldset>
           <legend class="form-label-bold dec-legend" id="app">By sending this claim you agree that:</legend>
@@ -154,7 +210,7 @@
         </fieldset>
 
           <div class="form-group">
-            <a href="/payments-v1/self-what-happens-next" class="button">Agree and send claim</a>
+            <a href="/payments-v1/what-happens-next" class="button">Agree and send claim</a>
           </div>
 
       </main>

@@ -92,16 +92,16 @@ nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
     z-index: 5;
 }
 
-@media (max-width: 640px)
-static-35de660….css:1
-.nav-tabs li:first-child a, .nav-tabs .tabs-nav li:first-child a {
-    border-left: none;
-    border-top: 1px solid #bfc1c3;
+@media (max-width: 640px){
+  .nav-tabs li:first-child a, .nav-tabs .tabs-nav li:first-child a {
+      border-left: none;
+      border-top: 1px solid #bfc1c3;
+  }
 }
 
-@media (max-width: 640px)
-static-35de660….css:1
-.nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
-    float: none;
-    margin: 0 -16px;
+@media (max-width: 640px){
+  .nav-tabs ol, .nav-tabs ul, .nav-tabs .tabs-nav {
+      float: none;
+      margin: 0 -16px;
+  }
 }
