@@ -19,7 +19,7 @@ router.post('/payments-v1/employment-type', function (req, res) {
       });
 
 router.post('/payments-v1/claim-type', function (req, res) {
-          if (req.body.claimtype === 'Travel') {
+            if (req.body.claimtype === 'Travel') {
             res.redirect('/payments-v1/travel-type')
           } else if (req.body.claimtype ==='Support') {
             res.redirect('/payments-v1/support-single')
@@ -29,7 +29,7 @@ router.post('/payments-v1/claim-type', function (req, res) {
         });
 
 router.post('/payments-v1/travel-type', function (req, res) {
-        if (req.body.claim === 'travel1') {
+          if (req.body.claim === 'travel1') {
           res.redirect('/payments-v1/single-travel')
         } else {
           res.redirect('/payments-v1/multi-travel')
@@ -38,7 +38,7 @@ router.post('/payments-v1/travel-type', function (req, res) {
 
 /// SELF EMPLOYED ROUTES ///
 router.post('/payments-v1/self-claim-type', function (req, res) {
-          if (req.body.claimtype === 'Travel') {
+            if (req.body.claimtype === 'Travel') {
             res.redirect('/payments-v1/self-travel-type')
           } else if (req.body.claimtype ==='Support') {
             res.redirect('/payments-v1/self-support-single')
@@ -48,12 +48,14 @@ router.post('/payments-v1/self-claim-type', function (req, res) {
         });
 
 router.post('/payments-v1/self-travel-type', function (req, res) {
-        if (req.body.travel === 'travel1') {
+          if (req.body.self === 'travel1') {
           res.redirect('/payments-v1/self-single-travel')
         } else {
           res.redirect('/payments-v1/self-multi-travel')
         }
-      });
+      }); 
+
+
 
 /// PAYMENTS JOURNEY END ///
 
