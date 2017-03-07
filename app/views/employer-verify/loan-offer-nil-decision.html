@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your application - Budgeting Loans - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/beta-banner.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="notice polite m-b-l" style="background-color: #267cae; color: #fff">
+        <h1 class="bold-medium m-t-s m-b-xs" style="text-align: center">
+          Your application for a Budgeting Loan was unsuccessful </h1>
+      </div>
+
+      <p>You&rsquo;re not eligible for a loan because:</p>
+
+      <ul class="list list-bullet">
+        <li>you owe the Social Fund more than &pound;1,500 for Crisis Loans and Budgeting Loans</li>
+        <li>you or your partner haven&rsquo;t been getting Income Support, income-based Jobseeker&rsquo;s Allowance, income-related Employment and Support Allowance or Pension Credit for the past 6 months</li>
+        <li>you don&rsquo;t need more than &pound;100</li>
+        <li>you&rsquo;re involved in industrial action</li>
+      </ul>
+
+      <h2 class="heading-medium">If you&rsquo;re not happy with this decision</h2>
+      <p>You can ask for this decision to be reviewed. Write to <a href="https://www.gov.uk/contact-jobcentre-plus">JobCentre Plus</a> in the next 28 days explaining why you think the decision is wrong.</p>
+
+      <h2 class="heading-medium">Other help you can get</h1>
+        
+      <p>You might be able to get a loan from:</p>
+
+      <ul class="list list-bullet">
+        <li>your <a href="/find-your-local-council">local council</a></li>
+        <li>the <a rel="external" href="http://www.moneymadeclearwales.org/home.php?page_id=60">Discretionary Assistance Fund in Wales</a></li>
+        <li>the <a rel="external" href="http://www.nidirect.gov.uk/index/information-and-services/money-tax-and-benefits/benefits-and-financial-support/on-a-low-income-1/help-from-the-social-fund.htm">Northern Ireland Social Fund</a></li>
+        <li>the <a rel="external" href="http://www.gov.scot/Topics/People/fairerscotland/scottishwelfarefund"> Scottish Welfare Fund</a></li> 
+      </ul>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

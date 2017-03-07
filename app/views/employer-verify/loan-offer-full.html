@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Loan offer - Budgeting Loans - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/beta-banner.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="govuk-box-highlight m-b-l" style="padding: 20px">
+        <p class="m-b-m"><strong class="heading-medium">You can get a Budgeting Loan of</strong></p>
+        <h1 class="bold-xxlarge m-b-xs">&pound;300</h1>
+      </div>
+
+      <details style="margin-bottom: 1em;">
+
+        <summary><span class="summary">How your loan has been calculated</span></summary>
+
+        <p>The loan amount is based on:</p>
+
+        <div class="panel-indent">
+          <ul class="list list-bullet">
+            <li>the amount you owe the Social Fund</li>
+            <li>your regular debt repayments</li>
+            <li>how much you can afford to pay each week</li>
+          </ul>
+        </div>
+
+      </details>
+
+      <p>If you accept:</p>
+      
+      <ul class="list list-bullet">
+        <li>you&rsquo;ll repay &pound;8.77 a week, which will be automatically taken from your Jobseeker&rsquo;s Allowance</li>
+        <li>your new Jobseeker&rsquo;s Allowance payment will be &pound;62.20 a week for 34 weeks</li>
+        <li>you&rsquo;ll still have to repay the loan if you stop claiming benefits</li>
+      </ul>
+
+      <form method="post" class="form m-t-nl">
+
+        <fieldset class="inline m-b-m">
+
+          <h3 class="heading-medium">Do you want to accept this offer?</h3>
+         
+          <label class="block-label" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="choice" value="yes" >
+            Yes
+          </label>
+          <label class="block-label" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="choice" value="no" >
+            No
+          </label>
+
+        </fieldset>
+
+        <p>This offer will expire in 14 days.</p>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>{# / form-group #}
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

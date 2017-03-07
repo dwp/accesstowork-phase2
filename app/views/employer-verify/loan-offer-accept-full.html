@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Loan offer accepted - Budgeting Loans - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/beta-banner.html" %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+       <div class="govuk-box-highlight m-b-l p-s">
+        <h1 class="bold-large m-b-m">You&rsquo;ve accepted a Budgeting Loan of £300</h1>
+        <p style="padding: 0 15px;"><strong class="heading-small">This will be paid into your account by 15 June 2016</strong></p>
+      </div>
+
+      <h2 class="bold-medium m-b-m">What happens next</h2>
+
+      <p> You will:</p>
+
+      <ul class="list list-bullet">
+        <li>get an email confirming you&rsquo;ve accepted the loan</li>
+        <li>repay £8.77 a week, which will be automatically taken from your Jobseeker&rsquo;s Allowance</li>
+        <li>get a reduced Jobseeker&rsquo;s Allowance payment of £62.20 a week for 34 weeks</li>
+      </ul>
+
+      <p>If your circumstances change you must tell <a href="https://www.gov.uk/contact-jobcentre-plus">JobCentre Plus</a> immediately. You&rsquo;ll still have to repay the loan if you stop claiming benefits.</p>
+
+      <p><a href="https://www.gov.uk/" class="button">Finish</a></p>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
