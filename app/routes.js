@@ -61,16 +61,25 @@ router.post('/payments-v1/self-travel-type', function (req, res) {
 
 /// DESKTOP LOGIN ///
 
-/// EMPLOYED ROUTES ///
-router.post('/Payments_login_desktop_v1/employment_type', function (req, res) {
-        if (req.body.claimtype === 'employed') {
-          res.redirect('/Payments_login_desktop_v1/aboutyou_employed')
-        } else {
-          res.redirect('/Payments_login_desktop_v1/aboutyou_selfemployed')
-        }
-      });
+// router.get('/Payments_login_desktop_v1/claim_overview', function (req, res) {
+
+//   // var jugglingFeat = req.query.jugglingFeat
+
+//   req.session.claimtype = req.query.claimtype
+
+//   res.render('Payments_login_desktop_v1/claim_overview', {"data":req.session})
+// })
+
+
+/// LOG IN ROUTES ///
+
+/// claim type pull data through ///
+
 
 router.post('/Payments_login_desktop_v1/claim_type', function (req, res) {
+          
+          req.session.claimtype = req.body.claimtype
+          
           if (req.body.claimtype === 'Travel') {
             res.redirect('/Payments_login_desktop_v1/travel_type')
           } else if (req.body.claimtype ==='Support') {
@@ -80,6 +89,29 @@ router.post('/Payments_login_desktop_v1/claim_type', function (req, res) {
           }
         });
 
+
+/// PULL DATA TO CLAIM OVERVIEW PAGE ///
+
+router.get("/Payments_login_desktop_v1/claim_overview", function (req, res){
+  res.render('/Payments_login_desktop_v1/claim_overview', {"data":req.session})
+})
+
+/// claim date pull data through >> redirect the page ///
+
+
+router.post('/Payments_login_desktop_v1/single_travel', function (req, res) {
+          
+          req.session.dateday = req.body.dateday
+          res.redirect('/Payments_login_desktop_v1/select_payee')
+          
+        });
+
+
+
+
+
+
+/// travel type ///
 router.post('/Payments_login_desktop_v1/travel_type', function (req, res) {
         if (req.body.claim === 'travel1') {
           res.redirect('/Payments_login_desktop_v1/single_travel')
@@ -88,16 +120,6 @@ router.post('/Payments_login_desktop_v1/travel_type', function (req, res) {
         }
       });
 
-/// SELF EMPLOYED ROUTES ///
-router.post('/Payments_login_desktop_v1/self_claim_type', function (req, res) {
-          if (req.body.claimtype === 'Travel') {
-            res.redirect('/Payments_login_desktop_v1/travel_type')
-          } else if (req.body.claimtype ==='Support') {
-            res.redirect('/Payments_login_desktop_v1/support_details')
-          } else {
-            res.redirect('/Payments_login_desktop_v1/self_oneoff')
-          }
-        });
 
 
 /// EMPLOYED ROUTES MOBILE ///
@@ -117,6 +139,7 @@ router.post('/Payments_login_mobile_v1/claim_type', function (req, res) {
           } else {
             res.redirect('/Payments_login_mobile_v1/one_off_claim')
           }
+
         });
 
 router.post('/Payments_login_mobile_v1/travel_type', function (req, res) {
@@ -139,6 +162,8 @@ router.post('/payments_login_mobile_v1/self_claim_type', function (req, res) {
         });
 
 /// DESKTOP LOGIN END ///
+
+/// DESKTOP pull data ///
 
 
 

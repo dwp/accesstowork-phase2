@@ -6,6 +6,9 @@
 
 {% block content %}
 
+{{ data | log }}
+
+
 <main id="content" role="main">
 
   
@@ -31,7 +34,11 @@
 </div>
   </div>
 
+
+    <form class="form" method="post">
+
         <h1 class="form-title heading-large">Your one off travel claim details</h1>
+
 
           <div class="form-group">
             <fieldset>
@@ -40,16 +47,16 @@
               <div class="form-date">
                 
                 <div class="form-group form-group-day">
-                  <label for="dob-day">Day</label>
-                  <input type="text" class="form-control" id="dob-day" maxlength="2" name="dob-day">
+                  <label for="dateday">Day</label>
+                  <input type="text" class="form-control" id="dateday" maxlength="2" name="dateday">
                 </div>
                 <div class="form-group form-group-month">
                   <label for="dob-month">Month</label>
-                  <input type="text" class="form-control" id="dob-month" maxlength="2" name="dob-month">
+                  <input type="text" class="form-control" id="dob-month" maxlength="2" name="date-month">
                 </div>
                 <div class="form-group form-group-year">
                   <label for="dob-year">Year</label>
-                  <input type="text" class="form-control" id="dob-year" maxlength="4" name="dob-year">
+                  <input type="text" class="form-control" id="dob-year" maxlength="4" name="date-year">
                 </div>
               </div>
             </fieldset>
@@ -75,15 +82,23 @@
               <input type="text" class="form-control" id="email">
             </div>        
 
-          <p> <a class="button" href="/Payments_login_desktop_v1/select_payee">Continue</a></p>
+        <div class="form-group">
+      <input type="submit" class="button" value="Continue">
+    </div>
 
-         </div>
+</form>
+
+ </div>
          
-         <div class="column-one-third">
 
-         </div>
+
+    
 
     </div>    
+
+
+
+        
 </main>
 
 {% endblock %}

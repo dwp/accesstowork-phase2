@@ -30,7 +30,8 @@
 </div>
   </div>
 
-    <form class="form" method="post">
+
+    <form class="form" method="post" action="/Payments_login_desktop_v1/claim_type">
 
     <h1 class="form-title heading-large">What are you claiming for?</h1>
 
@@ -41,10 +42,12 @@
         <input id="radio-inline-1" type="radio" name="claimtype" value="Travel">
         Travel
       </label>
+
       <label class="block-label" for="radio-inline-2">
-        <input id="radio-inline-2" type="radio" name="claimtype" value="Oneoff">
+        <input id="radio-inline-2" type="radio" name="claimtype" value="One-off">
         Equipment or adaptation
       </label>
+
       <label class="block-label" for="radio-inline-3">
         <input id="radio-inline-3" type="radio" name="claimtype" value="Support">
         Support work
@@ -55,6 +58,7 @@
       <input type="submit" class="button" value="Continue">
     </div>
 
+</form>
 </main>
 
 {% endblock %}
