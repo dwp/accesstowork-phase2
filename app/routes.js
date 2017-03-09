@@ -98,12 +98,14 @@ router.get("/Payments_login_desktop_v1/claim_overview", function (req, res){
   res.render('payments_login_desktop_v1/claim_overview', {"data":req.session})
     });
 
-/// claim date pull data through >> redirect the page ///
 
+/// claim date pull data through >> redirect the page ///
 
 router.post('/Payments_login_desktop_v1/single_travel', function (req, res) {
           
           req.session.dateday = req.body.dateday
+          req.session.month = req.body.month
+          req.session.year = req.body.year
           res.redirect('/Payments_login_desktop_v1/select_payee')
           
         });
