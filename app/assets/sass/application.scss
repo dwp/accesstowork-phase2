@@ -117,3 +117,15 @@ $path: "/public/images/";
 .completion h1 {
   color: #fff;
   }
+
+details {
+  position:relative;
+  .quicklinks {
+    position:absolute;
+    background-color:white;
+    padding:0 $gutter/2 $gutter/2;
+    font-size:16px;
+    border:1px solid $grey-2;
+    border-top:none;
+  }
+}

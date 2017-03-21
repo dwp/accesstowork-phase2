@@ -59,6 +59,58 @@ router.post('/payments-v1/self-travel-type', function (req, res) {
 
 /// PAYMENTS JOURNEY END ///
 
+/// PAYMENTS JOURNEY VERSION 2 ///
+
+/// EMPLOYED ROUTES ///
+
+router.post('/payments-v2/employment-type', function (req, res) {
+        if (req.body.claimtype === 'employed') {
+          res.redirect('/payments-v2/user-details')
+        } else {
+          res.redirect('/payments-v2/self-user-details')
+        }
+      });
+
+router.post('/payments-v2/claim-type', function (req, res) {
+            if (req.body.claimtype === 'Travel') {
+            res.redirect('/payments-v2/travel-type')
+          } else if (req.body.claimtype ==='Support') {
+            res.redirect('/payments-v2/support-single')
+          } else {
+            res.redirect('/payments-v2/one-off-claim')
+          }
+        });
+
+router.post('/payments-v2/travel-type', function (req, res) {
+          if (req.body.claim === 'travel1') {
+          res.redirect('/payments-v2/single-travel')
+        } else {
+          res.redirect('/payments-v2/multi-travel')
+        }
+      });
+
+/// SELF EMPLOYED ROUTES ///
+router.post('/payments-v2/self-claim-type', function (req, res) {
+            if (req.body.claimtype === 'Travel') {
+            res.redirect('/payments-v2/self-travel-type')
+          } else if (req.body.claimtype ==='Support') {
+            res.redirect('/payments-v2/self-support-single')
+          } else {
+            res.redirect('/payments-v2/self-one-off-claim')
+          }
+        });
+
+router.post('/payments-v2/self-travel-type', function (req, res) {
+          if (req.body.self === 'travel1') {
+          res.redirect('/payments-v2/self-single-travel')
+        } else {
+          res.redirect('/payments-v2/self-multi-travel')
+        }
+      }); 
+
+/// PAYMENTS JOURNEY V2 END ///
+
+
 /// DESKTOP LOGIN ///
 
 // router.get('/Payments_login_desktop_v1/claim_overview', function (req, res) {
