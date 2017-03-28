@@ -108,7 +108,24 @@ router.post('/payments-v2/self-travel-type', function (req, res) {
         }
       }); 
 
+
+
+/// HOW TO UPLOAD RECEIPTS ///
+
+// router.post('/payments-v2/how-to-send-receipts', function (req, res) {
+//         if (req.body.howtoupload === 'take-photo') {
+//           res.redirect('/payments-v2/upload-receipts')
+//         } else {
+//           res.redirect('/payments-v2/claim-overview')
+//         }
+//       });
+
+
 /// PAYMENTS JOURNEY V2 END ///
+
+
+
+
 
 
 /// DESKTOP LOGIN ///

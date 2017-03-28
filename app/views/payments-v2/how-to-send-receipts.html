@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Bank account
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+  
+    <div class="grid-row">
+
+      <div class="column-two-thirds">
+
+        <h1 class="form-title heading-large">You need to send us your receipt(s), how would you like to do this?</h1>
+
+
+       <form>
+        <fieldset class="form-group">
+          
+
+          <label class="block-label" for="radio-inline-1" data-target="account-yes">
+            <input id="radio-inline-1"  type="radio" name="howtoupload" value="upload">
+            By uploading one or more receipts from my computer or device
+          </label>
+          <label class="block-label" for="radio-inline-2" data-target="account-no">
+            <input id="radio-inline-2"  type="radio" name="howtoupload" value="take-photo">
+            By taking one or more photos using my smart phone or tablet
+          </label>
+        </fieldset>
+
+
+        <div class="panel panel-border-narrow js-hidden" id="account-yes">
+
+              <div class="form-group">
+
+              <p>For this option your files should already be saved on the device you are using</p>
+
+              
+
+                <label class="js-visible-block form-label-bold" for="upload-file">Upload file</label>
+
+                <input class="secondarybutton" for="file-input" type="submit" value="Choose file"> 
+
+
+
+<!-- /// HOW TO UPLOAD RECEIPTS STYLE ON GOV.UK /// -->
+
+<!-- <div class="form-group">
+  <label class="form-label" for="file-input">
+    Upload a file
+  </label>
+  <input type="file" id="file-input">
+</div> -->
+
+                </div>
+             
+            </div>{# /account-reference #}
+
+
+
+
+
+            <div class="panel panel-border-narrow js-hidden" id="account-no">
+
+            <div class="form-group">
+
+              <p>For this option your smart phone or tablet camera needs to be above 8 megapixels</p>
+
+                <label class="js-visible-block form-label-bold" for="upload-file">Take one or more photos of your receipt(s)</label>
+
+                  <p> <a class="secondarybutton" href="/payments-v2/upload-receipts">Continue</a></p>
+
+                </div>          
+          </div>  {# /account-details #}
+          </form>
+
+            <p> <a class="button" href="/payments-v2/claim-overview">Continue</a></p>
+
+            
+        </div> {# /column 2 thirds #}
+
+      </div> {# /grid row #}
+
+</main>
+
+{% endblock %}
+
