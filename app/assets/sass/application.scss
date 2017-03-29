@@ -155,3 +155,98 @@ details {
   box-sizing: border-box;
   vertical-align: top;
 }
+
+/// Style specifically for index page
+
+.index-page-banner {
+  background-color: $govuk-blue;
+  color: $white;
+  margin-bottom: $gutter;
+}
+
+.index-heading-wrapper {
+  margin: 0 auto;
+  max-width: 968px;
+}
+
+.index-heading-xlarge {
+  margin: 0;
+  padding: 3rem 0 1rem;
+}
+
+.index-heading-large {
+  font-weight: normal;
+  margin: 0;
+  padding: 1rem 0 3rem;
+}
+
+@media screen and (max-width: 1020px) {
+  .index-heading-xlarge,
+  .index-heading-large {
+    margin-left: $gutter;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .index-heading-xlarge,
+  .index-heading-large {
+    margin-left: $gutter / 2;
+  }
+}
+
+.index-heading-medium {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.index-p {
+  margin: 0;
+}
+
+.clearfix {
+  clear: both;
+  display: block;
+}
+
+.current-version {
+  border-bottom: 1px solid $border-colour;
+  padding-bottom: $gutter;
+}
+
+.older-versions {
+  padding: $gutter / 2 0;
+}
+
+.older-version {
+  border-bottom: 1px solid $border-colour;
+  padding: 2rem 0 3rem;
+}
+
+.version-number {
+  float: left;
+}
+
+.release-date {
+  float: right;
+  margin-right: 23%;
+}
+
+.start-journey {
+  background: $green url('../images/icon-pointer.png') no-repeat right;
+  font-size: 115%;
+  font-weight: bold;
+  margin: 1rem 0;
+  padding-right: 4rem;
+}
+
+.older-toggle {
+  padding-top: $gutter / 2;
+  text-decoration: underline;
+}
+
+.grey-button {
+  @include button($panel-colour);
+  margin: 2rem 0;
+}
+
+// End of Index page styles
