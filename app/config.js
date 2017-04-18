@@ -19,7 +19,7 @@ module.exports = {
   useHttps: 'true',
 
   //TURN ON / OFF BROWSERSYNC
-  useBrowserSync: "true",
+  useBrowserSync: 'true',
 
   // Cookie warning - update link to service's cookie page.
   cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
