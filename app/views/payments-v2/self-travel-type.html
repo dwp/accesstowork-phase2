@@ -20,17 +20,17 @@
     <h1 class="form-title heading-large">What type of travel are you claiming for?</h1>
 
     <fieldset class="form-group">
-      <!-- <legend class="form-label-bold" for="claim">What are you claiming for?</legend> -->
+       <legend class="form-label-bold" for="claim">What are you claiming for?</legend> 
       
-      <label class="block-label" for="radio-inline-1">
-        <input id="radio-inline-1" type="radio" name="self" value="travel1">
-        One off travel
-      </label>
-      <label class="block-label" for="radio-inline-2">
-        <input id="radio-inline-2" type="radio" name="self" value="travel2">
-        Regular travel to and from work
-      </label>
-    </fieldset>
+        <div class="multiple-choice">
+            <input id="radio-1" type="radio" name="claim" value="travel1">
+            <label for="radio-1">One off travel</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="radio-2" type="radio" name="claim" value="travel2">
+          <label for="radio-2">Regular travel to and from work</label>
+        </div>
+    </fieldset>    
         
     <div class="form-group">
       <input type="submit" class="button" value="Continue">
