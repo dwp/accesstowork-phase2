@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Loan offer - Budgeting Loans - GOV.UK
+  Access to work payments claim
 {% endblock %}
 
 {% block content %}
@@ -13,38 +13,57 @@
 
     <div class="column-two-thirds">
 
-     <h1 class="heading-large">Access to Work payment verification</h1>
+     <h1 class="heading-large">Access to Work payment claim verification</h1>
 
       
 
         <h2 class="heading-medium">What you need to do</h2>
 
           <ul class="list list-bullet">
-            <li>check employees details</li>
-            <li>review the receipts</li>
+            <li>check the details on the form</li>
             <li>accept or reject the claim</li>
           </ul>
 
+          <a href="/public/images/verifier_payments_claim">View the form</a> 
+
         <form class="form" method="post">
 
-        <fieldset class="inline">
+        <fieldset class="form-group">
 
           <h3 class="heading-medium">Do you agree with the claim?</h3>
-         
-          <label class="block-label" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="choice" value="yes" >
-            Yes
-          </label>
-          <label class="block-label" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="choice" value="no" >
-            No
-          </label>
+            
+            <div class="multiple-choice">
+              
+              <input id="radio-1" type="radio" name="choice" value="yes" >
+              <label for="radio-1">Yes</label>
+            </div>
+            
+            <div class="multiple-choice" data-target="disagree">  
+              
+              <input id="radio-2" type="radio" name="choice" value="no">
+              <label for="radio-2">No</label>
 
+           </div>
+              
         </fieldset>
+
+        <p>Your decision will be sent to the Access to Work payment team to process</p>
+
+        <div class="panel panel-border-narrow js-hidden" id="disagree">
+
+          <div class="form-group">
+
+                <label class="js-visible-block form-label-bold" for="disagree-reason">Reason you disagree with the claim</label>
+                <label class="form-label" for="disagree-reason">Please state why you disagree with the claim details</label>
+                <textarea class="form-control" id="reasons" name="reasons" style="margin-top:10px;" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+              
+          </div>
+
+        </div>    
 
         </form>
         <div class="form-group">
-          <input class="button" type="submit" value="Continue">
+         <p> <a class="button" href="/employer-verify/employer-what-happens-next">Send</a></p>
         </div>
 
       </form>

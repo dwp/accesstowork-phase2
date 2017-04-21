@@ -1,0 +1,44 @@
+body {
+  padding-top: 1px;
+}
+
+.email-page {
+  background-color: #ccc;
+  margin: 0;
+}
+
+.email {
+  width: 62%;
+  max-width: 768px;
+  margin: 5% auto;
+  background: white;
+  padding: 30px;
+}
+
+.email-meta {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em;
+}
+
+.meta-label {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.email-body {
+  margin-top: 2em;
+  padding-bottom: 90px;
+}
+
+.email-body img {
+  margin-bottom: 15px;
+}
+
+.letter-meta {
+  float: right;
+  text-align: right;
+}
+
+p b {
+  font-weight: bold;
+}

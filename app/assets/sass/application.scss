@@ -249,4 +249,9 @@ details {
   margin: 2rem 0;
 }
 
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}
+
 // End of Index page styles
