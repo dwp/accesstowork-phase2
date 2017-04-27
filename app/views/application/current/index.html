@@ -1,0 +1,97 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Can you get an Access to Work grant?{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds">
+
+  <h1 class="form-title heading-xlarge">Access to Work</h1>
+    
+  <!-- INTRO NAVIGAITON -->
+
+      <nav class="intro-nav">
+        <ol>
+          <li class="active font-xsmall">
+            <span class="part-number">1.</span>
+            <span>Overview</span>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">3.</span>
+            <a href="intro3" title="Part 3: Apply">Apply</a>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">2.</span>
+            <a href="intro2" title="Part 2: What you'll get">What you'll get</a>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">4.</span>
+            <a href="intro4" title="Part 4: Report changes">Report changes</a>
+          </li>
+        </ol>
+      </nav>
+
+  <!-- CONTENT -->
+  <div class="intro-content">
+  	<h2 class="heading-medium">1. Overview</h2>
+  	<p>You can apply for help from Access to Work if you have a disability or health condition that makes it difficult for you to do parts of your job.</p>
+  	<p>The grant can pay for <a href="intro3">special equipment or support</a> to help you: </p>
+  	<ul class="list-bullet">
+  	  <li>do things you have to do at work, eg answer the phone, go to meetings</li>
+  	  <li>get to and from work</li>
+  	</ul>
+    <h2 class="heading-medium">Other benefits</h2>
+        <p>You might not get Access to Work if you already get:</p>
+    <ul class="list-bullet">
+      <li>Incapacity Benefit</li>
+      <li>Job Seekers Allowance</li>
+      <li>Employment and Support Allowance</li>
+      <li>Severe Disability Allowance</li>
+      <li>Income Support</li>
+      <li>National Insurance Credits</li>
+    </ul>
+  </div>
+
+ <nav class="intro-next">
+          <a href="intro2" rel="next" title="Navigate to next part">Next<span class="pagination-part-title">What you'll get</span></a>
+       </nav>
+   
+</section>
+
+
+<aside class="column-third help-margin">
+      <h2 class="bold-medium intro-right">Elsewhere on GOV.UK</h2>
+      	<ul class="intro-right-nav">
+		  		<li>
+                  <a href="#">Reasonable adjustments for disabled workers</a>
+                </li>
+              
+                <li>
+                  <a href="#">Definition of disability under the Equality Act 2010</a>
+                </li>
+              
+                <li>
+                  <a href="#">Disability rights</a>
+                </li>
+              
+                <li>
+                  <a href="#">Looking for work if you're disabled</a>
+                </li>
+              
+              
+            </ul>
+    </aside>
+    
+</div>
+
+
+
+</main>
+
+{% endblock %}

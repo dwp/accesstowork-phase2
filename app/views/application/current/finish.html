@@ -1,0 +1,45 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Application complete{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+  {% include "includes/alpha.html" %}
+
+  <div class="grid-row">
+
+    <section class="column-two-thirds" aria-labelledby="complete">
+
+      <!-- HEADING -->
+      <div class="completion">
+        <h1 class="form-title heading-large" id="complete" style="padding-top:30px">Your application has been received</h1>
+        <p style="color:white;margin-top:-30px">Your reference number is: <b style="font-weight:700">KJSAD</b></p>
+      </div>
+
+      <div class="form-group">
+
+       <h2 class="heading-medium">What happens next</h2>
+
+       <p>You or your representative will get a phone call or email within 5 working days to discuss your application.</p>
+
+       <p>You'll be told if someone needs to visit your workplace to meet with you face-to-face, and when this will happen.</p>
+
+     </div>
+
+     <!-- Primary buttons, secondary links -->
+     <div class="form-group">
+      <ul>
+        <li><a href="index" class="button">Finish</a></li>
+      </ul>
+    </div>
+
+  </section>
+
+</div>
+
+</main>
+
+{% endblock %}

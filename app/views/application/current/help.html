@@ -1,0 +1,79 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About you{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" id="thirdparty"> Help with this form </h1>
+
+  <p>If you're struggling to complete the form by yourself you can ring or email to get help.</p>
+
+  <ul class="list form-group">
+    <li>Phone: <a href="tel:09876 543 321">0113 823 0614</a></li>
+    <li>Email: <a href="mailto:harrow.atwdigitalapplications@dwp.gsi.gov.uk">harrow.atwdigitalapplications@dwp.gsi.gov.uk</a></li>
+  </ul>
+
+  <p>You can <a href="javascript:history.go(-1);">return to the form</a> and carry on if you want.</p>
+
+  <p>
+
+</section><!-- .column-two-thirds -->
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+
+  var deaf_conditions = [
+    "Deaf",
+    "Hear",
+  ];
+
+  $(document).on('ready',function()
+  {
+    $('#submitButton').on('click',function(e)
+    {
+      e.preventDefault();
+      var val = $('#conditions').val();
+      // console.log("typed: "+val);
+      if (val) // if they've filled something in (they don't have to).
+      {
+        var match = false;
+        $.each(deaf_conditions, function(i, str)
+        {
+          // console.log("condition: "+str);
+          var matches = val.toLowerCase().match(str.toLowerCase());
+          if (matches) match = true;
+        });
+        // console.log(match);
+        if (match)
+        {
+          Cookies.set('hearing',true);
+          Cookies.set('sections',6);
+          $("form").append('<input type="hidden" name="fast" value="true" />');
+          $("form").attr('action','hearing');
+        } else {
+          Cookies.set('sections',5);
+        }
+      }
+      $("form").submit();
+    });
+  });
+</script>
+{% endblock %}

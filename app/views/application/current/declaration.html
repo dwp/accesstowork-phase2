@@ -1,0 +1,63 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Consent &amp; Declaration{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/alpha.html" %}
+
+  <div class="grid-row">
+
+    <section class="column-two-thirds" aria-labelledby="declaration">
+
+      <!-- BACK LINK -->
+      <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+      <!-- HEADING -->
+      <h1 class="form-title heading-large" id="declaration">Declaration</h1>
+
+
+      <form action="finish" method="post" class="form">
+
+        <input type="hidden" name="page_name" value="delcaration"/>
+
+        <fieldset>
+          <legend class="form-label-bold dec-legend" id="app">By sending this application you agree that:</legend>
+
+          <div class="form-group">
+            <ul class="list-bullet" aria-labelledby="app">
+              <li>the information in this application is correct as far as you know</li>
+              <li>you'll tell the Access to Work unit about any changes to your condition or circumstances, eg if your place of work changes</li>
+              <li>you agree to the <a href="email">email terms</a></li>
+            </ul>
+
+            <div class="application-notice help-notice">
+              <p>It might be a criminal offence if you knowingly give false information or don't report anything that would affect your grant, eg if your condition improves or you change where you work.</p>
+            </div>
+          </div>
+
+        </fieldset>
+
+
+        <!-- Primary buttons, secondary links -->
+
+        <fieldset class="primary-nav form-group">
+          <legend>Form Navigation</legend>
+          <ul>
+            <li><button class="button" name="agreed" value="true">I agree - send my application</button></li>
+          </ul>
+        </fieldset>
+
+      </form>
+
+    </section>
+
+    {% include "application/rightcol.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}

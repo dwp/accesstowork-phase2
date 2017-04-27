@@ -1,0 +1,86 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Can you get an Access to Work grant?{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/alpha.html" %}
+
+  <div class="grid-row">
+
+    <section class="column-two-thirds">
+
+      <h1 class="form-title heading-xlarge">Access to Work</h1>
+
+      <nav class="intro-nav">
+        <ol>
+          <li class="font-xsmall">
+            <span class="part-number">1.</span>
+            <a href="index" title="Part 1: Overview">Overview</a>
+          </li>
+          <li class="active font-xsmall">
+            <span class="part-number">3.</span>
+            <span>Apply</span>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">2.</span>
+            <a href="intro2" title="Part 2: What you'll get">What you'll get</a>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">4.</span>
+            <a href="intro4" title="Part 4: Report changes">Report changes</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="intro-content">
+        <h2 class="heading-medium">3. Apply</h2>
+
+        <p class="font-small" id="grant">To get an Access to Work grant you must:</p>
+
+        <ul class="list-bullet" aria-labelledby="grant">
+          <li>be 16 or over</li>
+          <li>live and work in England, Scotland or Wales - there's a different system in <a href="http://www.nidirect.gov.uk/access-to-work-practical-help-at-work">Northern Ireland</a></li>
+          <li>have a job</li>
+          <li>be disabled or have a long-term health condition</li>
+        </ul>
+        <p class="font-small">When you apply: </p>
+        <ul class="list-bullet" aria-labelledby="grant">
+          <li>Department for Work and Pensions will contact your employer</li>
+          <li>someone might visit you at work</li>
+        </ul>
+        <div class="panel-indent" style="margin-bottom:30px !important">
+          <p>If you have a mental health condition nobody will contact your employer without talking to you first.</p>
+        </div>
+        <details>
+          <summary><span class="summary">Long-term health conditions</span></summary>
+          <div class="panel-indent">
+            <p id="health">If you're not permanently disabled, your health condition must either:</p>
+            <ul aria-labelledby="health" class='list-bullet'>
+              <li>have already lasted for at least a year</li>
+              <li>be expected to last at least a year</li>
+            </ul>
+            <p>If you're permanently disabled or have a mental health condition it doesn't matter how long you've had your condition.</p>
+          </div>
+        </details>
+        <br />        
+
+        <p><a href="start" class="button button-get-started">Start now</a></p>
+      </div><!-- .intro-content -->
+
+        <nav class="intro-next">
+    <a href="intro2" class="first" rel="next" title="Navigate to previous part">Previous<span class="pagination-part-title">What you'll get</span></a>
+    <a href="intro4" rel="next" title="Navigate to next part">Next<span class="pagination-part-title">Report changes</span></a>
+  </nav>
+
+    </section>
+
+    {% include "includes/elsewhere.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}

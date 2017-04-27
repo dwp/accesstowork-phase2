@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}Diffing versions{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <ul class="diff_navigation clearfix">
+    <li>Previous versions</li>
+    {% for item in range(2,13) %}
+      <li><a href="/application/v{{ item }}/diff">v{{ item }}</a></li>
+    {% endfor %}
+  </ul>
+
+<div clas"grid-row" style="clear:both">
+  
+  {{ diffdata | log }}
+
+  <section class="column-third" style="padding-top:20px;">
+    
+    <a href="#" id="view_summary">View summary</a>
+
+    <h2 class="heading-medium" style="margin-bottom:0">Changed files</h2>
+    <p class="font-xsmall">(where the action is)</p>
+    <ul id="changed">
+    {% for item in diffdata.changed %}
+      <li><a href="#{{ item | sanssuffix }}">{{ item }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <br /><h2 class="heading-medium" style="margin-bottom:0">New files</h2>
+    <ul>
+    {% for item in diffdata.new %}
+      <li><a href="/application/v{{ vthis }}/{{ item | sanssuffix }}">{{ item }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <br /><h2 class="heading-medium" style="margin-bottom:0">Deleted files</h2>
+    <ul>
+    {% for item in diffdata.deleted %}
+      <li><a href="/application/v{{ vlast }}/{{ item | sanssuffix }}">{{ item }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <br /><h2 class="heading-medium" style="margin-bottom:0">Ignore</h2><p class="font-xsmall">(minor changes non-iterative)</p>
+    <ul id="ignored">
+    {% for item in diffdata.ignored %}
+      {% if item == 'rightcol.html' %}
+      {% elif item == 'scripts.html' %}
+      {% elif item == 'scripts.html' %}
+      {% else %}
+        <li><a href="#{{ item | sanssuffix }}">{{ item }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+
+  </section>
+
+  <section class="column-two-thirds">
+    <div id="summary">
+      <h2 class="heading-large">Summary</h2>
+      {{ summary | safe }}
+      <br />
+      <dl>
+        {% for name,note in notes %}
+          <dt class="heading-small"><a class="sumview" href="#{{ name }}">{{ name }}.html</a></dt>
+            <dd>{{ note }}</dd>
+            <dd>
+              <a class="screen" href="/public/images/pages/v{{ vlast }}/{{ name }}-full.png" data-lightbox="{{ name }}">{{ vlast }}<br /><img src="/public/images/pages/v{{ vlast }}/{{ name }}-thumb.png" width="100"></a>
+              <a class="screen" href="/public/images/pages/v{{ vthis }}/{{ name }}-full.png" data-lightbox="{{ name }}">{{ vthis }}<br /><img src="/public/images/pages/v{{ vthis }}/{{ name }}-thumb.png" width="100"></a>
+            </dd>
+        {% endfor %}
+      </dl>
+    </div>
+    
+    {{ diffdata.diffs | safe }}
+    
+  </section>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript" src="/public/javascripts/lightbox.js"> </script>
+<script type="text/javascript" src="/public/javascripts/diff.js"> </script>
+{% endblock %}

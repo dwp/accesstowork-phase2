@@ -1,0 +1,88 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+  <!-- HEADING -->
+  <h1 class="form-title heading-large" id="aboutjob">
+    {# <span class="section-progress">Section 5 of 7</span>  #}
+    About your job
+  </h1>
+
+  <form action="aboutjob" method="post" class="form">
+
+    <input type="hidden" name="page_name" value="employed_self"/>
+
+    <fieldset>
+
+      <legend class="hidden-legend" aria-hidden="true">What you do and where you work</legend>
+
+      {# <!-- JOB TITLE -->
+      <div class="form-group">
+        <label class="form-label-bold" for="job-title">Your job title</label>
+        <input class="form-control" type="text" id="job-title" name="job-title">
+      </div> #}
+
+      <!-- ADDRESS -->
+      <div class="form-group">
+         <fieldset class="inline">
+            <legend class="form-label-bold">Do you work from home?</legend>
+            <div class="form-group">
+              <label class="block-label selection-button-radio" for="work-from-home-yes">
+                <input id="work-from-home-yes" name="self-emp-address" type="radio" value="Yes">
+                Yes
+              </label>
+            </div><div class="form-group">
+              <label class="block-label selection-button-radio" for="work-from-home-no" data-target="eligibility-q1">
+                <input id="work-from-home-no" name="self-emp-address" type="radio" value="No">
+                No
+              </label>
+            </div>
+            <div class="panel-indent js-hidden" id="eligibility-q1" name="self-emp-eligibility-q1">
+               <fieldset>
+                <legend class="form-label">Your work address</legend>
+                  <div class="form-group" style="width:100%">
+                    <label class="form-label" for="address-line1"><input type="text" class="form-control" id="address-line1" name="self-emp-address-line1"></label>
+                    <label class="form-label" for="address-line2"><input type="text" class="form-control" id="address-line2" name="self-emp-address-line2"></label>
+                    <label class="form-label" for="address-line3"><input type="text" class="form-control" id="address-line3" name="self-emp-address-line3"></label>
+                  </div>
+                  <div class="form-group" style="width:100%">
+                    <label class="form-label" for="postcode">Postcode</label>
+                    <input type="text" class="form-control form-control-1-4" id="postcode" name="self-emp-postcode">
+                  </div>
+              </fieldset>
+            </div>
+         </fieldset>
+      </div>
+
+    </fieldset>
+
+    <!-- NEXT BUTTON -->
+    <fieldset class="primary-nav form-group">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button"/>
+    </fieldset>
+
+  </form>
+
+</section>
+
+{% include "application/rightcol.html" %}
+
+</div>
+
+</main>
+
+{% endblock %}

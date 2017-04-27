@@ -1,0 +1,28 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <h1 class="form-title heading-large">Something's gone wrong</h1>
+  <p id="payHelp">There was a problem sending your form.</p>
+  <p><a href='#'>Go back</a> and try again.</p>
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Can you get an Access to Work grant?{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/alpha.html" %}
+
+  <div class="grid-row">
+
+    <section class="column-two-thirds">
+
+      <h1 class="form-title heading-xlarge">Access to Work</h1>
+
+      <nav class="intro-nav">
+        <ol>
+          <li class="font-xsmall">
+            <span class="part-number">1.</span>
+            <a href="index" title="Part 1: Overview">Overview</a>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">3.</span>
+            <a href="intro3" title="Part 3: Apply">Apply</a>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">2.</span>
+            <a href="intro2" title="Part 2: What you'll get">What you'll get</a>
+          </li>
+          <li class="active font-xsmall">
+            <span class="part-number">4.</span>
+            <span>Report changes</span>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="intro-content">
+        <h2 class="heading-medium">4. Report changes</h2>
+
+        <p class="font-small" id="grant">If you already have an Access to Work grant you must report anything that changes. This includes if: 
+
+        <ul class="list-bullet" aria-labelledby="grant">
+          <li>your job role changes</li>
+          <li>you move house</li>
+          <li>you move offices or place of work</li>
+          <li>your condition changes</li>
+          <li>anything else changes that you think affects your grant</li>
+        </ul>
+        <p>Use this service to tell Access to Work something's changed.</p>
+        <p> You'll need your grant reference number, find this on your original offer letter.</p>
+        <p>Once you report a change someone will look at it and decide if the change affects your grant and get in contact if needed. If you don't hear anything your grant won't be affected.</p>
+        <p>If it makes a major change to your grant you may have to make a full application and have another workplace assessment.</p>   
+
+        <p><a href="../coc/mvp/" class="button button-get-started">Start now</a></p>
+      </div><!-- .intro-content -->
+
+      <nav class="intro-next">
+        <a href="intro3" class="first" rel="next" title="Navigate to previous part">Previous<span class="pagination-part-title">Apply</span></a>
+      </nav>
+
+    </section>
+
+    {% include "includes/elsewhere.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}

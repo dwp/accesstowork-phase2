@@ -1,0 +1,90 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About you{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" id="thirdparty">
+    {# <span class="section-progress">Section 1 of 7</span> #}
+    What are your conditions or disabilities?
+  </h1>
+
+  <form action="during-work" method="post" class="form" id="theForm">
+
+    <input type="hidden" name="page_name" value="start"/>
+
+    <!-- YOUR CONDITION -->
+    <div class="form-group" style="margin-bottom:45px">
+      <!-- <label class="form-label-bold" for="conditions-and-dis" id="">What's your condition or disability?</label> -->
+      <input name="my-condition" id="conditions" class="form-control full"/>
+    </div>
+
+    <fieldset class="primary-nav form-group">
+		  <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="submitButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+
+  var deaf_conditions = [
+    "Deaf",
+    "Hear",
+  ];
+
+  $(document).on('ready',function()
+  {
+    $('#submitButton').on('click',function(e)
+    {
+      e.preventDefault();
+      var val = $('#conditions').val();
+      // console.log("typed: "+val);
+      if (val) // if they've filled something in (they don't have to).
+      {
+        var match = false;
+        $.each(deaf_conditions, function(i, str)
+        {
+          // console.log("condition: "+str);
+          var matches = val.toLowerCase().match(str.toLowerCase());
+          if (matches) match = true;
+        });
+        // console.log(match);
+        if (match)
+        {
+          Cookies.set('hearing',true);
+          Cookies.set('sections',6);
+          $("form").append('<input type="hidden" name="fast" value="true" />');
+          $("form").attr('action','hearing');
+        } else {
+          Cookies.set('sections',5);
+        }
+      }
+      $("form").submit();
+    });
+  });
+</script>
+{% endblock %}

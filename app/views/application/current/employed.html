@@ -1,0 +1,125 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+  <!-- HEADING -->
+<h1 class="form-title heading-large" id="aboutjob">
+  {# <span class="section-progress">Section 5 of 7</span>  #}
+  Where you work
+</h1>
+
+<form action="line-manager" method="post" class="form">
+
+    <input type="hidden" name="page_name" value="employed"/>
+
+    <fieldset class="form-group">
+
+        {# <legend class="hidden-legend" aria-hidden="true">Who you work for</legend> #}
+
+        <!-- EMPLOYER -->
+        <div class="form-group">
+          <label class="form-label-bold" for="company-name">Name</label>
+          <input class="form-control" type="text" id="company-name" name="employed-company-name">
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="form-group address-updated">
+          <fieldset>
+            <legend class="form-label-bold main">Address</legend>
+            <div class="form-group two-tier">
+              <label class="form-label" for="address1">Building or street</label>
+              <input type="text" id="address1" name="address1" value="" class="form-control">
+              <label class="form-label hidden" for="address2" style="position:absolute;left:-999px">Building or street line 2</label>
+              <input type="text" id="address2" name="address2" value="" class="form-control second-level" style="margin-top:8px">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="address3">Town or city</label>
+              <input type="text" id="address3" name="address3" value="" class="form-control">
+            </div>
+            {# <div class="form-group">
+              <label class="form-label" for="address4">County</label>
+              <input type="text" id="address4" name="address4" value="" class="form-control">
+            </div> #}
+            <div>
+              <label class="form-label" for="postCode">Postcode</label>
+              <input type="text" id="postCode" name="postCode" value="" class="form-control">
+            </div>
+          </fieldset>
+        </div>
+
+    </fieldset>
+
+    <!-- NEXT BUTTON -->
+    <fieldset class="primary-nav form-group">
+      <legend>Navigation</legend>
+      <input type="submit" value="Continue" class="button"/>
+    </fieldset>
+
+  </form>
+
+</section>
+
+{% include "application/rightcol.html" %}
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+    var substringMatcher = function(strs)
+    {
+       return function findMatches(q, cb)
+       {
+         console.log('got here');
+         var matches = [];
+         var substrRegex = new RegExp(q, 'i');
+         $.each(strs, function(i, str) {
+           if (substrRegex.test(str)) {
+             matches.push(str);
+           }
+         });
+         cb(matches);
+       };
+    };
+
+    var conditions = [
+      'BT',
+      'Royal Mail',
+      'BBC',
+      'Coop',
+      'Ernst & Young',
+      'British Gas',
+      'HMRC',
+      'RBS',
+      'Sainsburys',
+      'Red Cross',
+      'Microlink'
+    ];
+
+    $(document).on('ready',function()
+    {
+      // $('#company-name').typeahead(
+      //   { "hint":true, "highlight":true, "minLength":1 },
+      //   {
+      //    name:'conditions',
+      //    source: substringMatcher(conditions)
+      //   }
+      // );
+    });
+</script>
+{% endblock %}

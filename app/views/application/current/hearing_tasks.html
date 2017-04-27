@@ -1,0 +1,141 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" id="aboutjob">
+    <span class="section-progress">Section 2 of 7</span>
+    How would this help?
+  </h1>
+
+  <form action="travel" method="post" class="form">
+
+    <input type="hidden" name="page_name" value="hearing_tasks"/>
+    <input type="hidden" name="multiple" value="0" id="multiple"/>
+
+
+    <!-- HOW MANY HOURS -->
+    <div class="form-group">
+      <label class="form-label-bold" for="full-name" id="full-name-label">Roughly how many hours do you need <span id="needs" style="color:#005ea5"></span> for?</label>
+      <p>If you don't need this help regularly, try to think how much you'd need usually over a month or so.</p>
+      <!-- HOW MANY HOURS -->
+      <fieldset class="inline">
+        <div class="form-group">
+          <label class="form-label horizontal-right-label" for="hours-per-week">
+            <input type="text" class="form-control form-control-4-chars" name="hours" id="hours-per-week">hours
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="form-label visuallyhidden"></label>
+          <select class="form-select" name="hours_unit">
+            <option>a week</option>
+            <option>a month</option>
+            <option>a year</option>
+          </select>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- LIST THE THINGS -->
+    <fieldset class="inline" id="havejob">
+      <legend class="form-label-bold" id="alreadyJob">When would you need this help?</legend>
+      <p>For example would they help you during meetings, or to answer the phone.</p>
+      <div class="tasks">
+        <p class="cond"><input name="need_tasks" class="form-control" style="width:50%" autocomplete="off"/></p>
+        <p class="cond"><input name="need_tasks" class="form-control" style="width:50%" autocomplete="off"/></p>
+        <p class="cond"><input name="need_tasks" class="form-control" style="width:50%" autocomplete="off"/></p>
+      </div>
+      <p><a href="#" id="add" class="button-add">&#43; add another</a></p>
+    </fieldset>
+
+    <fieldset class="primary-nav form-group">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="nextButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+$(document).on("ready",function(e)
+{
+  var t = window.location.hash.substring(1);
+  if (!t) t = 0;
+
+  $('#multiple').val(t);
+
+  // grab the values from the cookie then check that it's an array.
+  var deaf_need = Cookies.getJSON('deaf_need');
+  if (typeof deaf_need == 'string') deaf_need = [deaf_need];
+  if (deaf_need == undefined) deaf_need = ['a BSL Interpreter'];
+
+  // just put the first one on the page.
+  var hearing_count = t;
+  $('#needs').text(deaf_need[hearing_count]);
+
+  var form = $('form');
+
+  $('#nextButton').on('click',function(e)
+  {
+    e.preventDefault();
+    /*
+      First see if all the tasks questions have been asked.
+    */
+    hearing_count++;
+    if (hearing_count < deaf_need.length)
+    {
+      form.attr('action','hearing_tasks#'+hearing_count);
+      form.submit();
+
+    } else {
+
+      form.submit();
+    }
+  });
+
+  // This has to happen after the on.click handler has
+  // been defined above otherwise the form will just be submitted.
+  if (hearing_count >= deaf_need.length) $('#nextButton').trigger('click');
+
+  /*
+    make the "add another" link work.
+  */
+  $('#add').on("click",function(e)
+  {
+    e.preventDefault();
+    var c = $($('.tasks .cond')[0]).clone(); // clone the first input
+    $('.tasks').append(c); // apend it to the block.
+    $(c.find('input')).val("").focus(); // empty the vlalue.
+
+    if ($('.tasks input').length > 1)
+    {
+      $('.plural').text(', in total, do you need to do these things at work');
+    }
+  });
+});
+
+</script>
+{% endblock %}

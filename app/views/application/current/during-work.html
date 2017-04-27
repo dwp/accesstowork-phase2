@@ -1,0 +1,204 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" style="margin-bottom:30px">
+    {# <span class="section-progress">Section 4 of 7</span> #}
+    How does your condition affect you at work?
+  </h1>
+
+  <form action="travel" method="post" class="form">
+
+    <input type="hidden" name="page_name" value="during_work"/>
+
+    <!-- Do you need - Yes No -->
+    <fieldset id="havejob">
+      <div class="form-group ">
+        <!-- Yes, whole job -->
+        <label id="screen1" class="block-label selection-button-radio" data-target="work-whole" for="during-work-whole">
+          <input id="during-work-whole" type="radio" name="help-during-work" value="whole" />
+          Your whole working day is affected
+        </label>
+        <!-- Yes, only part of my job -->
+        <label class="block-label selection-button-radio" data-target="work-tasks" for="during-work-part">
+          <input id="during-work-part" type="radio" name="help-during-work" value="part" />
+          Your condition affects only certain tasks
+        </label>
+        <!-- No, none of my job is affected -->
+        <label class="block-label selection-button-radio" data-target="" for="during-work-no">
+          <input id="during-work-no" type="radio" name="help-during-work" value="none" />
+          Your condition doesn't affect you at work at all
+        </label>
+      </div>
+    </fieldset>
+
+    <div id="work-whole" class="js-hidden panel-indent">
+      <!-- WHY DO YOU NEED -->
+      <fieldset class="form-group">
+        <label class="form-label-bold" for="reasons">
+          Describe how your working day is affected by your condition.
+        </label>
+        <textarea class="form-control" name="whole-day-desc" style="height:250px"></textarea>
+      </fieldset>
+    </div>
+
+    <div id="work-tasks" class="js-hidden panel-indent" style="margin-bottom:30px !important;">
+      <fieldset class="form-group">
+        <legend class="heading-medium" style="margin-bottom:5px">Which tasks are more difficult for you in work?</legend>
+        <p class="form-hint">Tick any that apply</p>
+        <div class="grid-row">
+          <div class="column-half">
+          {% set tasks = [
+              "Taking phone calls",
+              "Using a computer",
+              "Heavy lifting",
+              "Sitting for a long time",
+              "Climbing stairs",
+              "Going to meetings"
+            ] %}
+          {% for item in tasks %}
+            <label class="block-label" for="{{ item | slugify }}">
+              <input id="{{ item | slugify }}" type="checkbox" name="work-now" value="{{ item | lower }}" />
+              {{ item }}
+            </label>
+            {% if loop.index == 3 %}
+          </div>
+          <div class="column-half">
+            {% endif %}
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <!-- ANYTHING ELSE -->
+      <fieldset class="form-group">
+        <legend class="form-label-bold" id="alreadyJob">Anything else?</legend>
+        <!-- <p class="form-hint">This includes getting to or from work, or anything you have to do as part of your job role.</p> -->
+        <fieldset class="inline">
+          <div class="form-group" style="margin-bottom:10px">
+            <label id="screen2" class="block-label" data-target="extra-tasks" for="work-more-yes">
+              <input id="work-more-yes" type="radio" name="work-more" value="Yes" />
+              Yes
+            </label>
+          </div>
+          <div class="form-group form-group-compound">
+            <label class="block-label" data-target="" for="work-more-no">
+              <input id="work-more-no" type="radio" name="work-more" value="No" />
+              No
+            </label>
+          </div>
+        </fieldset>
+        <div class="form-group js-hidden panel-indent" id="extra-tasks">
+          <p class="form-hint">Add as many as you like</p>
+          <div class="conditions" style="margin-bottom:15px">
+            <p class="cond"><input name="user-tasks" class="form-control" autocomplete="off"/></p>
+            <p class="cond"><input name="user-tasks" class="form-control" autocomplete="off"/></p>
+            <p class="cond"><input name="user-tasks" class="form-control" autocomplete="off"/></p>
+          </div>
+          <p><a href="#" id="add" class="button-add">&#43; add another task </a></p>
+        </div>
+      </fieldset>
+
+    </div><!-- #work-tasks -->
+
+    <fieldset class="primary-nav form-group" style="margin-top:30px">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="nextButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+$(document).on('ready',function()
+{
+  var hearing = Cookies.get('hearing');
+  if (!hearing) $('#hearing').hide();
+
+  $('#add').on("click",function(e)
+  {
+    e.preventDefault();
+    var c = $($('.conditions .cond')[0]).clone(); // clone the first input
+    $('.conditions').append(c); // apend it to the block.
+    $(c.find('input')).val("").focus(); // empty the vlalue.
+  });
+
+  $('#nextButton').on('click',function(e)
+  {
+    e.preventDefault();
+    // take out the data I don't want going through.
+    var formdata = $('form').serializeArray().filter(function(el,i)
+    {
+        if (el.name == "work-now") return false;
+        if (el.name == "user-tasks") return false;
+        return true;
+    });
+
+    var data = [];
+
+    // Put the work tasks back in.
+    $('input[name="work-now"]').each(function(i,el)
+    {
+      if ($(el).prop('checked'))
+      {
+        data.push($(el).val());
+      }
+    });
+
+    // Put the user added tasks back in.
+    $('input[name="user-tasks"]').each(function(i,el)
+    {
+      if ($(el).val() !== '')
+      {
+        data.push($(el).val().toLowerCase());
+      }
+    });
+
+    // Add all these back into the form data.
+    $.each(data,function(i,el)
+    {
+      formdata.push({name:"during_work_tasks", value:el});
+    });
+
+    // if Yes isn't picked at the top.
+    if ($('#during-work-no').prop('checked')||$('#during-work-whole').prop('checked'))
+    {
+      $("form").submit();
+    } else {
+      if (!data.length) alert('Please pick or enter at least one task.');
+      else {
+        $.post("/application/during-work",
+          formdata
+          ,function(data) {
+            Cookies.set('during_count',0);
+            window.location.href = '/application/during-work-why';
+          });
+      }
+    }
+  });
+});
+</script>
+{% endblock %}

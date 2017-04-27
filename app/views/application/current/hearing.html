@@ -1,0 +1,151 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About you{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" id="thirdparty">
+    {# <span class="section-progress">Section 2 of 7</span> #}
+    Do you need one of these?
+  </h1>
+
+  <form action="hearing-tasks" method="post" class="form" id="theForm">
+
+      <input type="hidden" name="page_name" value="hearing"/>
+
+      <!-- WHAT DO YOU NEED -->
+      <fieldset class="form-group" id="deaf_need">
+        <!-- <legend class="heading-medium" id="deaf_need-label">Do you need one of these?</legend> -->
+        <p>Select any that apply</p>
+        <div class="form-group" aria-labelledby="deaf_need-label">
+
+          <!-- <div class="grid-row">
+            <div class="column-half"> -->
+              <label class="block-label selection-button-checkbox" for="deaf_need-bsl">
+                <input id="deaf_need-bsl" type="checkbox" name="deaf_need" value="a BSL interpreter" />
+                BSL interpreter
+              </label>
+              <label class="block-label selection-button-checkbox" for="deaf_need-lip">
+                <input id="deaf_need-lip" type="checkbox" name="deaf_need" value="a lip speaker" />
+                Lip speaker
+              </label>
+            <!-- </div>
+            <div class="column-half"> -->
+              <label class="block-label selection-button-checkbox" for="deaf_need-notetaker">
+                <input id="deaf_need-notetaker" type="checkbox" name="deaf_need" value="a note taker" />
+                Note taker
+              </label>
+              <label class="block-label selection-button-checkbox" for="deaf_need-hearingaids">
+                <input id="deaf_need-hearingaids" type="checkbox" name="deaf_need" value="hearing aids" />
+                Hearing aids
+              </label>
+              <label class="block-label selection-button-checkbox" for="deaf_need-ampequip">
+                <input id="deaf_need-ampequip" type="checkbox" name="deaf_need" value="amplification equipment" />
+                Amplification equipment
+              </label>
+            <!-- </div>
+          </div> -->
+
+        </div>
+
+        <div class="form-group" style="margin-bottom:10px;">
+
+          <label class="block-label selection-button-checkbox" for="deaf_need-se" data-target="se-ask">
+            <input id="deaf_need-se" type="checkbox" name="deaf_need" value="Something else" />
+            Something else
+          </label>
+          
+        </div>
+
+        <fieldset class="mid-form js-hidden" id="se-ask">
+          <div class="form-group panel-indent mid-form">
+            <label class="form-label" for="deaf_need-se-ask">
+              <noscript> If something else, then w</noscript><span class="js">W</span>hat?
+            </label>
+            <input class="form-control" id="deaf_need-se-ask" name="deaf_need-se" type="text" aria-required="true">
+          </div>
+        </fieldset>
+        
+      </fieldset>
+
+    <!-- NEXT BUTTON -->
+    <fieldset class="primary-nav form-group">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="nextButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    var form = $('form');
+    $('#nextButton').on('click',function(e)
+    {
+      e.preventDefault();
+
+      /*
+        Check they've picked something.
+      */
+      var picked = false;
+      var alertMsg = 'Please pick one!';
+
+      $('input[name="deaf_need"]').each(function(i,el)
+      {
+        if ($(el).prop('checked'))
+        {
+          picked = true;
+          if ($(el).val() == "Something else")
+          {
+            var val = $('#deaf_need-se-ask').val();
+            if (val) // if they've actually typeed something.
+            {
+                $('#deaf_need-se').val(val.toLowerCase());
+                picked = true;
+            } else {
+                alertMsg = "Please type in what you need."
+                picked = false;
+            }
+          }
+        }
+      });
+
+      /*
+        Alert them if not or let them through.
+      */
+      if (!picked) alert(alertMsg)
+      else {
+        form.submit();
+      }
+
+      // grab the form as an array.
+      // var f = form.serializeArray();
+      // reset the count so the next page works.
+
+    });
+  });
+</script>
+{% endblock %}

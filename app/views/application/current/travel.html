@@ -1,0 +1,144 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Travelling to or from work{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" style="margin-bottom:30px;">
+    {# <span class="section-progress">Section 3 of 7</span> #}
+    Do you want some help to get to work?
+  </h1>
+  {# <p class='helper'>This means you don't have to pay extra to travel because of your condition and can get to work on time.</p> #}
+
+  <form action="travel-why" method="post" class="form" id="theForm">
+
+    <input type="hidden" name="page_name" value="travel"/>
+
+    <!-- Do you need - Yes No -->
+    <fieldset class="">
+      <div class="form-group">
+        <label class="block-label selection-button-radio" data-target="" for="help-travelling-no">
+          <input id="help-travelling-no" type="radio" name="help-travelling" value="No"/>
+          No, I can get to work ok
+        </label>
+        <label id="screen1" class="block-label selection-button-radio" data-target="travel-options" for="help-travelling-yes">
+          <input id="help-travelling-yes" type="radio" name="help-travelling" value="Yes" />
+          Yes I want help
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="form-group js-hidden panel-indent" id="travel-options" style="margin-bottom:30px !important;">
+
+      <!-- WHAT DO YOU NEED -->
+      <fieldset>
+        <div class="form-group">
+          <legend class="heading-medium">How do you get to work at the moment?</legend>
+          <p>Tick all that apply</p>
+        {% for item in travel_options %}
+          <label class="block-label selection-button-checkbox" for="{{ item.value | slugify }}">
+            <input id="{{ item.value | slugify }}" type="checkbox" name="travel-now" value="{{ item.value }}" />
+            {{ item.label }}
+          </label>
+        {% endfor %}
+        </div>
+        
+        <div class="form-group">
+          <label class="block-label selection-button-checkbox clearfix" for="travel-now-se" data-target="se-ask">
+            <input id="travel-now-se" type="checkbox" name="travel-now" value="" />
+            Something else
+          </label>
+          <fieldset class="mid-form js-hidden" id="se-ask" style="margin-top:50px">
+            <div class="form-group panel-indent mid-form">
+              <label class="form-label" for="travel-now-se-ask">What?</label>
+              <input class="form-control" id="travel-now-se-ask" name="travel-now-se" type="text" aria-required="true">
+            </div>
+          </fieldset>
+        </div>
+
+      </fieldset>
+
+    </div><!-- .form-group -->
+
+    <!-- NEXT BUTTON -->
+    <fieldset class="primary-nav form-group" style="margin-top:30px">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="nextButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+
+  $(document).on('ready',function()
+  {
+    Cookies.remove('travel_now');
+  });
+
+  $('#nextButton').on('click',function(e)
+  {
+    e.preventDefault();
+
+    var picked = false;
+    $('input[name="help-travelling"]').each(function(i,el)
+    {
+      console.log('got here');
+      if( $(el).prop('checked') ) // if Yes or No has been ticked.
+      {
+        if ( $(el).val() == 'No' ) // if it's No.
+        {
+          picked = true;
+          $('form').attr('action','job-status');
+        }
+
+        if ( $(el).val() == 'Yes' ) // if it's Yes.
+        {
+          $('input[name="travel-now"]').each(function(i,el)
+          {
+            if ($(el).attr('id') == 'travel-now-se') // if it's the SE option
+            {
+              if ($(el).prop('checked')) // if it's checked save the typed value.
+              {
+                var val = $('#travel-now-se-ask').val();
+                if (val) // if they've actually typeed something.
+                {
+                    $('#travel-now-se').val(val.toLowerCase());
+                    picked = true;
+                }
+              }
+            } else {
+              if ($(el).prop('checked')) picked = true;
+            }
+          });
+        }
+      }
+    });
+    // console.log(picked);
+    if (picked) $('form').submit();
+    else alert('Please pick one or choose "No" above.');
+  });
+</script>
+{% endblock %}

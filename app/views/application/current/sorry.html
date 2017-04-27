@@ -1,0 +1,33 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <h1 class="form-title heading-large">You won't get an Access to Work grant</h1>
+  <p id="payHelp">An Access to Work grant can only pay for help with:</p>
+  <ul aria-labelledby="payHelp" class="list-bullet">
+    <li>managing difficulties caused by your condition that make it harder for you to do your job</li>
+    <li>travelling to or from work or as part of your job</li>
+  </ul>
+  <p>You may be <a href="https://www.gov.uk/benefits-calculators">eligible for other benefits</a>.</p>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}

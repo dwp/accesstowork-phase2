@@ -1,0 +1,97 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Travelling now{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  {# <h1 class="form-title heading-large">&nbsp;</h1> #}
+
+  <form action="travel-why-not" method="post" class="form" id="theForm" style="margin-top:30px">
+
+    <input type="hidden" name="page_name" value="travel_why_not"/>
+    <input type="hidden" name="multiple" value="0" id="multiple"/>
+
+    <!-- HOW MANY HOURS -->
+    <div class="form-group">
+
+      <!-- WHY DO YOU NEED -->
+      <div class="form-group">
+        <label class="heading-large" for="reasons" id="">
+          Why can't you travel by <span class="need"></span>?
+        </label>
+        <textarea class="form-control" id="reasons" name="reasons" style="margin-top:10px;"></textarea>
+      </div>
+
+    </div>
+
+    <fieldset class="primary-nav form-group">
+		  <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="submitButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    var form = $('form');
+    // grab the count from the cookie (if it exists).
+    var t = window.location.hash.substring(1);
+    if (!t) t = 0;
+    // put the number in the multiple field (for session data)
+    $('#multiple').val(t);
+    // grab the list of things from travel_not
+    var the_needs = Cookies.getJSON('travel_not');
+    // make sure it's an array
+    if (typeof the_needs == 'string') the_needs = [the_needs];
+    // just put the first one on the page.
+    var travel_count = t;
+    $('.need').text(the_needs[travel_count]);
+
+    $('#submitButton').on('click',function(e)
+    {
+      e.preventDefault();
+      // move the count onto the next item.
+      travel_count++;
+      // check there's some left.
+      if (travel_count < the_needs.length)
+      {
+        // ask the about the next item.
+        form.attr('action','travel-why-not#'+travel_count);
+        form.submit();
+      } else {
+
+        var seen_fasttrack = Cookies.getJSON('fast');
+        console.log(seen_fasttrack);
+        // move on to the next set of questions.
+        if (seen_fasttrack) form.attr('action','job-status');
+        else form.attr('action','job-status');
+        form.submit();
+      }
+    });
+  });
+</script>
+{% endblock %}

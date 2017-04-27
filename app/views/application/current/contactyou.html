@@ -1,0 +1,180 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About you{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/alpha.html" %}
+
+  <div class="grid-row">
+
+    <section class="column-two-thirds" aria-labelledby="aboutyou">
+
+      <!-- BACK LINK -->
+      <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+      <!-- HEADING -->
+      <h1 class="form-title heading-large" id="aboutyou">
+        {# <span class="section-progress">Section 7 of 7</span> #}
+        Who do you want to be contacted about your condition, award or application?
+      </h1>
+
+      <form action="declaration" method="post" class="form">
+
+        <input type="hidden" name="page_name" value="contact_you"/>
+
+        <!-- CONTACT WHO? -->
+        <h2 class="heading-medium" style="margin-top:0;"></h2>
+        <div class="form-group">
+          <fieldset>
+            <label for="contact-me" class="block-label selection-button-radio" data-target="me-reveal" id="screenshotclick">
+              <input id="contact-me" type="radio" name="contact-pref" value="contact-me">
+              Yourself
+            </label>
+            <label for="contact-someone" class="block-label selection-button-radio" data-target="third-reveal">
+              <input id="contact-someone" type="radio" name="contact-pref" value="contact-someone">
+              Someone else, who can speak for you
+            </label>
+          </fieldset>
+        </div>
+
+        <!-- CONTACT YOU HOW? -->
+        <div class="form-group panel-indent js-hidden" id="me-reveal">
+          <fieldset>
+            <legend class="heading-medium">How do you want to be contacted?</legend>
+            <p>Select as many as you like.</p>
+            <div class="form-group" aria-labelledby="howEmployed">
+
+              <!-- EMAIL -->
+              <label id="screen2" for="you-email" class="block-label selection-button-checkbox" data-target="email-ask">
+                <input id="you-email" type="checkbox" name="you-contact-pref" value="email">
+                Email
+              </label>
+              <fieldset class="mid-form js-hidden" id="email-ask">
+                <div class="form-group panel-indent mid-form">
+                  <label class="form-label" for="email-address">Email address</label>
+                  <input class="form-control" id="email-address" name="you-email-address" type="text" aria-required="true">
+                </div>
+              </fieldset>
+
+              <!-- PHONE -->
+              <label for="you-phone" class="block-label selection-button-checkbox" data-target="phone-ask">
+                <input id="you-phone" type="checkbox" name="you-contact-pref" value="phone">
+                Phone call
+              </label>
+              <fieldset class="mid-form js-hidden" id="phone-ask">
+                <div class="form-group panel-indent mid-form">
+                  <label class="form-label" for="telephone-number">Phone number</label>
+                  <!-- <p class="form-hint">Enter a landline, mobile or textphone number.</p> -->
+                  <input class="form-control" name="you-telephone-number" type="text" aria-required="true">
+                </div>
+              </fieldset>
+
+              <!-- TEXT MESSAGAE -->
+              <label for="you-text" class="block-label selection-button-checkbox" data-target="text-ask">
+                <input id="you-text" type="checkbox" name="you-contact-pref" value="text">
+                Text message
+              </label>
+              <fieldset class="mid-form js-hidden" id="text-ask">
+                <div class="form-group panel-indent mid-form">
+                  <label class="form-label" for="telephone-number">Phone number</label>
+                  <!-- <p class="form-hint">Enter a landline, mobile or textphone number.</p> -->
+                  <input class="form-control" name="you-telephone-number" type="text" aria-required="true">
+                </div>
+              </fieldset>
+
+              <label for="you-post" class="block-label selection-button-checkbox" data-target="">
+                <input id="you-post" type="checkbox" name="you-contact-pref" value="post">
+                Letter
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- CONTACT THEM HOW? -->
+        <div class="form-group panel-indent js-hidden" id="third-reveal">
+          <fieldset>
+            <!-- THEIR NAME -->
+            <div class="form-group" style="margin-bottom:30px;">
+              <label class="form-label-bold" for="employer-name">Your representative</label>
+              <p>This should be someone you trust and who can talk about your condition.</p>
+              <input class="form-control" type="text" id="employer-name" name="employed-employer-name">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="heading-medium" style="margin-bottom:0;">How can they be contacted?</legend>
+            <p>Select as many as you like.</p>
+            <div class="form-group" aria-labelledby="howEmployed">
+
+              <!-- EMAIL -->
+              <label for="them-email" class="block-label selection-button-checkbox" data-target="them-email-ask">
+                <input id="them-email" type="checkbox" name="them-contact-pref" value="email">
+                Email
+              </label>
+              <fieldset class="mid-form js-hidden" id="them-email-ask">
+                <div class="form-group panel-indent">
+                  <label class="form-label" for="email-address">Email address</label>
+                  <input class="form-control" id="email-address" name="you-email-address" type="text" aria-required="true">
+                </div>
+              </fieldset>
+
+              <!-- PHONE -->
+              <label for="them-phone" class="block-label selection-button-checkbox" data-target="them-phone-ask">
+                <input id="them-phone" type="checkbox" name="them-contact-pref" value="phone">
+                Phone call
+              </label>
+              <fieldset class="mid-form js-hidden" id="them-phone-ask">
+                <div class="form-group panel-indent mid-form">
+                  <label class="form-label" for="telephone-number">Phone number</label>
+                  <!-- <p class="form-hint">Enter a landline, mobile or textphone number.</p> -->
+                  <input class="form-control" name="you-telephone-number" type="text" aria-required="true">
+                </div>
+              </fieldset>
+
+              <!-- TEXT MESSAGAE -->
+              <label for="them-text" class="block-label selection-button-checkbox" data-target="them-text-ask">
+                <input id="them-text" type="checkbox" name="them-contact-pref" value="text">
+                Text message
+              </label>
+              <fieldset class="mid-form js-hidden" id="them-text-ask">
+                <div class="form-group panel-indent mid-form">
+                  <label class="form-label" for="telephone-number">Phone number</label>
+                  <!-- <p class="form-hint">Enter a landline, mobile or textphone number.</p> -->
+                  <input class="form-control" name="you-telephone-number" type="text" aria-required="true">
+                </div>
+              </fieldset>
+
+              <label for="them-post" class="block-label selection-button-checkbox" data-target="">
+                <input id="them-post" type="checkbox" name="them-contact-pref" value="post">
+                Letter
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="relationship">What's your relationship with this person?</label>
+              <input class="form-control" id="relationship" name="trd-relationship" type="text">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="primary-nav form-group" style="margin-top:30px;">
+          <legend>Form Navigation</legend>
+          <input type="submit" value="Continue" class="button" />
+        </fieldset>
+
+      </form>
+
+    </section><!-- .column-two-thirds -->
+
+    <img src="/public/images/tick.png" style="position:absolute;left:-9999px"/>
+
+    {% include "application/rightcol.html" %}
+
+  </div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}

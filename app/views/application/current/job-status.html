@@ -1,0 +1,125 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About you{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+  <!-- HEADING -->
+  <h1 class="form-title heading-large" id="thirdparty">
+    {# <span class="section-progress">Section 5 of 7</span> #}
+    Employment status
+  </h1>
+
+  <form action="doyouknow" method="post" class="form" id="theForm">
+
+    <input type="hidden" name="page_name" value="job_status"/>
+
+    <div class="form-group">
+
+      <!-- SELF EMPLOYED EMPLOYED DIRECTOR? -->
+      <div id="employment-status">
+        <fieldset>
+            <!-- <legend class="heading-small" id="howEmployed">Your employment status</legend> -->
+            <div class="form-group" aria-labelledby="howEmployed">
+                <label class="block-label" for="employed" data-target="what-you-need">
+                  <input id="employed" type="radio" name="emp-status" value="Employed" data-dest="employed">
+                  Employed
+                </label>
+                <label class="block-label" for="self-employed" data-target="what-you-need">
+                  <input id="self-employed" type="radio" name="emp-status" value="Self" data-dest="self-employed">
+                  Self-employed
+                </label>
+                <label class="block-label" for="ltd" data-target="what-you-need">
+                  <input id="ltd" type="radio" name="emp-status" value="Director" data-dest="limited-company">
+                  Director of a limited company
+                </label>
+            </div>
+        </fieldset>
+      </div>
+
+    </div><!-- .form-group -->
+
+    <!-- NEXT BUTTON -->
+    <fieldset class="primary-nav form-group">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="submitButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+
+  var count = 1;
+  $(document).on("ready",function(e)
+  {
+
+    var form = $("#theForm"),
+        fields = $("#fields"),
+        subb = $('#submitButton');
+
+    /*
+      When they click submit refer to the previous
+      Employment answer for the next step.
+    */
+    var dest = '';
+    $(subb).on('click',function(e)
+    {
+      e.preventDefault();
+      var emp_status = '';
+
+      // loop through the radio buttons to check for a checked one.
+      $('input[name="emp-status"]').each(function(i,e)
+      {
+        if ($(e).prop('checked'))  emp_status = $(e).attr('value');
+      });
+
+      //
+      switch(emp_status)
+      {
+        case "Employed": dest = 'employed'; break;
+        case "Self": dest = 'employed-self'; break;
+        case "Director": dest = 'employed-limited'; break;
+      }
+
+      // if at this point we have a destination go to it otherwise
+      // alert a quick error.
+      if (dest)
+      {
+        form.attr('action',dest);
+        form.submit();
+      } else {
+        alert('You need to complete the form');
+      }
+
+    });
+
+    // }
+
+  });
+
+</script>
+{% endblock %}

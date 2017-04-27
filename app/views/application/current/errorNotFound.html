@@ -1,0 +1,32 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <h1 class="form-title heading-large">You can't view this page</h1>
+  <p>This could be because:</p>
+  <ul class='list-bullet'>
+  	<li class='list-bullet'>it doesn't exist</li>
+  	<li class='list-bullet'>you haven't done anything for a while, and your information has been removed to keep you safe online</li>
+  </ul>
+  <p>Go back a page and try again. If that doesn't work, you'll have to start a new Access to Work application from GOV.UK.</p>
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}

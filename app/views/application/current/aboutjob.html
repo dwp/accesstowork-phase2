@@ -1,0 +1,168 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+  <section class="column-two-thirds" aria-labelledby="aboutjob">
+
+    <!-- BACK LINK -->
+    <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+    <h1 class="form-title heading-large" id="aboutjob">
+      {# <span class="section-progress">Section 3 of 7</span>  #}
+      About your job
+    </h1>
+
+    <form action="aboutyou" method="post" class="form">
+
+      <input type="hidden" name="page_name" value="about_job"/>
+
+      <fieldset class="form-group">
+
+        <legend class="hidden-legend" aria-hidden="true">Your job</legend>
+
+        <!-- WHEN DID YOU START -->
+        <div class="form-group">
+
+            <!-- JOB TITLE -->
+            <div class="form-group" style="margin-bottom:60px;">
+              <label class="form-label-bold" for="job-title">Job title or role</label>
+              <input class="form-control" type="text" id="job-title" name="job-title" spellcheck="false">
+            </div>
+
+            <div class="form-group-compound clearfix" aria-labelledby="howLongEmployed">
+              <fieldset>
+                <legend class="heading-medium" id="howLongEmployed">How long have you been in your current job or role?</legend>
+                <label class="block-label selection-button-radio" for="mtsix">
+                  <input id="mtsix" type="radio" name="emp-length" value="morethansix">
+                  More than 6 weeks
+                </label>
+                <label class="block-label selection-button-radio" for="ltsix" data-target="start-date">
+                  <input id="ltsix" type="radio" name="emp-length" value="lessthansix">
+                  Less than 6 weeks
+                </label>
+                <label class="block-label selection-button-radio" for="ntstrt" data-target="start-date2">
+                  <input id="ntstrt" type="radio" name="emp-length" value="notstarted">
+                  You haven't started yet
+                </label>
+              </fieldset>
+            </div>
+
+            <!-- WHEN DID YOU START -->
+            <div class="panel-indent js-hidden" id="start-date">
+              <fieldset class="form-group">
+                <legend class="heading-medium">When did you start this job?</legend>
+                <!-- <p>For example, 08 4 2014.</p> -->
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="dob-day">Day</label>
+                    <input type="text" class="form-control" id="dob-day" name="work-dob-day">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label for="dob-month">Month</label>
+                    <input type="text" class="form-control" id="dob-month" name="work-dob-month">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label for="dob-year">Year</label>
+                    <input type="text" class="form-control" id="dob-year" name="work-dob-year">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- WHEN DID YOU START -->
+            <div class="panel-indent js-hidden" id="start-date2">
+              <fieldset class="form-group">
+                <legend class="heading-medium">When will you start this job?</legend>
+                <!-- <p>For example, 08 4 2014.</p> -->
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="dob-day">Day</label>
+                    <input type="text" class="form-control" id="dob-day" name="work-dob-day">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label for="dob-month">Month</label>
+                    <input type="text" class="form-control" id="dob-month" name="work-dob-month">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label for="dob-year">Year</label>
+                    <input type="text" class="form-control" id="dob-year" name="work-dob-year">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- DAYS A WEEK? -->
+        <div class="form-group">
+          <fieldset>
+            <label class="form-label-bold" for="work-days" id="work-daysexample">How many days a week do you regularly work?</label>
+            <p class="form-hint" aria-labelledby="work-daysexample">This can be a range, but if you include uncontracted days (eg, overtime) you may have to prove you work them regularly.</p>
+            <input class="form-control" type="tel" id="work-days" name="work-work-days">
+          </fieldset>
+        </div>
+
+        <!-- HOURS A WEEK? -->
+        <div class="form-group" style="margin-top:30px;">
+          <label class="heading-medium" for="job-title">How many hours a week do you regularly work?</label>
+              <p class="form-hint" aria-labelledby="work-daysexample">This can be a range, but if you include uncontracted hours (eg, overtime) you may have to prove you work them regularly.</p>
+          <input class="form-control" type="tel" id="job-title" name="work-job-hours">
+        </div>
+
+      <fieldset class="primary-nav form-group">
+        <legend>Navigation</legend>
+        <input type="submit" value="Continue" class="button" id="nextButton"/>
+      </fieldset>
+
+    </form>
+
+  </section><!-- .column-two-thirds -->
+
+  {% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on("ready",function(e)
+  {
+    var form = $("form");
+    $('#nextButton').on('click',function(e)
+    {
+      e.preventDefault();
+
+      // go and check what they put for employment status.
+      var emp_status = Cookies.getJSON('emp_status');
+      switch(emp_status)
+      {
+        case "Employed": dest = 'aboutyou'; break;
+        case "Self": dest = 'aboutyou'; break;
+        case "Director": dest = 'aboutyou'; break;
+      }
+
+      // if at this point we have a destination go to it otherwise
+      // alert a quick error.
+      if (dest)
+      {
+        form.attr('action',dest);
+        form.submit();
+      } else {
+        alert('You need to complete the form');
+      }
+
+    });
+  });
+</script>
+{% endblock %}

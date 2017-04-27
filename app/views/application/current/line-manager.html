@@ -1,0 +1,112 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+	<!-- HEADING -->
+  <h1 class="form-title heading-large" id="aboutjob">
+    {# <span class="section-progress">Section 5 of 7</span> #}
+    Your workplace contact
+  </h1>
+
+  <form action="aboutjob" method="post" class="form">
+
+    <input type="hidden" name="page_name" value="line_manager"/>
+
+    <fieldset>
+
+      <!-- THEIR NAME -->
+      <div class="form-group">
+          <label class="form-label-bold" for="employer-name">Their name</label>
+          <input class="form-control" type="text" id="employer-name" name="employed-employer-name">
+      </div>
+
+      <p>We'll contact this person to discuss your difficulties at work and how Access to Work can help.</p>
+
+    
+     <p>We won't contact them until we've spoken to you first.</p>
+
+      <!--<div class="panel panel-border-wide">
+        We won't contact them until we've spoken to you first.
+      </div> -->
+     
+
+      <!-- CONTACT YOU HOW? -->
+      <div class="form-group" style="margin-top:10px;">
+        <fieldset>
+            <legend class="heading-medium" style="margin-bottom:5px;">How can we contact them?</legend>
+            <p>Select as many as you like:</p>
+            <div class="form-group">
+
+                <!-- EMAIL -->
+                <label for="line-email" class="block-label selection-button-checkbox" data-target="email-ask">
+                  <input id="line-email" type="checkbox" name="line-contact-pref" value="email">
+                  Email
+                </label>
+                <fieldset class="mid-form js-hidden" id="email-ask">
+                  <div class="form-group panel-indent mid-form">
+                    <label class="form-label" for="email-address">Email address</label>
+                    <input class="form-control" id="email-address" name="line-email-address" type="text" aria-required="true">
+                  </div>
+                </fieldset>
+
+                <!-- PHONE -->
+                <label for="line-phone" class="block-label selection-button-checkbox" data-target="phone-ask">
+                  <input id="line-phone" type="checkbox" name="line-contact-pref" value="phone">
+                  Phone
+                </label>
+                <fieldset class="mid-form js-hidden" id="phone-ask">
+                  <div class="form-group panel-indent mid-form">
+                    <label class="form-label" for="telephone-number">Phone number</label>
+                    <!-- <p class="form-hint">Enter a landline, mobile or textphone number.</p> -->
+                    <input class="form-control" name="line-telephone-number" type="text" aria-required="true">
+                  </div>
+                </fieldset>
+
+                <!-- TEXT MESSAGAE -->
+               <!--  <label for="line-text" class="block-label selection-button-checkbox" data-target="text-ask">
+                  <input id="line-text" type="checkbox" name="line-contact-pref" value="text">
+                  Text message
+                </label>
+                <fieldset class="mid-form js-hidden" id="text-ask">
+                  <div class="form-group panel-indent mid-form">
+                    <label class="form-label" for="telephone-number">Phone number</label>
+                    <p class="form-hint">Enter a landline, mobile or textphone number.</p> 
+                    <input class="form-control" name="line-telephone-number" type="text" aria-required="true">
+                  </div>
+                </fieldset> -->
+
+            </div>
+        </fieldset>
+      </div>
+
+    </fieldset>
+
+    <!-- Primary buttons, secondary links -->
+    <fieldset class="primary-nav form-group">
+      <legend>Navigation</legend>
+      <input type="submit" value="Continue" class="button"/>
+    </fieldset>
+
+  </form>
+
+</section>
+
+{% include "application/rightcol.html" %}
+
+</div>
+
+</main>
+
+{% endblock %}

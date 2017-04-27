@@ -1,0 +1,117 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}About your job{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="aboutjob">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+  <!-- HEADING -->
+  <h1 class="form-title heading-large" id="aboutjob">
+    {# <span class="section-progress">Section 5 of 7</span>  #}
+    About your company
+  </h1>
+
+  <form action="aboutjob" method="post" class="form">
+
+    <input type="hidden" name="page_name" value="employed_limited"/>
+
+    <fieldset>
+
+      <legend class="hidden-legend" aria-hidden="true">Your limited company details</legend>
+      <!-- COMPANY NAME -->
+      <div class="form-group">
+        <label class="form-label-bold" for="company-name">Company name</label>
+        <input class="form-control" type="text" id="company-name" name="company-name">
+      </div>
+      <!-- COMPANY ADDRESS -->
+      <div class="form-group">
+        <fieldset class="inline">
+          <legend class="form-label-bold">Is your company's address different to your home address?</legend>
+          <!-- YES / NO -->
+          <div class="form-group form-group-compound">
+            <label class="block-label selection-button-radio" for="eligibility1-yes" data-target="eligibility-q1">
+              <input id="eligibility1-yes" name="ltd-co-address" type="radio" value="Yes">
+              Yes
+            </label>
+          </div><div class="form-group">
+            <label class="block-label selection-button-radio" for="eligibility1-no">
+              <input id="eligibility1-no" name="ltd-co-address" type="radio" value="No">
+              No
+            </label>
+          </div>
+          <!-- ADDRESS -->
+          <div class="panel-indent js-hidden" id="eligibility-q1" name="ltd-co-eligibility-q1">
+            <fieldset>
+              <legend class="form-label">Company address</legend>
+              <div class="form-group" style="width:100%">
+                <label class="form-label" for="address-line1"><input type="text" class="form-control" id="address-line1" name="ltd-co-address-line1"></label>
+                <label class="form-label" for="address-line2"><input type="text" class="form-control" id="address-line2" name="ltd-co-address-line2"></label>
+                <label class="form-label" for="address-line3"><input type="text" class="form-control" id="address-line3" name="ltd-co-address-line3"></label>
+              </div>
+              <div class="form-group" style="width:100%">
+                <label class="form-label" for="postcode">Postcode</label>
+                <input type="text" class="form-control form-control-1-4" id="postcode" name="ltd-co-postcode">
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- NEA MENTOR -->
+      {# <div class="form-group">
+         <fieldset class="inline">
+            <legend class="form-label-bold">Do you have a New Enterprise Allowance mentor</legend>
+            <div class="form-group form-group-compound">
+              <label class="block-label selection-button-radio" for="nea-mentor-yes" data-target="mentor-extra">
+                <input id="nea-mentor-yes" name="self-emp-address" type="radio" value="Yes">
+                Yes
+              </label>
+            </div><div class="form-group">
+              <label class="block-label selection-button-radio" for="nea-mentor-no">
+                <input id="nea-mentor-no" name="self-emp-address" type="radio" value="No">
+                No
+              </label>
+            </div>
+            <!-- THEIR DETAILS -->
+            <div class="panel-indent js-hidden" id="mentor-extra">
+              <div class="form-group" style="width:100%">
+              <label class="form-label" for="name">Their name</label>
+              <input class="form-control" id="name" name="mentor-name" type="text">
+            </div>
+            <div class="form-group" style="width:100%">
+              <label class="form-label" for="phone">Their phone number</label>
+              <input class="form-control" id="phone" name="mentor-phone" type="text">
+            </div>
+            </div>
+        </fieldset>
+      </div> #}
+
+    </fieldset>
+
+    <!-- NEXT BUTTON -->
+    <fieldset class="primary-nav form-group">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button"/>
+    </fieldset>
+
+  </form>
+
+</section>
+
+{% include "application/rightcol.html" %}
+</div>
+
+
+</main>
+
+{% endblock %}

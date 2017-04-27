@@ -1,0 +1,123 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}During work{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds" aria-labelledby="thirdparty">
+
+  <!-- BACK LINK -->
+  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+  <!-- HEADING -->
+  {# <h1 class="form-title heading-large">&nbsp;</h1> #}
+
+  <form action="during-work-why" method="post" class="form" id="theForm" style="margin-top:30px">
+
+    <input type="hidden" name="page_name" value="during_work_why"/>
+    <input type="hidden" name="multiple" value="0" id="multiple"/>
+
+    <!-- HOW MANY HOURS -->
+    <div class="form-group">
+
+      <!-- WHY DO YOU NEED -->
+      <div class="form-group">
+        <label class="heading-large" for="reasons" id="">
+          Why is <span class="need" style="color:#005ea5"></span> a problem for you?
+        </label>
+        <textarea class="form-control" id="reasons" name="reasons"></textarea>
+      </div>
+
+      <!-- HOW MANY HOURS -->
+      <fieldset class="inline">
+
+        <label class="form-label-bold" for="full-name" id="full-name-label">
+          Do you know of something that could help you with <span class="need" style="color:#005ea5"></span>?
+        </label>
+
+        <!-- Do you need - Yes No -->
+        <fieldset class="inline" id="havejob">
+          <div class="form-group" style="margin-bottom:15px;">
+            <label id="screen1" class="block-label selection-button-radio" data-target="what-help" for="help-yes">
+              <input id="help-yes" type="radio" name="help" value="Yes" />
+              Yes
+            </label>
+          </div>
+          <div class="form-group form-group-compound">
+            <label class="block-label selection-button-radio" data-target="" for="help-no">
+              <input id="help-no" type="radio" name="help" value="No" />
+              No
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="js-hidden panel-indent" id="what-help">
+          <label class="form-label" for="what-is-it">What is it?</label>
+          <textarea id="what-is-it" name="help-what" class="form-control" style="min-height:4em"></textarea>
+        </fieldset>
+
+      </fieldset>
+
+    </div>
+
+    <fieldset class="primary-nav form-group">
+      <legend>Form Navigation</legend>
+      <input type="submit" value="Continue" class="button" id="submitButton"/>
+    </fieldset>
+
+  </form>
+
+</section><!-- .column-two-thirds -->
+
+{% include "application/rightcol.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    // grab the count from the cookie (if it exists).
+    var t = window.location.hash.substring(1);
+    if (!t) t = 0;
+
+    $('#multiple').val(t);
+
+    // just put the first one on the page.
+    var during_count = t;
+    var the_needs = Cookies.getJSON('during_work_tasks');
+    if (typeof the_needs == 'string') the_needs = [the_needs];
+    var the_text = the_needs[during_count];
+
+    $('.need').text(the_text);
+
+    var form = $('form');
+
+    $('#submitButton').on('click',function(e)
+    {
+      e.preventDefault();
+
+      during_count++;
+      if (during_count < the_needs.length)
+      {
+        Cookies.set('during_count',during_count);
+        form.attr('action','during-work-why#'+during_count);
+        form.submit();
+
+      } else {
+
+        form.attr('action','travel');
+        form.submit();
+      }
+    });
+  });
+</script>
+{% endblock %}

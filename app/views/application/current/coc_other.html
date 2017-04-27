@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}About you{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+	<div class="grid-row">
+
+		<section class="column-two-thirds" aria-labelledby="aboutyou">
+			
+			<!-- BACK LINK -->
+		  <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+			<h1 class="form-title heading-large" style="margin-top:30px;">
+				What else has changed that you want to report?
+			</h1>
+			
+			<form action="coc_declaration" method="post">
+				<div class="form-group">
+					<textarea class="form-control" name="why" ></textarea>
+				</div>
+				<button class="button">Continue</button>
+			</form>
+
+		</section>
+    
+    {# {% include "application/mvp/leftcol.html" %} #}
+
+	</div>
+
+</main>
+
+{% endblock %}

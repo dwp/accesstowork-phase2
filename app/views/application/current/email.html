@@ -1,0 +1,50 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Consent &amp; Declaration{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/alpha.html" %}
+
+  <div class="grid-row">
+
+    <section class="column-two-thirds" aria-labelledby="declaration">
+
+      <!-- BACK LINK -->
+      <p class="back-link"><a href="javascript:history.go(-1);">Back</a></p>
+
+      <!-- HEADING -->
+      <h1 class="form-title heading-large" id="declaration">Using email</h1>
+
+       <p>If you choose to use email to manage your application it may involve discussing your condition and personal situation with an agent electronically.</p>
+      <p>Department for Work and Pensions (DWP) can't guarantee external emails against:</p>
+        <ul class='list-bullet'>
+          <li>loss or non-delivery</li>
+          <li>theft by third parties</li>
+          <li>manipulation of data</li>
+        </ul>
+        <p>Asking DWP to use email to get in touch with you in this application means you understand this risk. If you have any concerns then don't include your email address.</p>
+      <p><a href="declaration">Back to declaration page</a></p>
+
+      <!--
+      TOM ADAMS!!!
+
+      If you're in here editing you should know that below is the original content that advisers would send at this point. The above is just my copy&paste + interpretation. Feel free to alter it! ;-)
+
+      You may have requested that DWP correspond with you by e-mail as a reasonable adjustment under the Equality Act. This may require e-mailing your personal data outside of the Secure network used by DWP. We need to inform you of the risks associated with e-mailing outside a secure network, the primary risks are loss, manipulation and theft of emails. Before DWP can proceed with your request please provide written confirmation (this can be an e-mail response) that you accept the risks associated with DWP corresponding with you by internet based email.
+
+      Please respond using the relevant statement set out below (copy and paste to a reply email)
+      I GIVE MY CONSENT FOR DWP TO CORRESPOND WITH ME BY EMAIL AS A REASONABLE ADJUSTMENT UNDER THE EQUALITY ACT. THIS IS MY PREFERRED METHOD OF COMMUNICATION DUE TO MY DISABILITY/HEALTH CONDITION. I accept that there are risks associated with email outside of a secure network and that the primary risks are loss, manipulation and theft of emails.  I understand that DWP will store this information safely in files and IT systems.
+      -->
+
+    </section>
+
+    {% include "application/rightcol.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}

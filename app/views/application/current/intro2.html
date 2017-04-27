@@ -1,0 +1,67 @@
+{% extends "application/layout.html" %}
+
+{% block page_title %}Apply for an Access to Work grant{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+{% include "includes/alpha.html" %}
+
+<div class="grid-row">
+
+<section class="column-two-thirds">
+
+  <h1 class="form-title heading-xlarge">Access to Work</h1>
+
+
+      <nav class="intro-nav">
+        <ol>
+          <li class="font-xsmall">
+            <span class="part-number">1.</span>
+            <a href="index" title="Part 1: Overview">Overview</a>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">3.</span>
+            <a href="intro3" title="Part 3: Apply">Apply</a>
+          </li>
+          <li class="active font-xsmall">
+            <span class="part-number">2.</span>
+            <span>What you'll get</span>
+          </li>
+          <li class="font-xsmall">
+            <span class="part-number">4.</span>
+            <a href="intro4" title="Part 4: Report changes">Report changes</a>
+          </li>
+        </ol>
+      </nav>
+
+  <div class="intro-content">
+    <h2 class="heading-medium">2. What you'll get</h2>
+    <p>Access to Work can pay for things like:</p>
+    <ul class="list-bullet">
+      <li>things to help you do your job, eg computers or software</li>
+      <li>special furniture, eg chairs or ramps</li>
+      <li>travel to and from work</li>
+      <li>a support worker, eg a sign language (BSL) interpreter</li>
+      <li>training for your colleagues to help them understand your disability</li>
+    </ul>
+    <h2 class="heading-medium">Maximum grant</h2>
+    <p>You'll get as much help as you need to do your job up to a cost of &pound;41,400 per year.</p>
+    <p>If you already have Access to Work and it's worth more it'll be reduced in April 2018.</p>
+  </div>
+
+  <nav class="intro-next">
+    <a href="index" class="first" rel="next" title="Navigate to previous part">Previous<span class="pagination-part-title">Overview</span></a>
+    <a href="intro3" rel="next" title="Navigate to next part">Next<span class="pagination-part-title">Apply</span></a>
+  </nav>
+
+</section>
+
+{% include "includes/elsewhere.html" %}
+
+</div><!-- .grid-row -->
+
+</main>
+
+{% endblock %}
