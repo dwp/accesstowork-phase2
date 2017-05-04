@@ -1,0 +1,22 @@
+/* STAFF ACCESS LAYOUT */
+.staff-container {
+  display:table;
+  width:100%;
+  box-sizing: border-box;
+}
+.staff-nav {
+  display:table-cell;
+  border-right:1px solid $grey-2;
+  width:76px;
+  background-color:$grey-4;
+  padding-left:10px;
+  padding-top:15px;
+}
+.staff-main {
+  display:table-cell;
+  padding:0 30px 90px;
+  vertical-align: top;
+  .heading-large {
+    margin-top:25px; 
+  }
+}

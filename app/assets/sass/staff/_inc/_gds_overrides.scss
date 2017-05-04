@@ -1,0 +1,45 @@
+// allow the background of the page to be that grey colour.
+// body { background:#F8F8F8; }
+// html { background-color: lighten(#dee0e2,5); }
+/*
+  REMAKING SOME OF THE GDS STYLES
+*/
+#global-header .header-wrapper {
+  max-width:1280px;
+}
+#footer .footer-wrapper {
+  max-width:none;
+}
+#global-header #logo img {
+  width:185.00px;
+  height:31px;
+}
+#global-header-bar {
+  display:none;
+  max-width:none;
+}
+#global-header #logo img {
+  visibility:visible;
+}
+#content {
+  max-width:none;
+  padding:0;
+  margin:0;
+  &.mvp {
+    margin:0 45px;
+  }
+}
+
+
+/* INCLUDING THE PROTOTYPE TAG THING IN THE BANNER */
+.phase-banner .phase-tag {
+  background-color:$beta-colour;
+}
+.proposition-phase-tag {
+  text-transform:uppercase;
+  background-color:$beta-colour;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  position:relative; top:-2px; left:10px;
+}

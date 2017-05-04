@@ -1,0 +1,51 @@
+{% extends TEMPLATE_FOLDER + "/_inc/govuk_template-staff.html" %}
+
+{% block head %}
+  <link href="/public/stylesheets/staff/v2.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block page_title %}
+	Access To Work - Staff Access
+{% endblock %}
+
+{% block full_header %}
+<header role="banner" id="global-header" class="">
+  <div class="header-wrapper">
+    <div class="grid-row">
+      <div class="column-half">
+        <div class="header-proposition" aria-labelledby="proposition-name">
+          <h1 id="proposition-name"><a href="/{{TEMPLATE_FOLDER}}/" style="text-decoration:none;color:white">Access To Work Staff Access</a> <span class="proposition-phase-tag">Prototype</span></h1>
+        </div>
+      </div><!-- column -->
+      <div class="column-half" style="text-align:right;color:white;padding-top:10px;">
+
+        {% if  loggedin %}
+          Logged in as <a href="/{{ TEMPLATE_FOLDER }}/adviser/{{ loggedin.id }}" class="loggedin heading-small">{{ loggedin.name }} {{ loggedin.surname }}</a>
+        {% else %}
+          <a href="/{{TEMPLATE_FOLDER}}/login" style="color:white">Log in</a>
+        {% endif %}
+      </div><!-- column -->
+    </div><!-- row -->
+  </div>
+</header>
+
+{{ loggedin | log }}
+<!--end header-->
+{% endblock %}
+
+
+{% block header_class%}with-proposition{% endblock %}
+
+{% block body_end %}
+  {% include TEMPLATE_FOLDER + "/_inc/scripts.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% block staff_content %}{% endblock %}
+
+</main>
+
+{% endblock %}

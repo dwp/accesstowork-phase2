@@ -1,0 +1,33 @@
+.quote {
+  position:absolute;
+  top:12px;left:115px;
+  width:300px;
+  color:black;
+  display:none;
+  background-color:rgba(white,0.8);
+  border-radius:15px;
+  border:3px solid $govuk-blue;
+  padding:10px;
+}
+.quote:before
+{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 100%;
+	top: 15px;
+	border: 20px solid;
+	border-color: $govuk-blue $govuk-blue transparent transparent ;
+}
+.quote:after
+{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 100%;
+	top: 18px;
+	border: 16px solid;
+	border-color: white white transparent transparent ;
+}

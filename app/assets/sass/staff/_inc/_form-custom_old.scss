@@ -1,0 +1,412 @@
+// Styling for radios and checkboxes
+
+
+  // Hide native controls - (!!!)
+  input[type='checkbox'],
+  input[type='radio']{
+    display: none;
+  }
+
+
+  .form-control-checkbox,
+  .form-control-radio{
+    //margin-top: -5px;
+    //margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding-top: 8px;
+    width: auto;
+    float: left;
+    clear: left;
+    padding-right: 20px;
+    // Show click area on hover
+    &:hover{
+      cursor: pointer;
+      background: $highlight-colour;
+      outline: 6px solid $highlight-colour;
+    }
+  }
+
+  // Create box style for checbox and radio
+  .form-control-checkbox::before,
+  .form-control-radio::before{
+    content: "";
+    float: left;
+    background-color: #fff;
+    border: 2px solid $border-colour;
+
+    //width: 32px;
+    //height: 32px;
+
+    width: 30px;
+    height: 30px;
+
+    margin-right: 10px;
+    margin-top: -6px;
+    position:relative;
+  }
+
+  // Make radios circles not boxes
+  .form-control-radio::before{
+    //border-radius: 17px
+    border-radius: 16px
+  }
+
+  // Checked style
+  input[type='checkbox']:checked + .form-control-checkbox::before{
+    content: "";
+    background: #FFF url(/public/images/tick.png) no-repeat 1px 1px;
+    background-size: 91%;
+  }
+
+  input[type='radio']:checked + .form-control-radio::before{
+    content: "●";
+    line-height: 1;
+    text-align: center;
+    font-size: 31px;
+  }
+
+
+  // Compact versions
+  .form-control-checkbox.compact-control,
+  .form-control-radio.compact-control{
+    line-height: 1.4;
+    margin-top: 0;
+    padding-top: 2px; // + Offset
+  }
+  .form-control-checkbox.compact-control::before,
+  .form-control-radio.compact-control::before{
+    width: 16px;
+    height: 16px;
+    margin-top: 1px; // - Offset
+  }
+
+  input[type='radio']:checked + .form-control-radio.compact-control::before{
+    font-size: 17px;
+  }
+
+
+  // Checkbox header
+
+  .checkbox-header:checked + .form-control-checkbox{
+    font-weight: bold;
+  }
+
+
+// No bottom margin on last checkbox or radio (because the parent form group has a margin already)
+.form-group .form-control-checkbox:last-child,
+.form-group .form-control-radio:last-child{
+  margin-bottom: 0
+}
+
+/*
+  - - - - - - - - - - - - - - - - - - - - -  SELECT BOX STYLES  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/    
+
+
+
+// SELECT BOX STYLES
+
+
+// 1. STANDARD VERSION
+//
+// Styles the native select control
+
+select.form-select{
+
+  height:auto;
+  width: 100%;
+  @include box-sizing(border-box);
+
+  @include core-19;
+  padding: 5px 45px 4px 10px;
+  background-color: #fff;
+  background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 100% -50px;
+  border: 2px solid $border-colour;
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  @include media(tablet) {
+    width: auto;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+// 2. ENHANCED VERSION
+//
+// When applied to a set of radio buttons this emulates a more usable version of
+// the native select box. The main enhancement is that the box expands INTO the
+// page rather than over it, so you scroll through the list just by scrolling
+// the page. It also stays open on click, so it's easier to use if your motor
+// skills aren't so good.
+
+.js-enabled .js-form-select{
+  height: 38px;
+  overflow: hidden;
+  padding: 0;
+  @include box-sizing(border-box);
+  border: 2px solid $border-colour;
+  background: $border-colour url(/public/images/toggle-sprite-grey.png) no-repeat 100% -50px;
+
+  @include core-19;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  // Hide all items...
+  label{
+    display: none;
+    padding: 5px 45px 4px 10px;
+    background-color: white;
+    border-bottom: 1px solid $border-colour;
+    &:hover{
+      cursor: pointer;
+    } 
+  }
+
+
+  label:nth-child(2){
+  } 
+
+  // ...then show checked item
+  input:checked + label{
+    display: block;
+    margin-right: 30px;
+  }
+
+  // Open styles
+
+  &.open{
+    height: auto;
+    background: url(/public/images/toggle-sprite-grey.png) no-repeat 100% -16px;
+
+    &::before{
+      display: none;
+    }
+
+    label{
+      display: block;
+    }
+    input:checked + label{
+      margin-right: 0;
+        background-color: $highlight-colour;
+    }
+    label:nth-child(2){
+      margin-right: 30px !important;
+    }
+    label:last-child{
+      border-bottom: none;
+    }
+    label{
+      &:hover{
+        background-color: $highlight-colour;
+      }  
+    }
+  }
+
+  .none-of-the-above{
+    margin: 20px 10px;
+  }
+}
+
+// Compact version
+
+.form-select.compact-control{
+  @include core-16;
+  padding: 3px 22px 2px 5px;
+  background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 101% -55px;
+
+}
+
+
+.form-select-2{
+  @include core-19;
+
+  width: 100%;
+  @include box-sizing(border-box);
+  padding: 6px 45px 5px 10px;
+  background: #CCC url(/public/images/toggle-sprite.png) no-repeat 100% -25px;
+  border: 0 solid;
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  @include media(tablet) {
+    width: auto;
+  }
+}
+
+.form-select-3{
+  @include core-19;
+
+  margin-top: 3px;
+
+  width: 100%;
+  @include box-sizing(border-box);
+  border: 1px solid $border-colour;
+
+  @include media(tablet) {
+    width: auto;
+  }
+}
+
+/*
+  - - - - - - - - - - - - - - - - - - - - -  SHAME - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/    
+
+// Simpler form hint style
+.form-hint{
+  margin: 0 0 20px 0;
+  color: $black;
+}
+
+// Fixed character width form controls
+.form-control-1-char    { width: 1.5em }
+.form-control-2-chars   { width: 2.4em }
+.form-control-3-chars   { width: 3.3em }
+.form-control-4-chars   { width: 4.2em }
+.form-control-5-chars   { width: 5.1em }
+.form-control-6-chars   { width: 6em }
+.form-control-7-chars   { width: 7em }
+.form-control-8-chars   { width: 8em }
+.form-control-9-chars   { width: 9em }
+.form-control-10-chars  { width: 10em }
+.form-control-11-chars  { width: 11em }
+.form-control-12-chars  { width: 12em }
+.form-control-13-chars  { width: 13em }
+.form-control-14-chars  { width: 14em }
+.form-control-15-chars  { width: 15em }
+.form-control-16-chars  { width: 16em }
+
+
+// Inline fieldsets for compound controls
+fieldset.inline,
+.inline-form-groups {
+  @extend %contain-floats;
+  .form-group {
+    width: auto;
+    margin-right: 10px;
+    clear: none;
+  }
+}
+
+
+// Thick grey borders
+.form-control-checkbox::before,
+.form-control-radio::before,
+.form-select-2,
+.form-control,
+.form-control{
+  border: 2px solid $border-colour;
+}
+
+.form-control-email{
+  width: 36em;
+}
+
+
+// Margins for left or right aligned labels
+
+.form-label.horizontal-right-label{
+  margin-bottom: 0;
+  .form-control{
+    margin-right: 10px
+  }
+}
+
+.form-label.horizontal-left-label{
+  margin-bottom: 0;
+  .form-control{
+    margin-left: 10px
+  }
+}
+
+
+// VERTICAL SPACING
+
+body { 
+  //background-image: url(/public/images/v-rhythm-46.png); 
+  //background-position-y: -5px;
+}
+
+// Reduce bottom margin by 2px so the spacing between labels and controls is the same as between related controls - 10px
+.form-label{
+  margin-bottom: 3px;
+}
+
+.form-control{
+  //padding: 3px; // Slightly reduce the v-hight to match that of the radios and checkboxes
+}
+
+.form-group{
+  //margin-bottom: 28px // Slightly reduced from 30px - seems to keep it closer to the 46px vertical rhythm
+}
+
+fieldset.form-group{
+  //margin-bottom: 26px
+  //margin-bottom: 42px;
+  //margin-bottom: 19px;
+}
+
+
+// Make margin between related form groups smaller
+
+.form-group-related{
+  margin-bottom: 10px;
+}
+
+
+// Grids
+
+.grid-row {
+  @extend %grid-row;
+}
+
+.column-quarter {
+  @include grid-column( 1/4 );
+}
+
+.column-three-quarters {
+  @include grid-column( 3/4 );
+}
+
+// Align service header in a quarter-width grid layout
+#global-header.with-proposition .header-wrapper .header-global {
+  //width: 25%;
+}
+
+
+
+
+// Compact controls
+
+.compact-controls{
+  .form-control,
+  .form-select,
+  .form-label,
+  .form-label-bold{
+    @include core-16;
+  }
+  .form-select{
+    padding: 3px 36px 2px 5px;
+    background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 101% -55px;
+  }
+  .form-control{
+    padding: 2px 4px;
+  }
+  .form-control-checkbox::before,
+  .form-control-radio::before{
+    height: 25px;
+    width: 25px;
+    margin-top: -6px;
+  }
+}
+
+
+// Make buttons same height as form fields
+.button{
+  padding-top: 8px;
+  padding-bottom: 5px
+}

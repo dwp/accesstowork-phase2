@@ -30,6 +30,9 @@ useAuth = useAuth.toLowerCase()
 useHttps = useHttps.toLowerCase()
 useBrowserSync = useBrowserSync.toLowerCase()
 
+// this is helpful elsewhere for includes.
+global.appRoot = __dirname;
+
 var useDocumentation = (config.useDocumentation === 'true')
 
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
@@ -219,6 +222,7 @@ if (typeof (routes) !== 'function') {
   console.log('Warning: the use of bind in routes is deprecated - please check the prototype kit documentation for writing routes.')
   routes.bind(app)
 } else {
+  app.use('/staff/v2/', require(__dirname + '/app/views/staff/v2/routes.js'))
   app.use('/', routes)
 }
 
@@ -269,13 +273,13 @@ app.post(/^\/([^.]+)$/, function (req, res) {
   res.redirect('/' + req.params[0])
 })
 
-console.log('\nGOV.UK Prototype kit v' + releaseVersion)
+console.log("\x1b[37m"+'\nGOV.UK Prototype kit v' + releaseVersion+"\x1b[0m")
 // Display warning not to use kit for production services.
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
 
 // start the app
 utils.findAvailablePort(app, function (port) {
-  console.log('Listening on port ' + port + '   url: http://localhost:' + port)
+  console.log('Listening on port ' + port + '   url: ' + "\x1b[91m" + 'http://localhost:' + port + "\x1b[0m")
   if (env === 'production' || useBrowserSync === 'false') {
     app.listen(port)
   } else {

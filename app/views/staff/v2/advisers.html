@@ -1,0 +1,64 @@
+{% extends TEMPLATE_FOLDER+"/layout.html" %}
+
+{% block staff_content %}
+
+  {# {{ advisers | log }} #}
+  
+  <div class="staff__heading">
+    <div class="staff__centred">
+      <h2 class="heading-xlarge" style="margin:0 0 15px">{{ teamname | capitalize }}</h2>
+      <div class="show_only list_{{ by }}">
+        <ul>
+          <li><a>show only:</a></li>
+          {% set fish = ['all','deaf','hidden','large','self','director','visual','pan'] %}
+          {% for item in fish %}
+            <li class="item_{{ item }}"><a href="/{{TEMPLATE_FOLDER}}/advisers/{{ item }}" style="color:white">{{ item }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="grid-row">
+      <div class="column">
+        <div class="box">
+        <table style="margin-bottom:60px" class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Adviser</th>
+              <th>Yesterday</th>
+              <th>Added today</th>
+              <th>Now</th>
+            </tr>
+          </thead>
+        {% for item in advisers %}
+          <tr class="click_row" data-id="{{ item.id }}">
+            <td style="padding-left:10px">{{ item.name }} {{ item.surname }}</td>
+            <td>{{ "" | randnum(15,20) }}</td>
+            <td>+ {{ "" | randnum(1,5) }}</td>
+            <td>{{ "" | randnum(15,30) }}</td>
+          </tr>
+          {# {{ item | log }} #}
+        {% endfor %}
+        </table>
+      </div><!-- box -->
+      </div><!-- column -->
+    </div><!-- row -->
+  </div><!-- container -->
+    
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{TEMPLATE_FOLDER}}/adviser/"+id;
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+
+{% block case_content %}
+
+  <div class="box tabs">
+    <div class="grid-row">
+      <div class="column-half">
+        <p>
+          <span class="font-xsmall">Employer</span><br />
+          <span class="bold-medium">Boots PLC</span>
+        </p>
+        <p>
+          <span class="font-xsmall">Address</span><br />
+          <span class="bold-medium">23 Railway Cuttings</span><br />
+          <span class="bold-medium">East Cheam</span><br />
+          <span class="bold-medium">London</span><br />
+          <span class="bold-medium">SM2 7YT</span><br />
+        </p>
+        <p>
+          <hr class="rule"/>
+          <span class="font-xsmall">Line Manager</span><br />
+          <span class="bold-medium">Bob Carolgees</span><br />
+          <span class="font-xsmall">Telephone:</span><br />
+          <span class="bold-medium">0768 432 4532</span><br />
+          <span class="font-xsmall">email:</span><br />
+          <span class="bold-medium">bob.carolgees@business.com</span>
+        </p>
+      </div><!-- column -->
+      <div class="column-half">
+        <p>
+          <span class="font-xsmall">Started</span><br />
+          <span class="bold-medium">
+            {{ ["More than 6 weeks ago","1st June 2016","7th July 2016","8th August 2016"] | randarr }}
+          </span>
+        </p>
+        <p>
+          <span class="font-xsmall">Days</span><br />
+          <span class="bold-medium">{{ '' | randnum(1,5) }} days a week</span>
+        </p>
+        <p>
+          <span class="font-xsmall">Hours</span><br />
+          <span class="bold-medium">{{ '' | randnum(10,37) }} hours a week</span>
+        </p>
+      </div><!-- column -->
+    </div><!-- row -->
+  </div><!-- box -->
+
+{% endblock %}
+
+{% block page_script %}
+  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+{% endblock %}

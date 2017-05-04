@@ -1,0 +1,22 @@
+
+<div class="staff__heading">
+  <div class="staff__centred">
+    <h2 class="heading-xlarge" style="margin:0 0 10px">{{ case.name }} {{ case.surname }}</h2>
+    <div class="grid-row">
+      <div class="column-quarter">
+        <p><span class="font-xsmall">Condition</span><br /><span class="bold-medium">{{ case.condition }}</spanc></p>
+      </div>
+      <div class="column-quarter">
+        <p><span class="font-xsmall">{{ case.job_status | default('Job') }}</span><br /><span class="bold-medium">{{ case.job_title }}</spanc></p>
+      </div>
+      <div class="column-quarter">
+        {% include TEMPLATE_FOLDER + "/_inc/app_adviser.html" %}
+      </div>
+      <div class="column-quarter">
+        {% include TEMPLATE_FOLDER + "/_inc/app_team.html" %}
+      </div>
+    </div><!-- row -->
+  </div><!-- staff__centred -->
+</div><!-- staff__heading -->
+
+  

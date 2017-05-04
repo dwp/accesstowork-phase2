@@ -1,0 +1,10 @@
+.todo_list {
+  background-color: $panel-colour;
+  border:2px solid  $grey-2;
+  padding:10px;
+  .heading-medium.top { margin-top:0; }
+  label {
+    font-size:16px;
+    margin-bottom:10px;
+  }
+}

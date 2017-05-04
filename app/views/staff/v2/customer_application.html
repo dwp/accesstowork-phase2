@@ -1,0 +1,44 @@
+{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+
+{% block case_content %}
+
+  {# {{ case | log }} #}
+      
+  <div class="box tabs">
+    <table>
+      {% if case.job_how_harder %}
+      <tr>
+        <td class="bold nobr">How is your job harder?</td>
+        <td class="cust_info">{{ case.job_how_harder }}</td>
+      </tr>
+      <tr>
+        <td class="bold nobr">What do you do now?</td>
+        <td class="cust_info">{{ case.job_what_do_now | default("Not answered")}}</td>
+      </tr>
+      <tr>
+        <td class="bold nobr">What do you want?</td>
+        <td class="cust_info">{{ case.job_what_need | default("Not answered") }}</td>
+      </tr>
+      {% endif %}
+      {% if  case.travel_how_harder %}
+      <tr>
+        <td class="bold nobr">How is your travel harder?</td>
+        <td class="cust_info">{{ case.travel_how_harder }}</td>
+      </tr>
+      <tr>
+        <td class="bold nobr">What do you do now?</td>
+        <td class="cust_info">{{ case.travel_what_do_now | default("Not answered")}}</td>
+      </tr>
+      <tr>
+        <td class="bold nobr">What do you want?</td>
+        <td class="cust_info">{{ case.travel_what_need | default("Not answered") }}</td>
+      </tr>
+      {% endif %}
+    </table>
+  </div><!-- box -->
+
+{% endblock %}
+
+{% block page_script %}
+  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+{% endblock %}

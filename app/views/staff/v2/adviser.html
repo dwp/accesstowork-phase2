@@ -1,0 +1,72 @@
+{% extends TEMPLATE_FOLDER+"/layout.html" %}
+
+{% block staff_content %}
+
+  {# {{ cases | log }} #}
+
+  <div class="staff__heading">
+    <div class="staff__centred">
+      <div class="grid-row">
+        <div class="column-two-thirds">
+            <h2 class="font-xlarge" style="margin:0 0 15px">Adviser: <span class="bold-xlarge">{{ cases[0].adviser.name }} {{ cases[0].adviser.surname }}</span></h2>
+        </div><!-- column -->
+        <div class="column-third">
+          <p style="margin:0">Phone number: 07986 543 123</p>
+          <p>Email: <a href="mailto:{{ cases[0].adviser.name | lower }}.{{ cases[0].adviser.surname | lower }}@dwp.gsi.gov.uk" style="color:white">{{ cases[0].adviser.name | lower }}.{{ cases[0].adviser.surname | lower }}@dwp.gsi.gov.uk</a></p>
+        </div><!-- column -->
+      </div><!-- row -->
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid-row">
+      <div class="column">
+
+        <div class="box">
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Customer</th>
+              {# <th>Team</th> #}
+              {# <th width="30%">Condition</th> #}
+              <th>Condition</th>
+              <th>Status</th>
+              <th class="numeric">Since</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in range(0, cases.length) %}
+            {% set item  = cases[i] %}
+            <tr class="click_row" data-id="{{ item._id }}">
+              <td style="padding-left:15px;" class="nobr">{{ item.name }} {{ item.surname }}</td>
+              {# <td><span class="tag {{ item.team }}">{{ item.team }}</span></td> #}
+              <td>{{ item.condition | truncate(60) }}</td>
+              {% set status = item.timeline | default([]) | last %}
+              <td>{{ status.status }}</td>
+              <td class="nobr numeric">{{ status.date | default(" ") | formatDate('HH:mma - Do MMM YYYY') }}</td>
+            </tr>
+            {# {{ item | log }} #}
+            {% endfor %}
+          </tbody>
+        </table>
+        </div><!-- box -->
+
+      </div><!-- column -->
+    </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
+    });
+  });
+</script>
+{% endblock %}

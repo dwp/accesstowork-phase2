@@ -1,0 +1,77 @@
+{% extends TEMPLATE_FOLDER + "/layout.html" %}
+
+{% block staff_content %}
+
+{# {{ cases | log }} #}
+
+{{ baseUrl }}
+
+<div class="staff__heading">
+  <div class="staff__centred">
+  {% if by %}
+    <h1 class="heading-xlarge" style="margin:0 0 15px">{{ by | capitalize }} – Open</h1>
+    <div class="show_only list_{{ by }}">
+      <ul>
+        <li><a>show only:</a></li>
+        {% set fish = ['all','deaf','hidden','large','self','director','visual','pan'] %}
+        {% for item in fish %}
+          <li class="item_{{ item }}"><a href="/{{TEMPLATE_FOLDER}}/groupby/{{ item }}" style="color:white">{{ item }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if title %}
+    <h1 class="heading-xlarge">{{ title }}</h1>
+  {% endif %}
+  </div><!-- staff__centred -->
+</div><!-- staff__heading -->
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column">
+      <div class="box">
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Team</th>
+              {# <th width="30%">Condition</th> #}
+              <th>Condition</th>
+              <th class="numeric">Initial contact</th>
+              <th class="numeric">Adviser</th>
+            </tr>
+          </thead>
+        {% for i in range(0, cases.length) %}
+          {% set item  = cases[i] %}
+          <tr class="click_row" data-id="{{ item._id }}">
+            <td style="padding-left:15px;" class="">{{ item.name }} {{ item.surname }}</td>
+            <td><span class="tag {{ item.team }}">{{ item.team }}</span></td>
+            <td>{{ item.condition | truncate(50) }}</td>
+            {# <td>{{ item.job_title }}</td> #}
+            <td class="nobr numeric">{{ item.postDate | formatDate('Do MMMM YYYY') }}</td>
+            <td class="nobr numeric">{{ item.adviser.name }} {{ item.adviser.surname }}</td>
+          </tr>
+          {# {{ item | log }} #}
+        {% endfor %}
+        </table>
+      </div><!-- box -->
+    </div><!-- column -->
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
+    });
+  });
+</script>
+{% endblock %}

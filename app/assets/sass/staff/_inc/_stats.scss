@@ -1,0 +1,30 @@
+/*
+  Stats bits
+*/
+.stats {
+  margin-bottom:30px;
+  border-bottom:1px solid $grey-2;
+  display:table;
+  width:100%;
+  li {
+    box-sizing:border-box;
+    display:table-cell;
+    width:19%;
+    margin:0;padding:0;
+    padding-right:10px;
+  }
+
+}
+.stat__label {
+  margin:0;
+}
+.stat-num {
+  margin:0;
+}
+.stats {
+  h2.adviser {color:$alpha-colour}
+  h2.assessor {color:$beta-colour}
+  h2.mainenance {color:$live-colour}
+  h2.customer {color:$govuk-blue}
+  h2.qaf {color:$discovery-colour}
+}

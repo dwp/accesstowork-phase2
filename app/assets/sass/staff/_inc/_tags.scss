@@ -1,0 +1,51 @@
+.tag {
+  @extend .font-xsmall;
+  display:inline-block;
+  position:relative; top:-2px;
+  padding:4px 7px 2px;
+  color:white;
+  background-color:$grey-1;
+  border-radius:5px;
+  // margin-left:5px;
+  min-width:50px;
+  text-align:center;
+
+  &.circle {
+    $size:30px;
+    display:block;
+    border-radius:50%;
+    min-width:0;
+    padding:0;
+    width:$size;height:$size;
+  }
+}
+
+.tag_date {
+  float:left;
+  margin-left:15px;
+  margin-top:2px;
+}
+
+.tag {
+  &.adviser {background-color:$alpha-colour}
+  &.assessor {background-color:$beta-colour}
+  &.mainenance {background-color:$live-colour}
+  &.customer {background-color:$govuk-blue}
+  &.qaf {background-color:$discovery-colour}
+  
+  &.deaf {background-color:$light-blue}
+  &.hidden {background-color:$orange;visibility:visible;}
+  &.large {background-color:$fuschia}
+  &.self {background-color:$grass-green}
+  &.director {background-color:$green}
+  &.visual {background-color:$mellow-red}
+  &.pan {background-color:$pink}
+
+  &.waiting_assessment,
+  &.waiting_employer,
+  &.waiting_extra_info,
+  &.waiting_med_ev,
+  &.waiting_offer_sent,
+  &.waiting_quotes,
+    {background-color:$error-colour}
+}

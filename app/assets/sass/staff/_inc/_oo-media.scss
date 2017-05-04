@@ -1,0 +1,29 @@
+/* ====== media ====== */
+.media {
+  border:1px solid $grey-2;
+  border-bottom-width:10px;
+  padding:10px 0px 0 20px;
+  margin-bottom:20px;
+  font-size:14px;
+}
+.media, .bd {
+  overflow:hidden;
+  _overflow:visible;
+  zoom:1;
+}
+.bd {
+  background-color:$grey-4;
+  padding:10px 20px;
+  .heading-top {
+    margin:0 0 10px 0;
+  }
+  .tag {
+    margin-left:0;
+  }
+}
+.media .img {
+  float:left;
+  margin:15px 10px 15px 0;
+}
+.media .img img { display:block; }
+.media .imgExt{ float:right; margin-left: 10px; }

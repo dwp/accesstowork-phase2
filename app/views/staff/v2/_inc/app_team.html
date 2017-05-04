@@ -1,0 +1,19 @@
+<!-- - - - - -  TEAM - - - - - -->
+{# <h3 class="heading-small">Team</h3> #}
+<ul class="list bullet-list left_nav shower" id="cat_show">
+  <li>
+    <div class="show">
+      <a href="#" class="editter">edit</a>
+      <p><span class="font-xsmall">Team</span><br /><span class="bold-medium" id="team">{{ case.team | capitalize }}</span></p>
+    </div>
+    <div class="edit">
+      <select class="dropdown" id="edit_category">
+        {% set categories = ['deaf','hidden','large','self','director','visual','unknown'] %}
+        {% for item in categories %}
+          <option value="{{ item }}" {% if case.allocation == item %}selected="selected"{% endif %}>{{ item }}</option>
+        {% endfor %}
+      </select>
+      <a href="#" class="editter">cancel</a>
+    </div>
+  </li>
+</ul>

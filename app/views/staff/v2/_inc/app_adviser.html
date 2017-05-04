@@ -1,0 +1,21 @@
+<!-- - - - - -  ADVISER - - - - - -->
+{# <h3 class="heading-small">Adviser</h3> #}
+<ul class="list bullet-list left_nav shower" id="ad_show">
+  <li>
+    <div class="show">
+      <a href="#" class="editter">edit</a>
+      <p><span class="font-xsmall">Adviser</span><br />
+        <span class="bold-medium"><a href="/{{TEMPLATE_FOLDER}}/adviser/{{ case.adviser.id }}/">{{ case.adviser.name }} {{ case.adviser.surname }}</a></span></p>
+      {# <a href="/{{TEMPLATE_FOLDER}}/adviser/{{ case.adviser.id }}/">{{ case.adviser.name }} {{ case.adviser.surname }}</a> #}
+    </div>
+    <div class="edit">
+      <select class="dropdown" id="edit_adviser">
+          <option value="-1">- unassign -</option>
+        {% for item in advisers %}
+          <option value="{{item.id}}" {% if item.id == case.adviser.id %}selected="selected"{% endif %} >{{item.name}} {{item.surname}}</option>
+        {% endfor %}
+      </select>
+      <a href="#" class="editter">cancel</a>
+    </div>
+  </li>
+</ul>

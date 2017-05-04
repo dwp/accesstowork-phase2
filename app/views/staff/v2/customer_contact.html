@@ -1,0 +1,39 @@
+{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+
+{% block case_content %}
+        
+  <div class="box tabs">
+    <div class="grid-row">
+      <div class="column-half">
+        <p>
+          <span class="font-xsmall">Date of birth</span><br />
+          <span class="bold-medium">19th October 1976</span>
+        </p>
+        
+        <p>
+          <span class="font-xsmall">Address</span><br />
+          <span class="bold-medium">23 Railway Cuttings</span><br />
+          <span class="bold-medium">East Cheam</span><br />
+          <span class="bold-medium">London</span><br />
+          <span class="bold-medium">SM2 7YT</span><br />
+        </p>
+      </div><!-- column -->
+      <div class="column-half">
+        <p>
+          <span class="font-xsmall">Telephone</span><br />
+          <span class="bold-medium">09870 654 321</span>
+        </p>
+        <p>
+          <span class="font-xsmall">Email</span><br />
+          <span class="bold-medium"><a href="">{{ case.name | lower }}.{{ case.surname | lower }}@googlemail.com</a></span>
+        </p>
+      
+      </div><!-- column -->
+    </div><!-- row -->
+  </div><!-- box -->
+
+{% endblock %}
+
+{% block page_script %}
+  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+{% endblock %}
