@@ -1,3 +1,6 @@
+var _ = require('lodash')
+var moment = require('moment')
+
 module.exports = function (env) {
   /**
    * Instantiate object used to store the methods registered as a
@@ -6,6 +9,35 @@ module.exports = function (env) {
    * @type {Object}
    */
   var filters = {}
+
+  filters.randnum = function(str,low,high) {
+      return low + Math.floor(Math.random()*(1+high-low));
+  }
+
+  filters.revCron = function(array) {
+      return _.sortBy(array,function(el)
+      {
+        return new Date(el.date);
+      }).reverse();
+  }
+
+  filters.formatDate = function(str,format) {
+      var d = moment(str).format(format);
+      if (d !== 'Invalid date') return d;
+      else return '';
+  }
+
+  filters.slugify = function(str) {
+      return str.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()’]/g,"").replace(/ +/g,'_').toLowerCase();
+  }
+
+  filters.check = function(str,checkee,output) {
+      return str == checkee ? output : '';
+  }
+
+  filters.randarr = function(array) {
+      return _.sample(array);
+  }
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

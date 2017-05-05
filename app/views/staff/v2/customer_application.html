@@ -3,7 +3,15 @@
 {% block case_content %}
 
   {# {{ case | log }} #}
-      
+
+  <div class="section-tabs js-tabs clearfix">
+    <ul>
+      <li class="active"><a href="customer_application">Application</a></li>
+      <li><a href="customer_job">Job</a></li>
+      <li><a href="customer_contact">Contact</a></li>
+    </ul>
+  </div>
+
   <div class="box tabs">
     <table>
       {% if case.job_how_harder %}

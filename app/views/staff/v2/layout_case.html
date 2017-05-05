@@ -3,24 +3,22 @@
 {% block staff_content %}
 
   {{ case | log }}
-  
+
   {% include TEMPLATE_FOLDER + "/_inc/app_top.html" %}
-  
+
   <div class="container">
     <div class="grid-row">
-      
+
       <div class="column-third" style="padding-right:30px">
         {% include TEMPLATE_FOLDER + "/_inc/app_status.html" %}
       </div><!-- column -->
-      
+
       <div class="column-two-thirds">
-        
-        {% include TEMPLATE_FOLDER + "/_inc/app_tabs.html" %}
-        
+
         {% block case_content %}{% endblock %}
-        
+
       </div><!-- column -->
-        
+
     </div><!-- row -->
   </div>
 

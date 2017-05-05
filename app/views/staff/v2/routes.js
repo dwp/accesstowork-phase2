@@ -13,12 +13,13 @@ var express     = require('express'),
 
 function loadAdvisers()
 {
-  var adviser_data = __dirname + "/../mvp/_data/advisers.json";
+  var adviser_data = __dirname + "/data/advisers.json";
   return JSON.parse(fs.readFileSync(adviser_data).toString());
 }
 
 router.all('*',function(req,res,next)
 {
+  console.log('got here')
   req.data = req.data || {};
   req.data.TEMPLATE_FOLDER = 'staff/v2'
   req.data.loggedin = req.session.user;
@@ -34,7 +35,8 @@ router.get('/login', function(req,res,next)
 
 router.get('/', function(req,res,next)
 {
-  res.send('router.get(/) - database - needs fixing!')
+  // res.send('router.get(/) - database - needs fixing!')
+  next();
   // store.find({"open":true}).then(function(cases)
   // {
   //   req.data.by = "all";
@@ -107,7 +109,9 @@ router.get('/adviser/:id', function(req,res,next)
 {
   var id = parseInt(req.params.id);
 
-  res.send('router.get(/adviser/:id) - database - needs fixing!')
+  // res.send('router.get(/adviser/:id) - database - needs fixing!')
+  req.url = '/adviser';
+  next();
   // store.find({"adviser.id":id,"open":true}).then(function(cases)
   // {
   //
@@ -209,7 +213,7 @@ router.post('/customer/cat/update', function(req,res,next)
 });
 
 /*
-  CUSTOMER DETAILS PAGES.
+  CUSTOMER DETAILS PAGES.  /customer/21983129837129837/application/
 */
 router.get('/customer/:id/:what?', function(req,res,next)
 {
@@ -217,18 +221,20 @@ router.get('/customer/:id/:what?', function(req,res,next)
   var what = (req.params.what) ? '_'+req.params.what : '_application';
 
   res.send('router.get(/customer/:id/:what?) - database - needs fixing!')
-  // store.findOne({"_id":id}).then(function(cases)
-  // {
-  //   req.data.advisers = loadAdvisers();
-  //   // req.data.case = _.findWhere(cases, {'_id':String(id)});
-  //   req.data.case = cases;
-  //   req.data.chosen = what.substr(1);
-  //
-  //   console.log(what.substr(1));
-  //
-  //   req.url = '/customer'+what+'/';
-  //   next();
-  // });
+
+
+  store.findOne({"_id":id}).then(function(cases)
+  {
+    req.data.advisers = loadAdvisers();
+    // req.data.case = _.findWhere(cases, {'_id':String(id)});
+    req.data.case = cases;
+    req.data.chosen = what.substr(1); application
+
+    console.log(what.substr(1));
+
+    req.url = '/customer'+what+'/';
+    next();
+  });
 });
 
 router.post('/login/update',function(req,res,next)

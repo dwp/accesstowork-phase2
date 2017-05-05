@@ -3,7 +3,7 @@
 {% block staff_content %}
 
   {# {{ advisers | log }} #}
-  
+
   <div class="staff__heading">
     <div class="staff__centred">
       <h2 class="heading-xlarge" style="margin:0 0 15px">{{ teamname | capitalize }}</h2>
@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="container">
     <div class="grid-row">
       <div class="column">
@@ -34,7 +34,7 @@
           </thead>
         {% for item in advisers %}
           <tr class="click_row" data-id="{{ item.id }}">
-            <td style="padding-left:10px">{{ item.name }} {{ item.surname }}</td>
+            <td style="padding-left:10px">{{ item.name}} {{ item.surname }}</td>
             <td>{{ "" | randnum(15,20) }}</td>
             <td>+ {{ "" | randnum(1,5) }}</td>
             <td>{{ "" | randnum(15,30) }}</td>
@@ -46,7 +46,7 @@
       </div><!-- column -->
     </div><!-- row -->
   </div><!-- container -->
-    
+
 {% endblock %}
 
 {% block page_script %}

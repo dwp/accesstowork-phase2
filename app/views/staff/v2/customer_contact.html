@@ -1,7 +1,16 @@
 {% extends TEMPLATE_FOLDER+"/layout_case.html" %}
 
 {% block case_content %}
-        
+
+<div class="section-tabs js-tabs clearfix">
+  <ul>
+    <li><a href="customer_application">Application</a></li>
+    <li><a href="customer_job">Job</a></li>
+    <li class="active"><a href="customer_contact">Contact</a></li>
+  </ul>
+</div>
+
+
   <div class="box tabs">
     <div class="grid-row">
       <div class="column-half">
@@ -9,7 +18,7 @@
           <span class="font-xsmall">Date of birth</span><br />
           <span class="bold-medium">19th October 1976</span>
         </p>
-        
+
         <p>
           <span class="font-xsmall">Address</span><br />
           <span class="bold-medium">23 Railway Cuttings</span><br />
@@ -27,7 +36,7 @@
           <span class="font-xsmall">Email</span><br />
           <span class="bold-medium"><a href="">{{ case.name | lower }}.{{ case.surname | lower }}@googlemail.com</a></span>
         </p>
-      
+
       </div><!-- column -->
     </div><!-- row -->
   </div><!-- box -->

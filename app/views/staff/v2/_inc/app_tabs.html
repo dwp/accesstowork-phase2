@@ -1,8 +1,0 @@
-{% set root = "/"+TEMPLATE_FOLDER+"/customer/"+case._id %}
-<div class="section-tabs js-tabs clearfix">
-  <ul>
-    <li class="{{ chosen | check("application","active") }}"><a href="{{ root }}/application">Application</a></li>
-    <li class="{{ chosen | check("job","active") }}"><a href="{{ root }}/job">Job</a></li>
-    <li class="{{ chosen | check("contact","active") }}"><a href="{{ root }}/contact">Contact</a></li>
-  </ul>
-</div>
