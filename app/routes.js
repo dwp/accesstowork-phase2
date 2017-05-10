@@ -65,9 +65,9 @@ router.post('/payments-v1/self-travel-type', function (req, res) {
 
 router.post('/payments-v2/employment-type', function (req, res) {
         if (req.body.claimtype === 'employed') {
-          res.redirect('/payments-v2/user-details')
+          res.redirect('/payments-v2/receipt-verify')
         } else {
-          res.redirect('/payments-v2/self-user-details')
+          res.redirect('/payments-v2/self-receipt-verify')
         }
       });
 
@@ -101,7 +101,7 @@ router.post('/payments-v2/self-claim-type', function (req, res) {
         });
 
 router.post('/payments-v2/self-travel-type', function (req, res) {
-          if (req.body.self === 'travel1') {
+          if (req.body.claim === 'travel1') {
           res.redirect('/payments-v2/self-single-travel')
         } else {
           res.redirect('/payments-v2/self-multi-travel')

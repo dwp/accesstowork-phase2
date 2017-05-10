@@ -19,14 +19,13 @@
 
   		<div class="column-two-thirds">
 
-    		<h1 class="form-title heading-large">Bank details</h1>
-
-    		<p>Do you need the payment made to an account you have used before?</p>
-
+	    	<div class="form-group">	
+	    		<h1 class="form-title heading-large">Bank details</h1>
+	    		<p>Is this an existing payee?</p>
+	    	</div>
+    		
 		   <form>
 		    <fieldset class="form-group">
-
-		      <legend class="visually-hidden">Do you need the payment made to an account you have used before?</legend>
 		      
 		      <div class="multiple-choice" data-target="account-yes">
               	<input id="radio-1" type="radio" name="bank" value="acoountyes">
@@ -45,11 +44,9 @@
 
               <div class="form-group">
 
-                <label class="js-visible-block form-label-bold" for="account-reference">Account reference</label>
+                <label class="js-visible-block form-label-bold" for="account-reference">Enter the reference you use for this account</label>
 
-                <p class="form-hint">Enter the reference or name you use for this account</p>
-
-                <label class="form-label" for="account-reference">Account reference</label>
+                <label class="visually-hidden" for="account-reference">Account reference</label>
 					<input class="form-control" id="account-reference" type="text">
               </div>
              
@@ -59,7 +56,7 @@
 
             <div class="form-group">
 
-            <label class="js-visible-block form-label-bold" for="account-no">Add new account details</label>
+            <label class="visually-hidden" for="account-no">Add new account details</label>
 
 		      <form>
 			      <div class="form-group">
@@ -72,7 +69,7 @@
 			      <div class="form-group">
 			        <fieldset>
 			          <label class="form-label-bold" for="ba-account-reference">
-			            Account reference
+			            Create a reference you will use for this account
 			          </label>
 			          <input type="text" class="form-control" id="ba-account-reference" name="ba-account-reference" value="">
 			        </fieldset>
@@ -111,7 +108,7 @@
 			        <fieldset>
 			          <label class="form-label-bold" for="bs-society-roll">
 			            Building society roll or reference number (optional)
-			            <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+			            <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook.</span>
 			          </label>
 			          <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
 			        </fieldset>
