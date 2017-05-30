@@ -1,0 +1,113 @@
+{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+
+{% block case_content %}
+
+{# {{ case | log }} #}
+
+<div class="section-tabs js-tabs clearfix">
+  <ul>
+    <li class="active"><a href="customer_application">Application</a></li>
+    <li><a href="customer_job">Job</a></li>
+    <li><a href="customer_contact">Contact</a></li>
+  </ul>
+</div>
+
+
+<!-- Filter -->
+
+<main role="main" class="column-three-quarters column-main">
+<div class='bottom-gutter ajax-block-container'>
+
+  <ul role='tablist' class='pill'>
+    <li aria-selected='true' role='tab'>
+      <div class='pill-selected-item' tabindex='0'>
+        <div class="big-number-smaller">
+          <div class="big-number-number">
+            17
+          </div>
+        </div>
+        <div class="pill-label">total</div>
+      </div>     
+    </li>   
+
+    <li aria-selected='false' role='tab'>
+      <a href="#">
+        <div class="big-number-smaller">
+          <div class="big-number-number">
+            0
+          </div>
+        </div>
+        <div class="pill-label">sending</div>
+      </a>   
+    </li>
+
+    <li aria-selected='false' role='tab'>
+    <a href="#">
+        <div class="big-number-smaller">
+          <div class="big-number-number">
+            17
+          </div>
+        </div>
+
+        <div class="pill-label">delivered</div>
+      </a>
+      
+    </li>
+
+    <li aria-selected='false' role='tab'>
+    <a href="#">
+        <div class="big-number-smaller">
+          <div class="big-number-number">
+          0
+          </div>       
+        </div>
+        <div class="pill-label">failed</div>
+      </a>
+      
+    </li>
+    
+  </ul>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+<div class="box tabs">
+  <table>
+    {% if case.job_how_harder %}
+    <tr>
+      <td class="bold nobr">How is your job harder?</td>
+      <td class="cust_info">{{ case.job_how_harder }}</td>
+    </tr>
+    <tr>
+      <td class="bold nobr">What do you do now?</td>
+      <td class="cust_info">{{ case.job_what_do_now | default("Not answered")}}</td>
+    </tr>
+    <tr>
+      <td class="bold nobr">What do you want?</td>
+      <td class="cust_info">{{ case.job_what_need | default("Not answered") }}</td>
+    </tr>
+    {% endif %}
+    {% if  case.travel_how_harder %}
+    <tr>
+      <td class="bold nobr">How is your travel harder?</td>
+      <td class="cust_info">{{ case.travel_how_harder }}</td>
+    </tr>
+    <tr>
+      <td class="bold nobr">What do you do now?</td>
+      <td class="cust_info">{{ case.travel_what_do_now | default("Not answered")}}</td>
+    </tr>
+    <tr>
+      <td class="bold nobr">What do you want?</td>
+      <td class="cust_info">{{ case.travel_what_need | default("Not answered") }}</td>
+    </tr>
+    {% endif %}
+  </table>
+</div><!-- box -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+{% endblock %}

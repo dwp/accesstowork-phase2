@@ -1,0 +1,56 @@
+a,.pill-selected-item {
+  display:block;float:left;box-sizing:border-box;width:100%;padding:10px
+  }
+
+.pill a{
+  background:#005ea5;color:#fff;border:2px solid #005ea5;position:relative;text-decoration:none;cursor:pointer
+  }
+
+.pill a .pill-label{
+  text-decoration:underline
+  }
+.pill a:link,.pill a:visited{
+  color:#fff
+}
+.pill a:hover{
+  color:#d5e8f3
+}
+.pill a:active,.pill a:focus{
+  z-index:10
+}
+.pill-selected-item{
+  border:2px solid #0b0c0c;outline:1px solid rgba(255,255,255,0.1);position:relative;z-index:1000;color:#0b0c0c
+}
+.pill-selected-item:focus{
+  z-index:10;outline:3px solid #ffbf47
+}
+.pill-separate-item{
+  display:block;text-align:left;padding:10px 15px
+}
+.pill-separate-item:link,.pill-separate-item:visited{background:#005ea5;color:#fff;text-decoration:underline}.pill-separate-item:hover{
+  color:#d5e8f3
+}
+
+
+.column-quarter,.column-one-quarter{
+  padding:0 15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+  @media (min-width: 641px){.column-quarter,.column-one-quarter{float:left;width:25%}
+}
+
+.column-half,.column-one-half{padding:0 15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+@media (min-width: 641px){.column-half,.column-one-half{float:left;width:50%}}
+
+.column-third,.column-one-third{padding:0 15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+@media (min-width: 641px){.column-third,.column-one-third{float:left;width:33.33333%}}
+
+.column-two-thirds{padding:0 15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+@media (min-width: 641px){.column-two-thirds{float:left;width:66.66667%}}
+.column-full{padding:0 15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+@media (min-width: 641px){.column-full{float:left;width:100%}}
+ul,ol{list-style-type:none}
+.list{padding:0;margin-top:5px;margin-bottom:20px}
+
+.column-three-quarters{
+  padding:0 15px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+  @media (min-width: 641px){.column-three-quarters{float:left;width:75%}
+}
