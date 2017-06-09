@@ -1,0 +1,21 @@
+{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+
+{% block case_content %}
+
+<div class="section-tabs js-tabs clearfix">
+  <ul>
+    <li class="active"><a href="customer_timeline">Timeline</a></li>
+    <li><a href="customer_application">Application</a></li>
+    <li><a href="customer_job">Job</a></li>
+    <li><a href="customer_contact">Contact</a></li>
+  </ul>
+</div>
+
+
+  
+
+{% endblock %}
+
+{% block page_script %}
+  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+{% endblock %}

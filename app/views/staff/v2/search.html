@@ -1,0 +1,44 @@
+{% extends TEMPLATE_FOLDER+"/layout.html" %}
+
+{% block staff_content %}
+
+  {# {{ cases | log }} #}
+
+  <div class="staff__heading">
+    <div class="staff__centred">
+      <div class="grid-row">
+        
+        
+      </div><!-- row -->
+    </div>
+  </div>
+
+  <div class="column-full">
+
+  <h1 class="bold-xlarge">Find a case</h1>
+
+  <p class="form-hint">Enter a name, address, date or condition of a person</p>
+
+            <div class="content">
+              <label for="site-search-text">Search</label>
+              <input type="search" name="q" id="site-search-text" title="Search" class="js-search-focus" placeholder="Search">
+              <input class="submit" type="submit" value="Search">
+            </div>
+
+  </div> <!-- column-full -->
+  
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
+    });
+  });
+</script>
+{% endblock %}

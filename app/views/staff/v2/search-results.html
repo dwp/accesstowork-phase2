@@ -13,22 +13,27 @@
     </div>
   </div>
 
-  
+  <div class="column-full">
 
-  <div class="container">
+  <h1 class="bold-large">Search results for</h1>
 
-  <div class="font-xlarge"><span class="bold-xlarge">Adviser:</span>John Goldsmith</div>
-    <div class="grid-row">
-      <div class="column">
+  <p class="font-medium">Autism</p>
+
+            <div class="content">
+              <label for="site-search-text">Search</label>
+              <input type="search" name="q" id="site-search-text" title="Search" class="js-search-focus" placeholder="Search">
+              <input class="submit" type="submit" value="Search">
+            </div>
 
         <div class="box">
         <table class="zebra">
           <thead>
             <tr>
               <th style="padding-left:15px;">Name</th>
+              <th>Team</th>
               <th>Condition</th>
-              <th>Status</th>
-              <th class="numeric">Since</th>
+              <th class="numeric">Initial contact</th>
+              <th>Adviser</th>
               
             </tr>
           </thead>
@@ -38,27 +43,33 @@
           Oliver Reed
         </td>
         <td>
-          Autism
+          Hidden
         </td>
         <td>
-          New appliction
+          Autism
         </td>
         <td>
           10:54am - 5th June 2017
         </td>
+        <td>
+          Jacob Riley
+        </td>  
       </tr>
       <tr>
         <td>
           Martin Short
         </td>
         <td>
-          Eplilepsy
+          Hidden
         </td>
         <td>
-          New application 
+          Epilepsy
         </td>
         <td>
           12:34pm - 5th June 2017
+        </td>
+        <td>
+          John Goldsmith
         </td>
       </tr>
       <tr>
@@ -66,42 +77,51 @@
           Cheryl Cook        
         </td>
         <td>
-          Depression
+          Self
         </td>
         <td>
-          First call
+          Autism
         </td>
         <td>
           10:21am - 31st May 2017
         </td>
+        <td>
+          Jacob Riley
+        </td> 
       </tr>
       <tr>
         <td>
           Paul John-Jones
         </td>
         <td>
-          Autism
+          Deaf
         </td>
         <td>
-          Gather completed
+          Autism
         </td>
         <td>
           2:21pm - 21st May 2017
         </td>
+        <td>
+          John Goldsmith
+        </td>  
       </tr>
       <tr>
         <td>
           Pauline McCallum
         </td>
         <td>
-          Depression
+          Hidden
         </td>
         <td>
-          Referred for assessment
+          Epilepsy
         </td>
         <td>
           2:45pm - 21st May 2017
         </td>
+        <td>
+          Margot Lines
+        </td>  
       </tr>
     </tbody>
 
@@ -109,10 +129,11 @@
         </table>
         </div><!-- box -->
 
-      </div><!-- column -->
-    </div><!-- row -->
-</div><!-- container -->
+             
 
+  </div> <!-- column-full -->
+
+  
 {% endblock %}
 
 {% block page_script %}
