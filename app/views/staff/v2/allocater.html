@@ -1,0 +1,138 @@
+{% extends TEMPLATE_FOLDER+"/layout.html" %}
+
+{% block staff_content %}
+
+  {# {{ cases | log }} #}
+
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+        <li id="nav-home" class="selected"><a href="/adviser">My cases</a></li>
+        <li id="nav-case"><a href="advisers">My team</a></li>
+        <li id="nav-dash"><a href="search">Search</a></li>    
+    </ul>
+  </div>
+  <div class="external-links-wrapper">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="all-teams">All teams</a></li>
+      <li class="main-nav-link"><a href="">All advisers</a></li>
+    </ul>
+  </div>
+</div>
+
+  
+
+  <div class="container">
+
+  <div class="font-xlarge"><span class="bold-xlarge">Adviser:</span>John Goldsmith</div>
+    <div class="grid-row">
+      <div class="column">
+
+        <div class="box">
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Condition</th>
+              <th>Allocate</th>
+              <th class="numeric">Since</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>
+                  <a href="customer_timeline">Oliver Reed</a>
+                </td>
+                <td>
+                  Autism
+                </td>
+                <td>
+                  assign
+                </td>
+                <td class="numeric">
+                  10:54am - 12th June 2017
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="customer_timeline">Martin Short</a>
+                </td>
+                <td>
+                  Eplilepsy
+                </td>
+                <td>
+                 assign
+                </td>
+                <td class="numeric">
+                  12:34pm - 12th June 2017
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="customer_timeline">Cheryl Cook</a>        
+                </td>
+                <td>
+                  Depression
+                </td>
+                <td>
+                  assign
+                </td>
+                <td class="numeric">
+                  10:21am - 12th June 2017
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="customer_timeline">Paul John-Jones</a>
+                </td>
+                <td>
+                  Autism
+                </td>
+                <td>
+                  assign
+                </td>
+                <td class="numeric">
+                  2:21pm - 12th June 2017
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="customer_timeline">Pauline McCallum</a>
+                </td>
+                <td>
+                  Depression
+                </td>
+                <td>
+                  assign
+                </td>
+                <td class="numeric">
+                  2:45pm - 12th June 2017
+                </td>
+              </tr>
+          </tbody>         
+        </table>
+
+      </div><!-- box -->
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+    
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
+    });
+  });
+</script>
+{% endblock %}
