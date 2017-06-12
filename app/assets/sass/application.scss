@@ -5,7 +5,7 @@ $path: "/public/images/";
 // Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
 @import 'govuk-elements';
-@import "inc/timeline";
+@import "staff/_inc/timeline";
 
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
 @import 'patterns/check-your-answers';
@@ -305,6 +305,55 @@ details {
   background-repeat: no-repeat;
   background-position: 0 50%;
 }    
+
+.nav-horizontal{
+  background-color: $grey-3;
+  overflow: hidden;
+  
+  .main-nav-wrapper{
+    width: 100%;
+    
+    ul {
+      padding-left: 40px;
+      float: left;
+      margin: 0;
+    }
+    
+    li{
+      float: left;
+
+      a {
+        display: inline-block;
+        padding: 15px;
+        text-decoration: none;
+        color: $black;
+      }
+      &.selected a, &.selected a:hover {
+        background-color: $govuk-blue;
+        font-weight: bold;
+        color: $white;
+      }
+    }  
+  }
+
+  .external-links-wrapper{
+    float:right;
+
+    ul {
+      list-style: none;
+      padding: 15px 40px 15px 0;
+    }
+
+    li {
+      display: inline;
+    
+      a {
+        color: $govuk-blue;
+        font-size: 16px
+      }
+    }
+  }
+}
       
 
 // End of Index page styles

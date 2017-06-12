@@ -4,27 +4,61 @@
 
   {# {{ advisers | log }} #}
 
-  <div class="staff__heading">
-    <div class="staff__centred">
-      
-    </div>
+  <div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">      
+        <li id="nav-home"><a href="adviser">My cases</a></li>
+        <li id="nav-case" class="selected"><a href="advisers">My team</a></li>
+        <li id="nav-dash"><a href="search">Search</a></li>
+    </ul>
   </div>
+  <div class="external-links-wrapper">
+    <ul class="external-links">
+      <li class="main-nav-link"><a href="all-teams">All teams</a></li>
+      <li class="main-nav-link"><a href="">All advisers</a></li>
+    </ul>
+  </div>
+</div>
 
   
   
-
+ <div class="container">
     <div class="grid-row">
       <div class="column-one-third">
-
         <div class="font-xlarge"><span class="bold-xlarge">Team:</span> Hidden</div>
-     </div>   
+      </div>   
+      <div class="column-two-thirds">
+        <div class="grid-row">
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">57</h1>
+            <p>cases in team</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">23</h1>
+            <p>awaiting adviser</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">12</h1>
+            <p>awaiting citizen</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">7</h1>
+            <p>iceboxed</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- .row -->
 
-        <div class="box">
+    <hr>
 
-        <table class="zebra">
+    <div class="grid-row">
+      <div class="column-one-third font-large" >
+        John Goldsmith
+      </div>
+      <div class="column-two-thirds">
+         <table class="zebra">
           <thead>
             <tr>
-            <td rowspan="7" class="font-large"><a href="adviser">John Goldsmith</a></td>
               <th style="padding-left:15px;">Case</th>
               <th>Status</th>
               <th class="numeric">Since</th>
@@ -38,7 +72,7 @@
         <td>
           New appliction
         </td>
-        <td>
+        <td class="numeric">
           10:54am - 5th June 2017
         </td>
       </tr>
@@ -49,7 +83,7 @@
         <td>
           New application 
         </td>
-        <td>
+        <td class="numeric">
           12:34pm - 5th June 2017
         </td>
       </tr>
@@ -60,7 +94,7 @@
         <td>
           First call
         </td>
-        <td>
+        <td class="numeric">
           10:21am - 31st May 2017
         </td>
       </tr>
@@ -71,7 +105,7 @@
         <td>
           Gather completed
         </td>
-        <td>
+        <td class="numeric">
           2:21pm - 21st May 2017
         </td>
       </tr>
@@ -82,20 +116,25 @@
         <td>
           Referred for assessment
         </td>
-        <td>
+        <td class="numeric">
           2:45pm - 21st May 2017
         </td>
       </tr>
     </tbody>
 
     </table>
+      </div>
+    </div>
 
-         
-        </table>
+    <hr> 
+
+     <div class="column-one-third font-large" >
+        Marjorie Hill
+      </div>  <!-- column -->
+      <div class="column-two-thirds">
         <table class="zebra">
           <thead>
             <tr>
-            <td rowspan="7" class="font-large"><a href="adviser">Marjorie Hill</a></td>
               <th style="padding-left:15px;">Case</th>
               <th>Status</th>
               <th class="numeric">Since</th>
@@ -109,7 +148,7 @@
         <td>
           New appliction
         </td>
-        <td>
+        <td class="numeric">
           9:38am - 4th June 2017
         </td>
       </tr>
@@ -120,7 +159,7 @@
         <td>
           First call 
         </td>
-        <td>
+        <td class="numeric">
           10:00am - 2nd June 2017
         </td>
       </tr>
@@ -131,7 +170,7 @@
         <td>
           First call
         </td>
-        <td>
+        <td class="numeric">
           3:35pm - 21st May 2017
         </td>
       </tr>
@@ -142,7 +181,7 @@
         <td>
           Second call
         </td>
-        <td>
+        <td class="numeric">
           3:21pm - 20th May 2017
         </td>
       </tr>
@@ -153,7 +192,7 @@
         <td>
           Referred for assessment
         </td>
-        <td>
+        <td class="numeric">
           12:45pm - 18th 2017
         </td>
       </tr>
@@ -161,10 +200,18 @@
 
     </table>
 
+    </div> <!-- column -->
+
+    <hr>
+
+      <div class="column-one-third font-large">
+        Meghan Isleworth
+      </div> <!-- column -->
+      <div class="column-two-thirds">  
+
         <table class="zebra">
               <thead>
                 <tr>
-                <td rowspan="7" class="font-large"><a href="adviser">Meghan Isleworth</a></td>
                   <th style="padding-left:15px;">Case</th>
                   <th>Status</th>
                   <th class="numeric">Since</th>
@@ -178,7 +225,7 @@
             <td>
               New appliction
             </td>
-            <td>
+            <td class="numeric">
               9:00am - 4ht June 2017
             </td>
           </tr>
@@ -189,10 +236,9 @@
             <td>
               New application 
             </td>
-            <td>
+            <td class="numeric">
               11:45pm - 3rd June 2017
-            </td>
-          </tr>
+            </tr>
           <tr>
             <td>
               <a href="customer_timeline">Sandra Gaul</a>       
@@ -200,7 +246,7 @@
             <td>
               New application
             </td>
-            <td>
+            <td class="numeric">
               10:21am - 3rd June 2017
             </td>
           </tr>
@@ -211,7 +257,7 @@
             <td>
               Employer contact
             </td>
-            <td>
+            <td class="numeric">
               12:00pm - 29th May 2017
             </td>
           </tr>
@@ -222,10 +268,9 @@
         </table>
 
         
-        </table>
-        </div><!-- box -->
+    
 
-      </div> <!-- column-full-->
+      </div> <!-- column-third-->
 
     </div> <!-- grid-row -->    
 

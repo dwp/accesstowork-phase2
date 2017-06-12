@@ -9,23 +9,23 @@
 {% endblock %}
 
 {% block full_header %}
-<header role="banner" id="global-header" class="">
+<header role="banner" id="global-header">
   <div class="header-wrapper">
-    <div class="grid-row">
-      <div class="column-half">
-        <div class="header-proposition" aria-labelledby="proposition-name">
-          <h1 id="proposition-name"><a href="/{{TEMPLATE_FOLDER}}/" style="text-decoration:none;color:white">Access To Work Staff Access</a> <span class="proposition-phase-tag">Prototype</span></h1>
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="/" title="Go to the homepage" id="logo" class="content">
+          <img src="{{asset_path}}images/gov.uk_logotype_crown_invert_trans.png" width="35" height="31" alt="" style=>
+        </a>
+      </div>
+      <div class="header-proposition">
+        <div class="content">
+          <nav id="proposition-menu">
+            <div style="float:right;color:white;font-size:16px;font-weight:bold">John Goldsmith</div>
+            <a href="/" id="proposition-name">{{serviceName}}</a>            
+          </nav>
         </div>
-      </div><!-- column -->
-      <div class="column-half" style="text-align:right;color:white;padding-top:10px;">
-
-        {% if  loggedin %}
-          Logged in as <a href="/{{ TEMPLATE_FOLDER }}/adviser/{{ loggedin.id }}" class="loggedin heading-small">{{ loggedin.name }} {{ loggedin.surname }}</a>
-        {% else %}
-          <a href="/{{TEMPLATE_FOLDER}}/login" style="color:white">Log in</a>
-        {% endif %}
-      </div><!-- column -->
-    </div><!-- row -->
+      </div>
+    </div>
   </div>
 </header>
 
