@@ -1,14 +1,10 @@
 <!-- - - - - -  Status - - - - - -->
-<h3 class="heading-small" style="margin-top:0;">Status</h3>
-<div class="timeline__item">
-  {% set latest = case.timeline | revCron %}
-  {{ latest | log }}
-  <h4>{{ latest[0].status }}</h4>
-  <p class="timeline__notes">{{ latest[0].notes }}</p>
-  <p class="timeline__date">{{ latest[0].adviser.name }} {{ latest[0].adviser.surname }} &mdash; {{ latest[0].date | formatDate("HH:mma - Do MMM YYYY") }}</p>
-</div>
-<button class="button" id="status_button">change status</button>
+
+<div class="container_status">
+<h3 class="heading-small" style="margin-top:0;">Update status</h3>
+
 {% set statuses = [
+  "Choose a status",
   "First contact attempted",
   "Second contact attempted",
   "Third contact attempted",
@@ -33,26 +29,74 @@
   "Application withdrawn",
   "Other (see notes)"
   ] %}
-<form class="form js-hidden" id="status_form">
-  <select class="dropdown" name="status" id="status_status" style="margin-bottom:10px;">
+<form class="form" id="status_form">
+  <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
     {% for item in statuses %}
         <option name="{{ item | slugify }}">{{ item }}</option>
     {% endfor %}
   </select>
   <textarea class="form-control" name="notes" id="status_notes"></textarea>
   <input type="button" class="button" value="Save" id="status_add"/>
-  <a href="#" class="editter" id="status_cancel">cancel</a>
 </form>
+</div>
 
-{% if case.timeline | length > 1  %}
-  <h3 class="heading-small">Previously</h3>
-  {% for item in case.timeline | revCron %}
-    {% if loop.index0 %}
-      <div class="timeline__item">
-        <h4>{{ item.status }}</h4>
-        <p class="timeline__notes">{{ item.notes }}</p>
-        <p class="timeline__date">{{ item.adviser.name }} {{ item.adviser.surname }} &mdash; {{ item.date | formatDate("HH:mma - Do MMM YYYY") }}</p>
-      </div>
-    {% endif %}
-  {% endfor %}
-{% endif %}
+<div style="padding-bottom: 30px;">
+</div>
+
+ <div class="container_status">
+<h3 class="heading-small" style="margin-top:0;">Update adviser</h3>
+
+{% set statuses = [
+  "Choose an adviser",
+  "Sarah Andrews",
+  "Martin Armitage",
+  "Clémence Fabre",
+  "Elisse Farcens",
+  "Christoph Fernandez",
+  "Julie Guichard",
+  "Colin Julien<",
+  "Théo Langlois",
+  "Capucine Michel",
+  "Sarah Micheals",
+  "Celise Mutton",
+  "Richard Oulton",
+  "Ed Oxley",
+  "Colin Partinigton",
+  "Brigit Pardeux",
+  "Lionel Phelps",
+  "Anne Pinkton",
+  "Lisa Punchton",
+  "Paul Rice"
+  ] %}
+<form class="form" id="status_form">
+  <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
+    {% for item in statuses %}
+        <option name="{{ item | slugify }}">{{ item }}</option>
+    {% endfor %}
+  </select> 
+</form>
+<input type="button" class="button" value="Save" id="status_add"/>
+</div> 
+
+<div style="padding-bottom: 30px;">
+</div>
+
+<div class="container_status">
+  <h3 class="heading-small" style="margin-top:0;">Update team</h3>
+
+{% set statuses = [
+  "Choose a team",
+  "Deaf",
+  "Large",
+  "Pan",
+  "Self"
+  ] %}
+  <form class="form" id="status_form">
+    <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
+      {% for item in statuses %}
+          <option name="{{ item | slugify }}">{{ item }}</option>
+      {% endfor %}
+    </select>  
+  </form>
+  <input type="button" class="button" value="Save" id="status_add"/>
+</div>

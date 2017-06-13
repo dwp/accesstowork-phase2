@@ -3,7 +3,7 @@
 @import '_inc/custom';
 // @import 'elements';
 @import '_inc/icons';
-@import "_inc/form-custom_old";
+// @import "_inc/form-custom_old";
 @import "_inc/clearfix";
 
 @import "_inc/gds_overrides";
@@ -223,11 +223,22 @@ table.customers {
 .container {
   margin:0 auto;
   max-width:none;
-  padding:30px;
+  padding:30px 30px 90px;
   @media screen and ( max-width: 1280px ){
      margin:0 30px;
   }
 }
+
+.container_status {
+  background-color:$grey-3;
+  margin:0 auto;
+  max-width:none;
+  padding:30px 30px 30px;
+  @media screen and ( max-width: 1280px ){
+     margin:0 30px;
+  }
+}
+
 
 .loggedin:visited,
 .loggedin:link {
