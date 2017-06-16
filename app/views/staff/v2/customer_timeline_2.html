@@ -1,56 +1,31 @@
 {% extends TEMPLATE_FOLDER+"/layout_case_2.html" %}
 
-
-<div class="staff__heading">
-  <div class="staff__centred">
-    <h2 class="heading-xlarge" style="margin:0 0 10px">Oliver Reed</h2>
-    <div class="grid-row">
-      <div class="column-quarter">
-        <p><span class="font-xsmall">Condition</span><br /><span class="bold-medium">Autism</spanc></p>
-      </div>
-      <div class="column-quarter">
-        <p><span class="font-xsmall">Employed</span><br /><span class="bold-medium">Channel 4</spanc></p>
-      </div>
-      <div class="column-quarter">
-        <p><span class="font-xsmall">Adviser</span><br /><span class="bold-medium"></span></p>
-      </div>
-      <div class="column-quarter">
-        <p><span class="font-xsmall">Team</span><br /><span class="bold-medium">Hidden</span></p>
-      </div>
-    </div><!-- row -->
-  </div><!-- staff__centred -->
-</div><!-- staff__heading -->
-<div class="grid grid-row">
-
-<div class="column-two-thirds">
-<div class="section-tabs js-tabs clearfix">
-  <ul>
-    <li class="active"><a href="customer_timeline">Timeline</a></li>
-    <li><a href="customer_application">Application</a></li>
-    <li><a href="customer_job">Job</a></li>
-    <li><a href="customer_contact">Contact</a></li>
-  </ul>
-</div>
+{% block case_content %}
 
 
-<div class="timeline" style="margin-top:45px;">
-
-          <span class="line"></span>
-          <div class="timeline-event">
-            <h3 class="heading-small">New application received</h3>
-            <p class="status">09:37am - 12th June 2017</p>
-          </div>
-
-          
-
-          <div style="clear:both"></div>
-
+        <div class="section-tabs js-tabs clearfix">
+          <ul>
+            <li class="active"><a href="customer_timeline">Timeline</a></li>
+            <li><a href="customer_application">Application</a></li>
+            <li><a href="customer_job">Job</a></li>
+            <li><a href="customer_contact">Contact</a></li>
+          </ul>
         </div>
 
-     </div> <!-- column-two-third-->   
- </div> <!-- grid-row --> 
 
+        <div class="timeline" style="margin-top:45px;">
+            <span class="line"></span>
+            <div class="timeline-event">
+              <h3 class="heading-small">New application received</h3>
+              <p class="status">09:37am - 12th June 2017</p>
+            </div>
+            <div style="clear:both"></div>
+        </div>
 
+      
+ 
+
+{% endblock%}
 
 {% block page_script %}
   {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
