@@ -268,7 +268,7 @@ table.customers {
     width: 100%;
     
     ul {
-      padding-left: 40px;
+      padding-left: 30px;
       float: left;
       margin: 0;
     }
@@ -283,7 +283,7 @@ table.customers {
         color: $black;
       }
       &.selected a, &.selected a:hover {
-        background-color: $govuk-blue;
+        background-color: #28a197;
         font-weight: bold;
         color: $white;
       }
