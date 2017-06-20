@@ -1,82 +1,85 @@
 <!-- - - - - -  Status - - - - - -->
 
 <div class="container_status">
-<h3 class="heading-small" style="margin-top:0;">Update status</h3>
+  <h3 class="heading-small" style="margin-top:0;">Update status</h3>
 
-{% set statuses = [
-  "Choose a status",
-  "First contact attempted",
-  "Second contact attempted",
-  "Third contact attempted",
-  "Gather appointment set",
-  "Employer call made",
-  "Cost share agreed",
-  "Cost share not agreed",
-  "Incoming call from customer taken",
-  "Incoming call from employer taken",
-  "Incoming call from assessor taken",
-  "Assessment requested",
-  "Assessment rework requested",
-  "Submitted for approval",
-  "Failed QAF",
-  "Medical evidence requested",
-  "Offer sent",
-  "Offer accepted",
-  "Offer partially accepted",
-  "Offer rejected",
-  "Change of circumstances received",
-  "Case reassigned",
-  "Application withdrawn",
-  "Other (see notes)"
-  ] %}
-<form class="form" id="status_form">
-  <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
-    {% for item in statuses %}
-        <option name="{{ item | slugify }}">{{ item }}</option>
-    {% endfor %}
-  </select>
-  <textarea class="form-control" name="notes" id="status_notes" style="padding-bottom: 20px";></textarea>
-  
-</form>
-<input type="button" class="button" value="Save" id="status_add"/>
+  {% set statuses = [
+    "Choose a status",
+    "First contact attempted",
+    "Second contact attempted",
+    "Third contact attempted",
+    "Gather appointment set",
+    "Employer call made",
+    "Cost share agreed",
+    "Cost share not agreed",
+    "Incoming call from customer taken",
+    "Incoming call from employer taken",
+    "Incoming call from assessor taken",
+    "Assessment requested",
+    "Assessment rework requested",
+    "Submitted for approval",
+    "Failed QAF",
+    "Medical evidence requested",
+    "Offer sent",
+    "Offer accepted",
+    "Offer partially accepted",
+    "Offer rejected",
+    "Change of circumstances received",
+    "Case reassigned",
+    "Application withdrawn",
+    "Other (see notes)"
+    ] %}
+  <form class="form" id="status_form">
+    <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
+      {% for item in statuses %}
+          <option name="{{ item | slugify }}">{{ item }}</option>
+      {% endfor %}
+    </select>
+    <textarea class="form-control form-group-compound" name="notes" id="status_notes" style="padding-bottom: 20px";></textarea>
+    
+  </form>
+  <div style="padding-bottom: 10px;">
+  </div>
+  <input type="button" class="button" value="Save" id="status_add"/>
 </div>
 
 <div style="padding-bottom: 30px;">
 </div>
 
- <div class="container_status">
-<h3 class="heading-small" style="margin-top:0;">Update adviser</h3>
 
-{% set statuses = [
-  "Choose an adviser",
-  "Sarah Andrews",
-  "Martin Armitage",
-  "Clémence Fabre",
-  "Elisse Farcens",
-  "Christoph Fernandez",
-  "Julie Guichard",
-  "Colin Julien<",
-  "Théo Langlois",
-  "Capucine Michel",
-  "Sarah Micheals",
-  "Celise Mutton",
-  "Richard Oulton",
-  "Ed Oxley",
-  "Colin Partinigton",
-  "Brigit Pardeux",
-  "Lionel Phelps",
-  "Anne Pinkton",
-  "Lisa Punchton",
-  "Paul Rice"
-  ] %}
-<form class="form" id="status_form">
-  <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
-    {% for item in statuses %}
-        <option name="{{ item | slugify }}">{{ item }}</option>
-    {% endfor %}
-  </select> 
-</form>
-<input type="button" class="button" value="Save" id="status_add"/>
+ <div class="container_status">
+  <h3 class="heading-small" style="margin-top:0;">Update adviser</h3>
+
+  {% set statuses = [
+    "Choose an adviser",
+    "Sarah Andrews",
+    "Martin Armitage",
+    "Clémence Fabre",
+    "Elisse Farcens",
+    "Christoph Fernandez",
+    "Julie Guichard",
+    "Colin Julien<",
+    "Théo Langlois",
+    "Capucine Michel",
+    "Sarah Micheals",
+    "Celise Mutton",
+    "Richard Oulton",
+    "Ed Oxley",
+    "Colin Partinigton",
+    "Brigit Pardeux",
+    "Lionel Phelps",
+    "Anne Pinkton",
+    "Lisa Punchton",
+    "Paul Rice"
+    ] %}
+  <form class="form" id="status_form">
+    <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
+      {% for item in statuses %}
+          <option name="{{ item | slugify }}">{{ item }}</option>
+      {% endfor %}
+    </select> 
+  </form>
+  <input type="button" class="button" value="Save" id="status_add"/>
 </div> 
 
 <div style="padding-bottom: 30px;">
@@ -85,13 +88,13 @@
 <div class="container_status">
   <h3 class="heading-small" style="margin-top:0;">Update team</h3>
 
-{% set statuses = [
-  "Choose a team",
-  "Deaf",
-  "Large",
-  "Pan",
-  "Self"
-  ] %}
+  {% set statuses = [
+    "Choose a team",
+    "Deaf",
+    "Large",
+    "Pan",
+    "Self"
+    ] %}
   <form class="form" id="status_form">
     <select class="form-control" name="status" id="status_status" style="margin-bottom:10px;">
       {% for item in statuses %}
