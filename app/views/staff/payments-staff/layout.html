@@ -1,4 +1,4 @@
-{% extends TEMPLATE_FOLDER + "/_inc/govuk_template-staff.html" %}
+{% extends "staff/v2/_inc/govuk_template-staff.html" %}
 
 {% block head %}
   <link href="/public/stylesheets/staff/v2.css" media="screen" rel="stylesheet" type="text/css" />
@@ -37,7 +37,7 @@
 {% block header_class%}with-proposition{% endblock %}
 
 {% block body_end %}
-  {% include TEMPLATE_FOLDER + "/_inc/scripts.html" %}
+  {% include "staff/v2/_inc/scripts.html" %}
 {% endblock %}
 
 {% block content %}

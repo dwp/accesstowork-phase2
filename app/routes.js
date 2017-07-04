@@ -7,6 +7,20 @@ router.get('/', function (req, res) {
 })
 
 
+/// STAFF PAYMENTS UI ///
+
+router.use("/staff/payments-staff/payments-home", function (req, res, next){
+  // res.send('test');
+  res.locals.page="payments-home" 
+  next()
+    });
+
+router.use("/staff/payments-staff/my-cases", function (req, res, next){
+  // res.send('test');
+  res.locals.page="my-cases" 
+  next()
+    });
+
 /// PAYMENTS VERSION-1 ///
 
 /// EMPLOYED ROUTES ///
