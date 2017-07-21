@@ -1,0 +1,62 @@
+{% extends TEMPLATE_FOLDER+"/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('none') }}
+
+{% include TEMPLATE_FOLDER + "/inc/app_top.html" %}
+
+<div class="container">
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      {% block case_content %}{% endblock %}
+
+    </div><!-- column -->
+
+    <div class="column-one-third">
+
+      {% include TEMPLATE_FOLDER + "/inc/app_status.html" %}
+
+    </div><!-- column -->
+
+  </div><!-- row -->
+</div>
+
+{% endblock %}
+
+{% block page_script %}
+  {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
+{% endblock %}
+
+{% macro case_tabs(selected,num) %}
+<div class="section-tabs js-tabs clearfix">
+  <ul>
+    {% if "timeline" == selected %}
+      <li class="active"><a href="timeline_{{ num }}">Timeline</a></li>
+    {% else %}
+      <li><a href="timeline_{{ num }}">Timeline</a></li>
+    {% endif %}
+
+    {% if "application" == selected %}
+      <li class="active"><a href="application_{{ num }}">Application</a></li>
+    {% else %}
+      <li><a href="application_{{ num }}">Application</a></li>
+    {% endif %}
+
+    {% if "job" == selected %}
+      <li class="active"><a href="job_{{ num }}">Job</a></li>
+    {% else %}
+      <li><a href="job_{{ num }}">Job</a></li>
+    {% endif %}
+
+    {% if "contact" == selected %}
+      <li class="active"><a href="contact_{{ num }}">Contact</a></li>
+    {% else %}
+      <li><a href="contact_{{ num }}">Contact</a></li>
+    {% endif %}
+  </ul>
+</div>
+{% endmacro %}

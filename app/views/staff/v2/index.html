@@ -1,4 +1,4 @@
-{% extends TEMPLATE_FOLDER + "/layout.html" %}
+{% extends TEMPLATE_FOLDER + "/inc/layout.html" %}
 
 {% block staff_content %}
 
@@ -1410,7 +1410,7 @@
     {
       e.preventDefault();
       var id = $(this).data('id');
-      window.location.href = "/{{TEMPLATE_FOLDER}}/customer_application";
+      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/application_1";
     });
   });
 </script>

@@ -1,13 +1,13 @@
-{% extends TEMPLATE_FOLDER+"/layout_case_3.html" %}
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
 
 {% block case_content %}
 
 <div class="section-tabs js-tabs clearfix">
   <ul>
-    <li><a href="customer_timeline_3">Timeline</a></li>
-    <li><a href="customer_application_2">Application</a></li>
-    <li><a href="customer_job_2">Job</a></li>
-    <li class="active"><a href="customer_contact_2">Contact</a></li>
+    <li><a href="timeline_3">Timeline</a></li>
+    <li><a href="application_2">Application</a></li>
+    <li><a href="job_2">Job</a></li>
+    <li class="active"><a href="contact_2">Contact</a></li>
   </ul>
 </div>
 
@@ -17,13 +17,13 @@
       <div class="column-half">
         <p>
           <span class="font-xsmall">Date of birth</span><br />
-          <span class="bold-medium">23rd March 1972</span>
+          <span class="bold-medium">13th December 1980</span>
         </p>
 
         <p>
           <span class="font-xsmall">Address</span><br />
-          <span class="bold-medium">221b Baker Street</span><br />
-          <span class="bold-medium">Marylebone</span><br />
+          <span class="bold-medium">25 Acaicia Avenue</span><br />
+          <span class="bold-medium">Holstead</span><br />
           <span class="bold-medium">London</span><br />
           <span class="bold-medium">NW1 6XE</span><br />
         </p>
@@ -31,7 +31,7 @@
       <div class="column-half">
         <p>
           <span class="font-xsmall">Telephone</span><br />
-          <span class="bold-medium">0171 222 222</span>
+          <span class="bold-medium">0181 456 321</span>
         </p>
         <p>
           <span class="font-xsmall">Email</span><br />
@@ -45,5 +45,5 @@
 {% endblock %}
 
 {% block page_script %}
-  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+  {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
 {% endblock %}

@@ -10,8 +10,10 @@
 #footer .footer-wrapper {
   max-width:none;
 }
+#global-header #logo {
+  margin-left:25px;
+}
 #global-header #logo img {
-  width:185.00px;
   height:31px;
 }
 #global-header-bar {
@@ -29,7 +31,10 @@
     margin:0 45px;
   }
 }
-
+#global-header .header-proposition #proposition-name {
+  position:relative;
+  top:4px;
+}
 
 /* INCLUDING THE PROTOTYPE TAG THING IN THE BANNER */
 .phase-banner .phase-tag {

@@ -1,14 +1,14 @@
-{% extends TEMPLATE_FOLDER+"/layout_case_3.html" %}
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
 
 {% block case_content %}
 
 
         <div class="section-tabs js-tabs clearfix">
           <ul>
-            <li class="active"><a href="customer_timeline_3">Timeline</a></li>
-            <li><a href="customer_application_3">Application</a></li>
-            <li><a href="customer_job_3">Job</a></li>
-            <li><a href="customer_contact_3">Contact</a></li>
+            <li class="active"><a href="timeline">Timeline</a></li>
+            <li><a href="application_2">Application</a></li>
+            <li><a href="job_1">Job</a></li>
+            <li><a href="contact_1">Contact</a></li>
           </ul>
         </div>
 
@@ -17,7 +17,7 @@
             <span class="line"></span>
             <div class="timeline-event">
               <h3 class="heading-small">New application received</h3>
-              <p class="status">08:12am - 12th June 2017</p>
+              <p class="status">08:01am - 12th June 2017</p>
             </div>
             <div style="clear:both"></div>
         </div>
@@ -28,5 +28,5 @@
 {% endblock%}
 
 {% block page_script %}
-  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+  {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
 {% endblock %}

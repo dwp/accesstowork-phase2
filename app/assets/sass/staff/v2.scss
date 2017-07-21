@@ -19,6 +19,7 @@
 @import "_inc/toggler";
 @import "_inc/dropdown";
 @import "_inc/quote";
+@import "_inc/margins";
 
 /*
   Helper classes.
@@ -41,7 +42,6 @@ hr.rule {
 table tr:last-child td {
   border:none;
 }
-
 
 .eligability {
   th,td {text-align:center}
@@ -211,21 +211,25 @@ table.customers {
 
 .staff__heading {
   background-color:$govuk-blue;
-  padding:30px 30px 10px;
+  padding:30px 40px 10px;
   color:white;
-  margin-bottom:30px;
   .staff__centred {
     max-width:1280px;
     margin:0 auto;
   }
 }
 
+table.zebra {
+  tr>td:first-child {
+    padding-left:15px;
+  }
+}
+
 .container {
   margin:0 auto;
   max-width:none;
-  padding:30px 30px 90px;
+  padding:30px 40px 90px;
   @media screen and ( max-width: 1280px ){
-     margin:0 30px;
   }
 }
 
@@ -263,16 +267,16 @@ table.customers {
 .nav-horizontal{
   background-color: $grey-3;
   overflow: hidden;
-  
+
   .main-nav-wrapper{
     width: 100%;
-    
+
     ul {
-      padding-left: 30px;
+      padding-left: 40px;
       float: left;
       margin: 0;
     }
-    
+
     li{
       float: left;
 
@@ -287,7 +291,7 @@ table.customers {
         font-weight: bold;
         color: $white;
       }
-    }  
+    }
   }
 
   .external-links-wrapper{
@@ -300,7 +304,7 @@ table.customers {
 
     li {
       display: inline;
-    
+
       a {
         color: $govuk-blue;
         font-size: 16px
@@ -354,7 +358,7 @@ table.customers {
   background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
   background-repeat: no-repeat;
   background-position: 0 50%;
-}    
+}
 
 hr {
   display: block;
@@ -370,13 +374,13 @@ hr {
     #nino { }
     #search-submit{
         background: $black  url('/public/images/search-button.png') no-repeat 2px 50%;
-        height: 38px;
+        height: 37px;
         width: 38px;
         border: 0;
         margin-left: -4px;
         text-indent: -5000px;
         position: relative;
-        top: -1px;       
+        top: -1px;
     }
 }
 

@@ -1,13 +1,13 @@
-{% extends TEMPLATE_FOLDER+"/layout_case_3.html" %}
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
 
 {% block case_content %}
 
 <div class="section-tabs js-tabs clearfix">
   <ul>
-    <li><a href="customer_timeline_3">Timeline</a></li>
-    <li><a href="customer_application_3">Application</a></li>
-    <li class="active"><a href="customer_job_3">Job</a></li>
-    <li><a href="customer_contact_3">Contact</a></li>
+    <li><a href="timeline">Timeline</a></li>
+    <li><a href="application_1">Application</a></li>
+    <li class="active"><a href="job_1">Job</a></li>
+    <li><a href="contact_1">Contact</a></li>
   </ul>
 </div>
 
@@ -19,23 +19,23 @@
       <div class="column-half">
         <p>
           <span class="font-xsmall">Employer</span><br />
-          <span class="bold-medium">Manor House Auctions</span>
+          <span class="bold-medium">Channel 4</span>
         </p>
         <p>
           <span class="font-xsmall">Address</span><br />
-          <span class="bold-medium">52 Festive Road</span><br />
-          <span class="bold-medium">Putney</span><br />
+          <span class="bold-medium">23 Railway Cuttings</span><br />
+          <span class="bold-medium">East Cheam</span><br />
           <span class="bold-medium">London</span><br />
-          <span class="bold-medium">SW15 1YL</span><br />
+          <span class="bold-medium">SM2 7YT</span><br />
         </p>
         <p>
           <hr class="rule"/>
           <span class="font-xsmall">Line Manager</span><br />
-          <span class="bold-medium">Marmaduke Benn</span><br />
+          <span class="bold-medium">Bob Carolgees</span><br />
           <span class="font-xsmall">Telephone:</span><br />
-          <span class="bold-medium">07717 123 456</span><br />
+          <span class="bold-medium">0768 432 4532</span><br />
           <span class="font-xsmall">email:</span><br />
-          <span class="bold-medium">m.benn@manorhouse.com</span>
+          <span class="bold-medium">bob.carolgees@business.com</span>
         </p>
       </div><!-- column -->
       <div class="column-half">
@@ -65,5 +65,5 @@
 {% endblock %}
 
 {% block page_script %}
-  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+  {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
 {% endblock %}

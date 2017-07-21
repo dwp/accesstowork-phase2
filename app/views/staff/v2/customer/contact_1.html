@@ -1,16 +1,13 @@
-{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
 
 {% block case_content %}
 
-<div class="section-tabs js-tabs clearfix">
-  <ul>
-    <li><a href="customer_timeline">Timeline</a></li>
-    <li><a href="customer_application">Application</a></li>
-    <li><a href="customer_job">Job</a></li>
-    <li class="active"><a href="customer_contact">Contact</a></li>
-  </ul>
-</div>
-
+{#
+  this is a macro: pass the name of the selected item
+  and the number for the url.
+  Code in inc/layout_case.html
+#}
+{{ case_tabs("contact",1) }}
 
   <div class="box tabs">
     <div class="grid-row">
@@ -45,5 +42,5 @@
 {% endblock %}
 
 {% block page_script %}
-  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+  {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
 {% endblock %}

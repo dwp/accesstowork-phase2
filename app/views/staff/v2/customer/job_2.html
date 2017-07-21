@@ -1,13 +1,13 @@
-{% extends TEMPLATE_FOLDER+"/layout_case.html" %}
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
 
 {% block case_content %}
 
 <div class="section-tabs js-tabs clearfix">
   <ul>
-    <li><a href="customer_timeline">Timeline</a></li>
-    <li><a href="customer_application">Application</a></li>
-    <li class="active"><a href="customer_job">Job</a></li>
-    <li><a href="customer_contact">Contact</a></li>
+    <li><a href="timeline_3">Timeline</a></li>
+    <li><a href="application_2">Application</a></li>
+    <li class="active"><a href="job_2">Job</a></li>
+    <li><a href="contact_2">Contact</a></li>
   </ul>
 </div>
 
@@ -23,26 +23,26 @@
         </p>
         <p>
           <span class="font-xsmall">Address</span><br />
-          <span class="bold-medium">23 Railway Cuttings</span><br />
-          <span class="bold-medium">East Cheam</span><br />
+          <span class="bold-medium">The Studios</span><br />
+          <span class="bold-medium">Westminster</span><br />
           <span class="bold-medium">London</span><br />
-          <span class="bold-medium">SM2 7YT</span><br />
+          <span class="bold-medium">SW15 1YL</span><br />
         </p>
         <p>
           <hr class="rule"/>
           <span class="font-xsmall">Line Manager</span><br />
-          <span class="bold-medium">Bob Carolgees</span><br />
+          <span class="bold-medium">John Snow</span><br />
           <span class="font-xsmall">Telephone:</span><br />
-          <span class="bold-medium">0768 432 4532</span><br />
+          <span class="bold-medium">07797 123 456</span><br />
           <span class="font-xsmall">email:</span><br />
-          <span class="bold-medium">bob.carolgees@business.com</span>
+          <span class="bold-medium">john.snow@c4.com</span>
         </p>
       </div><!-- column -->
       <div class="column-half">
         <p>
           <span class="font-xsmall">Started</span><br />
           <span class="bold-medium">
-            {{ ["More than 6 weeks ago","1st June 2016","7th July 2016","8th August 2016"] | randarr }}
+            {{ ["More than 6 weeks ago","1st June 2016","1st July 2017","8th August 2016"] | randarr }}
           </span>
         </p>
         <p>
@@ -65,5 +65,5 @@
 {% endblock %}
 
 {% block page_script %}
-  {% include TEMPLATE_FOLDER + "/_inc/adviser_edit.html" %}
+  {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
 {% endblock %}

@@ -1,36 +1,17 @@
-{% extends TEMPLATE_FOLDER+"/layout.html" %}
+{% extends TEMPLATE_FOLDER + "/inc/layout.html" %}
 
 {% block staff_content %}
 
-  {# {{ cases | log }} #}
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
 
-  <div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
-        <li id="nav-home" class="selected"><a href="adviser">My cases</a></li>
-        <li id="nav-case"><a href="advisers">My team</a></li>
-        <li id="nav-allocator"><a href="allocate">Allocate</a></li>
-        <li id="nav-dash"><a href="search">Search</a></li>    
-    </ul>
-  </div>
-  <div class="external-links-wrapper">
-    <ul class="external-links">
-      <li class="main-nav-link"><a href="all-teams">All teams</a></li>
-      <span class="pipe">|</span>
-      <li class="main-nav-link"><a href="all-advisers">All advisers</a></li>
-    </ul>
-  </div>
-</div>
+<div class="container">
 
-  
+  <div class="font-xlarge mb30"><span class="bold-xlarge">Adviser:</span> John Goldsmith</div>
 
-  <div class="container">
-
-  <div class="font-xlarge"><span class="bold-xlarge">Adviser:</span>John Goldsmith</div>
     <div class="grid-row">
-      <div class="column">
+      <div class="column-full">
 
-        <div class="box">
         <table class="zebra">
           <thead>
             <tr>
@@ -38,84 +19,41 @@
               <th>Condition</th>
               <th>Status</th>
               <th class="numeric">Since</th>
-              
             </tr>
           </thead>
           <tbody>
-              <tr>
-                <td>
-                  <a href="customer_timeline">Oliver Reed</a>
-                </td>
-                <td>
-                  Autism
-                </td>
-                <td>
-                  New appliction
-                </td>
-                <td class="numeric">
-                  10:54am - 5th June 2017
-                </td>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Oliver Reed</td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">10:54am - 5th June 2017</td>
               </tr>
-              <tr>
-                <td>
-                  <a href="customer_timeline">Martin Short</a>
-                </td>
-                <td>
-                  Eplilepsy
-                </td>
-                <td>
-                  New application 
-                </td>
-                <td class="numeric">
-                  12:34pm - 5th June 2017
-                </td>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Martin Short</td>
+                <td>Eplilepsy</td>
+                <td>New application</td>
+                <td class="numeric">12:34pm - 5th June 2017</td>
               </tr>
-              <tr>
-                <td>
-                  <a href="customer_timeline">Cheryl Cook</a>        
-                </td>
-                <td>
-                  Depression
-                </td>
-                <td>
-                  First call
-                </td>
-                <td class="numeric">
-                  10:21am - 31st May 2017
-                </td>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Cheryl Cook</td>
+                <td>Depression</td>
+                <td>First call</td>
+                <td class="numeric">10:21am - 31st May 2017</td>
               </tr>
-              <tr>
-                <td>
-                  <a href="customer_timeline">Paul John-Jones</a>
-                </td>
-                <td>
-                  Autism
-                </td>
-                <td>
-                  Gather completed
-                </td>
-                <td class="numeric">
-                  2:21pm - 21st May 2017
-                </td>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>Autism</td>
+                <td>Gather completed</td>
+                <td class="numeric">2:21pm - 21st May 2017</td>
               </tr>
-              <tr>
-                <td>
-                  <a href="customer_timeline">Pauline McCallum</a>
-                </td>
-                <td>
-                  Depression
-                </td>
-                <td>
-                  Referred for assessment
-                </td>
-                <td class="numeric">
-                  2:45pm - 21st May 2017
-                </td>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>Depression</td>
+                <td>Referred for assessment</td>
+                <td class="numeric">2:45pm - 21st May 2017</td>
               </tr>
-          </tbody>         
+          </tbody>
         </table>
-
-      </div><!-- box -->
 
      </div><!-- column -->
 
@@ -132,8 +70,8 @@
     $('.click_row').on('click',function(e)
     {
       e.preventDefault();
-      var id = $(this).data('id');
-      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
+      var href = $(this).attr('href');
+      window.location.href = href;
     });
   });
 </script>
