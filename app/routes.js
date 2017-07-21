@@ -6,18 +6,24 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.get('*/search-results', function (req, res, next) {
+  res.locals.search_term = req.query.search_term
+  // res.send('fish')
+  next();
+})
+
 
 /// STAFF PAYMENTS UI ///
 
 router.use("/staff/payments-staff/payments-home", function (req, res, next){
   // res.send('test');
-  res.locals.page="payments-home" 
+  res.locals.page="payments-home"
   next()
     });
 
 router.use("/staff/payments-staff/my-cases", function (req, res, next){
   // res.send('test');
-  res.locals.page="my-cases" 
+  res.locals.page="my-cases"
   next()
     });
 
@@ -67,7 +73,7 @@ router.post('/payments-v1/self-travel-type', function (req, res) {
         } else {
           res.redirect('/payments-v1/self-multi-travel')
         }
-      }); 
+      });
 
 
 
@@ -120,7 +126,7 @@ router.post('/payments-v2/self-travel-type', function (req, res) {
         } else {
           res.redirect('/payments-v2/self-multi-travel')
         }
-      }); 
+      });
 
 
 
@@ -160,9 +166,9 @@ router.post('/payments-v2/self-travel-type', function (req, res) {
 
 
 router.post('/Payments_login_desktop_v1/claim_type', function (req, res) {
-          
+
           req.session.claimtype = req.body.claimtype
-          
+
           if (req.body.claimtype === 'Travel') {
             res.redirect('/Payments_login_desktop_v1/travel_type')
           } else if (req.body.claimtype ==='Support') {
@@ -185,12 +191,12 @@ router.get("/Payments_login_desktop_v1/claim_overview", function (req, res){
 /// claim date pull data through >> redirect the page ///
 
 router.post('/Payments_login_desktop_v1/single_travel', function (req, res) {
-          
+
           req.session.dateday = req.body.dateday
           req.session.month = req.body.month
           req.session.year = req.body.year
           res.redirect('/Payments_login_desktop_v1/select_payee')
-          
+
         });
 
 
