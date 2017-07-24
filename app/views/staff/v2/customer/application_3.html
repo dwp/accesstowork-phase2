@@ -9,36 +9,32 @@
 #}
 {{ case_tabs("application",1) }}
 
-  <div class="box">
-    <table>
-      <tr>
-        <td class="bold nobr">How is your job harder?</td>
-        <td class="cust_info">I find it difficult to be able to get into work. Because of my condition I cannot be aorund people so getting to work on Public Transport is something I cannot do. I get anxiety and if this isn't addressed quickly I can become agitataed and sometimes violent.</td>
-      </tr>
-      <tr>
-        <td class="bold nobr">What do you do now?</td>
-        <td class="cust_info">{{ case.job_what_do_now | default("Not answered")}}</td>
-      </tr>
-      <tr>
-        <td class="bold nobr">What do you want?</td>
-        <td class="cust_info">To travel to work by Taxi so avoiding Public Transport and not being put in a position where I can be a harm to myslef and others</td>
-      </tr>
-
-      <tr>
-        <td class="bold nobr">How is your travel harder?</td>
-        <td class="cust_info">Becasue I cannot tolerate public places and public transport I rely on family to give me a lift currently.</td>
-      </tr>
-      <tr>
-        <td class="bold nobr">What do you do now?</td>
-        <td class="cust_info">{{ case.travel_what_do_now | default("Not answered")}}</td>
-      </tr>
-      <tr>
-        <td class="bold nobr">What do you want?</td>
-        <td class="cust_info">{{ case.travel_what_need | default("Not answered") }}</td>
-      </tr>
-
-    </table>
-  </div><!-- box -->
+<table class="mt30">
+  <tr>
+    <td class="bold nobr">How is your job harder?</td>
+    <td class="cust_info">I find it difficult to be able to get into work. Because of my condition I cannot be aorund people so getting to work on Public Transport is something I cannot do. I get anxiety and if this isn't addressed quickly I can become agitataed and sometimes violent.</td>
+  </tr>
+  <tr>
+    <td class="bold nobr">What do you do now?</td>
+    <td class="cust_info">{{ case.job_what_do_now | default("Not answered")}}</td>
+  </tr>
+  <tr>
+    <td class="bold nobr">What do you want?</td>
+    <td class="cust_info">To travel to work by Taxi so avoiding Public Transport and not being put in a position where I can be a harm to myslef and others</td>
+  </tr>
+  <tr>
+    <td class="bold nobr">How is your travel harder?</td>
+    <td class="cust_info">Becasue I cannot tolerate public places and public transport I rely on family to give me a lift currently.</td>
+  </tr>
+  <tr>
+    <td class="bold nobr">What do you do now?</td>
+    <td class="cust_info">{{ case.travel_what_do_now | default("Not answered")}}</td>
+  </tr>
+  <tr>
+    <td class="bold nobr">What do you want?</td>
+    <td class="cust_info">{{ case.travel_what_need | default("Not answered") }}</td>
+  </tr>
+</table>
 
 {% endblock %}
 

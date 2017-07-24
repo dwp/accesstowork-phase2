@@ -9,36 +9,33 @@
 #}
 {{ case_tabs("contact",1) }}
 
+<div class="grid-row mt30">
+  <div class="column-half">
+    <p>
+      <span class="font-xsmall">Date of birth</span><br />
+      <span class="bold-medium">23rd March 1972</span>
+    </p>
 
-  <div class="box">
-    <div class="grid-row">
-      <div class="column-half">
-        <p>
-          <span class="font-xsmall">Date of birth</span><br />
-          <span class="bold-medium">23rd March 1972</span>
-        </p>
+    <p>
+      <span class="font-xsmall">Address</span><br />
+      <span class="bold-medium">221b Baker Street</span><br />
+      <span class="bold-medium">Marylebone</span><br />
+      <span class="bold-medium">London</span><br />
+      <span class="bold-medium">NW1 6XE</span><br />
+    </p>
+  </div><!-- column -->
+  <div class="column-half">
+    <p>
+      <span class="font-xsmall">Telephone</span><br />
+      <span class="bold-medium">0171 222 222</span>
+    </p>
+    <p>
+      <span class="font-xsmall">Email</span><br />
+      <span class="bold-medium"><a href="">bobby@googlemail.com</a></span>
+    </p>
 
-        <p>
-          <span class="font-xsmall">Address</span><br />
-          <span class="bold-medium">221b Baker Street</span><br />
-          <span class="bold-medium">Marylebone</span><br />
-          <span class="bold-medium">London</span><br />
-          <span class="bold-medium">NW1 6XE</span><br />
-        </p>
-      </div><!-- column -->
-      <div class="column-half">
-        <p>
-          <span class="font-xsmall">Telephone</span><br />
-          <span class="bold-medium">0171 222 222</span>
-        </p>
-        <p>
-          <span class="font-xsmall">Email</span><br />
-          <span class="bold-medium"><a href="">{{ case.name | lower }}.{{ case.surname | lower }}@googlemail.com</a></span>
-        </p>
-
-      </div><!-- column -->
-    </div><!-- row -->
-  </div><!-- box -->
+  </div><!-- column -->
+</div><!-- row -->
 
 {% endblock %}
 
