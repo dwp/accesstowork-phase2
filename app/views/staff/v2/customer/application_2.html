@@ -2,18 +2,14 @@
 
 {% block case_content %}
 
-  {# {{ case | log }} #}
+{#
+  this is a macro: pass the name of the selected item
+  and the number for the url.
+  Code in inc/layout_case.html
+#}
+{{ case_tabs("application",1) }}
 
-  <div class="section-tabs js-tabs clearfix">
-    <ul>
-      <li><a href="timeline_2">Timeline</a></li>
-      <li class="active"><a href="application_2">Application</a></li>
-      <li><a href="job_2">Job</a></li>
-      <li><a href="contact_2">Contact</a></li>
-    </ul>
-  </div>
-
-  <div class="box tabs">
+  <div class="box">
     <table>
       <tr>
         <td class="bold nobr">How is your job harder?</td>
@@ -27,7 +23,7 @@
         <td class="bold nobr">What do you want?</td>
         <td class="cust_info">To travel to work by Taxi so avoiding Public Transport and not being put in a position where I can be a harm to myslef and others</td>
       </tr>
-      
+
       <tr>
         <td class="bold nobr">How is your travel harder?</td>
         <td class="cust_info">Becasue I cannot tolerate public places and public transport I rely on family to give me a lift currently.</td>
@@ -40,7 +36,7 @@
         <td class="bold nobr">What do you want?</td>
         <td class="cust_info">{{ case.travel_what_need | default("Not answered") }}</td>
       </tr>
-     
+
     </table>
   </div><!-- box -->
 

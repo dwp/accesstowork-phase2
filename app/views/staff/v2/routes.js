@@ -19,7 +19,6 @@ function loadAdvisers()
 
 router.all('*',function(req,res,next)
 {
-  console.log('got here')
   req.data = req.data || {};
   req.data.TEMPLATE_FOLDER = 'staff/v2'
   req.data.loggedin = req.session.user;
@@ -35,7 +34,7 @@ router.all('*',function(req,res,next)
 
 router.get('/', function(req,res,next)
 {
-  
+
   // res.send('tom was ere');
   // res.send('router.get(/) - database - needs fixing!')
   next();

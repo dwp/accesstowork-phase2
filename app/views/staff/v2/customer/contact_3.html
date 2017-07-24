@@ -2,17 +2,15 @@
 
 {% block case_content %}
 
-<div class="section-tabs js-tabs clearfix">
-  <ul>
-    <li><a href="timeline_3">Timeline</a></li>
-    <li><a href="application_2">Application</a></li>
-    <li><a href="job_2">Job</a></li>
-    <li class="active"><a href="contact_2">Contact</a></li>
-  </ul>
-</div>
+{#
+  this is a macro: pass the name of the selected item
+  and the number for the url.
+  Code in inc/layout_case.html
+#}
+{{ case_tabs("contact",1) }}
 
 
-  <div class="box tabs">
+  <div class="box">
     <div class="grid-row">
       <div class="column-half">
         <p>

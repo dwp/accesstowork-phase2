@@ -2,28 +2,27 @@
 
 {% block case_content %}
 
+{#
+  this is a macro: pass the name of the selected item
+  and the number for the url.
+  Code in inc/layout_case.html
+#}
 
-        <div class="section-tabs js-tabs clearfix">
-          <ul>
-            <li class="active"><a href="timeline">Timeline</a></li>
-            <li><a href="application_2">Application</a></li>
-            <li><a href="job_1">Job</a></li>
-            <li><a href="contact_1">Contact</a></li>
-          </ul>
-        </div>
+{{ case_tabs("timeline",1) }}
+
+<div class="timeline">
+
+  <span class="line"></span>
+  <div class="timeline-event">
+    <h3 class="heading-large mb0">New application received</h3>
+    <p class="status">08:01am - 12th June 2017</p>
+  </div>
+
+  <div style="clear:both"></div>
+
+</div>
 
 
-        <div class="timeline" style="margin-top:45px;">
-            <span class="line"></span>
-            <div class="timeline-event">
-              <h3 class="heading-small">New application received</h3>
-              <p class="status">08:01am - 12th June 2017</p>
-            </div>
-            <div style="clear:both"></div>
-        </div>
-
-      
- 
 
 {% endblock%}
 

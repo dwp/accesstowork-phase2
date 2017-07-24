@@ -63,7 +63,14 @@ table.customers {
 }
 
 .timeline {
+
   margin-top:30px;
+
+  .status {
+    @include bold-24;
+    color:$grey-1;
+    margin:5px 0 10px;
+  }
 }
 
 .contact {
