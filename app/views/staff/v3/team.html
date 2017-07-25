@@ -1,0 +1,274 @@
+{% extends TEMPLATE_FOLDER + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-team') }}
+
+ <div class="container">
+    <div class="grid-row">
+      <div class="column-one-third">
+        <div class="font-xlarge"><span class="bold-xlarge">Team:</span> Hidden</div>
+      </div>
+      <div class="column-two-thirds">
+        <div class="grid-row">
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">57</h1>
+            <p>cases in team</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">23</h1>
+            <p>awaiting adviser</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">12</h1>
+            <p>awaiting citizen</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">7</h1>
+            <p>iceboxed</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- .row -->
+
+    <hr>
+
+    <div class="grid-row">
+      <div class="column-one-third font-large" >
+        John Goldsmith
+      </div>
+      <div class="column-two-thirds">
+       <table class="zebra">
+        <thead>
+          <tr>
+            <th style="padding-left:15px;">Case</th>
+            <th>Status</th>
+            <th class="numeric">Since</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Oliver Reed</a>
+            </td>
+            <td>
+              New appliction
+            </td>
+            <td class="numeric">
+              10:54am - 5th June 2017
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Martin Short</a>
+            </td>
+            <td>
+              New application
+            </td>
+            <td class="numeric">
+              12:34pm - 5th June 2017
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Cheryl Cook</a>
+            </td>
+            <td>
+              First call
+            </td>
+            <td class="numeric">
+              10:21am - 31st May 2017
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Paul John-Jones</a>
+            </td>
+            <td>
+              Gather completed
+            </td>
+            <td class="numeric">
+              2:21pm - 21st May 2017
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Pauline McCallum</a>
+            </td>
+            <td>
+              Referred for assessment
+            </td>
+            <td class="numeric">
+              2:45pm - 21st May 2017
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    <hr>
+
+    <div class="grid-row">
+     <div class="column-one-third font-large" >
+        Marjorie Hill
+      </div>  <!-- column -->
+      <div class="column-two-thirds">
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Case</th>
+              <th>Status</th>
+              <th class="numeric">Since</th>
+            </tr>
+          </thead>
+          <tobdy>
+      <tr>
+        <td>
+          <a href="customer/timeline_1">Marcus Smith</a>
+        </td>
+        <td>
+          New appliction
+        </td>
+        <td class="numeric">
+          9:38am - 4th June 2017
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="customer/timeline_1">Muriel Gray</a>
+        </td>
+        <td>
+          First call
+        </td>
+        <td class="numeric">
+          10:00am - 2nd June 2017
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="customer/timeline_1">Candice Campari</a>
+        </td>
+        <td>
+          First call
+        </td>
+        <td class="numeric">
+          3:35pm - 21st May 2017
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="customer/timeline_1">Justine Time</a>
+        </td>
+        <td>
+          Second call
+        </td>
+        <td class="numeric">
+          3:21pm - 20th May 2017
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="customer/timeline_1">Stephanie Sloan</a>
+        </td>
+        <td>
+          Referred for assessment
+        </td>
+        <td class="numeric">
+          12:45pm - 18th May 2017
+        </td>
+      </tr>
+    </tbody>
+
+    </table>
+
+    </div> <!-- column -->
+    </div><!-- .row -->
+
+   <hr>
+
+      <div class="column-one-third font-large">
+        Meghan Isleworth
+      </div> <!-- column -->
+      <div class="column-two-thirds">
+
+        <table class="zebra">
+              <thead>
+                <tr>
+                  <th style="padding-left:15px;">Case</th>
+                  <th>Status</th>
+                  <th class="numeric">Since</th>
+                </tr>
+              </thead>
+
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Malcolm Best</a>
+            </td>
+            <td>
+              New appliction
+            </td>
+            <td class="numeric">
+              9:00am - 4th June 2017
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Judith Speight</a>
+            </td>
+            <td>
+              New application
+            </td>
+            <td class="numeric">
+              11:45pm - 3rd June 2017
+            </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Sandra Gaul</a>
+            </td>
+            <td>
+              New application
+            </td>
+            <td class="numeric">
+              10:21am - 3rd June 2017
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="customer/timeline_1">Gina Peaches</a>
+            </td>
+            <td>
+              Employer contact
+            </td>
+            <td class="numeric">
+              12:00pm - 29th May 2017
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+     </div> <!-- column-third-->
+
+    </div> <!-- grid-row -->
+
+   </div> <!-- container -->
+
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{TEMPLATE_FOLDER}}/adviser/"+id;
+    });
+  });
+</script>
+{% endblock %}

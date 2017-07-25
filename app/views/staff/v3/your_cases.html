@@ -1,0 +1,78 @@
+{% extends TEMPLATE_FOLDER + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ macro.horizontal_nav('nav-cases') }}
+
+<div class="container">
+
+  <div class="font-xlarge mb30"><span class="bold-xlarge">Adviser:</span> John Goldsmith</div>
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Condition</th>
+              <th>Status</th>
+              <th class="numeric">Since</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Oliver Reed</td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">10:54am - 5th June 2017</td>
+              </tr>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Martin Short</td>
+                <td>Eplilepsy</td>
+                <td>New application</td>
+                <td class="numeric">12:34pm - 5th June 2017</td>
+              </tr>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Cheryl Cook</td>
+                <td>Depression</td>
+                <td>First call</td>
+                <td class="numeric">10:21am - 31st May 2017</td>
+              </tr>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>Autism</td>
+                <td>Gather completed</td>
+                <td class="numeric">2:21pm - 21st May 2017</td>
+              </tr>
+              <tr href="customer/timeline_1" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>Depression</td>
+                <td>Referred for assessment</td>
+                <td class="numeric">2:45pm - 21st May 2017</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

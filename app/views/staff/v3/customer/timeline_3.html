@@ -1,0 +1,23 @@
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
+
+{% block case_content %}
+
+{#
+  this is a macro: pass the name of the selected item
+  and the number for the url.
+  Code in inc/layout_case.html
+#}
+{{ case_tabs("timeline",1) }}
+
+<div class="timeline">
+
+  <span class="line"></span>
+  <div class="timeline-event">
+    <h3 class="heading-large mb0">New application received</h3>
+    <p class="status">08:01am - 12th June 2017</p>
+  </div>
+
+  <div style="clear:both"></div>
+
+</div>
+{% endblock%}

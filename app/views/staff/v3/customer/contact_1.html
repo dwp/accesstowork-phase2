@@ -1,0 +1,40 @@
+{% extends TEMPLATE_FOLDER+"/inc/layout_case.html" %}
+
+{% block case_content %}
+
+{#
+  this is a macro: pass the name of the selected item
+  and the number for the url.
+  Code in inc/layout_case.html
+#}
+{{ case_tabs("contact",1) }}
+
+<div class="grid-row mt30">
+  <div class="column-half">
+    <p>
+      <span class="font-xsmall">Date of birth</span><br />
+      <span class="bold-medium">19th October 1976</span>
+    </p>
+
+    <p>
+      <span class="font-xsmall">Address</span><br />
+      <span class="bold-medium">23 Railway Cuttings</span><br />
+      <span class="bold-medium">East Cheam</span><br />
+      <span class="bold-medium">London</span><br />
+      <span class="bold-medium">SM2 7YT</span><br />
+    </p>
+  </div><!-- column -->
+  <div class="column-half">
+    <p>
+      <span class="font-xsmall">Telephone</span><br />
+      <span class="bold-medium">09870 654 321</span>
+    </p>
+    <p>
+      <span class="font-xsmall">Email</span><br />
+      <span class="bold-medium"><a href="">bobby@googlemail.com</a></span>
+    </p>
+
+  </div><!-- column -->
+</div><!-- row -->
+
+{% endblock %}
