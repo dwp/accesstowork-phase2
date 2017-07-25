@@ -1,19 +1,18 @@
-<!-- - - - - -  TEAM - - - - - -->
-{# <h3 class="heading-small">Team</h3> #}
-<ul class="list bullet-list left_nav shower" id="cat_show">
-  <li>
-    <div class="show">
-      <a href="#" class="editter">edit</a>
-      <p><span class="font-xsmall">Team</span><br /><span class="bold-medium" id="team">{{ case.team | capitalize }}</span></p>
-    </div>
-    <div class="edit">
-      <select class="dropdown" id="edit_category">
-        {% set categories = ['deaf','hidden','large','self','director','visual','unknown'] %}
-        {% for item in categories %}
-          <option value="{{ item }}" {% if case.allocation == item %}selected="selected"{% endif %}>{{ item }}</option>
+{% set statuses = [
+  "",
+  "Deaf",
+  "Large",
+  "Pan",
+  "Self"
+  ] %}
+<div class="container_status">
+    <h3 class="heading-medium mt0">Update team</h3>
+    <form class="form">
+      <select class="form-control form-select mb10" name="team" id="app_team" style="margin-bottom:10px;">
+        {% for item in statuses %}
+            <option name="{{ item | slugify }}">{{ item }}</option>
         {% endfor %}
       </select>
-      <a href="#" class="editter">cancel</a>
-    </div>
-  </li>
-</ul>
+      <input type="button" class="button" value="Save"/>
+    </form>
+</div>

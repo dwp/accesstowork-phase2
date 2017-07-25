@@ -19,6 +19,8 @@
     <div class="column-one-third">
 
       {% include TEMPLATE_FOLDER + "/inc/app_status.html" %}
+      {% include TEMPLATE_FOLDER + "/inc/app_adviser.html" %}
+      {% include TEMPLATE_FOLDER + "/inc/app_team.html" %}
 
     </div><!-- column -->
 
@@ -29,6 +31,13 @@
 
 {% block page_script %}
   {% include TEMPLATE_FOLDER + "/inc/adviser_edit.html" %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
 {% endblock %}
 
 {% macro case_tabs(selected,num) %}

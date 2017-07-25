@@ -1,0 +1,87 @@
+/*
+  - - - - - - - - - - - - - - - - - - - - -  SELECT BOX STYLES  - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+.form-select {
+  // height: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.25;
+  padding: 5px 45px 2px 5px;
+  background-color: #fff;
+
+  border: 2px solid black;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.combobox-container .input-group {
+  position:relative;
+  z-index:5;
+
+  .dropdown-menu {
+    position:absolute;
+    top:0;left:0;
+    width:98%;
+    margin-left:4px;
+    background:#F0F8FF;
+    font-size:18px;
+    border:1px solid black;
+
+    li {
+      padding:4px 20px 3px;
+      a {text-decoration:none}
+      &.active {
+        background:$govuk-blue;
+        a {color:white}
+      }
+    }
+  }
+}
+
+span.dropdown-toggle {
+  position:absolute;
+  top:2px;right:2px;
+  height:30px;
+  width:30px;
+  background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 0 -51px;
+  cursor:pointer;
+}
+
+@media (min-width: 641px) {
+  select.form-select {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+@media (min-width: 641px) {
+  select.form-select {
+    width: auto;
+  }
+}
+
+select.form-select:hover {
+  cursor: pointer;
+}
+
+.form-select.compact-control {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  padding: 3px 22px 2px 5px;
+  background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 101% -55px;
+}
+
+@media (min-width: 641px) {
+  .form-select.compact-control {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}

@@ -19,7 +19,9 @@
 @import "_inc/toggler";
 @import "_inc/dropdown";
 @import "_inc/quote";
-@import "_inc/margins";
+@import "_inc/form_select";
+@import "_inc/combobox";
+
 
 /*
   Helper classes.
@@ -244,10 +246,10 @@ table.zebra {
   background-color:$grey-3;
   margin:0 auto;
   max-width:none;
-  padding:30px 30px 30px;
-  @media screen and ( max-width: 1280px ){
-     margin:0 30px;
-  }
+  padding:20px;
+  // @media screen and ( max-width: 1280px ){
+  //    margin:0 30px;
+  // }
 }
 
 
@@ -474,3 +476,5 @@ hr {
     width: 96%;
   }
 }
+
+@import "_inc/margins";
