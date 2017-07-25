@@ -8,7 +8,6 @@ var express     = require('express'),
 
 router.all('*',function(req,res,next)
 {
-  console.log('got here')
   req.data = req.data || {};
   req.data.PATH = 'staff/v3'
   next();

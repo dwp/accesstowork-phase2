@@ -2,30 +2,26 @@
 
 {% block staff_content %}
 
-{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
-{{ horizontal_nav('none') }}
+  {# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+  {{ horizontal_nav('none') }}
 
-{% include PATH + "/inc/app_top.html" %}
+  {% include PATH + "/inc/app_top.html" %}
 
-<div class="container">
-  <div class="grid-row">
+  <div class="container">
+    <div class="grid-row">
 
-    <div class="column-two-thirds">
+      <div class="column-two-thirds">
+        {% block case_content %}{% endblock %}
+      </div><!-- column -->
 
-      {% block case_content %}{% endblock %}
+      <div class="column-one-third">
+        {% include PATH + "/inc/edit_status.html" %}
+        {% include PATH + "/inc/edit_adviser.html" %}
+        {% include PATH + "/inc/edit_team.html" %}
+      </div><!-- column -->
 
-    </div><!-- column -->
-
-    <div class="column-one-third">
-
-      {% include PATH + "/inc/edit_status.html" %}
-      {% include PATH + "/inc/edit_adviser.html" %}
-      {% include PATH + "/inc/edit_team.html" %}
-
-    </div><!-- column -->
-
-  </div><!-- row -->
-</div>
+    </div><!-- row -->
+  </div><!-- container -->
 
 {% endblock %}
 
@@ -42,6 +38,12 @@
 {% macro case_tabs(selected,num) %}
 <div class="section-tabs js-tabs clearfix">
   <ul>
+    {% if "details" == selected %}
+      <li class="active"><a href="details_{{ num }}">Details</a></li>
+    {% else %}
+      <li><a href="details_{{ num }}">Details</a></li>
+    {% endif %}
+
     {% if "timeline" == selected %}
       <li class="active"><a href="timeline_{{ num }}">Timeline</a></li>
     {% else %}
