@@ -1,11 +1,11 @@
-{% extends TEMPLATE_FOLDER+"/inc/layout.html" %}
+{% extends PATH+"/inc/layout.html" %}
 
 {% block staff_content %}
 
 {# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
 {{ horizontal_nav('none') }}
 
-{% include TEMPLATE_FOLDER + "/inc/app_top.html" %}
+{% include PATH + "/inc/app_top.html" %}
 
 <div class="container">
   <div class="grid-row">
@@ -18,9 +18,9 @@
 
     <div class="column-one-third">
 
-      {% include TEMPLATE_FOLDER + "/inc/edit_status.html" %}
-      {% include TEMPLATE_FOLDER + "/inc/edit_adviser.html" %}
-      {% include TEMPLATE_FOLDER + "/inc/edit_team.html" %}
+      {% include PATH + "/inc/edit_status.html" %}
+      {% include PATH + "/inc/edit_adviser.html" %}
+      {% include PATH + "/inc/edit_team.html" %}
 
     </div><!-- column -->
 

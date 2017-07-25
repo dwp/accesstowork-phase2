@@ -1,4 +1,4 @@
-{% extends TEMPLATE_FOLDER + "/inc/govuk_template-staff.html" %}
+{% extends PATH + "/inc/govuk_template-staff.html" %}
 
 {% block head %}
   <link href="/public/stylesheets/staff/v2.css" media="screen" rel="stylesheet" type="text/css" />
@@ -37,7 +37,7 @@
 {% block header_class%}with-proposition{% endblock %}
 
 {% block body_end %}
-  {% include TEMPLATE_FOLDER + "/inc/scripts.html" %}
+  {% include PATH + "/inc/scripts.html" %}
 {% endblock %}
 
 {% block content %}
@@ -56,35 +56,35 @@
     <ul class="main-nav">
 
       {% if "nav-cases" == selected %}
-        <li id="nav-cases" class="selected"><a href="/{{ TEMPLATE_FOLDER }}/adviser">Your casess</a></li>
+        <li id="nav-cases" class="selected"><a href="/{{ PATH }}/your_cases">Your cases</a></li>
       {% else %}
-        <li id="nav-cases"><a href="/{{ TEMPLATE_FOLDER }}/adviser">Your cases</a></li>
+        <li id="nav-cases"><a href="/{{ PATH }}/your_cases">Your cases</a></li>
       {% endif %}
 
       {% if "nav-team" == selected %}
-        <li id="nav-team" class="selected"><a href="/{{ TEMPLATE_FOLDER }}/team">Your team</a></li>
+        <li id="nav-team" class="selected"><a href="/{{ PATH }}/team">Your team</a></li>
       {% else %}
-        <li id="nav-team"><a href="/{{ TEMPLATE_FOLDER }}/team">Your team</a></li>
+        <li id="nav-team"><a href="/{{ PATH }}/team">Your team</a></li>
       {% endif %}
 
       {% if "nav-unallocated" == selected %}
-        <li id="nav-unallocated" class="selected"><a href="/{{ TEMPLATE_FOLDER }}/unallocated">Unallocated</a></li>
+        <li id="nav-unallocated" class="selected"><a href="/{{ PATH }}/unallocated">Unallocated</a></li>
       {% else %}
-        <li id="nav-unallocated"><a href="/{{ TEMPLATE_FOLDER }}/unallocated">Unallocated</a></li>
+        <li id="nav-unallocated"><a href="/{{ PATH }}/unallocated">Unallocated</a></li>
       {% endif %}
 
       {% if "nav-search" == selected %}
-        <li id="nav-search" class="selected"><a href="/{{ TEMPLATE_FOLDER }}/search">Search</a></li>
+        <li id="nav-search" class="selected"><a href="/{{ PATH }}/search">Search</a></li>
       {% else %}
-        <li id="nav-search"><a href="/{{ TEMPLATE_FOLDER }}/search">Search</a></li>
+        <li id="nav-search"><a href="/{{ PATH }}/search">Search</a></li>
       {% endif %}
 
     </ul>
   </div>
   <div class="external-links-wrapper">
     <ul class="external-links">
-      <li class="main-nav-link" style="margin-right:20px"><a href="/{{ TEMPLATE_FOLDER }}/all-teams">All teams</a></li>
-      <li class="main-nav-link"><a href="/{{ TEMPLATE_FOLDER }}/all-advisers">All advisers</a></li>
+      <li class="main-nav-link" style="margin-right:20px"><a href="/{{ PATH }}/all-teams">All teams</a></li>
+      <li class="main-nav-link"><a href="/{{ PATH }}/all-advisers">All advisers</a></li>
     </ul>
   </div>
 </div>

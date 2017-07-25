@@ -1,4 +1,4 @@
-{% extends TEMPLATE_FOLDER + "/inc/layout.html" %}
+{% extends PATH + "/inc/layout.html" %}
 
 {% block staff_content %}
 
@@ -45,13 +45,13 @@
         "adviser":v,
       }
       $.ajax({
-        url: '/{{TEMPLATE_FOLDER}}/login/update',
+        url: '/{{PATH}}/login/update',
         method: "POST",
         contentType: 'application/json',
         data: JSON.stringify(formdata),
         dataType: 'json',
         complete:  function(data,status,xhr) {
-          window.location.href = "/{{TEMPLATE_FOLDER}}/adviser/"+v;
+          window.location.href = "/{{PATH}}/adviser/"+v;
           console.log(data);
         }});
 

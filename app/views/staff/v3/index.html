@@ -1,8 +1,8 @@
-{% extends TEMPLATE_FOLDER + "/inc/layout.html" %}
+{% extends PATH + "/inc/layout.html" %}
 
 {% block staff_content %}
 
-{{ TEMPLATE_FOLDER | log }}
+{{ PATH | log }}
 
 <div class="staff__heading">
   <div class="staff__centred">
@@ -13,7 +13,7 @@
         <li><a>show only:</a></li>
         {% set fish = ['all','deaf','hidden','large','self','director','visual','pan'] %}
         {% for item in fish %}
-          <li class="item_{{ item }}"><a href="/{{TEMPLATE_FOLDER}}/groupby/{{ item }}" style="color:white">{{ item }}</a></li>
+          <li class="item_{{ item }}"><a href="/{{PATH}}/groupby/{{ item }}" style="color:white">{{ item }}</a></li>
         {% endfor %}
       </ul>
     </div>
@@ -1410,7 +1410,7 @@
     {
       e.preventDefault();
       var id = $(this).data('id');
-      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/application_1";
+      window.location.href = "/{{PATH}}/customer/application_1";
     });
   });
 </script>
