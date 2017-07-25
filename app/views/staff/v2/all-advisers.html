@@ -2,31 +2,13 @@
 
 {% block staff_content %}
 
-  {# {{ cases | log }} #}
-
-  <div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
-        <li id="nav-home"><a href="adviser">Your cases</a></li>
-        <li id="nav-case"><a href="advisers">Your team</a></li>
-        <li id="nav-allocator"><a href="allocate">Allocate</a></li>
-        <li id="nav-dash"><a href="search">Search</a></li>    
-    </ul>
-  </div>
-  <div class="external-links-wrapper">
-    <ul class="external-links">
-      <li class="main-nav-link"><a href="all-teams">All teams</a></li>
-      <span class="pipe">|</span>
-      <li class="main-nav-link"><a href="all-advisers">All advisers</a></li>
-    </ul>
-  </div>
-</div>
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
 
 <div class="container">
   <div class="grid-row">
-    
 
-    <div class="bold-xlarge" style="padding-left:15px;padding-bottom:30px;"">All advisers</div>
+    <div class="bold-xlarge" style="padding-left:15px;padding-bottom:30px;">All advisers</div>
 
     <div class="column-quarter">
       <div class="form-group">
@@ -38,7 +20,7 @@
           <li><a href="">Lamia Bzirkt</a></li>
           <li><a href="">Peter Duval</a></li>
           <li><a href="">Clémence Fabre</a></li>
-          <li><a href="">Elisse Farcens</a></li>          
+          <li><a href="">Elisse Farcens</a></li>
           <li><a href="">Christoph Fernandez</a></li>
           <li><a href="adviser">John Goldsmith</a></li>
           <li><a href="">Julie Guichard</a></li>
@@ -50,9 +32,9 @@
           <li><a href="">Bruno Lefevre</a></li>
           <li><a href="">Lou Marchal</a></li>
           <li><a href="">Capucine Michel</a></li>
-       </ul>   
-      </div> <!-- form-group -->    
-    </div> <!-- clomun-quarter --> 
+       </ul>
+      </div> <!-- form-group -->
+    </div> <!-- clomun-quarter -->
 
     <div class="column-quarter">
       <div class=="form-group">
@@ -64,7 +46,7 @@
           <li><a href="">Petr Myzink</a></li>
           <li><a href="">Paul Nuveau</a></li>
           <li><a href="">Claire Nylon</a></li>
-          <li><a href="">Chantal Obsurf</a></li>          
+          <li><a href="">Chantal Obsurf</a></li>
           <li><a href="">Christopher Oddsicz</a></li>
           <li><a href="adviser">John Ockley</a></li>
           <li><a href="">Richard Oulton</a></li>
@@ -76,9 +58,9 @@
           <li><a href="">Cherise Peters</a></li>
           <li><a href="">Lionel Phelps</a></li>
           <li><a href="">Anne Pinkton</a></li>
-       </ul>   
+       </ul>
       </div> <!-- form-group -->
-    </div> <!-- column-quarter --> 
+    </div> <!-- column-quarter -->
 
     <div class="column-quarter">
       <div class=="form-group">
@@ -90,7 +72,7 @@
           <li><a href="">Paul Rice</a></li>
           <li><a href="">Peter Rodden</a></li>
           <li><a href="">Sohail Rumdhan</a></li>
-          <li><a href="">Anne Runcie</a></li>          
+          <li><a href="">Anne Runcie</a></li>
           <li><a href="">Sarah Samples</a></li>
           <li><a href="adviser">John Scholey</a></li>
           <li><a href="">Russell Shusster</a></li>
@@ -102,26 +84,11 @@
           <li><a href="">Alled Thonglure</a></li>
           <li><a href="">Jesus Tripanti</a></li>
           <li><a href="">Julien Umbro</a></li>
-       </ul>   
+       </ul>
       </div> <!-- form-group -->
-    </div> <!-- column-quarter --> 
+    </div> <!-- column-quarter -->
 
   </div> <!-- grid-row -->
 </div> <!-- container -->
 
-{% endblock %}
-
-
-{% block page_script %}
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    $('.click_row').on('click',function(e)
-    {
-      e.preventDefault();
-      var id = $(this).data('id');
-      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
-    });
-  });
-</script>
 {% endblock %}

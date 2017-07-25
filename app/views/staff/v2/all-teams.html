@@ -2,30 +2,14 @@
 
 {% block staff_content %}
 
-  
-  <div class="nav-horizontal">
-  <div class="main-nav-wrapper">
-    <ul class="main-nav">
-        <li id="nav-home"><a href="adviser">Your cases</a></li>
-        <li id="nav-case"><a href="advisers">Your team</a></li>
-        <li id="nav-allocator"><a href="allocate">Allocate</a></li>
-        <li id="nav-dash"><a href="search">Search</a></li>    
-    </ul>
-  </div>
-  <div class="external-links-wrapper">
-    <ul class="external-links">
-      <li class="main-nav-link"><a href="all-teams">All teams</a></li>
-       <span class="pipe">|</span>
-      <li class="main-nav-link"><a href="all-advisers">All advisers</a></li>
-    </ul>
-  </div>
-</div>
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
 
 <div class="container">
   <div class="grid-row">
     <div class="column-half">
 
-    <div class="bold-xlarge" style="padding-bottom:30px;"">All teams</div>
+    <div class="bold-xlarge" style="padding-bottom:30px;">All teams</div>
 
       <div class="form-group">
         <p><a href="advisers-deaf">Deaf</a></p>
@@ -34,24 +18,9 @@
         <p><a href="advisers-pan">Pan disability</a></p>
         <p><a href="advisers-self">Self employed</a></p>
       </div> <!-- form-group -->
-        
-    </div> <!-- clomun-half -->  
+
+    </div> <!-- clomun-half -->
   </div> <!-- grid-row -->
 </div> <!-- container -->
 
-{% endblock %}
-
-
-{% block page_script %}
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    $('.click_row').on('click',function(e)
-    {
-      e.preventDefault();
-      var id = $(this).data('id');
-      window.location.href = "/{{TEMPLATE_FOLDER}}/customer/"+id;
-    });
-  });
-</script>
 {% endblock %}

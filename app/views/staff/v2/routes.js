@@ -34,16 +34,7 @@ router.all('*',function(req,res,next)
 
 router.get('/', function(req,res,next)
 {
-
-  // res.send('tom was ere');
-  // res.send('router.get(/) - database - needs fixing!')
-  next();
-  // store.find({"open":true}).then(function(cases)
-  // {
-  //   req.data.by = "all";
-  //   req.data.cases = cases;
-  //   next();
-  // });
+  res.redirect('your_cases');
 });
 
 // router.get('/show/closed/', function(req,res,next)
