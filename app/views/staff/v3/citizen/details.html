@@ -1,0 +1,101 @@
+{% extends PATH+"/inc/layout_case.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("details",1) }}
+
+  <div class="grid-row mt30">
+
+    <div class="column-third">
+
+      <h3 class="heading-medium mt0">Citizen</h3>
+
+      <p>
+        <span class="font-medium">Oliver Reed</span>
+        <hr class="rule mt10 mb10" />
+      </p>
+
+      <p>
+        <span class="label">Birthday</span><br />
+        <span class="font-medium">19th October 1976</span>
+      </p>
+
+      <p>
+        <span class="label">Address</span><br />
+        <span class="font-medium">23 Railway Cuttings</span><br />
+        <span class="font-medium">East Cheam</span><br />
+        <span class="font-medium">London</span><br />
+        <span class="font-medium">SM2 7YT</span><br />
+      </p>
+
+      <p>
+        <span class="label">Telephone</span><br />
+        <span class="font-medium">09870 654 321</span>
+      </p>
+      <p>
+        <span class="label">Email</span><br />
+        <span class="font-medium"><a href="">ollyreed@googlemail.com</a></span>
+      </p>
+
+    </div>
+
+    <div class="column-third">
+
+      <h3 class="heading-medium mt0">Employer</h3>
+
+      <p>
+        <span class="font-medium">Channel 4</span>
+        <hr class="rule mt10 mb10" />
+      </p>
+
+      <p>
+        <span class="label">Since</span><br />
+        <span class="font-medium">
+          {{ ["More than 6 weeks ago","1st June 2016","7th July 2016","8th August 2016"] | randarr }}
+        </span>
+      </p>
+      <p>
+        <span class="label">Working pattern</span><br />
+        <span class="font-medium">{{ '' | randnum(1,5) }} days a week</span><br />
+        <span class="font-medium">{{ '' | randnum(10,37) }} hours a week</span>
+      </p>
+
+    </div><!-- column -->
+    <div class="column-third">
+
+      <h3 class="heading-medium mt0">Employer Contact</h3>
+      <p>
+        <span class="font-medium">Bob Carolgees</span><br />
+        <hr class="rule mt10 mb10" />
+      </p>
+      <p>
+        <span class="label">Relationship</span><br />
+        <span class="font-medium">Line Manager</span><br />
+      </p>
+      <p>
+        <span class="label">Telephone</span><br />
+        <span class="font-medium">0768 432 4532</span><br />
+      </p>
+      <p>
+        <span class="label">Email</span><br />
+        <span class="font-medium"><a href="#">bob.carolgees@business.com</a></span>
+      </p>
+      <p>
+        <span class="label">Address</span><br />
+        <span class="font-medium">Channel 4</span><br />
+        <span class="font-medium">Big Posh Office</span><br />
+        <span class="font-medium">That There London</span><br />
+        <span class="font-medium">LW3 7YT</span><br />
+      </p>
+
+    </div><!-- column -->
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}

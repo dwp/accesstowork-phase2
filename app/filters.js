@@ -39,6 +39,10 @@ module.exports = function (env) {
       return _.sample(array);
   }
 
+  filters.isActive = function(val,active){
+    if (val == active) return ' class=active'
+  }
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

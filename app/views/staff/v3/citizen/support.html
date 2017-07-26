@@ -1,0 +1,60 @@
+{% extends PATH+"/inc/layout_case.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+      <h2 class="heading-large" id="onlineapp">Support agreed</h2>
+
+      <table class="zebra">
+        <tr>
+          <th style="padding-left:15px;">Type</th>
+          <th>Description</th>
+          <th>Dates</th>
+          <th class="numeric">Budget</th>
+          <th class="numeric">Remaining</th>
+        </tr>
+        <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
+          <td>Travel - Ongoing</td>
+          <td>Taxi to and from work 4 days a week (approx £5 per journey)</td>
+          <td class="nobr">Apr 2016 - Jan 2019</td>
+          <td class="numeric">£1040.00</td>
+          <td class="numeric grn">£123.00</td>
+        </tr>
+        <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
+          <td>Support Worker</td>
+          <td>BSL Interrpretter - 5 days a week</td>
+          <td class="nobr">Apr 2016 - Jan 2019</td>
+          <td class="numeric">£42000.00</td>
+          <td class="numeric red">£-321.00</td>
+        </tr>
+      </table>
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

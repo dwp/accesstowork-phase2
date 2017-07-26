@@ -7,21 +7,7 @@
 
   {% include PATH + "/inc/app_top.html" %}
 
-  <div class="container">
-    <div class="grid-row">
-
-      <div class="column-two-thirds">
-        {% block case_content %}{% endblock %}
-      </div><!-- column -->
-
-      <div class="column-one-third">
-        {% include PATH + "/inc/edit_status.html" %}
-        {% include PATH + "/inc/edit_adviser.html" %}
-        {% include PATH + "/inc/edit_team.html" %}
-      </div><!-- column -->
-
-    </div><!-- row -->
-  </div><!-- container -->
+  {% block case_content %}{% endblock %}
 
 {% endblock %}
 
@@ -38,35 +24,43 @@
 {% macro case_tabs(selected,num) %}
 <div class="section-tabs js-tabs clearfix">
   <ul>
-    {% if "details" == selected %}
-      <li class="active"><a href="details_{{ num }}">Details</a></li>
-    {% else %}
-      <li><a href="details_{{ num }}">Details</a></li>
-    {% endif %}
 
     {% if "timeline" == selected %}
-      <li class="active"><a href="timeline_{{ num }}">Timeline</a></li>
+      <li class="active"><a href="/{{ PATH }}/citizen/timeline">Timeline</a></li>
     {% else %}
-      <li><a href="timeline_{{ num }}">Timeline</a></li>
+      <li><a href="/{{ PATH }}/citizen/timeline">Timeline</a></li>
     {% endif %}
 
-    {% if "application" == selected %}
-      <li class="active"><a href="application_{{ num }}">Application</a></li>
+    {% if "details" == selected %}
+      <li class="active"><a href="/{{ PATH }}/citizen/details">Details</a></li>
     {% else %}
-      <li><a href="application_{{ num }}">Application</a></li>
+      <li><a href="/{{ PATH }}/citizen/details">Details</a></li>
     {% endif %}
 
-    {% if "job" == selected %}
-      <li class="active"><a href="job_{{ num }}">Job</a></li>
+    {% if "case" == selected %}
+      <li class="active"><a href="/{{ PATH }}/citizen/case/onlineapp">Case</a></li>
     {% else %}
-      <li><a href="job_{{ num }}">Job</a></li>
+      <li><a href="/{{ PATH }}/citizen/case/onlineapp">Case</a></li>
     {% endif %}
 
-    {% if "contact" == selected %}
-      <li class="active"><a href="contact_{{ num }}">Contact</a></li>
+    {% if "support" == selected %}
+      <li class="active"><a href="/{{ PATH }}/citizen/support">Support</a></li>
     {% else %}
-      <li><a href="contact_{{ num }}">Contact</a></li>
+      <li><a href="/{{ PATH }}/citizen/support">Support</a></li>
     {% endif %}
+
   </ul>
 </div>
+{% endmacro %}
+
+{% macro case_nav(active) %}
+  <p class="mt30 mb10">Evidence collected so far:</p>
+  <ul class="case_nav mt0">
+    {# isActive() is a "Filter" found in app/filters.js #}
+    <li {{ active | isActive('assessment') }}><a href="/{{ PATH }}/citizen/case/assessment">Assessment report</a></li>
+    <li {{ active | isActive('medicalev') }}><a href="/{{ PATH }}/citizen/case/medicalev">Medical evidence</a></li>
+    <li {{ active | isActive('employer') }}><a href="/{{ PATH }}/citizen/case/employer">Employer contact</a></li>
+    <li {{ active | isActive('phonecall') }}><a href="/{{ PATH }}/citizen/case/phonecall">Phone call (further info)</a></li>
+    <li {{ active | isActive('onlineapp') }}><a href="/{{ PATH }}/citizen/case/onlineapp">Online application</a></li>
+  </ul>
 {% endmacro %}

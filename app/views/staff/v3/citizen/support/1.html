@@ -1,0 +1,62 @@
+{% extends PATH+"/inc/layout_case.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <div class="column-half">
+      <h2 class="heading-large" id="onlineapp">Travel (Ongoing)</h2>
+      <p>
+        <span class="label">Details</span><br />
+        <span class="font-medium">Taxi to and from work 4 days a week (approx £5 per journey)</span>
+      </p>
+      <p>
+        <span class="label">Dates</span><br />
+        <span class="font-medium">Apr 2016 - Jan 2019</span>
+      </p>
+    </div><!-- column-half -->
+
+    <div class="column-half">
+      <h2 class="heading-medium" id="onlineapp">Receipts</h2>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th class="numeric">Amount</th>
+          <th class="numeric">Left</th>
+        </tr>
+        <tr>
+          <td>14th April</td>
+          <td class="numeric">inital budget</tdclass>
+          <td class="numeric">£500.00</td>
+        </tr>
+        <tr>
+          <td>13th May</td>
+          <td class="numeric">£3.50</td>
+          <td class="numeric">£496.50</td>
+        </tr>
+        <tr>
+          <td>18th June</td>
+          <td class="numeric">£7.50</td>
+          <td class="numeric">£489.00</td>
+        </tr>
+        <tr>
+          <td>19th July</td>
+          <td class="numeric">£17.50</td>
+          <td class="numeric">£471.50</td>
+        </tr>
+      </table>
+
+    </div><!-- column-half -->
+
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
