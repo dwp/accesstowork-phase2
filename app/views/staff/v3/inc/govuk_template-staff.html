@@ -101,16 +101,18 @@
 
     {% block content %}{% endblock %}
 
-    {# <footer class="group js-footer" id="footer" role="contentinfo">
-      <div class="footer-wrapper">
-        {% block footer_top %}{% endblock %}
+    <footer class="group js-footer" id="footer" role="contentinfo">
+      <div class="container">
+        {% block footer_top %}
+        <p><a href="/prototype-admin/clear-data">clear</a></p>
+        {% endblock %}
       </div>
-    </footer> #}
+    </footer>
     <!--end footer-->
 
     <div id="global-app-error" class="app-error hidden"></div>
 
-    {% block body_end %}{% endblock %}
+    {% block body_end %}fish{% endblock %}
     {% block page_script %}{% endblock %}
   </body>
 </html>

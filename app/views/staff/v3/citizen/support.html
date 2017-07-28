@@ -3,6 +3,8 @@
 {% block case_content %}
 
 <div class="container">
+
+  {{ data | log }}
   {#
     this is a macro: pass the name of the selected item
     and the number for the url.
@@ -25,19 +27,31 @@
           <th class="numeric">Remaining</th>
         </tr>
         <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
-          <td>Travel - Ongoing</td>
+          <td class="nobr">Travel - Ongoing</td>
           <td>Taxi to and from work 4 days a week (approx £5 per journey)</td>
           <td class="nobr">Apr 2016 - Jan 2019</td>
           <td class="numeric">£1040.00</td>
           <td class="numeric grn">£123.00</td>
         </tr>
         <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
-          <td>Support Worker</td>
+          <td class="nobr">Support Worker</td>
           <td>BSL Interrpretter - 5 days a week</td>
           <td class="nobr">Apr 2016 - Jan 2019</td>
           <td class="numeric">£42000.00</td>
           <td class="numeric red">£-321.00</td>
         </tr>
+        {% if  data.description %}
+          {% set fromDate = data.day+'/'+data.month+'/'+data.year %}
+          <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
+            <td class="nobr">{{ data.type_of_support }}</td>
+            <td>{{ data.description }}</td>
+            {% set fromDate = data.from_day+'/'+data.from_month+'/'+data.from_year %}
+            {% set fromDate = data.to_day+'/'+data.to_month+'/'+data.to_year %}
+            <td class="nobr">{{ fromDate | formatDate("MMM YYYY") }} - {{ fromDate | formatDate("MMM YYYY") }}</td>
+            <td class="numeric">{{ data.budget }}</td>
+            <td class="numeric red">£101.00</td>
+          </tr>
+        {% endif %}
       </table>
     </div><!-- column-full -->
   </div><!-- grid-row -->

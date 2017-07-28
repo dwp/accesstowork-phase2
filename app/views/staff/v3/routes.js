@@ -8,8 +8,7 @@ var express     = require('express'),
 
 router.all('*',function(req,res,next)
 {
-  req.data = req.data || {};
-  req.data.PATH = 'staff/v3'
+  res.locals.PATH = 'staff/v3'
   next();
 });
 

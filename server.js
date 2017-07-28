@@ -186,7 +186,10 @@ app.get('/robots.txt', function (req, res) {
 
 app.get('/prototype-admin/clear-data', function (req, res) {
   req.session.destroy()
-  res.render('prototype-admin/clear-data')
+  var ref = req.get('Referrer');
+  // res.end(ref);
+  res.redirect(ref);
+  // res.render('prototype-admin/clear-data')
 })
 
 // Redirect root to /docs when in promo mode.

@@ -1,0 +1,47 @@
+{% extends PATH+"/inc/layout_case.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h2 class="heading-large" id="onlineapp">Will you be offering support to this person?</h2>
+
+      <form class="form" action="/{{ PATH }}/citizen/support/add" method="post">
+        <div class="form-group">
+          <div class="multiple-choice" data-target="support_yes_extra">
+            <input id="support_yes" name="support" type="radio" value="Yes">
+            <label for="support_yes"> Yes </label>
+          </div>
+          <div class="multiple-choice" data-target="support_no_extra">
+            <input id="support_no" name="support" type="radio" value="No, redirect(/{{PATH}}/citizen/support/rejected)">
+            <label for="support_no"> No </label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden pb20" id="support_no_extra">
+            <label class="heading-medium" for="reason">Why?</label>
+            <p class="form-hint">This text will be included in a rejection letter and sent to this person.</p>
+            <textarea class="form-control text-full" name="reason" id="reason" style="width:50%;"></textarea>
+          </div>
+        </div>
+        <input type="submit" class="button" value="Continue" />
+      </form>
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+// $(document).on('ready',function() { $('#support_no').prop("checked", true) });
+</script>
+{% endblock %}
