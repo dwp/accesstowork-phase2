@@ -106,8 +106,8 @@
     $('.click_row').on('click',function(e)
     {
       e.preventDefault();
-      var id = $(this).data('id');
-      window.location.href = "/{{PATH}}/citizen/"+id;
+      var href = $(this).attr('href');
+      window.location.href = "/{{PATH}}/"+href;
     });
   });
 </script>
