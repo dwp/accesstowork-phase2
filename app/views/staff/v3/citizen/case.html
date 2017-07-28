@@ -1,5 +1,7 @@
 {% extends PATH+"/inc/layout_case.html" %}
 
+{% block case_nav_left %}{{ case_nav(data.type_of_evidence,true) }}{% endblock %}
+
 {% block case_content %}
 
       <p class="mb0 mt30 form-hint">{{ data.evidence_date }}</p>
