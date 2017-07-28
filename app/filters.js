@@ -27,6 +27,12 @@ module.exports = function (env) {
       else return '';
   }
 
+  filters.formatToday = function(str,format) {
+      var d = moment().format(format);
+      if (d !== 'Invalid date') return d;
+      else return '';
+  }
+
   filters.slugify = function(str) {
       return str.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()’]/g,"").replace(/ +/g,'_').toLowerCase();
   }

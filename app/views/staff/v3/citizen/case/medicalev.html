@@ -1,43 +1,25 @@
 {% extends PATH+"/inc/layout_case.html" %}
 
+{% block case_nav_left %}{{ case_nav('medicalev') }}{% endblock %}
+
 {% block case_content %}
 
-<div class="container">
-  {#
-    this is a macro: pass the name of the selected item
-    and the number for the url.
-    Code in inc/layout_case.html
-  #}
-  {{ case_tabs("case",1) }}
-
-  <div class="grid-row">
-
-    <div class="column-third">
-      {{ case_nav('medicalev') }}
-    </div><!-- column -->
-    <div class="column-two-thirds">
-
-      <p class="mb0 mt30">5pm – 12th July 2017</p>
-      <h2 class="heading-large mt0" id="onlineapp">Medical evidence</h2>
-      <div class="attachment clearfix" style="margin-top:30px;">
-        <div class="attachment-thumb">
-            <a aria-hidden="true" class="thumbnail" href="/public/pdfs/medicalev.pdf"><img alt="" src="/public/images/medicalev.png"></a>
-        </div>
-        <div class="attachment-details">
-          <h2 class="title"><a  href="/public/pdfs/medicalev.pdf">Letter from Oliver's GP</a></h2>
-          <p class="metadata">
-              <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>,
-              <span class="file-size">5.34MB</span>
-              (in DRS)
-          </p>
-          <p class="mb0">"Confirms Oliver has motor neurone disease."</p>
-          <p>&mdash; <a href="#">John Goldsmith</a></p>
-        </div>
-      </div>
-
-
-    </div><!-- column-full -->
-  </div><!-- grid-row -->
-</div><!-- container -->
+  <p class="mb0 mt30">5pm – 12th July 2017</p>
+  <h2 class="heading-large mt0" id="onlineapp">Medical evidence</h2>
+  <div class="attachment clearfix" style="margin-top:30px;">
+    <div class="attachment-thumb">
+        <a aria-hidden="true" class="thumbnail" href="/public/pdfs/medicalev.pdf"><img alt="" src="/public/images/medicalev.png"></a>
+    </div>
+    <div class="attachment-details">
+      <h2 class="title"><a  href="/public/pdfs/medicalev.pdf">Letter from Oliver's GP</a></h2>
+      <p class="metadata">
+          <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>,
+          <span class="file-size">5.34MB</span>
+          (in DRS)
+      </p>
+      <p class="mb0">"Confirms Oliver has motor neurone disease."</p>
+      <p>&mdash; <a href="#">John Goldsmith</a></p>
+    </div>
+  </div>
 
 {% endblock %}

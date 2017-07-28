@@ -1,4 +1,4 @@
-{% extends PATH+"/inc/layout_case.html" %}
+{% extends PATH+"/inc/layout_citizen.html" %}
 
 {% block case_content %}
 
@@ -71,4 +71,14 @@
   </div><!-- row -->
 </div><!-- container -->
 
+{% endblock %}
+
+{% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+    });
+  </script>
 {% endblock %}
