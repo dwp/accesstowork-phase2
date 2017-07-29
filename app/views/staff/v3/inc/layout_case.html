@@ -1,4 +1,4 @@
-{% extends PATH+"/inc/layout.html" %}
+{% extends PATH+"/inc/layout_citizen.html" %}
 
 {% block staff_content %}
 
@@ -34,38 +34,6 @@
   </div><!-- container -->
 
 {% endblock %}
-
-{% macro case_tabs(selected,num) %}
-<div class="section-tabs js-tabs clearfix">
-  <ul>
-
-    {% if "timeline" == selected %}
-      <li class="active"><a href="/{{ PATH }}/citizen/timeline">Timeline</a></li>
-    {% else %}
-      <li><a href="/{{ PATH }}/citizen/timeline">Timeline</a></li>
-    {% endif %}
-
-    {% if "details" == selected %}
-      <li class="active"><a href="/{{ PATH }}/citizen/details">Details</a></li>
-    {% else %}
-      <li><a href="/{{ PATH }}/citizen/details">Details</a></li>
-    {% endif %}
-
-    {% if "case" == selected %}
-      <li class="active"><a href="/{{ PATH }}/citizen/case/onlineapp">Case</a></li>
-    {% else %}
-      <li><a href="/{{ PATH }}/citizen/case/onlineapp">Case</a></li>
-    {% endif %}
-
-    {% if "support" == selected %}
-      <li class="active"><a href="/{{ PATH }}/citizen/support/initial">Support</a></li>
-    {% else %}
-      <li><a href="/{{ PATH }}/citizen/support/initial">Support</a></li>
-    {% endif %}
-
-  </ul>
-</div>
-{% endmacro %}
 
 {% macro case_nav(active,extra) %}
   <p class="mt30 mb10">Evidence collected so far:</p>

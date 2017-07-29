@@ -17,4 +17,16 @@ router.get('/', function(req,res,next)
   res.redirect('your_cases');
 });
 
+router.get('/citizen/support', function(req,res,next)
+{
+  if (res.locals.data.support == "Yes")
+  {
+    next();
+  } else if  (res.locals.data.support == "No") {
+    res.redirect('support/rejected');
+  } else {
+    res.redirect('support/initial');
+  }
+});
+
 module.exports = router;
