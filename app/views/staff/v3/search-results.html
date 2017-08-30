@@ -19,7 +19,7 @@
 
       </div><!-- search-box-container -->
 
-      <table class="zebra">
+      <table class="zebra" sortable>
         <thead>
           <tr>
             <th style="padding-left:15px;">Name</th>
@@ -75,6 +75,7 @@
 {% endblock %}
 
 {% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
 <script type="text/javascript">
   $(document).on('ready',function()
   {

@@ -50,7 +50,7 @@
         Marjorie Hill
       </div>  <!-- column -->
       <div class="column-two-thirds">
-        <table class="zebra">
+        <table class="zebra" sortable>
           <thead>
             <tr>
               <th style="padding-left:15px;">Case</th>
@@ -124,7 +124,7 @@
       </div> <!-- column -->
       <div class="column-two-thirds">
 
-        <table class="zebra">
+        <table class="zebra" sortable>
               <thead>
                 <tr>
                   <th style="padding-left:15px;">Case</th>
@@ -188,6 +188,7 @@
 {% endblock %}
 
 {% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
 <script type="text/javascript">
   $(document).on('ready',function()
   {
