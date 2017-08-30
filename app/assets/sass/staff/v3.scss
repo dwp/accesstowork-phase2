@@ -23,6 +23,7 @@
 @import "_inc/combobox";
 @import "_inc/timeline";
 @import "_inc/attachment";
+@import "_inc/alerts";
 
 
 /*
@@ -388,24 +389,24 @@ hr {
 @import "_inc/margins";
 
 .button.button-secondary {
-  background-color: #eee;
+  background-color: $grey-3;
   color: #000;
   box-shadow: 0 2px 0 #666;
 
   &:hover {
-    background-color: #ccc;
+    background-color: $grey-2;
     color: #000;
     box-shadow: 0 2px 0 #666;
   }
 
   &:focus {
-    background-color: #ccc;
+    background-color: $grey-2;
     color: #000;
     box-shadow: 0 2px 0 #666;
   }
 
   &.disabled:hover {
-    background-color: #eee;
+    background-color: $grey-3;
   }
 }
 
