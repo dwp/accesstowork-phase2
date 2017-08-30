@@ -17,6 +17,9 @@
   padding:0 30px 90px;
   vertical-align: top;
   .heading-large {
-    margin-top:25px; 
+    margin-top:25px;
   }
+}
+.column-three-quarters {
+  @include grid-column(3 / 4);
 }
