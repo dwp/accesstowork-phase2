@@ -12,7 +12,7 @@
     <div class="grid-row">
       <div class="column-full">
 
-        <table class="zebra" sortable>
+        <table class="zebra">
           <thead>
             <tr>
               <th style="padding-left:15px;">Name</th>
@@ -106,7 +106,6 @@
 {% endblock %}
 
 {% block page_script %}
-{% include PATH + "/inc/table-sorting.html" %}
 <script type="text/javascript">
   $(document).on('ready',function()
   {
