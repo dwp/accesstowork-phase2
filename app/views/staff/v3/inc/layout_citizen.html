@@ -44,6 +44,13 @@
 {% endmacro %}
 
 {% macro case_nav(active) %}
+  <ul class="case_nav">
+    <li {{ active | isActive('onlineapp') }}><a href="/{{ PATH }}/citizen/case/onlineapp">Online application</a></li>
+    <li {{ active | isActive('eligibility') }}><a href="/{{ PATH }}/citizen/case/eligibility">Eligibility</a></li>
+  </ul>
+  <div class="mt30">
+    <a class="button" href="add">Record new evidence</a>
+  </div>
   <p class="mt30 mb10">Evidence collected so far:</p>
   <ul class="case_nav mt0">
     {# isActive() is a "Filter" found in app/filters.js #}
@@ -51,6 +58,5 @@
     <li {{ active | isActive('medicalev') }}><a href="/{{ PATH }}/citizen/case/medicalev">Medical evidence</a></li>
     <li {{ active | isActive('employer') }}><a href="/{{ PATH }}/citizen/case/employer">Employer contact</a></li>
     <li {{ active | isActive('phonecall') }}><a href="/{{ PATH }}/citizen/case/phonecall">Phone call (further info)</a></li>
-    <li {{ active | isActive('onlineapp') }}><a href="/{{ PATH }}/citizen/case/onlineapp">Online application</a></li>
   </ul>
 {% endmacro %}
