@@ -190,6 +190,14 @@ table.customers {
   @include core-19;
   padding-top:12px;
   padding-bottom:30px;
+  text-indent:-0.4em;
+  &:not(.no-answer)
+  {
+    &:before { content:"\201C"; }
+    &:after { content:"\201D"; }
+  }
+  &.no-answer { color:$grey-1 }
+
 }
 
 .box {
