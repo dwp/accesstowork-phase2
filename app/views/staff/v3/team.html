@@ -50,7 +50,7 @@
         <tbody>
           <tr>
             <td>
-              <a href="citizen/timeline">Oliver Reed</a>
+              <a href="citizen/timeline">Oliver Reed</a> <a href="citizen/all-cases">(3 cases in total)</a>
             </td>
             <td>
               New appliction
@@ -263,6 +263,9 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
     $('.click_row').on('click',function(e)
     {
       e.preventDefault();

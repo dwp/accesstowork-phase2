@@ -1,0 +1,63 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+<div class="container">
+
+  <div class="font-xlarge mb30"><span class="bold-xlarge">All cases:</span> Oliver Reed</div>
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Condition</th>
+              <th>Status</th>
+              <th class="numeric">Since</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="timeline" class="click_row">
+                <td>Oliver Reed - Trainee Manager, McDonalds #2</td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">10:54am - 5th June 2017</td>
+              </tr>
+              <tr href="timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse</td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">10:54am - 5th June 2017</td>
+              </tr>
+              <tr href="timeline" class="click_row">
+                <td>Oliver Reed - Crew Member, McDonalds #1</td>
+                <td>Autism</td>
+                <td>Offer accepted</td>
+                <td class="numeric">10:54am - 5th June 2017</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

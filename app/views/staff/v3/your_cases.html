@@ -23,7 +23,7 @@
           </thead>
           <tbody>
               <tr href="citizen/timeline" class="click_row">
-                <td>Oliver Reed</td>
+                <td>Oliver Reed - Trainee Manager, McDonalds #2 <a href="citizen/all-cases">(3 cases in total)</a></td>
                 <td>Autism</td>
                 <td>New appliction</td>
                 <td class="numeric">10:54am - 5th June 2017</td>
@@ -47,6 +47,12 @@
                 <td class="numeric">2:21pm - 21st May 2017</td>
               </tr>
               <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse <a href="citizen/all-cases">(3 cases in total)</a></td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">10:54am - 5th June 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
                 <td>Pauline McCallum</td>
                 <td>Depression</td>
                 <td>Referred for assessment</td>
@@ -67,6 +73,9 @@
 <script type="text/javascript">
   $(document).on('ready',function()
   {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
     $('.click_row').on('click',function(e)
     {
       e.preventDefault();
