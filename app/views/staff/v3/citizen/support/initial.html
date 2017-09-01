@@ -10,7 +10,7 @@
     Code in inc/layout_case.html
   #}
   {{ case_tabs("support",1) }}
-
+  
   <div class="grid-row">
     <div class="column-full">
 
@@ -26,10 +26,28 @@
             <input id="support_no" name="support" type="radio" value="No, redirect(/{{PATH}}/citizen/support/rejected)">
             <label for="support_no"> No </label>
           </div>
-          <div class="panel panel-border-narrow js-hidden pb20" id="support_no_extra">
-            <label class="heading-medium" for="reason">Why?</label>
-            <p class="form-hint">This text will be included in a rejection letter and sent to this person.</p>
-            <textarea class="form-control text-full" name="reason" id="reason" style="width:50%;"></textarea>
+          <div class="panel panel-border-narrow js-hidden" id="support_no_extra">
+            <div class="form-group">
+              {% set reasons = [
+                "",
+                "Advice only",
+                "Application withdrawn by customer",
+                "No agreement on employer/customer contribution",
+                "Disability does not effect job",
+                "Support is being provided by 3rd party"
+                ]
+              %}
+              <label class="heading-medium" for="reason">Why?</label>
+              <select class="form-control" name="reason" id="rejection_reason">
+                {% for reason in reasons %}
+                  <option name="{{ reason | slugify }}">{{ reason }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <span class="form-hint">This text will be included in a rejection letter and sent to this person.</span>
+              <textarea class="form-control" name="reason" id="reason" rows="5"></textarea>
+            </div>
           </div>
         </div>
         <input type="submit" class="button" value="Continue" />
@@ -41,8 +59,7 @@
 
 {% endblock %}
 
-{% block page_script %}
-<script type="text/javascript">
-// $(document).on('ready',function() { $('#support_no').prop("checked", true) });
-</script>
+{% block footer_top %}
+(<a href="add">add</a>
+| <a href="rejected">rejected</a>)
 {% endblock %}

@@ -36,14 +36,9 @@
 }
 
 select {
-	padding: 2px;
-	min-width: 150px;
-	max-width: 293px;
-	position: relative;
-	font-size: 13px;
-	height: 30px;
-	background: #fafafa;
-	border: 1px solid #bfc1c3;
+	display: block;
+
+	background: white;
 }
 
 li {
