@@ -15,7 +15,7 @@
 
       <h2 class="heading-large" id="onlineapp">Add a support item</h2>
 
-      <form class="form" action="/{{ PATH }}/citizen/support" method="post">
+      <form class="form" action="/{{ PATH }}/citizen/support" method="post" id="form-add">
         <div class="form-group">
           <label class="form-label" for="type_of_support">Type of support</label>
           <input class="form-control" id="type_of_support" name="type_of_support" type="text">
@@ -69,8 +69,11 @@
           </fieldset>
         </div>
         <div class="form-group">
-          <label class="form-label" for="budget">Budget</label>
-          <input class="form-control" id="budget" name="budget" type="text" style="width:25%"/>
+          <label for="budget">
+            <span class="form-label">Budget</span>
+            <span class="error-message js-hidden">Budget can not exceed £42,000</span>
+          </label>
+          <input class="form-control form-control-1-4" id="budget" name="budget" type="text"/>
         </div>
         <div class="form-group">
           <input type="submit" class="button" value="Continue" />
@@ -107,6 +110,23 @@ $(document).on('ready',function()
     $('#to_year').val(2018);
     $('#budget').val('£1200');
   });
+  // budget input validation
+  $('#form-add').on('submit', function(e){
+    e.preventDefault();
+    
+    var el = $('#budget');
+    $('.error-message').addClass('js-hidden');
+    el.closest('.form-group').removeClass('form-group-error');
+    el.removeClass('form-control-error');
+    
+    if(parseInt(el.val().replace(/[^\d]*/g, '')) > 42000) {
+      $('.error-message').removeClass('js-hidden');
+      el.closest('.form-group').addClass('form-group-error');
+      el.addClass('form-control-error');
+    } else {
+      e.target.submit();
+    }
+  })
 });
 </script>
 {% endblock %}
