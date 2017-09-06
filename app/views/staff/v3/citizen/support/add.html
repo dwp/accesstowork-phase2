@@ -9,7 +9,12 @@
     Code in inc/layout_case.html
   #}
   {{ case_tabs("support",1) }}
-
+  {% set types = ["Communication support at interview",
+                  "Travel to work",
+                  "Travel in work",
+                  "Support worker",
+                  "Adaptions to premises and equipment",
+                  "Special aids and equipment"] %}
   <div class="grid-row">
     <div class="column-full">
 
@@ -18,7 +23,12 @@
       <form class="form" action="/{{ PATH }}/citizen/support" method="post" id="form-add">
         <div class="form-group">
           <label class="form-label" for="type_of_support">Type of support</label>
-          <input class="form-control" id="type_of_support" name="type_of_support" type="text">
+          <select class="form-control" id="type_of_support" name="type_of_support">
+            <option name=""></option>
+            {% for type in types %}
+            <option name="{{ type | slugify }}">{{ type }}</option>
+          {% endfor %}
+          </select>
         </div>
         <div class="form-group">
           <label class="form-label" for="description">Description</label>
