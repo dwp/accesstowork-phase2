@@ -1,10 +1,21 @@
-# GOV.UK Prototype kit
+# Access to Work digital development - phase 2
 
-Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
+## About this prototype
 
-## About the prototype kit
+This set of prototypes are used to test designs for the second phase of service development for Access to Work
+Including
+* Staff facing system incorporating
+..1 Allocate function
+..2 Case build
+..3 Payments
+..4 Maintenance
+
+
+## About this prototype kit
 
 The prototype kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+
+Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
 
 Read the [project principles](https://govuk-prototype-kit.herokuapp.com/docs/principles).
 
