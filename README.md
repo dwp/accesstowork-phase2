@@ -5,10 +5,10 @@
 This set of prototypes are used to test designs for the second phase of service development for Access to Work
 Including
 * Staff facing system incorporating
-..1 Allocate function
-..2 Case build
-..3 Payments
-..4 Maintenance
+   1 Allocate function
+   2 Case build
+   3 Payments
+   4 Maintenance
 
 
 ## About this prototype kit
