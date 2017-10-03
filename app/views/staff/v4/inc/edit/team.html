@@ -1,0 +1,18 @@
+{% set statuses = [
+  "",
+  "Deaf",
+  "Large",
+  "Pan",
+  "Self"
+  ] %}
+<div class="container_status">
+    <h3 class="heading-medium mt0">Update team</h3>
+    <form class="form">
+      <select class="form-control form-select mb10" name="team" id="app_team" style="margin-bottom:10px;">
+        {% for item in statuses %}
+            <option name="{{ item | slugify }}">{{ item }}</option>
+        {% endfor %}
+      </select>
+      <input type="button" class="button" value="Save"/>
+    </form>
+</div>

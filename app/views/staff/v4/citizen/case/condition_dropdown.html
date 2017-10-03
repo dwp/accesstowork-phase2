@@ -1,0 +1,24 @@
+{% extends PATH+"/inc/layout_case.html" %}
+
+{% block case_nav_left %}{{ case_nav('condition_dropdown') }}{% endblock %}
+
+{% block case_content %}
+
+
+   <h2 class="heading-large">Details of condition</h2>
+   <div class="form-group">
+	  <label class="form-label" for="select-box">Select from list</label>
+	  <select class="form-control" id="select-box" name="select-box">
+	    <option>Option 1</option>
+	    <option>Option 2</option>
+	    <option>Option 3</option>
+	    <option>Option 4</option>
+	    <option>Option 5</option>
+	    <option>Option 6</option>
+	    <option>Option 7</option>
+	    <option>Option 8</option>
+	    <option>Option 9</option>
+	  </select>
+	</div>
+
+{% endblock %}

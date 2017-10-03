@@ -1,0 +1,205 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+  
+  <div class="grid-row">
+    <div class="column-two-thrids">
+
+      <h2 class="heading-large" id="onlineapp">Add a payment</h2>
+
+      <form class="form" action="" method="post" id="form-add-receipt">
+        <div class="form-group">
+          <label class="form-label" for="description">Description</label>
+          <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>
+        <div class="form-group" style="width:25%">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">From</span>
+            </legend>
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="from_day">Day</label>
+                <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
+              </div>
+              <div class="form-group form-group-month">
+                <label class="form-label" for="from_month">Month</label>
+                <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+                <label class="form-label" for="from_year">Year</label>
+                <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group" style="width:25%">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">To</span>
+            </legend>
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="to_day">Day</label>
+                <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
+              </div>
+              <div class="form-group form-group-month">
+                <label class="form-label" for="to_month">Month</label>
+                <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
+              </div>
+              <div class="form-group form-group-year">
+                <label class="form-label" for="to_year">Year</label>
+                <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div class="form-group">
+          <fieldset>
+            <label class="form-label label-no-hint" for="ba-account-holder">Payee account name</label>
+            <input type="text" class="form-control form-control-1-4" id="ba-account-holder" name="ba-account-holder" value="">
+          </fieldset>
+        </div>
+  
+        <div class="form-date form-group">
+          <fieldset>
+              <legend class="form-label">Payee sort code</legend>
+              
+              <div class="form-group form-group-day">
+              <label for="ba-sort1"></label>
+              <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+            </div>
+  
+            <div class="form-group form-group-month">
+              <label for="ba-sort2"></label>
+              <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+            </div>
+  
+            <div class="form-group form-group-month">
+              <label for="ba-sort3"></label>
+              <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+            </div>
+          </fieldset>
+        </div>
+  
+        <div class="form-group">
+          <fieldset>
+            <label class="form-label" for="ba-account-number">Payee account number</label>
+            <input type="text" class="form-control form-control-1-4" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+          </fieldset>
+        </div>
+    
+        <div class="form-group">
+          <label for="budget">
+            <span class="form-label">Amount</span>
+          </label>
+          <input class="form-control form-control-1-4" id="amount" name="amount" type="text"/>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+          <legend>
+            <span class="form-label">Has this receipt been verified?</span>
+          </legend>
+          <div class="multiple-choice" data-target="verified_yes_extra">
+            <input id="verified_yes" name="verified" type="radio" value="Yes">
+            <label for="verified_yes"> Yes </label>
+          </div>
+          <div class="multiple-choice" data-target="verified_no_extra">
+            <input id="verified_no" name="verified" type="radio" value="No">
+            <label for="verified_no"> No </label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="verified_yes_extra">
+              <fieldset>
+                <legend>
+                  <span class="form-label">Date verified</span>
+                </legend>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="from_day">Day</label>
+                    <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="from_month">Month</label>
+                    <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="from_year">Year</label>
+                    <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          <div class="panel panel-border-narrow js-hidden" id="verified_no_extra">
+            <div class="form-group">
+              <label class="heading-medium" for="reason">Why?</label>
+              <textarea class="form-control" name="reason" id="reason" rows="5"></textarea>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+          <legend>
+            <span class="form-label">Has this receipt been paid?</span>
+          </legend>
+          <div class="multiple-choice" data-target="paid_yes_extra">
+            <input id="paid_yes" name="paid" type="radio" value="Yes">
+            <label for="paid_yes">Yes</label>
+          </div>
+          <div class="multiple-choice" data-target="paid_no_extra">
+            <input id="paid_no" name="paid" type="radio" value="No">
+            <label for="paid_no">No</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="paid_yes_extra">
+              <fieldset>
+                <legend>
+                  <span class="form-label">Date paid</span>
+                </legend>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="from_day">Day</label>
+                    <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="from_month">Month</label>
+                    <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="from_year">Year</label>
+                    <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          <div class="panel panel-border-narrow js-hidden" id="paid_no_extra">
+            <div class="form-group">
+              <label class="heading-medium" for="reason">Why?</label>
+              <textarea class="form-control" name="reason" id="reason" rows="5"></textarea>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <a href="/{{PATH}}/citizen/support/1" class="button">Save</a>
+            <a href="/{{PATH}}/citizen/support/1" class="button text">Cancel</a>
+          <!-- <input type="submit" class="button" value="Continue" /> -->
+        </div>
+      </form>
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+{% endblock %}

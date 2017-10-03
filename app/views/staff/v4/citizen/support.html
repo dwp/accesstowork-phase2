@@ -1,0 +1,79 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+
+  {{ data | log }}
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+      <h2 class="heading-large" id="onlineapp">Support agreed</h2>
+
+      <table class="zebra">
+        <tr>
+          <th style="padding-left:15px;">Type</th>
+          <th>Description</th>
+          <th>Dates</th>
+          <th class="numeric">Budget</th>
+          <th class="numeric">Remaining</th>
+        </tr>
+        <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
+          <td class="nobr">Travel - Ongoing</td>
+          <td>Taxi to and from work 4 days a week (approx £5 per journey)</td>
+          <td class="nobr">Apr 2016 - Jan 2019</td>
+          <td class="numeric">£1040.00</td>
+          <td class="numeric grn">£123.00</td>
+        </tr>
+        <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
+          <td class="nobr">Support Worker</td>
+          <td>BSL Interrpretter - 5 days a week</td>
+          <td class="nobr">Apr 2016 - Jan 2019</td>
+          <td class="numeric">£42000.00</td>
+          <td class="numeric red">£-321.00</td>
+        </tr>
+        {% if  data.description %}
+          {% set fromDate = data.day+'/'+data.month+'/'+data.year %}
+          <tr class="click_row" href="/{{ PATH }}/citizen/support/1">
+            <td class="nobr">{{ data.type_of_support }}</td>
+            <td>{{ data.description }}</td>
+            {% set fromDate = data.from_day+'/'+data.from_month+'/'+data.from_year %}
+            {% set fromDate = data.to_day+'/'+data.to_month+'/'+data.to_year %}
+            <td class="nobr">{{ fromDate | formatDate("MMM YYYY") }} - {{ fromDate | formatDate("MMM YYYY") }}</td>
+            <td class="numeric">{{ data.budget }}</td>
+            <td class="numeric red">£101.00</td>
+          </tr>
+        {% endif %}
+      </table>
+
+      <div class="form-group mt30">
+        <a class="button" href="support/add">Add new support</a>
+      </div>
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

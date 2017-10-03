@@ -1,0 +1,206 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-team') }}
+
+ <div class="container">
+    <div class="grid-row">
+      <div class="column-one-third">
+        <div class="font-xlarge"><span class="bold-xlarge">Team:</span> Hidden</div>
+      </div>
+      <div class="column-two-thirds">
+        <div class="grid-row">
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">57</h1>
+            <p>cases in team</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">23</h1>
+            <p>Outstanding BF dates</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">12</h1>
+            <p>Outstanding over 20 days</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">7</h1>
+            <p>Outstanding initial action over 5 days</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- .row -->
+
+    <hr>
+
+    <div class="grid-row">
+      <div class="column-one-third font-large" >
+        <a href="/{{PATH}}/your_cases">John Goldsmith</a>
+      </div>
+      <div class="column-one-third font-large" >
+        6 cases
+      </div>
+  </div>
+
+    <hr>
+
+    <div class="grid-row">
+     <div class="column-one-third font-large" >
+        Marjorie Hill
+      </div>  <!-- column -->
+      <div class="column-two-thirds">
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Case</th>
+              <th>Status</th>
+              <th class="numeric">Status updated</th>
+              <th class="numeric">Claim submitted</th>
+            </tr>
+          </thead>
+          <tobdy>
+      <tr>
+        <td>
+          <a href="citizen/timeline">Marcus Smith</a>
+        </td>
+        <td>
+          New appliction
+        </td>
+        <td class="numeric">4 June 2017</td>
+        <td class="numeric">4 June 2017</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="citizen/timeline">Muriel Gray</a>
+        </td>
+        <td>
+          First call
+        </td>
+        <td class="numeric">15 June 2017</td>
+        <td class="numeric">12 June 2017</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="citizen/timeline">Candice Campari</a>
+        </td>
+        <td>
+          First call
+        </td>
+        <td class="numeric">22 May 2017</td>
+        <td class="numeric">21 May 2017</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="citizen/timeline">Justine Time</a>
+        </td>
+        <td>
+          Second call
+        </td>
+        <td class="numeric">22 May 2017</td>
+        <td class="numeric">20 May 2017</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="citizen/timeline">Stephanie Sloan</a>
+        </td>
+        <td>
+          Referred for assessment
+        </td>
+        <td class="numeric">20 May 2017</td>
+        <td class="numeric">18 May 2017</td>
+      </tr>
+    </tbody>
+
+    </table>
+
+    </div> <!-- column -->
+    </div><!-- .row -->
+
+   <hr>
+
+      <div class="column-one-third font-large">
+        Meghan Isleworth
+      </div> <!-- column -->
+      <div class="column-two-thirds">
+
+        <table class="zebra" sortable>
+              <thead>
+                <tr>
+                  <th style="padding-left:15px;">Case</th>
+                  <th>Status</th>
+                  <th class="numeric">Status updated</th>
+                  <th class="numeric">Claim submitted</th>
+                </tr>
+              </thead>
+
+          <tr>
+            <td>
+              <a href="citizen/timeline">Malcolm Best</a>
+            </td>
+            <td>
+              New appliction
+            </td>
+            <td class="numeric">4 June 2017</td>
+            <td class="numeric">4 June 2017</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="citizen/timeline">Judith Speight</a>
+            </td>
+            <td>
+              New application
+            </td>
+            <td class="numeric">13 June 2017</td>
+            <td class="numeric">13 June 2017</td>
+          <tr>
+            <td>
+              <a href="citizen/timeline">Sandra Gaul</a>
+            </td>
+            <td>
+              New application
+            </td>
+            <td class="numeric">13 June 2017</td>
+            <td class="numeric">13 June 2017</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="citizen/timeline">Gina Peaches</a>
+            </td>
+            <td>
+              Employer contact
+            </td>
+            <td class="numeric">4 June 2017</td>
+            <td class="numeric">29 May 2017</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+     </div> <!-- column-third-->
+
+    </div> <!-- grid-row -->
+
+   </div> <!-- container -->
+
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{PATH}}/adviser/"+id;
+    });
+  });
+</script>
+{% endblock %}

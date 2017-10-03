@@ -1,0 +1,126 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+
+  <div class="grid-row">
+  <div class="column-one-third">
+  <div class="font-large mb30"><span class="bold-large">Adviser:</span> John Goldsmith</div>
+ </div> <!-- COLUMN ONE THIRD -->
+     <div class="column-two-thirds">
+        <div class="grid-row">
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">25</h1>
+            <p>total applications</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">20</h1>
+            <p>active applications</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">2</h1>
+            <p>pending applications</p>
+          </div>
+          <div class="column-one-quarter">
+            <h1 class="bold-xlarge">3</h1>
+            <p>new applications</p>
+          </div>
+        </div> <!-- GRID ROW -->
+      </div> <!-- COMUN TWO THIRDS -->
+    </div> <!-- GRID ROW  -->
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>NINo</th>
+              <th>Support type</th>
+              <th>Status</th>
+              <th class="numeric">Next action date</th>
+              <th class="numeric">IDOC</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Trainee Manager, McDonalds #2 <a href="citizen/all-cases">(3 cases in total)</a></td>
+                <td>AA123456A</td>
+                <td>Hidden</td>
+                <td>New application</td>
+                <td class="numeric">10 October 2017</td>
+                <td class="numeric">1 October 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Martin Short</td>
+                <td>BB654321B</td>
+                <td>Deaf</td>
+                <td>Gather completed</td>
+                <td class="numeric">4 October 2017</td>
+                <td class="numeric">15 August 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Cheryl Cooke</td>
+                <td>CC112233C</td>
+                <td>Hidden</td>
+                <td>First contact</td>
+                <td class="numeric">4 October 2017</td>
+                <td class="numeric">27 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>DD445566D</td>
+                <td>Pan</td>
+                <td>Employer contact</td>
+                <td class="numeric">5 October 2017</td>
+                <td class="numeric">20 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse <a href="citizen/all-cases">(3 cases in total)</a></td>
+                <td>AA123456A</td>
+                <td>Hidden</td>
+                <td>Support offered</td>
+                <td class="numeric">7 October 2017</td>
+                <td class="numeric">13 August 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>AB132436C</td>
+                <td>Pan</td>
+                <td>Referred for assessment</td>
+                <td class="numeric">10 October 2017</td>
+                <td class="numeric">2 September 2017</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}
