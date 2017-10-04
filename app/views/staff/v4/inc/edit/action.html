@@ -1,5 +1,5 @@
-<!-- - - - - -  Status - - - - - -->
-{% set statuses = [
+<!-- - - - - -  Set Next Action - - - - - -->
+{% set next action = [
   "",
   "First contact attempted",
   "Second contact attempted",
@@ -26,19 +26,19 @@
   ]
 %}
 <div class="container_status mt30 mb30" style="z-index:1000">
-  <h3 class="heading-medium" style="margin:0 0 10px">Update status</h3>
+  <h3 class="heading-medium" style="margin:0 0 10px">Set next action</h3>
   <form class="form">
     <div class="form-group mb10">
       <select class="form-control form-select" name="status" id="status_status" style="margin-bottom:10px;">
-        {% for item in statuses %}
+        {% for item in set next action %}
             <option name="{{ item | slugify }}">{{ item }}</option>
         {% endfor %}
       </select>
     </div>
     <textarea class="form-control mb10" name="notes"></textarea>
   
-  <!-- <h3 class="heading-medium" style="margin:0 0 10px">Set BF</h3>
-  <input type="date"> -->
+  <h3 class="heading-medium" style="margin:0 0 10px">Set NA</h3>
+  <input type="date">
 
 </form>
 
