@@ -32,8 +32,8 @@ router.get('/citizen/support', function(req,res,next)
 router.post('/citizen/case/eligibility', function(req,res,next)
 {
   return (req.body.support == 'No') ? 
-    res.redirect('/staff/v3/citizen/support/rejected') : 
-    res.redirect('/staff/v3/citizen/timeline');
+    res.redirect('/staff/v4/citizen/support/rejected') : 
+    res.redirect('/staff/v4/citizen/timeline');
 });
 
 module.exports = router;
