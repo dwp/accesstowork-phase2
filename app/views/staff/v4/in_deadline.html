@@ -1,0 +1,129 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+<h1 class="heading-large">Within deadline applications</h1>
+          
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+              <tr>
+                <th style="padding-left:15px;">Name</th>
+                <th>NINo</th>
+                <th>Status</th>
+                <th class="numeric">Next action date</th>
+                <th class="numeric">Case start</th>
+              </tr>
+          </thead>
+          <tbody>             
+              <tr href="citizen/timeline" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>AB132436C</td>
+                <td>Referred for assessment</td>
+                <td class="numeric" style="color: green">10 October 2017</td>
+                <td class="numeric">2 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Matthew Cooke</td>
+                <td>AD214354C</td>
+                <td>Cost share agreed</td>
+                <td class="numeric" style="color: green">11 October 2017</td>
+                <td class="numeric">4 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Susan Wrolfe</td>
+                <td>BA654321C</td>
+                <td>Medical evidence requested</td>
+                <td class="numeric" style="color: green">11 October 2017</td>
+                <td class="numeric">1 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Paul Tully</td>
+                <td>AB132436C</td>
+                <td>Employer call made</td>
+                <td class="numeric" style="color: green">18 October 2017</td>
+                <td class="numeric">20 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Sulliman Muntari</td>
+                <td>AA615243A</td>
+                <td>Medical evidence requested</td>
+                <td class="numeric" style="color: green">18 October 2017</td>
+                <td class="numeric">15 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Sara Powers</td>
+                <td>BB162534A</td>
+                <td>Referred for assessment</td>
+                <td class="numeric" style="color: green">19 October 2017</td>
+                <td class="numeric">22 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Aaron Scholfield</td>
+                <td>CA111222B</td>
+                <td>Referred for assessment</td>
+                <td class="numeric" style="color: green">20 October 2017</td>
+                <td class="numeric">25 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Afaz Khan</td>
+                <td>QQ1234456A</td>
+                <td>Offer sent</td>
+                <td class="numeric" style="color: green">20 October 2017</td>
+                <td class="numeric">25 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Simon Clarkson</td>
+                <td>AC315243C</td>
+                <td>Offer sent</td>
+                <td class="numeric" style="color: green">21 October 2017</td>
+                <td class="numeric">28 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Tony Tubbs</td>
+                <td>DD413256A</td>
+                <td>Offer partially accepted</td>
+                <td class="numeric" style="color: green">21 October 2017</td>
+                <td class="numeric">28 September 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Harry Crosby</td>
+                <td>BB112233B</td>
+                <td>Referred for assessment</td>
+                <td class="numeric" style="color: green">22 October 2017</td>
+                <td class="numeric">28 September 2017</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

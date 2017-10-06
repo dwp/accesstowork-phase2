@@ -1,0 +1,66 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+<h1 class="heading-large">Overdue deadline applications</h1>
+          
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+                <th style="padding-left:15px;">Name</th>
+                <th>NINo</th>
+                <th>Status</th>
+                <th class="numeric">Next action date</th>
+                <th class="numeric">Case start</th>
+              </tr>
+          </thead>
+          <tbody>             
+              <tr href="citizen/timeline" class="click_row">
+                <td>Martin Short</td>
+                <td>BB654321B</td>
+                <td>Gather completed</td>
+                <td class="numeric" style="color:red">4 October 2017</td>
+                <td class="numeric">15 August 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Cheryl Cooke</td>
+                <td>CC112233C</td>
+                <td>First contact</td>
+                <td class="numeric" style="color: red">4 October 2017</td>
+                <td class="numeric">27 September 2017</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}
