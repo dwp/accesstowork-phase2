@@ -42,7 +42,7 @@
 
     <hr>
 
-    <div class="grid-row click_row" href="v4/your_cases">
+    <div class="grid-row click_row" href="your_cases">
       <div class="column-one-third font-large" >
         John Goldsmith
       </div> <!-- COLUMN ONE THIRD -->
@@ -170,8 +170,8 @@
     $('.click_row').on('click',function(e)
     {
       e.preventDefault();
-      var id = $(this).data('id');
-      window.location.href = "/{{PATH}}/adviser/"+id;
+       var href = $(this).attr('href');
+      window.location.href = href;
     });
   });
 </script>
