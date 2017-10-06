@@ -18,7 +18,7 @@
   <h3 class="heading-medium" style="margin:0 0 10px">Set next action</h3>
   <form class="form">
     <div class="form-group mb10">
-      <select class="form-control form-select" name="status" id="status_status" style="margin-bottom:10px;">
+      <select class="form-control form-select" name="status" id="action_app" style="margin-bottom:10px;">
         {% for item in statuses %}
             <option name="{{ item | slugify }}">{{ item }}</option>
         {% endfor %}
