@@ -8,7 +8,7 @@ var express     = require('express'),
 
 router.all('*',function(req,res,next)
 {
-  res.locals.PATH = 'staff/v4'
+  res.locals.PATH = 'staff/v5'
   next();
 });
 
@@ -32,8 +32,8 @@ router.get('/citizen/support', function(req,res,next)
 router.post('/citizen/case/eligibility', function(req,res,next)
 {
   return (req.body.support == 'No') ? 
-    res.redirect('/staff/v4/citizen/support/rejected') : 
-    res.redirect('/staff/v4/citizen/timeline');
+    res.redirect('/staff/v5/citizen/support/rejected') : 
+    res.redirect('/staff/v5/citizen/timeline');
 });
 
 module.exports = router;

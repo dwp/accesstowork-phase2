@@ -228,6 +228,7 @@ if (typeof (routes) !== 'function') {
   app.use('/staff/v2/', require(__dirname + '/app/views/staff/v2/routes.js'))
   app.use('/staff/v3/', require(__dirname + '/app/views/staff/v3/routes.js'))
   app.use('/staff/v4/', require(__dirname + '/app/views/staff/v4/routes.js'))
+  app.use('/staff/v5/', require(__dirname + '/app/views/staff/v5/routes.js'))
   app.use('/', routes)
 }
 
