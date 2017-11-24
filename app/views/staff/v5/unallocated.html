@@ -1,0 +1,123 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-unallocated') }}
+
+  <div class="container">
+
+  <h1 class="bold-xlarge mb30">Unallocated cases</h1>
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Condition</th>
+              <th>Status</th>
+              <th class="numeric">Claim submitted</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Trainee Manager, McDonalds #2 <a href="citizen/all-cases">(3 applications in total)</a></td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">5 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Martin Short</td>
+                <td>Eplilepsy</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Cheryl Cook</td>
+                <td>Depression</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Paul John-Jones</td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse <a href="citizen/all-cases">(3 applications in total)</a></td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">5 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Pauline McCallum</td>
+                <td>Depression</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Jonty Lee</td>
+                <td>Depression</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Peter Keil</td>
+                <td>Blind</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Seamus Murphy</td>
+                <td>Multiple Sclerosis</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Martin Smith</td>
+                <td>Deaf</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Caitlin Rose</td>
+                <td>Blind</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+              <tr class="click_row" href="citizen/timeline">
+                <td>Scott Moore</td>
+                <td>Autism</td>
+                <td>New appliction</td>
+                <td class="numeric">12 June 2017</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = "/{{PATH}}/"+href;
+    });
+  });
+</script>
+{% endblock %}

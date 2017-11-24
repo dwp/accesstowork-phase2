@@ -1,0 +1,61 @@
+% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+
+  <div class="grid-row">
+
+    <div class="column-one-third">
+    <!--   <a href="v4/citizen/support" class="link-back">Back</a> -->
+
+      <h2 class="heading-large" id="onlineapp">Support award</h2>
+      <p>
+        <span class="label">Dates</span><br />
+        <span class="font-small">From: 1st December 2017</span> <br />
+        <span class="font-small">To: 30th Vovember 2020</span>
+      </p>
+      <p>
+        <span class="label">Description</span><br />
+        <span class="font-small">Taxi to and from work 4 days a week</span><br />
+      </p>
+      <p>  
+        <span class="label">Journeys per week</span><br />
+        <span class="font-small">8</span>
+        <span class="label">Total award journeys</span><br />
+        <span class="font-small">2080</span>
+      </p>
+      <p>  
+        <span class="label">Cost per journey</span><br />
+        <span class="font-small">£5</span>
+        <span class="label">Total cost</span><br />
+        <span class="font-small">£6,240</span>
+      </p>
+      <p>
+        <span class="label">Is cost share applied to this support?</span><br />
+        <span class="font-small">Yes</span><br />
+        <span class="label">Cost share amount to deduct</span><br />
+        <span class="font-small">£1,248</span><br />
+      </p>
+     <div class="form-group">
+        <label for="budget">
+          <span class="form-label">Budget</span>
+          <span class="error-message js-hidden">Budget can not exceed £42,000</span>
+        </label>
+        <input class="form-control form-control-1-4" id="budget" name="budget" type="text" value="£4,992"/>
+      </div>
+
+      
+      <div class="form-group mt30">
+        <a href="payees" class="link">eidt</a>
+      </div>  
+
+    </div><!-- COLUMN ONE THIRD -->
+    <div class="column-two-thirds">
+    </div> <!-- COLUMN TWO THRIDS -->  
+
+  </div><!-- grid-row -->
+
+</div><!-- container -->
+
+{% endblock %}

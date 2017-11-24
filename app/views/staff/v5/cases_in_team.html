@@ -1,0 +1,135 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+  <h1 class="heading-large">All work</h1>
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>NINo</th>
+              <th>Status</th>
+              <th class="numeric">Next action date</th>
+              <th class="numeric">Case age</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Trainee Manager, McDonalds #2 <a href="citizen/all-cases">(3 applications in total)</a></td>
+                <td>AA123456A</td>
+                <td>New application</td>
+                <td class="numeric">10 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Martin Short</td>
+                <td>BB654321B</td>
+                <td>Gather completed</td>
+                <td class="numeric" style="color: red">4 October 2017</td>
+                <td class="numeric">5 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Cheryl Cooke</td>
+                <td>CC112233C</td>
+                <td>First contact attempted</td>
+                <td class="numeric" style="color: red">4 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>DD445566D</td>
+                <td>Employer contacted</td>
+                <td class="numeric">5 October 2017</td>
+                <td class="numeric">2 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse <a href="citizen/all-cases">(3 applications in total)</a></td>
+                <td>AA123456A</td>
+                <td>Support offered</td>
+                <td class="numeric">7 October 2017</td>
+                <td class="numeric" style="color: red">27 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>AB132436C</td>
+                <td>Referred for assessment</td>
+                <td class="numeric"">10 October 2017</td>
+                <td class="numeric" style="color: orange">17 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Trainee Manager, McDonalds #2 <a href="citizen/all-cases">(3 applications in total)</a></td>
+                <td>AA123456A</td>
+                <td>First call attempted</td>
+                <td class="numeric">10 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Martin Short</td>
+                <td>BB654321B</td>
+                <td>Gather completed</td>
+                <td class="numeric">4 October 2017</td>
+                <td class="numeric">3 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Cheryl Cooke</td>
+                <td>CC112233C</td>
+                <td>First contact attempted</td>
+                <td class="numeric">4 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>DD445566D</td>
+                <td>Employer contacted</td>
+                <td class="numeric">5 October 2017</td>
+                <td class="numeric">2 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse <a href="citizen/all-cases">(3 applications in total)</a></td>
+                <td>AA123456A</td>
+                <td>Support offered</td>
+                <td class="numeric">7 October 2017</td>
+                <td class="numeric" style="color: orange">15 days</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>AB132436C</td>
+                <td>Referred for assessment</td>
+                <td class="numeric">10 October 2017</td>
+                <td class="numeric">7 days</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

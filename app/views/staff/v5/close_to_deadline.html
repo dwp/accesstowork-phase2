@@ -1,0 +1,73 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+<h1 class="heading-large">New work</h1>
+          
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+                <th style="padding-left:15px;">Name</th>
+                <th>NINo</th>
+                <th>Status</th>
+                <th class="numeric">Next action date</th>
+                <th class="numeric">Case age</th>
+              </tr>
+          </thead>
+          <tbody>             
+              <tr href="citizen/timeline" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>DD445566D</td>
+                <td style="color: darkblue">New application</td>
+                <td class="numeric">5 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Oliver Reed - Salesman, Carphone Warehouse <a href="citizen/all-cases">(3 cases in total)</a></td>
+                <td>AA123456A</td>
+                <td style="color: darkblue">New application</td>
+                <td class="numeric">7 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+              <tr href="citizen/timeline" class="click_row">
+                <td>Alice Wolfe</td>
+                <td>AA253416A</td>
+                <td style="color: darkblue">New application</td>
+                <td class="numeric">8 October 2017</td>
+                <td class="numeric">1 day</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

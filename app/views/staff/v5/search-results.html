@@ -1,0 +1,90 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-search') }}
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="search-box-container mb30">
+
+        <h1 class="bold-medium mb10">Search results for:</h1>
+
+        <form action="search-results" method="get" class="form" id="search-form">
+          <input id="keyword" type="search" autocomplete="off" name="search_term" class="form-control js-search-focus" value="{{ search_term }}">
+          <input id="search-submit" type="submit" class="search-submit" value="Search">
+        </form>
+
+      </div><!-- search-box-container -->
+
+      <table class="zebra" sortable>
+        <thead>
+          <tr>
+            <th style="padding-left:15px;">Name</th>
+            <th>Condition</th>
+            <th>Status</th>
+            <th class="numeric">Status updated</th>
+            <th class="numeric">Claim submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr href="citizen/timeline" class="click_row">
+              <td>Oliver Reed</td>
+              <td>Autism</td>
+              <td>New appliction</td>
+              <td class="numeric">5 June 2017</td>
+              <td class="numeric">5 June 2017</td>
+            </tr>
+            <tr href="citizen/timeline" class="click_row">
+              <td>Martin Short</td>
+              <td>Eplilepsy</td>
+              <td>New application</td>
+              <td class="numeric">5 June 2017</td>
+              <td class="numeric">5 June 2017</td>
+            </tr>
+            <tr href="citizen/timeline" class="click_row">
+              <td>Cheryl Cook</td>
+              <td>Depression</td>
+              <td>First call</td>
+              <td class="numeric">1 June 2017</td>
+              <td class="numeric">31 May 2017</td>
+            </tr>
+            <tr href="citizen/timeline" class="click_row">
+              <td>Paul John-Jones</td>
+              <td>Autism</td>
+              <td>Gather completed</td>
+              <td class="numeric">27 May 2017</td>
+              <td class="numeric">21 May 2017</td>
+            </tr>
+            <tr href="citizen/timeline" class="click_row">
+              <td>Pauline McCallum</td>
+              <td>Depression</td>
+              <td>Referred for assessment</td>
+              <td class="numeric">27 May 2017</td>
+              <td class="numeric">21 May 2017</td>
+            </tr>
+        </tbody>
+      </table>
+
+    </div> <!-- column-full -->
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{PATH}}/citizen/"+id;
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h2 class="heading-large mb0" id="onlineapp">Support rejected</h2>
+
+      <p class="mb0 mt10 form-hint">12th July 2017</p>
+      <p>I decided that we weren't able to support Oliver because ipsum dolor sit amet, ex his virtute voluptua, vim intellegam inciderint ut. Rebum noster reprimique ea per. No agam aliquid nam, reque mundi saepe ne duo. Quo populo pericula in. Sea duis decore torquatos an, eum ut commodo nusquam.
+      Per ex purto everti contentiones, ne quo etiam vivendum. An eos summo ridens, illum error oporteat id pro. Aperiri iracundia pro ea, vis amet vidisse ne. An quo quis cetero, habemus invidunt volutpat nec et, id ferri eleifend mediocrem sea. Nibh dissentiet cu eos, sea ut timeam nonumes percipit.
+      Vim ornatus utroque noluisse eu, quo solum ludus ut, vix in vidit quodsi singulis. </p>
+      <p>&mdash; <a href="#">John Goldsmith</a></p>
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+(<a href="add">add</a>
+| <a href="initial">initial</a>)
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+// $(document).on('ready',function() { $('#support_no').prop("checked", true) });
+</script>
+{% endblock %}

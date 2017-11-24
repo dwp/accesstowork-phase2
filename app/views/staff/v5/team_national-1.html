@@ -1,0 +1,115 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-team') }}
+
+ <div class="container">
+    <div class="grid-row">
+      <div class="column-one-third">
+        <div class="font-large"><span class="bold-large">Specialism:</span> Hidden</div>
+      </div>
+      <div class="column-two-thirds">
+        <div class="grid-row">
+          <div class="column-one-quarter">
+            <a href="cases_in_team" style="color: black">
+              <h1 class="bold-xlarge">4458</h1>
+              <p>Total work</p>
+            </a>
+          </div>
+          <div class="column-one-quarter">
+            <a href="outstanding_bf">
+              <h1 class="bold-xlarge">1889</h1>
+              <p>Paused work</p>
+            </a>  
+          </div>
+          <div class="column-one-quarter">
+            <a href="over_15days" style="color: orange">
+              <h1 class="bold-xlarge">555</h1>
+              <p>Applications 15-19 days old</p>
+            </a>  
+          </div>
+          <div class="column-one-quarter">
+            <a href="over_20days" style="color: red">
+              <h1 class="bold-xlarge">123</h1>
+              <p>Applications 20 days old and over</p>
+            </a>  
+          </div>
+        </div>
+      </div>
+    </div><!-- .row -->
+
+    <hr>
+ 
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Team</th>
+              <th>Total work</th>
+              <th>Paused work</th>
+              <th style="color: orange">15-19 days old</th>
+              <th style="color: red">20 days and over</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="team" class="click_row">
+                <td>Hidden team 1</td>
+                <td>755</td>
+                <td>433</td>
+                <td style="color: orange">56</td>
+                <td style="color: red">48</td>
+              </tr>
+              <tr href="#" class="click_row">
+                <td>Hidden team 2</td>
+                <td>1445</td>
+                <td>123</td>
+                <td style="color: orange">78</td>
+                <td style="color: red">27</td>
+              </tr>
+              <tr href="#" class="click_row">
+                <td>Hidden team 3</td>
+                <td>462</td>
+                <td>178</td>
+                <td style="color: orange">188</td>
+                <td style="color: red">28</td>
+              </tr>
+              <tr href="#" class="click_row">
+                <td>Hidden team 4</td>
+                <td>894</td>
+                <td>168</td>
+                <td style="color: orange">233</td>
+                <td style="color: red">21</td>
+              </tr>              
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+   </div> <!-- container -->
+
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+       var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

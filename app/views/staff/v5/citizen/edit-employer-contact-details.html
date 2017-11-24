@@ -1,0 +1,71 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+     
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Edit employer contact details</h1>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Full name</label>
+        <input class="form-control" id="full-name" name="full-name" type="text" value="Bob Carolgees">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="telephone">Telephone</label>
+        <input class="form-control" id="telephone" name="telephone" type="text" value="07684324532">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="email">Email</label>
+        <input class="form-control" id="email" name="email" type="text" value="bob.carolgees@business.com">
+      </div>
+
+      <fieldset>
+
+        <div class="address-block">
+          
+          <legend>
+            <span class="form-label-bold">Address</span>
+          </legend>
+
+          <span class="form-label">Building or street</span>
+          <div class="form-group-compound">
+            <label class="visually-hidden" for="f-address-address1">Building or street 1</label>
+            <input class="form-control" type="text" name="address[address1]" id="f-address-address1" value="McDonalds" maxlength="1000" />
+          </div>
+
+          <div class="form-group-compound" id="address-address2">
+            <label class="visually-hidden" for="f-address-address2">Building or street 2</label>
+            <input class="form-control" type="text" name="address[address2]" id="f-address-address2" value="Big Posh Office" maxlength="1000" />
+          </div>
+
+          <div class="form-group-compound" id="address-address3">
+            <label class="form-label" for="f-address-address3">Town or city</label>
+            <input class="form-control" type="text" name="address[address3]" id="f-address-address3" value="That There London" maxlength="1000" />
+          </div>
+        </div>
+
+        <div class="form-group" id="address-postcode">
+          <label class="form-label" for="f-address-postcode">Postcode</label>
+          <input class="form-control form-control-1-4" type="text" name="address[postcode]" id="f-address-postcode" value="LW3 7YT" maxlength="1000">
+        </div>
+
+      </fieldset>
+
+      <div class="form-group">
+        <a href="/{{PATH}}/citizen/details" class="button">Save</a>
+        <a href="/{{PATH}}/citizen/details" class="button text">Cancel</a>
+      </div>
+
+    </div>{# /column-two-thirds #}
+
+  </div>{# /grid-row #}
+
+</div>
+
+{% endblock %}

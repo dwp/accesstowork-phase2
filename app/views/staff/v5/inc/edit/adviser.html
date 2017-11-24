@@ -1,0 +1,33 @@
+{% set statuses = [
+   "",
+   "Sarah Andrews",
+   "Martin Armitage",
+   "Clémence Fabre",
+   "Elisse Farcens",
+   "Christoph Fernandez",
+   "Julie Guichard",
+   "Colin Julien",
+   "Théo Langlois",
+   "Capucine Michel",
+   "Sarah Micheals",
+   "Celise Mutton",
+   "Richard Oulton",
+   "Ed Oxley",
+   "Colin Partinigton",
+   "Brigit Pardeux",
+   "Lionel Phelps",
+   "Anne Pinkton",
+   "Lisa Punchton",
+   "Paul Rice"
+   ] %}
+<div class="container_status mb30">
+  <h3 class="heading-medium mt0 mb10">Update adviser</h3>
+  <form class="form">
+    <select class="form-control form-select mb10" name="adviser" id="app_adviser" style="margin-bottom:10px;">
+     {% for item in statuses %}
+       <option name="{{ item | slugify }}">{{ item }}</option>
+     {% endfor %}
+    </select>
+    <input type="button" class="button" value="Save"/>
+  </form>
+</div>
