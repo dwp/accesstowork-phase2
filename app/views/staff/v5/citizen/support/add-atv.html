@@ -1,0 +1,91 @@
+
+  <div class="form-group">
+    <label class="form-label" for="description">Description</label>
+    <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
+  </div>
+  <div class="form-group" style="width:25%">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">Award from </span>
+        {# <span class="form-hint">For example, 31 3 1980</span> #}
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="from_day">Day</label>
+          <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="from_month">Month</label>
+          <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="from_year">Year</label>
+          <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="form-group" style="width:25%">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">Award to </span>
+        {# <span class="form-hint">For example, 31 3 1980</span> #}
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="to_day">Day</label>
+          <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="to_month">Month</label>
+          <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="to_year">Year</label>
+          <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="form-group">
+    <label for="journeys">
+      <span class="form-label">Number of Journeys per week</span>
+    </label>
+    <input class="form-control form-control-1-4" id="journeys" name="journeys" type="text"/>
+  </div>
+  <div class="form-group">
+    <label for="journey-cost">
+      <span class="form-label">Cost per journey</span>
+    </label>
+    <input class="form-control form-control-1-4" id="journey-cost" name="journey-cost" type="text"/>
+  </div>
+  <form class="form">
+    
+    <div class="form-group">
+      <label class="form-label" for="cost-share">Will cost share be applied to this support?</label>
+      <div class="multiple-choice" data-target="support_yes_extra">
+        <input id="support_yes" name="support" type="radio" value="Yes">
+        <label for="support_yes"> Yes </label>
+      </div>
+      <div class="multiple-choice" data-target="support_no_extra">
+        <input id="support_no" name="support" type="radio" value="No">
+        <label for="support_no"> No </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="support_yes_extra">
+        <div class="form-group">
+          <label class="form-label" for="reason">Enter cost share detail</label>
+          <input class="form-control form-control-1-4" id="cost-share-detail" name="cost-share-detail" type="text"/>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="form-group">
+    <label for="budget">
+      <span class="form-label">Budget</span>
+      <span class="error-message js-hidden">Budget can not exceed £42,000</span>
+    </label>
+    <input class="form-control form-control-1-4" id="budget" name="budget" type="text"/>
+  </div>
+  <div class="form-group">
+    <input type="submit" class="button" value="Continue" />
+  </div>

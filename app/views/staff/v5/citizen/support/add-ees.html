@@ -1,15 +1,4 @@
-{% extends PATH+"/inc/layout_citizen.html" %}
 
-{% block case_content %}
-
-<div class="container">
-  
-  <div class="grid-row">
-    <div class="column-full">
-
-      
-
-      <form class="form" action="/{{ PATH }}/citizen/support" method="post" id="form-add">
         
         <div class="form-group">
           <label class="form-label" for="description">Description</label>
@@ -101,60 +90,4 @@
         <div class="form-group">
           <input type="submit" class="button" value="Continue" />
         </div>
-      </form>
-
-    </div><!-- column-full -->
-  </div><!-- grid-row -->
-</div><!-- container -->
-{% endblock %}
-
-{% block footer_top %}
-<p>
-  <a href="/prototype-admin/clear-data">clear</a> |
-  <a href="#" id="fill">fill</a>
-  | (
-    <a href="initial">initial</a>
-    | <a href="rejected">rejected</a>
-    )
-</p>
-
-{% endblock %}
-
-{% block page_script %}
-<script type="text/javascript">
-// $(document).on('ready',function() { $('#support_no').prop("checked", true) });
-$(document).on('ready',function()
-{
-  $('#fill').on('click',function(e)
-  {
-    e.preventDefault();
-    $('#type_of_support').val("Travel - One Off");
-    $('#description').val("Taxi to and from work 4 days a week (approx £5 per journey)");
-    $('#from_day').val(5);
-    $('#from_month').val(12);
-    $('#from_year').val(2017);
-    $('#to_day').val(5);
-    $('#to_month').val(11);
-    $('#to_year').val(2018);
-    $('#budget').val('£1200');
-  });
-  // budget input validation
-  $('#form-add').on('submit', function(e){
-    e.preventDefault();
-    
-    var el = $('#budget');
-    $('.error-message').addClass('js-hidden');
-    el.closest('.form-group').removeClass('form-group-error');
-    el.removeClass('form-control-error');
-    
-    if(parseInt(el.val().replace(/[^\d]*/g, '')) > 42000) {
-      $('.error-message').removeClass('js-hidden');
-      el.closest('.form-group').addClass('form-group-error');
-      el.addClass('form-control-error');
-    } else {
-      e.target.submit();
-    }
-  })
-});
-</script>
-{% endblock %}
+      
