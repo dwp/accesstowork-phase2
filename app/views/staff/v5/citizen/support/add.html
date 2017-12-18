@@ -44,7 +44,7 @@
         
         
         
-      </form>
+      </form><!-- form-add --> 
 
     </div><!-- column-full -->
   </div><!-- grid-row -->
@@ -82,22 +82,7 @@ $(document).on('ready',function()
     $('#budget').val('£1200');
   });
   // budget input validation
-  $('#form-add').on('submit', function(e){
-    e.preventDefault();
-    
-    var el = $('#budget');
-    $('.error-message').addClass('js-hidden');
-    el.closest('.form-group').removeClass('form-group-error');
-    el.removeClass('form-control-error');
-    
-    if(parseInt(el.val().replace(/[^\d]*/g, '')) > 42000) {
-      $('.error-message').removeClass('js-hidden');
-      el.closest('.form-group').addClass('form-group-error');
-      el.addClass('form-control-error');
-    } else {
-      e.target.submit();
-    }
-  })
+
   // support input selection
   $('#type_of_support').on('change',function(e){
     e.preventDefault ();
