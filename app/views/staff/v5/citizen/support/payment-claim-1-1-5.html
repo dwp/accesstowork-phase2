@@ -1,0 +1,73 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-two-thirds">
+    <a href="1-5" class="link-back">Back</a>
+   <h2 class="heading-large" id="onlineapp">Travel to work payments claim</h2>
+
+      <table>
+        
+        <tbody>
+          <tr>
+            <td class="heading-small">Invoice reference</td>
+            <td>00002</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Dates of claim</td>
+            <td>From: 30th April 2016 <br />To: 13th May 2016</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Number of units claimed</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Amount claimed</td>
+            <td>£80</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Was this an exisitng payee?</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Was the receipt verified?</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Payment status</td>
+            <td>Paid</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Payment reference</td>
+            <td>SOP1112</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Notes</td>
+            <td>A new payee, Freds Cabs, was set up for Olivers claims for Trave to Work.<br />
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div><!-- COLOMN TWO THIRDS -->
+
+    <div class="column-one-thrid">
+
+    </div> <!-- COLUMN ONE THIRD -->  
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
