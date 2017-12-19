@@ -19,6 +19,11 @@
 
       <h2 class="heading-large" id="onlineapp">Travel (Ongoing)</h2>
       <p>
+        <span class="label">Adviser</span><br />
+        <span class="font-small">John Goldsmith</span> <br />
+        <span class="font-small">john.goldsmith@dwp.gsi.gov.uk</span>
+      </p>
+      <p>
         <span class="label">Dates</span><br />
         <span class="font-small">From: 30th Apr 2016</span> <br />
         <span class="font-small">To: 29th Apr 2019</span>
@@ -72,8 +77,9 @@
           <th>Remaining</th>
           <th class="numeric">Amount</th>
           <th class="numeric">Remaining</th>
+          <th>Status</th>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-5-1-2">
           <td>30th October 2017</td>
           <td>00006</td>
           <td>SOP1116</td>
@@ -81,8 +87,9 @@
           <td>1,456</td>
           <td class="numeric">£640</tdclass>
           <td class="numeric">£3,120</td>
+          <td>Paid</td>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-4-1-2">
           <td>17th July 2017</td>
           <td>00005</td>
           <td>SOP1115</td>
@@ -90,17 +97,19 @@
           <td>1,584</td>
           <td class="numeric">£1,040</tdclass>
           <td class="numeric">£3,760</td>
+          <td>Paid</td>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-3-1-2">
           <td>21st January 2017</td>
           <td>00004</td>
-          <td>SOP1114</td>
+          <td> - </td>
           <td>104</td>
           <td>1,792</td>
           <td class="numeric">£520</tdclass>
           <td class="numeric">£4,800</td>
+          <td>Rejected</td>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-2-1-2">
           <td>13th October 2106</td>
           <td>00003</td>
           <td>SOP1113</td>
@@ -108,8 +117,9 @@
           <td>1,896</td>
           <td class="numeric">£840</td>
           <td class="numeric">£5,320</td>
+          <td>Paid</td>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-1-1-2">
           <td>18th May 2016</td>
           <td>00002</td>
           <td>SOP1112</td>
@@ -117,6 +127,7 @@
           <td>2,064</td>
           <td class="numeric">£80</td>
           <td class="numeric">£6,160</td>
+          <td>Paid</td>
         </tr>
         <tr>
           <td>30th April 2016</td>
@@ -126,6 +137,7 @@
           <td>initial award</td>
           <td class="numeric">initial award</td>
           <td class="numeric">£6,240</td>
+          <td>initial award</td>
         </tr>
       </table>
 
@@ -133,5 +145,21 @@
 
   </div><!-- grid-row -->
 </div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
 
 {% endblock %}

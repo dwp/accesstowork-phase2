@@ -13,9 +13,9 @@
   <div class="grid-row">
     <div class="column-half">
 
-      <h2 class="heading-large" id="onlineapp">Add a payment</h2>
+      <h2 class="heading-large" id="onlineapp">Add a Travel to Work payment</h2>
 
-      <h3 class="heading-medium">Travel ongoing</h3>
+      <h3 class="heading-medium">Period of claim</h3>
 
       <form class="form" action="" method="post" id="form-add-receipt">
        <!-- <div class="form-group">
@@ -87,7 +87,7 @@
          </label>
 
 
-       <form>
+       
         <fieldset class="in-line">
           
           <div class="multiple-choice" data-target="account-yes">
@@ -226,17 +226,30 @@
             </div>
           </div>
           </fieldset>
-        <label class="form-label" for="textarea">
-                  Notes for this payment claim?
-        </label>
-        <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+        </div>
+          <div class="form-group">  
+            <label for="payee">
+              <span class="form-label">Action for this payment claim</span>
+           </label>       
+          <fieldset class="in-line">
+            
+            <div class="multiple-choice" data-target="account-yes">
+                  <input id="radio-1" type="radio" name="bank" value="acoountyes">
+                  <label for="radio-1">Accept</label>
+            </div>
 
+               <div class="multiple-choice" data-target="account-no">
+                 <input id="radio-2" type="radio" name="bank" value="accountno">
+                 <label for="radio-2">Reject</label>
+               </div> 
+           </fieldset>    
+        </div>
+
+          <label class="form-label" for="textarea">Notes for this payment claim?</label>
+          <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+</div> <!-- FORM GROUP -->   
         </div>
         </form>
-      </div>
-
-        
-
 
         <div class="form-group">
             <a href="/{{PATH}}/citizen/support/1-5" class="button">Save</a>
