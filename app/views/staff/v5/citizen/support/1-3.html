@@ -44,13 +44,23 @@
         <span class="font-small">Journeys used 624</span>
       </p>
       <p>
-        <span class="label">Payee details</span><br />
+        <span class="label">Live payee details</span><br />
+      </p>  
+      <p>
         <span class="font-small">Name: Freds Cabs</span><br />
         <span class="font-small">Bank name: Nat West</span><br />
         <span class="font-small">Status: live</span><br />
         <span class="font-small">Sort code: 11-22-33</span><br />
         <span class="font-small">Accunt number: 23456789</span><br />
         <span class="font-small">Email: jason.hair@fredscabs.com</span>
+      </p>
+      <p>
+        <span class="font-small">Name: Green Cars</span><br />
+        <span class="font-small">Bank name: Santander</span><br />
+        <span class="font-small">Status: live</span><br />
+        <span class="font-small">Sort code: 33-22-11</span><br />
+        <span class="font-small">Accunt number: 23456789</span><br />
+        <span class="font-small">Email: micky.shoo@green.cars.com</span>
       </p>
       <div class="form-group mt30">
         <a href="payees" class="link">View payees</a>
@@ -69,54 +79,60 @@
 
 
       <table>
-        <tr>
+        <tr >
           <th>Date</th>
           <th>Invoice reference</th>
           <th>SOP reference</th>
           <th>Units</th>
-          <th class="numeric">Amount</th>
+          <th>Amount</th>
+          <th>Payment status</th>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-5-1-3">
           <td>30th October 2017</td>
           <td>Freds 0005</td>
           <td>SOP00005</td>
           <td>128</td>
-          <td class="numeric">£640</tdclass>
+          <td>£640</td>
+          <td>Paid</td>  
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-4-1-3">
           <td>17th July 2017</td>
           <td>Freds 0004</td>
           <td>SOP00004</td>
           <td>208</td>
-          <td class="numeric">£1,040</tdclass>
+          <td>£1,040</td>
+          <td>Paid</td>  
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-3-1-3">
           <td>21st January 2017</td>
           <td>Freds 0003</td>
-          <td>SOP00003</td>
+          <td>-</td>
           <td>104</td>
-          <td class="numeric">£520</tdclass>
+          <td>£520</td>
+          <td>Rejected</td>  
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-2-1-3">
           <td>13th October 2106</td>
           <td>Freds 0002</td>
           <td>SOP00002</td>
           <td>168</td>
-          <td class="numeric">£840</td>
+          <td>£840</td>
+          <td>Paid</td>
         </tr>
-        <tr>
+        <tr class="click_row" href="payment-claim-1-1-3">
           <td>18th May 2016</td>
           <td>Freds 0001</td>
           <td>SOP00001</td>
           <td>16</td>
-          <td class="numeric">£80</td>
+          <td>£80</td>
+          <td>Paid</td>
         </tr>
         <tr>
           <td>30th April 2016</td>
           <td>initial award</td>
           <td>initial award</td>
           <td>initial award</td>
-          <td class="numeric">initial award</td>
+          <td>initial award</td>
         </tr>
       </table>
 
@@ -129,4 +145,18 @@
   </div><!-- grid-row -->
 </div><!-- container -->
 
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
 {% endblock %}
