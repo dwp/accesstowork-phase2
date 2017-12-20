@@ -1,0 +1,55 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+     
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <a href="1-5" class="link-back">Back</a>
+
+      <table>
+        <h2 class="heading-medium">Payee details</h2>
+        <tbody>
+          <tr>
+            <td class="heading-small">Name</td>
+            <td>Green Cars</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Bank</td>
+            <td>Santander</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Sort code</td>
+            <td>11-22-33</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Account number</td>
+            <td>23456789</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Contact email</td>
+            <td>craig.shoo@green.cars.com</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Status</td>
+            <td>Live</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="form-group">
+        <a href="edit-payee-details-toms" class="button">Edit</a>
+        
+      </div>
+
+    </div>{# /column-two-thirds #}
+
+  </div>{# /grid-row #}
+
+</div>
+
+{% endblock %}
