@@ -1,105 +1,115 @@
 
-  <div class="form-group">
-    <label class="form-label-bold" for="description">Description of travel support</label>
-    <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
+<div class="form-group">
+  <label class="form-label-bold" for="description">Description of travel support</label>
+  <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
+</div>
+<div class="form-group">
+  <label for="journeys">
+    <span class="form-label-bold">How many journeys?</span>
+  </label>
+  <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/> per week
+</div>
+<div class="form-group form-label-bold">
+  <label for="journey-cost">
+    <span class="form-label-bold">Cost per journey?</span>
+  </label>
+  £
+  <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
   </div>
-  <div class="form-group">
-    <label for="journeys">
-      <span class="form-label-bold">How many journeys?</span>
-    </label>
-    <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/> per week
-  </div>
-  <div class="form-group form-label-bold">
-    <label for="journey-cost">
-      <span class="form-label-bold">Cost per journey?</span>
-    </label>
-    £
-    <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
+  <div class="form-label-bold">or</div>
+<div class="form-group">  
+  <label for="journey-mileage">
+    <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
+  </label> 
+    = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
+</div>
+<div class="form-group form-label-bold">Deductions</div>
+<div class="form-group">
+  <label for="journeys">
+    <span class="form-label-bold">Employer mandatory</span>
+  </label>
+  £ <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/>
+</div>
+<div class="form-label-bold">or</div>
+<div class="form-group">  
+  <label for="journey-mileage">
+    <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
+  </label> 
+    = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
+</div>
+<div class="form-group">
+  <label for="journeys">
+    <span class="form-label-bold">Customer mandatory</span>
+  </label>
+  £ <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/>
+</div>
+<div class="form-label-bold">or</div>
+<div class="form-group">  
+  <label for="journey-mileage">
+    <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
+  </label> 
+    = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
+</div>
+
+<div class="form-group">
+  <fieldset class="inline">
+    <label class="form-label" for="cost-share">Is there a voluntary contribution?</label>
+    <div class="multiple-choice" data-target="vol-cont-yes">
+      <input id="support_yes" name="support" type="radio" value="Yes">
+      <label for="support_yes"> Yes </label>
     </div>
-    <div class="form-label-bold">or</div>
-  <div class="form-group">  
-    <label for="journey-mileage">
-      <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
-    </label> 
-      = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
-  </div>
-  <div class="form-group form-label-bold">Deductions</div>
-  <div class="form-group">
-    <label for="journeys">
-      <span class="form-label-bold">Employer mandatory</span>
-    </label>
-   £ <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/>
-  </div>
-  <div class="form-label-bold">or</div>
-  <div class="form-group">  
-    <label for="journey-mileage">
-      <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
-    </label> 
-      = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
-  </div>
-  <div class="form-group">
-    <label for="journeys">
-      <span class="form-label-bold">Customer mandatory</span>
-    </label>
-   £ <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/>
-  </div>
-  <div class="form-label-bold">or</div>
-  <div class="form-group">  
-    <label for="journey-mileage">
-      <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
-    </label> 
-      = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
-  </div>
-  
-  <div class="form-group">
-      <label class="form-label" for="cost-share">Is there a voluntary contribution?</label>
-      <div class="multiple-choice" data-target="vol-cont-yes">
-        <input id="support_yes" name="support" type="radio" value="Yes">
-        <label for="support_yes"> Yes </label>
-      </div>
-      <div class="multiple-choice" data-target="vol-cont-no">
-        <input id="support_no" name="support" type="radio" value="No">
-        <label for="support_no"> No </label>
-      </div>
-      <div class="panel panel-border-narrow js-hidden" id="vol-cont-yes">
-        <div class="form-group">
-          <label class="form-label" for="cost-share">Employer</label>
-              <div class="multiple-choice" data-target="emp-cont-yes">
-                <input id="support_yes" name="support" type="radio" value="Yes">
-                <label for="support_yes"> Yes </label>
-              </div>
-              <div class="multiple-choice" data-target="emp-cont-no">
-                <input id="support_no" name="support" type="radio" value="No">
-                <label for="support_no"> No </label>
-              </div>
-              <label class="form-label" for="cost-share">Customer</label>
-              <div class="multiple-choice" data-target="cus-cont-yes">
-                <input id="support_yes" name="support" type="radio" value="Yes">
-                <label for="support_yes"> Yes </label>
-              </div>
-              <div class="multiple-choice" data-target="emp-cont-no">
-                <input id="support_no" name="support" type="radio" value="No">
-                <label for="support_no"> No </label>
-              </div>
-              <div class="panel panel-border-narrow js-hidden" id="emp-cont-yes">
-              <label class="form-label" for="reason">Amount</label>
-          <input class="form-control form-control-1-4" id="cost-share-detail" name="cost-share-detail" type="text"/>
+    <div class="multiple-choice" data-target="vol-cont-no">
+      <input id="support_no" name="support" type="radio" value="No">
+      <label for="support_no"> No </label>
+    </div>
 
-
+    <div class="panel panel-border-narrow js-hidden" id="vol-cont-yes">
+      <fieldset class="inline form-group">
+        <label class="form-label" for="cost-share">Employer</label>
+        <div class="multiple-choice" data-target="emp-cont-yes">
+          <input id="employer_support_yes" name="employer_support" type="radio" value="Yes">
+          <label for="employer_support_yes"> Yes </label>
         </div>
-      </div>
-
+        <div class="multiple-choice" data-target="emp-cont-no">
+          <input id="employer_support_no" name="employer_support" type="radio" value="No">
+          <label for="employer_support_no"> No </label>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="emp-cont-yes">
+          £ <input class="form-control form-control-1-8" id="employer_cost_per_week" name="employer_cost_per_week" type="text"/> per week
+          <div class="form-label-bold">or</div>
+          <div class="form-group">  
+            <label for="journey-mileage">
+              <input class="form-control form-control-1-8" id="employer_miles" name="employer_miles" type="text"/> miles @ 25p per mile
+            </label> 
+              = £ <input class="form-control form-control-1-8" id="employer_miles_cost" name="employer_miles_cost" type="text"/> per week
+          </div>
+        </div>
+      </fieldset>
+      
+      <fieldset class="inline form-group">
+        <label class="form-label" for="cost-share">Customer</label>
+        <div class="multiple-choice" data-target="cus-cont-yes">
+          <input id="customer_support_yes" name="customer_support" type="radio" value="Yes">
+          <label for="customer_support_yes"> Yes </label>
+        </div>
+        <div class="multiple-choice" data-target="emp-cont-no">
+          <input id="customer_support_no" name="customer_support" type="radio" value="No">
+          <label for="customer_support_no"> No </label>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="cus-cont-yes">
+            £ <input class="form-control form-control-1-8" id="customer_cost_per_week" name="customer_cost_per_week" type="text"/> per week
+            <div class="form-label-bold">or</div>
+            <div class="form-group">  
+              <label for="journey-mileage">
+                <input class="form-control form-control-1-8" id="customer_miles" name="customer_miles" type="text"/> miles @ 25p per mile
+              </label> 
+                = £ <input class="form-control form-control-1-8" id="customer_miles_cost" name="customer_miles_cost" type="text"/> per week
+            </div>
+        </div>
+      </fieldset>
     </div>
+  </fieldset>
+</div>
 
 
 
-
-
-
-
-    </fieldset>
-  </div>
-
-
-
-  
