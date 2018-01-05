@@ -1,5 +1,46 @@
+<div class="form-group">
+  <label class="form-label" for="description">Description of travel support</label>
+  <textarea class="form-control" id="description" name="tiw-description" rows="4"></textarea>
+</div>
 
-              
+<fieldset class="inline form-group">
+  <label class="form-label" for="cost-share">Will there be set journeys?</label>
+  <div class="multiple-choice" data-target="tiw-set-journeys-yes">
+    <input id="tiw-set-journeys_yes" name="tiw-set-journeys" type="radio" value="Yes">
+    <label for="tiw-set-journeys_yes">Yes</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="tiw-set-journeys_no" name="tiw-set-journeys" type="radio" value="No">
+    <label for="tiw-set-journeys_no">No</label>
+  </div>
+  
+  <div class="panel panel-border-narrow js-hidden" id="tiw-set-journeys-yes">
+    
+    <div class="form-group">
+      <label for="tiw-set-journeys">
+        <span class="form-label">Number of journeys?</span>
+      </label>
+      <input class="form-control form-control-1-8" id="tiw-set-journeys" name="tiw-set-journeys" type="text"/> per week/per month
+    </div>
+    
+    <div class="form-group form-label">
+      <label for="tiw-set-journey-cost">
+        <span class="form-label">Cost per journey?</span>
+      </label>
+      £
+      <input class="form-control form-control-1-8" id="tiw-set-journey-cost" name="tiw-set-journey-cost" type="text"/> per week/per month
+    </div>
+    <div class="form-label">or</div>
+    <div class="form-group">  
+      <label for="tiw-set-journey-miles">
+        <input class="form-control form-control-1-8" id="tiw-set-journey-miles" name="tiw-set-journey-miles" type="text"/> miles @ 25p per mile
+      </label> 
+        = £ <span id="tiw-set-journey-miles-cost">0.00</span> per week/per month
+    </div>
+  </div>
+</fieldset>
+
+
     <div class="form-group">
       <label class="form-label" for="description">Critters</label>
       <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
@@ -79,7 +120,7 @@
           </div>
         </div>
       </div>
-    </form>
+    
     <div class="form-group">
       <label for="budget">
         <span class="form-label">Budget</span>
@@ -90,4 +131,4 @@
     <div class="form-group">
       <input type="submit" class="button" value="Continue" />
     </div>
-  </form>
+  
