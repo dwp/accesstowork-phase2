@@ -1,72 +1,35 @@
 
-  <h2 class="heading-large" id="onlineapp">First item</h2>
-
   <div class="form-group">
-    <label class="form-label" for="description">Record support item</label>
-    <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
-  </div>
-  <div class="form-group" style="width:25%">
-    <fieldset>
-      <legend>
-        <span class="form-label-bold">Award from </span>
-        {# <span class="form-hint">For example, 31 3 1980</span> #}
-      </legend>
-      <div class="form-date">
-        <div class="form-group form-group-day">
-          <label class="form-label" for="from_day">Day</label>
-          <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
-        </div>
-        <div class="form-group form-group-month">
-          <label class="form-label" for="from_month">Month</label>
-          <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
-        </div>
-        <div class="form-group form-group-year">
-          <label class="form-label" for="from_year">Year</label>
-          <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-        </div>
-      </div>
-    </fieldset>
-  </div>
-  <div class="form-group" style="width:25%">
-    <fieldset>
-      <legend>
-        <span class="form-label-bold">Award to </span>
-        {# <span class="form-hint">For example, 31 3 1980</span> #}
-      </legend>
-      <div class="form-date">
-        <div class="form-group form-group-day">
-          <label class="form-label" for="to_day">Day</label>
-          <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
-        </div>
-        <div class="form-group form-group-month">
-          <label class="form-label" for="to_month">Month</label>
-          <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
-        </div>
-        <div class="form-group form-group-year">
-          <label class="form-label" for="to_year">Year</label>
-          <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-        </div>
-      </div>
-    </fieldset>
-
+    <label class="form-label" for="sae-description">Details of suport item 1</label>
+    <textarea class="form-control" id="sae-description" name="sae-description" style="height:100px"></textarea>
   </div>
 
-  <div class="form-group">
-    <label for="gross-award">
-      <span class="form-label">Gross cost</span>
+  <div class="form-group form-label-bold">
+    <label for="sae-1-cost">
+      <span class="form-label-bold">Cost of item?</span>
     </label>
-    <input class="form-control form-control-1-4" id="gross-award" name="gross-award" type="text"/>
+    £
+    <input class="form-control form-control-1-8" id="sae-1-cost" name="sae-1-cost" type="text"/>
+  </div>
+  
+  <input type="button" class="button button-secondary" value="Add another item">
+
+  <div class="form-group">
+    <label for="sae-gross-award">
+      <span class="form-label-bold">Gross cost</span>
+    </label>
+    £<input class="form-control form-control-1-4" id="sae-gross-award" name="sae-gross-award" type="text"/>
   </div> <!-- FORM GROUP -->
   
     
     <div class="form-group">
-      <label class="form-label" for="employer-size">Employer size?</label>
+      <label class="form-label" for="sae-employer-size">Employer size?</label>
       <div class="multiple-choice" data-target="medium-yes">
-        <input id="medium_yes" name="employer-size" type="radio" value="Yes">
+        <input id="medium_yes" name="sae-employer-size" type="radio" value="Yes">
         <label for="medium_yes">Medium</label>
       </div>
       <div class="multiple-choice" data-target="large-yes">
-        <input id="large_yes" name="employer-size" type="radio" value="No">
+        <input id="large_yes" name="sae-employer-size" type="radio" value="No">
         <label for="large_yes">Large</label>
       </div>
       <div class="panel panel-border-narrow js-hidden" id="medium-yes">
@@ -84,14 +47,14 @@
     </div>
 
   <div class="form-group">
-      <label class="form-label" for="cost-share">Will there be a NHS deduction?</label>
+      <label class="form-label" for="sae-cost-share">Will there be a NHS deduction?</label>
       <div class="multiple-choice" data-target="nhs-yes">
-        <input id="support_yes" name="support" type="radio" value="Yes">
-        <label for="support_yes"> Yes </label>
+        <input id="sae-support_yes" name="sae-support" type="radio" value="Yes">
+        <label for="sae-support_yes"> Yes </label>
       </div>
       <div class="multiple-choice" data-target="nhs-no">
-        <input id="support_no" name="support" type="radio" value="No">
-        <label for="support_no"> No </label>
+        <input id="sae-support_no" name="support" type="radio" value="No">
+        <label for="sae-support_no"> No </label>
       </div>
       <div class="panel panel-border-narrow js-hidden" id="nhs-yes">
         <div class="form-group">
@@ -159,16 +122,10 @@
       <label for="gross-award">
         <span class="form-label">Net cost</span>
       </label>
-      <input class="form-control form-control-1-4" id="gross-award" name="gross-award" type="text"/>
+      £<input class="form-control form-control-1-4" id="gross-award" name="gross-award" type="text"/>
     </div> <!-- FORM GROUP -->
   
-  <div class="form-group">
-    <label for="budget">
-      <span class="form-label">Budget</span>
-      <span class="error-message js-hidden">Budget can not exceed £42,000</span>
-    </label>
-    <input class="form-control form-control-1-4" id="budget" name="budget" type="text"/>
-  </div>
+  
   <div class="form-group">
     <input type="submit" class="button" value="Continue" />
   </div>
