@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
   <div class="form-group">
     <label class="form-label-bold" for="description">Description of travel support</label>
     <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
@@ -42,64 +43,173 @@
       <span class="form-label-bold">Customer mandatory</span>
     </label>
    £ <input class="form-control form-control-1-8" id="journeys" name="journeys" type="text"/>
-  </div>
-  <div class="form-label-bold">or</div>
-  <div class="form-group">  
-    <label for="journey-mileage">
-      <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/> miles @ 25p per mile
-    </label> 
-      = £ <input class="form-control form-control-1-8" id="journey-cost" name="journey-cost" type="text"/>
-  </div>
-  
-  <div class="form-group">
-      <label class="form-label" for="cost-share">Is there a voluntary contribution?</label>
-      <div class="multiple-choice" data-target="vol-cont-yes">
-        <input id="support_yes" name="support" type="radio" value="Yes">
-        <label for="support_yes"> Yes </label>
-      </div>
-      <div class="multiple-choice" data-target="vol-cont-no">
-        <input id="support_no" name="support" type="radio" value="No">
-        <label for="support_no"> No </label>
-      </div>
-      <div class="panel panel-border-narrow js-hidden" id="vol-cont-yes">
-        <div class="form-group">
-          <label class="form-label" for="cost-share">Employer</label>
-              <div class="multiple-choice" data-target="emp-cont-yes">
-                <input id="support_yes" name="support" type="radio" value="Yes">
-                <label for="support_yes"> Yes </label>
-              </div>
-              <div class="multiple-choice" data-target="emp-cont-no">
-                <input id="support_no" name="support" type="radio" value="No">
-                <label for="support_no"> No </label>
-              </div>
-              <label class="form-label" for="cost-share">Customer</label>
-              <div class="multiple-choice" data-target="cus-cont-yes">
-                <input id="support_yes" name="support" type="radio" value="Yes">
-                <label for="support_yes"> Yes </label>
-              </div>
-              <div class="multiple-choice" data-target="emp-cont-no">
-                <input id="support_no" name="support" type="radio" value="No">
-                <label for="support_no"> No </label>
-              </div>
-              <div class="panel panel-border-narrow js-hidden" id="emp-cont-yes">
-              <label class="form-label" for="reason">Amount</label>
-          <input class="form-control form-control-1-4" id="cost-share-detail" name="cost-share-detail" type="text"/>
+=======
+<div class="form-group">
+  <label class="form-label" for="description">Description of travel support</label>
+  <textarea class="form-control" id="description" name="ttw-description" rows="4"></textarea>
+</div>
+<div class="form-group">
+  <label for="ttw-journeys">
+    <span class="form-label">How many journeys per week?</span>
+  </label>
+  <input class="form-control form-control-1-8" id="ttw-journeys" name="ttw-journeys" type="text"/>
+</div>
+<div class="form-group">
+  <label for="ttw-journey-cost">
+    <span class="form-label">Cost per journey?</span>
+  </label>
+  £ <input class="form-control form-control-1-8" id="ttw-journey-cost" name="ttw-journey-cost" type="text"/>
+</div>
+<div class="form-label">or</div>
 
+<label for="ttw-journey-mileage">
+  <input class="form-control form-control-1-8" id="ttw-journey-mileage" name="ttw-journey-mileage" type="text"/> miles @ 25p per mile
+</label> 
+ = £ <span id="ttw-journey-mileage-cost">0.00</span>
+<h3 class="form-group heading-medium mt30">Gross total: £<span id="ttw-gross">0.00</span> for 3 years</h3>
+<input class="hidden" name="ttw-gross" type="text"/>
 
+<h2 class="heading-medium">Deductions</h2>
+
+<div class="form-group">
+  <label for="ttw-cust-man-deductions">
+    <span class="form-label">Customer mandatory deduction</span>
+    <span class="form-hint" style="padding-top:0">Public transport costs</span>
+  </label>
+  £ <input class="form-control form-control-1-8" id="ttw-cust-man-deductions" name="ttw-cust-man-deductions" type="text"/> per week
+</div>
+
+<fieldset class="inline">
+  <legend>
+    <span class="form-label">Is there a voluntary deduction?</span>
+  </legend>
+  <div class="multiple-choice" data-target="vol-deduction-yes">
+    <input id="ttw-vol-deduction-yes" name="ttw-vol-deduction" type="radio" value="Yes">
+    <label for="ttw-vol-deduction-yes"> Yes </label>
+>>>>>>> origin/award_build
+  </div>
+  <div class="multiple-choice">
+    <input id="ttw-vol-deduction-no" name="ttw-vol-deduction" type="radio" value="No">
+    <label for="ttw-vol-deduction-no"> No </label>
+  </div>
+
+  <div class="panel panel-border-narrow js-hidden" id="vol-deduction-yes">
+    <fieldset class="inline form-group">
+      <legend>
+          <span class="form-label">Employer</span>
+      </legend>
+      <div class="multiple-choice" data-target="ttw-emp-deduction-panel">
+        <input id="ttw-emp-deduction-yes" name="ttw-emp-deduction" type="radio" value="Yes">
+        <label for="ttw-emp-deduction-yes"> Yes </label>
+      </div>
+      <div class="multiple-choice" data-target="emp-cont-no">
+        <input id="ttw-emp-deduction-no" name="ttw-emp-deduction" type="radio" value="No">
+        <label for="ttw-emp-deduction-no"> No </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="ttw-emp-deduction-panel">
+        £ <input class="form-control form-control-1-8" id="ttw-emp-deduction-amount" name="ttw-emp-deduction-amount" type="text"/> per week
+        <div class="form-label">or</div>
+        <div class="form-group">  
+          <label for="ttw-emp-deduction-mileage">
+            <input class="form-control form-control-1-8" id="ttw-emp-deduction-mileage" name="ttw-emp-deduction-mileage" type="text"/> miles @ 25p per mile
+          </label> 
+          = £<span id="ttw-emp-deduction-mileage-cost">0.00</span> per week
         </div>
       </div>
-
-    </div>
-
-
-
-
-
-
-
+    </fieldset>
+    
+    <fieldset class="inline form-group">
+      <legend>
+          <span class="form-label">Customer</span>
+      </legend>
+      <div class="multiple-choice" data-target="ttw-cust-deduction-panel">
+        <input id="ttw-cust-deduction-yes" name="ttw-cust-deduction" type="radio" value="Yes">
+        <label for="ttw-cust-deduction-yes"> Yes </label>
+      </div>
+      <div class="multiple-choice" data-target="cust-cont-no">
+        <input id="ttw-cust-deduction-no" name="ttw-cust-deduction" type="radio" value="No">
+        <label for="ttw-cust-deduction-no"> No </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="ttw-cust-deduction-panel">
+        £ <input class="form-control form-control-1-8" id="ttw-cust-deduction-amount" name="ttw-cust-deduction-amount" type="text"/> per week
+        <div class="form-label">or</div>
+        <div class="form-group">  
+          <label for="ttw-cust-deduction-mileage">
+            <input class="form-control form-control-1-8" id="ttw-cust-deduction-mileage" name="ttw-cust-deduction-mileage" type="text"/> miles @ 25p per mile
+          </label> 
+          = £<span id="ttw-cust-deduction-mileage-cost">0.00</span> per week
+        </div>
+      </div>
     </fieldset>
   </div>
+</fieldset>
 
 
+<h3 class="form-group heading-medium mt30">Net total: £<span id="ttw-net">0.00</span> for 3 years</h3>
+<input class="hidden" name="ttw-net" type="text"/>
 
-  
+<div class="form-group">
+  <input type="submit" class="button" value="Continue" />
+</div>
+
+<script>
+  window.onload = function(){
+    $('input').on('input', function(){
+
+      var ttwJourneys = $('#ttw-journeys').val();
+      var ttwJourneyCost = $('#ttw-journey-cost').val();
+      var ttwJourneyMiles = $('#ttw-journey-mileage').val();
+      var gross = 0;
+
+      if(ttwJourneys){
+        if(ttwJourneyCost){
+          gross = ttwJourneys*ttwJourneyCost*52*3;
+          $('#ttw-gross').html(gross.toFixed(2));
+          $('input[name="ttw-gross"]').val(gross);
+        }
+        
+        if(ttwJourneyMiles){
+          var mileCost = (parseFloat(ttwJourneyMiles) * 0.25).toFixed(2);
+          $('#ttw-journey-mileage-cost').html(mileCost);
+          gross = ttwJourneys*mileCost*52*3;
+          $('#ttw-gross').html(gross.toFixed(2));
+          $('input[name="ttw-gross"]').val(gross);
+        }
+      }
+
+      var manDeduc = $('#ttw-cust-man-deductions').val();
+      var empAmount = $('#ttw-emp-deduction-amount').val();
+      var empMiles = $('#ttw-emp-deduction-mileage').val();
+      var custAmount = $('#ttw-cust-deduction-amount').val();
+      var custMiles = $('#ttw-cust-deduction-mileage').val();
+      var empMilesCost = 0;
+      var custMilesCost = 0;
+      var emp = 0;
+      var cust = 0;
+
+      if($('input[name="ttw-vol-deduction"]').val() == "Yes"){
+
+        if($('input[name="ttw-emp-deduction"]').val() == "Yes"){
+          if(empAmount) emp = empAmount;
+          if(empMiles){
+            emp = empMilesCost = (parseFloat(empMiles) * 0.25).toFixed(2);
+            $('#ttw-emp-deduction-mileage-cost').html(empMilesCost)
+          }
+        } 
+
+        if($('input[name="ttw-cust-deduction"]').val() == "Yes"){
+          if(custAmount) cust = custAmount;
+          if(custMiles){
+            cust = custMilesCost = (parseFloat(custMiles) * 0.25).toFixed(2);
+            $('#ttw-cust-deduction-mileage-cost').html(custMilesCost)
+          }
+        }
+      }
+
+      var net = gross - ((manDeduc + parseFloat(emp) + parseFloat(cust)*52*3));
+      $('#ttw-net').html(net.toFixed(2));
+      $('input[name="ttw-net"]').val(net);
+    })
+  };
+</script>
+

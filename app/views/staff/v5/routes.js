@@ -36,4 +36,8 @@ router.post('/citizen/case/eligibility', function(req,res,next)
     res.redirect('/staff/v5/citizen/timeline');
 });
 
+router.post('/citizen/support/award-confirm', function(req,res,next) {
+  res.render('staff/v5/citizen/support/award-confirm', {data:req.body});
+});
+
 module.exports = router;

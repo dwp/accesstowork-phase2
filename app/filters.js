@@ -83,5 +83,15 @@ module.exports = function (env) {
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+
+  filters.money = function(str) {
+    let num = parseFloat(str).toFixed(2);
+    return isNaN(num) ? "0.00" : num;
+  }
+
+  filters.ttwMiles = function(str) {
+    let num = (parseFloat(str) * 0.25).toFixed(2) ;
+    return isNaN(num) ? "0.00" : num;
+  }
   return filters
 }

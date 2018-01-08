@@ -12,6 +12,7 @@
       £
       <input class="form-control form-control-1-8" id="mhs-cost" name="mhs-cost" type="text"/>
     </div>
+<<<<<<< HEAD
 
     <div class="form-label-bold">or</div>
 
@@ -20,6 +21,34 @@
         <input class="form-control form-control-1-8" id="mhs-hours" name="mhs-hours" type="text"/> hours @ ??p per hour
       </label> 
         = £ <input class="form-control form-control-1-8" id="mhs-claculated-hours" name="mhs-claculated-hours" type="text"/>
+=======
+    <form class="form">
+      
+      <div class="form-group">
+        <label class="form-label" for="cost-share">Will cost share be applied to this support?</label>
+        <div class="multiple-choice" data-target="support_yes_extra">
+          <input id="support_yes" name="support" type="radio" value="Yes">
+          <label for="support_yes"> Yes </label>
+        </div>
+        <div class="multiple-choice" data-target="support_no_extra">
+          <input id="support_no" name="support" type="radio" value="No">
+          <label for="support_no"> No </label>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="support_yes_extra">
+          <div class="form-group">
+            <label class="form-label" for="reason">Enter cost share detail</label>
+            <input class="form-control form-control-1-4" id="cost-share-detail" name="cost-share-detail" type="text"/>
+          </div>
+        </div>
+      </div>
+    
+    <div class="form-group">
+      <label for="budget">
+        <span class="form-label">Budget</span>
+        <span class="error-message js-hidden">Budget can not exceed £42,000</span>
+      </label>
+      <input class="form-control form-control-1-4" id="budget" name="budget" type="text"/>
+>>>>>>> origin/award_build
     </div>
     
     
