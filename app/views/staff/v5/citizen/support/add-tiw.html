@@ -1,6 +1,6 @@
 <div class="form-group">
   <label class="form-label" for="description">Description of travel support</label>
-  <textarea class="form-control" id="description" name="tiw-description" rows="4"></textarea>
+  <textarea class="form-control" id="description" name="tiw-description" rows="3"></textarea>
 </div>
 
 <fieldset class="inline form-group">
@@ -17,13 +17,13 @@
   <div class="panel panel-border-narrow js-hidden" id="tiw-set-journeys-yes">
     
     <div class="form-group">
-      <label for="tiw-set-journeys">
+      <label for="tiw-set-journey">
         <span class="form-label">Number of journeys?</span>
       </label>
-      <input class="form-control form-control-1-8" id="tiw-set-journeys" name="tiw-set-journeys" type="text"/> per week/per month
+      <input class="form-control form-control-1-8" id="tiw-set-journey" name="tiw-set-journey" type="text"/> per week/per month
     </div>
     
-    <div class="form-group form-label">
+    <div>
       <label for="tiw-set-journey-cost">
         <span class="form-label">Cost per journey?</span>
       </label>
@@ -33,102 +33,161 @@
     <div class="form-label">or</div>
     <div class="form-group">  
       <label for="tiw-set-journey-miles">
-        <input class="form-control form-control-1-8" id="tiw-set-journey-miles" name="tiw-set-journey-miles" type="text"/> miles @ 25p per mile
+        <input class="form-control form-control-1-8" id="tiw-set-journey-miles" name="tiw-set-journey-miles" type="text"/> miles @ 45p per mile
       </label> 
         = £ <span id="tiw-set-journey-miles-cost">0.00</span> per week/per month
     </div>
   </div>
 </fieldset>
 
-
-    <div class="form-group">
-      <label class="form-label" for="description">Critters</label>
-      <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
-    </div>
-    <div class="form-group" style="width:25%">
-      <fieldset>
-        <legend>
-          <span class="form-label-bold">Award from </span>
-          {# <span class="form-hint">For example, 31 3 1980</span> #}
-        </legend>
-        <div class="form-date">
-          <div class="form-group form-group-day">
-            <label class="form-label" for="from_day">Day</label>
-            <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
-          </div>
-          <div class="form-group form-group-month">
-            <label class="form-label" for="from_month">Month</label>
-            <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
-          </div>
-          <div class="form-group form-group-year">
-            <label class="form-label" for="from_year">Year</label>
-            <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class="form-group" style="width:25%">
-      <fieldset>
-        <legend>
-          <span class="form-label-bold">Award to </span>
-          {# <span class="form-hint">For example, 31 3 1980</span> #}
-        </legend>
-        <div class="form-date">
-          <div class="form-group form-group-day">
-            <label class="form-label" for="to_day">Day</label>
-            <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
-          </div>
-          <div class="form-group form-group-month">
-            <label class="form-label" for="to_month">Month</label>
-            <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
-          </div>
-          <div class="form-group form-group-year">
-            <label class="form-label" for="to_year">Year</label>
-            <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class="form-group">
-      <label for="journeys">
-        <span class="form-label">Number of Journeys per week</span>
-      </label>
-      <input class="form-control form-control-1-4" id="journeys" name="journeys" type="text"/>
-    </div>
-    <div class="form-group">
-      <label for="journey-cost">
-        <span class="form-label">Cost per journey</span>
-      </label>
-      <input class="form-control form-control-1-4" id="journey-cost" name="journey-cost" type="text"/>
-    </div>
-    <form class="form">
-      
-      <div class="form-group">
-        <label class="form-label" for="cost-share">Will cost share be applied to this support?</label>
-        <div class="multiple-choice" data-target="support_yes_extra">
-          <input id="support_yes" name="support" type="radio" value="Yes">
-          <label for="support_yes"> Yes </label>
-        </div>
-        <div class="multiple-choice" data-target="support_no_extra">
-          <input id="support_no" name="support" type="radio" value="No">
-          <label for="support_no"> No </label>
-        </div>
-        <div class="panel panel-border-narrow js-hidden" id="support_yes_extra">
-          <div class="form-group">
-            <label class="form-label" for="reason">Enter cost share detail</label>
-            <input class="form-control form-control-1-4" id="cost-share-detail" name="cost-share-detail" type="text"/>
-          </div>
-        </div>
-      </div>
+<fieldset class="inline">
+  <label class="form-label" for="cost-share">Will there be other journeys?</label>
+  <div class="multiple-choice" data-target="tiw-other-journeys-yes">
+    <input id="tiw-other-journeys_yes" name="tiw-other-journeys" type="radio" value="Yes">
+    <label for="tiw-other-journeys_yes">Yes</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="tiw-other-journeys_no" name="tiw-other-journeys" type="radio" value="No">
+    <label for="tiw-other-journeys_no">No</label>
+  </div>
+  
+  <div class="panel panel-border-narrow js-hidden" id="tiw-other-journeys-yes">
     
     <div class="form-group">
-      <label for="budget">
-        <span class="form-label">Budget</span>
-        <span class="error-message js-hidden">Budget can not exceed £42,000</span>
-      </label>
-      <input class="form-control form-control-1-4" id="budget" name="budget" type="text"/>
+      <label class="form-label" for="other-description">Other journey details</label>
+      <textarea class="form-control" id="other-description" name="tiw-other-description" rows="3"></textarea>
     </div>
+
     <div class="form-group">
-      <input type="submit" class="button" value="Continue" />
+      <label for="tiw-other-journey">
+        <span class="form-label">Number of journeys?</span>
+      </label>
+      <input class="form-control form-control-1-8" id="tiw-other-journey" name="tiw-other-journey" type="text"/> per week/per month
     </div>
+    
+    <div>
+      <label for="tiw-other-journey-cost">
+        <span class="form-label">Cost per journey?</span>
+      </label>
+      £
+      <input class="form-control form-control-1-8" id="tiw-other-journey-cost" name="tiw-other-journey-cost" type="text"/> per week/per month
+    </div>
+    <div class="form-label">or</div>
+    <div class="form-group">  
+      <label for="tiw-other-journey-miles">
+        <input class="form-control form-control-1-8" id="tiw-other-journey-miles" name="tiw-other-journey-miles" type="text"/> miles @ 45p per mile
+      </label> 
+        = £ <span id="tiw-other-journey-miles-cost">0.00</span> per week/per month
+    </div>
+  </div>
+</fieldset>
+
+<h3 class="form-group heading-medium mt30">Gross total: £<span id="tiw-gross">0.00</span> for 3 years</h3>
+<input class="hidden" name="tiw-gross" type="text"/>
+
+<h2 class="heading-medium">Deductions</h2>
+
+<div class="form-group">
+  <label for="tiw-cust-man-deductions">
+    <span class="form-label">Customer mandatory deduction</span>
+    <span class="form-hint" style="padding-top:0">Public transport costs</span>
+  </label>
+  £ <input class="form-control form-control-1-8" id="tiw-cust-man-deductions" name="tiw-cust-man-deductions" type="text"/> per week/per month
+</div>
+
+<fieldset class="inline">
+  <legend>
+      <span class="form-label">Is there a voluntary employer contribution?</span>
+  </legend>
+  <div class="multiple-choice" data-target="tiw-emp-deduction-panel">
+    <input id="tiw-emp-deduction-yes" name="tiw-emp-deduction" type="radio" value="Yes">
+    <label for="tiw-emp-deduction-yes"> Yes </label>
+  </div>
+  <div class="multiple-choice" data-target="emp-cont-no">
+    <input id="tiw-emp-deduction-no" name="tiw-emp-deduction" type="radio" value="No">
+    <label for="tiw-emp-deduction-no"> No </label>
+  </div>
+  <div class="panel panel-border-narrow js-hidden" id="tiw-emp-deduction-panel">
+    £ <input class="form-control form-control-1-8" id="tiw-emp-deduction-amount" name="tiw-emp-deduction-amount" type="text"/> per week
+    <div class="form-label">or</div>
+    <div class="form-group">  
+      <label for="tiw-emp-deduction-mileage">
+        <input class="form-control form-control-1-8" id="tiw-emp-deduction-mileage" name="tiw-emp-deduction-mileage" type="text"/> miles @ 45p per mile
+      </label> 
+      = £<span id="tiw-emp-deduction-mileage-cost">0.00</span> per week
+    </div>
+  </div>
+</fieldset>
+
+<h3 class="form-group heading-medium mt30">Net total: £<span id="tiw-net">0.00</span> for 3 years</h3>
+<input class="hidden" name="tiw-net" type="text"/>
+
+<div class="form-group">
+  <input type="submit" class="button" value="Continue" />
+</div>
+  
+<script>
+window.addEventListener('load', function() {
+  $('input').on('input', function(){
+  
+    var tiwSetJourneys = $('#tiw-set-journey').val();
+    var tiwSetJourneyCost = $('#tiw-set-journey-cost').val();
+    var tiwSetJourneyMiles = $('#tiw-set-journey-miles').val();
+    var tiwOtherJourneys = $('#tiw-other-journey').val();
+    var tiwOtherJourneyCost = $('#tiw-other-journey-cost').val();
+    var tiwOtherJourneyMiles = $('#tiw-other-journey-miles').val();
+    var set = 0;
+    var other = 0;
+    var gross = 0;
+
+    if(tiwSetJourneys){
+      if(tiwSetJourneyCost){
+        set = tiwSetJourneys*tiwSetJourneyCost*52*3;
+      }
+      
+      if(tiwSetJourneyMiles){
+        var setMileCost = (parseFloat(tiwSetJourneyMiles) * 0.25).toFixed(2);
+        $('#tiw-set-journey-miles-cost').html(setMileCost);
+        set = tiwSetJourneys*setMileCost*52*3;
+      }
+    }
+
+    if(tiwOtherJourneys){
+      if(tiwOtherJourneyCost){
+        other = tiwOtherJourneys*tiwOtherJourneyCost*52*3;
+      }
+      
+      if(tiwOtherJourneyMiles){
+        var otherMileCost = (parseFloat(tiwOtherJourneyMiles) * 0.25).toFixed(2);
+        $('#tiw-other-journey-miles-cost').html(otherMileCost);
+        other = tiwOtherJourneys*otherMileCost*52*3;
+      }
+    }
+    
+    gross = set + other;
+    $('#tiw-gross').html(gross.toFixed(2));
+    $('input[name="tiw-gross"]').val(gross);
+
+    var manDeduc = $('#tiw-cust-man-deductions').val();
+    var empAmount = $('#tiw-emp-deduction-amount').val();
+    var empMiles = $('#tiw-emp-deduction-mileage').val();
+    var empMilesCost = 0;
+    var emp = 0;
+    
+    
+    if($('input[name="tiw-emp-deduction"]').val() == "Yes"){
+      if(empAmount) emp = empAmount;
+      if(empMiles){
+        emp = empMilesCost = (parseFloat(empMiles) * 0.25).toFixed(2);
+        $('#tiw-emp-deduction-mileage-cost').html(empMilesCost)
+      }
+    }
+    
+    var net = gross - ((manDeduc + parseFloat(emp)*52*3));
+    $('#tiw-net').html(net.toFixed(2));
+    $('input[name="tiw-net"]').val(net);
+  })
+});
+</script>
+  
   

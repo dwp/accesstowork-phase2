@@ -68,6 +68,11 @@
 // $(document).on('ready',function() { $('#support_no').prop("checked", true) });
 $(document).on('ready',function()
 {
+
+  var selection = window.location.hash.replace('#', '');
+  $('option[name="'+selection+'"]').attr('selected', true);
+  
+
   $('#fill').on('click',function(e)
   {
     e.preventDefault();
@@ -136,10 +141,9 @@ $(document).on('ready',function()
     } else {
       $('#ttw').addClass('js-hidden')
     }
-
-
   })
-
+  
+  $('#type_of_support').trigger('change');
 });
 </script>
 {% endblock %}

@@ -93,5 +93,11 @@ module.exports = function (env) {
     let num = (parseFloat(str) * 0.25).toFixed(2) ;
     return isNaN(num) ? "0.00" : num;
   }
+
+  filters.tiwMiles = function(str) {
+    let num = (parseFloat(str) * 0.45).toFixed(2) ;
+    return isNaN(num) ? "0.00" : num;
+  }
+
   return filters
 }

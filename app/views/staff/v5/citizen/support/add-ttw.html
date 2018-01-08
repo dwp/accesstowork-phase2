@@ -1,7 +1,7 @@
 
 <div class="form-group">
   <label class="form-label" for="description">Description of travel support</label>
-  <textarea class="form-control" id="description" name="ttw-description" rows="4"></textarea>
+  <textarea class="form-control" id="description" name="ttw-description" rows="3"></textarea>
 </div>
 <div class="form-group">
   <label for="ttw-journeys">
@@ -9,7 +9,7 @@
   </label>
   <input class="form-control form-control-1-8" id="ttw-journeys" name="ttw-journeys" type="text"/>
 </div>
-<div class="form-group">
+<div>
   <label for="ttw-journey-cost">
     <span class="form-label">Cost per journey?</span>
   </label>
@@ -107,63 +107,65 @@
 </div>
 
 <script>
-  window.onload = function(){
-    $('input').on('input', function(){
+window.addEventListener('load', function() {
+  $('input').on('input', function(){
 
-      var ttwJourneys = $('#ttw-journeys').val();
-      var ttwJourneyCost = $('#ttw-journey-cost').val();
-      var ttwJourneyMiles = $('#ttw-journey-mileage').val();
-      var gross = 0;
+    var ttwJourneys = $('#ttw-journeys').val();
+    var ttwJourneyCost = $('#ttw-journey-cost').val();
+    var ttwJourneyMiles = $('#ttw-journey-mileage').val();
+    var gross = 0;
 
-      if(ttwJourneys){
-        if(ttwJourneyCost){
-          gross = ttwJourneys*ttwJourneyCost*52*3;
-          $('#ttw-gross').html(gross.toFixed(2));
-          $('input[name="ttw-gross"]').val(gross);
+    if(ttwJourneys){
+      if(ttwJourneyCost){
+        gross = ttwJourneys*ttwJourneyCost*52*3;
+        $('#ttw-gross').html(gross.toFixed(2));
+        $('input[name="ttw-gross"]').val(gross);
+      }
+      
+      if(ttwJourneyMiles){
+        var mileCost = (parseFloat(ttwJourneyMiles) * 0.25).toFixed(2);
+        $('#ttw-journey-mileage-cost').html(mileCost);
+        gross = ttwJourneys*mileCost*52*3;
+        $('#ttw-gross').html(gross.toFixed(2));
+        $('input[name="ttw-gross"]').val(gross);
+      }
+    }
+
+    var manDeduc = $('#ttw-cust-man-deductions').val();
+    var empAmount = $('#ttw-emp-deduction-amount').val();
+    var empMiles = $('#ttw-emp-deduction-mileage').val();
+    var custAmount = $('#ttw-cust-deduction-amount').val();
+    var custMiles = $('#ttw-cust-deduction-mileage').val();
+    var empMilesCost = 0;
+    var custMilesCost = 0;
+    var emp = 0;
+    var cust = 0;
+
+    if($('input[name="ttw-vol-deduction"]').val() == "Yes"){
+
+      if($('input[name="ttw-emp-deduction"]').val() == "Yes"){
+        if(empAmount) emp = empAmount;
+        if(empMiles){
+          emp = empMilesCost = (parseFloat(empMiles) * 0.25).toFixed(2);
+          $('#ttw-emp-deduction-mileage-cost').html(empMilesCost)
         }
-        
-        if(ttwJourneyMiles){
-          var mileCost = (parseFloat(ttwJourneyMiles) * 0.25).toFixed(2);
-          $('#ttw-journey-mileage-cost').html(mileCost);
-          gross = ttwJourneys*mileCost*52*3;
-          $('#ttw-gross').html(gross.toFixed(2));
-          $('input[name="ttw-gross"]').val(gross);
+      } 
+
+      if($('input[name="ttw-cust-deduction"]').val() == "Yes"){
+        if(custAmount) cust = custAmount;
+        if(custMiles){
+          cust = custMilesCost = (parseFloat(custMiles) * 0.25).toFixed(2);
+          $('#ttw-cust-deduction-mileage-cost').html(custMilesCost)
         }
       }
+    }
 
-      var manDeduc = $('#ttw-cust-man-deductions').val();
-      var empAmount = $('#ttw-emp-deduction-amount').val();
-      var empMiles = $('#ttw-emp-deduction-mileage').val();
-      var custAmount = $('#ttw-cust-deduction-amount').val();
-      var custMiles = $('#ttw-cust-deduction-mileage').val();
-      var empMilesCost = 0;
-      var custMilesCost = 0;
-      var emp = 0;
-      var cust = 0;
-
-      if($('input[name="ttw-vol-deduction"]').val() == "Yes"){
-
-        if($('input[name="ttw-emp-deduction"]').val() == "Yes"){
-          if(empAmount) emp = empAmount;
-          if(empMiles){
-            emp = empMilesCost = (parseFloat(empMiles) * 0.25).toFixed(2);
-            $('#ttw-emp-deduction-mileage-cost').html(empMilesCost)
-          }
-        } 
-
-        if($('input[name="ttw-cust-deduction"]').val() == "Yes"){
-          if(custAmount) cust = custAmount;
-          if(custMiles){
-            cust = custMilesCost = (parseFloat(custMiles) * 0.25).toFixed(2);
-            $('#ttw-cust-deduction-mileage-cost').html(custMilesCost)
-          }
-        }
-      }
-
-      var net = gross - ((manDeduc + parseFloat(emp) + parseFloat(cust)*52*3));
+    var net = gross - ((manDeduc + parseFloat(emp) + parseFloat(cust)*52*3));
+    if(net != 0){
       $('#ttw-net').html(net.toFixed(2));
       $('input[name="ttw-net"]').val(net);
-    })
-  };
+    }
+  })
+});
 </script>
 
