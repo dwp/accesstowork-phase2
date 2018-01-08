@@ -165,8 +165,10 @@ window.addEventListener('load', function() {
     }
     
     gross = set + other;
-    $('#tiw-gross').html(gross.toFixed(2));
-    $('input[name="tiw-gross"]').val(gross);
+    if(gross != 0){
+      $('#tiw-gross').html(gross.toFixed(2));
+      $('input[name="tiw-gross"]').val(gross);
+    }
 
     var manDeduc = $('#tiw-cust-man-deductions').val();
     var empAmount = $('#tiw-emp-deduction-amount').val();
@@ -184,8 +186,10 @@ window.addEventListener('load', function() {
     }
     
     var net = gross - ((manDeduc + parseFloat(emp)*52*3));
-    $('#tiw-net').html(net.toFixed(2));
-    $('input[name="tiw-net"]').val(net);
+    if(net != 0){
+      $('#tiw-net').html(net.toFixed(2));
+      $('input[name="tiw-net"]').val(net);
+    }
   })
 });
 </script>
