@@ -85,17 +85,17 @@ module.exports = function (env) {
   ------------------------------------------------------------------ */
 
   filters.money = function(str) {
-    let num = parseFloat(str).toFixed(2);
+    var num = parseFloat(str).toFixed(2);
     return isNaN(num) ? "0.00" : num;
   }
 
   filters.ttwMiles = function(str) {
-    let num = (parseFloat(str) * 0.25).toFixed(2) ;
+    var num = (parseFloat(str) * 0.25).toFixed(2) ;
     return isNaN(num) ? "0.00" : num;
   }
 
   filters.tiwMiles = function(str) {
-    let num = (parseFloat(str) * 0.45).toFixed(2) ;
+    var num = (parseFloat(str) * 0.45).toFixed(2) ;
     return isNaN(num) ? "0.00" : num;
   }
 
