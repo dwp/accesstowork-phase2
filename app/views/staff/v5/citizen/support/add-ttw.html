@@ -160,7 +160,7 @@ window.addEventListener('load', function() {
       }
     }
 
-    var net = gross - ((manDeduc + parseFloat(emp) + parseFloat(cust)*52*3));
+    var net = gross - (manDeduc + parseFloat(emp) + parseFloat(cust))*52*3;
     if(net != 0){
       $('#ttw-net').html(net.toFixed(2));
       $('input[name="ttw-net"]').val(net);

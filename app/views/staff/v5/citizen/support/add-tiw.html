@@ -185,7 +185,7 @@ window.addEventListener('load', function() {
       }
     }
     
-    var net = gross - ((manDeduc + parseFloat(emp)*52*3));
+    var net = gross - (manDeduc + parseFloat(emp))*52*3;
     if(net != 0){
       $('#tiw-net').html(net.toFixed(2));
       $('input[name="tiw-net"]').val(net);
