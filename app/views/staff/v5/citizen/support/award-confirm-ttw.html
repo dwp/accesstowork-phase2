@@ -1,0 +1,106 @@
+{% if data['ttw-description'] != '' %}
+<tr>
+  <td>Description of travel support</td>
+  <td>{{ data['ttw-description'] }}</td>
+  <td><a href="add#travel_to_works">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ttw-journeys'] != '' %}
+<tr>
+  <td>Number of jounrneys</td>
+  <td>{{ data['ttw-journeys'] }} per week</td>
+  <td><a href="add#travel_to_work">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ttw-journey-cost'] != '' %}
+<tr>
+  <td>Cost of journey</td>
+  <td>£{{ data['ttw-journey-cost'] | money }}</td>
+  <td><a href="add#travel_to_work">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ttw-gross'] != '' %}
+<tr>
+  <td class="bold">Gross total</td>
+  <td>£{{ data['ttw-gross'] | money }} for 3 years</td>
+  <td><a href="add#travel_to_work">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ttw-cust-man-deductions'] != '' %}
+<tr>
+  <td>Deductions - Public transport costs</td>
+  <td>£{{ data['ttw-cust-man-deductions'] | money }} per week</td>
+  <td><a href="add#travel_to_work">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ttw-vol-deduction'] %}
+<tr>
+  <td>Deductions - voluntary?</td>
+  <td>{{ data['ttw-vol-deduction'] }}</td>
+  <td><a href="add#travel_to_work">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ttw-vol-deduction'] == 'Yes' %}
+  
+  {% if data['ttw-emp-deduction'] %}
+  <tr>
+    <td>Deductions - Employer voluntary?</td>
+    <td>{{ data['ttw-emp-deduction'] }}</td>
+    <td><a href="add#travel_to_work">Change</a></td>
+  </tr>
+  {% endif %}
+
+  {% if data['ttw-emp-deduction-amount'] != '' %}
+  <tr>
+    <td>Deductions - Employer voluntary</td>
+    <td>£{{ data['ttw-emp-deduction-amount'] | money }}</td>
+    <td><a href="add#travel_to_work">Change</a></td>
+  </tr>
+  {% endif %}
+
+  {% if data['ttw-emp-deduction-mileage'] != '' %}
+  <tr>
+    <td>Deductions - Employer voluntary</td>
+    <td>{{ data['ttw-emp-deduction-mileage'] }} miles @ 25p per mile = £{{ data['ttw-emp-deduction-mileage'] | ttwMiles }} per week</td>
+    <td><a href="add#travel_to_work">Change</a></td>
+  </tr>
+  {% endif %}
+
+  {% if data['ttw-cust-deduction'] %}
+  <tr>
+    <td>Deductions - Customer voluntary?</td>
+    <td>{{ data['ttw-cust-deduction'] }}</td>
+    <td><a href="add#travel_to_work">Change</a></td>
+  </tr>
+  {% endif %}
+
+  {% if data['ttw-cust-deduction-amount'] != '' %}
+  <tr>
+    <td>Deductions - Customer voluntary</td>
+    <td>£{{ data['ttw-cust-deduction-amount'] | money }}</td>
+    <td><a href="add#travel_to_work">Change</a></td>
+  </tr>
+  {% endif %}
+
+  {% if data['ttw-cust-deduction-mileage'] != '' %}
+  <tr>
+    <td>Deductions - Customer voluntary</td>
+    <td>{{ data['ttw-cust-deduction-mileage'] }} miles @ 25p per mile = £{{ data['ttw-cust-deduction-mileage'] | ttwMiles }} per week</td>
+    <td><a href="add#travel_to_work">Change</a></td>
+  </tr>
+  {% endif %}
+{% endif %}
+
+{% if data['ttw-net'] != '' %}
+<tr>
+  <td class="bold">Net total</td>
+  <td>£{{ data['ttw-net'] | money }} for 3 years</td>
+  <td><a href="add#travel_to_work">Change</a></td>
+</tr>
+{% endif %}

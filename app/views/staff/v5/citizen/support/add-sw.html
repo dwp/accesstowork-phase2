@@ -1,94 +1,120 @@
 
-        
+<fieldset class="inline form-group">
+  <label class="form-label">Will the support be ongoing?</label>
+  <div class="multiple-choice" data-target="sw-ongoing">
+    <input id="sw-ongoing-yes" name="sw-ongoing" type="radio" value="Yes">
+    <label for="sw-ongoing-yes">Yes</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="sw-ongoing-no" name="sw-ongoing" type="radio" value="No">
+    <label for="sw-ongoing-no">No</label>
+  </div>
+  <div class="panel panel-border-narrow js-hidden" id="sw-ongoing">
+    <div class="form-group">
+      <label class="form-label" for="sw-ongoing-description">Description of support</label>
+      <textarea class="form-control" id="sw-ongoing-description" name="sw-ongoing-description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="sw-ongoing-hours">
+        <span class="form-label">Number of hours?</span>
+      </label>
+      <input class="form-control form-control-1-8" id="sw-ongoing-hours" name="sw-ongoing-hours" type="text"/> per week
+    </div>
+    <div class="form-group">  
+      <label for="sw-ongoing-hours-cost">
+        <span class="form-label">Cost</span>
+      </label>
+      £ <input class="form-control form-control-1-8" id="sw-ongoing-hours-cost" name="sw-ongoing-hours-cost" type="text"/> per hour
+        = £ <span id="sw-ongoing-hours-cost">0.00</span> per week
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="inline">
+  <label class="form-label">Will there be one off support?</label>
+  <div class="multiple-choice" data-target="sw-one-off">
+    <input id="sw-one-off-yes" name="sw-one-off" type="radio" value="Yes">
+    <label for="sw-one-off-yes">Yes</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="sw-one-off-no" name="sw-one-off" type="radio" value="No">
+    <label for="sw-one-off-no">No</label>
+  </div>
+  <div class="panel panel-border-narrow js-hidden" id="sw-one-off">
+    <div class="form-group">
+      <label class="form-label" for="sw-one-off-description">Description of support</label>
+      <textarea class="form-control" id="sw-one-off-description" name="sw-one-off-description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="sw-one-off-hours">
+        <span class="form-label">Number of hours?</span>
+      </label>
+      <input class="form-control form-control-1-8" id="sw-one-off-hours" name="sw-one-off-hours" type="text"/>
+    </div>
+    <div class="form-group">  
+      <label for="sw-one-off-hours-cost">
+        <span class="form-label">Cost</span>
+      </label>
+      £ <input class="form-control form-control-1-8" id="sw-one-off-hours-cost" name="sw-one-off-hours-cost" type="text"/> per hour
+        = £ <span id="sw-one-off-hours-cost">0.00</span>
+    </div>
+
+    <fieldset class="inline form-group">
+      <label class="form-label">Other support items?</label>
+      <div class="multiple-choice" data-target="sw-other">
+        <input id="sw-other-yes" name="sw-other" type="radio" value="Yes">
+        <label for="sw-other-yes">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="sw-other-no" name="sw-other" type="radio" value="No">
+        <label for="sw-other-no">No</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="sw-other">
         <div class="form-group">
-          <label class="form-label" for="description">Description Help me</label>
-          <textarea class="form-control" id="description" name="description" style="height:100px"></textarea>
+          <label class="form-label" for="sw-other-description">Description of support</label>
+          <textarea class="form-control" id="sw-other-description" name="sw-other-description" rows="3"></textarea>
         </div>
-        <div class="form-group" style="width:25%">
-          <fieldset>
-            <legend>
-              <span class="form-label-bold">Award from </span>
-              {# <span class="form-hint">For example, 31 3 1980</span> #}
-            </legend>
-            <div class="form-date">
-              <div class="form-group form-group-day">
-                <label class="form-label" for="from_day">Day</label>
-                <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
-              </div>
-              <div class="form-group form-group-month">
-                <label class="form-label" for="from_month">Month</label>
-                <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
-              <div class="form-group form-group-year">
-                <label class="form-label" for="from_year">Year</label>
-                <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <div class="form-group" style="width:25%">
-          <fieldset>
-            <legend>
-              <span class="form-label-bold">Award to </span>
-              {# <span class="form-hint">For example, 31 3 1980</span> #}
-            </legend>
-            <div class="form-date">
-              <div class="form-group form-group-day">
-                <label class="form-label" for="to_day">Day</label>
-                <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
-              </div>
-              <div class="form-group form-group-month">
-                <label class="form-label" for="to_month">Month</label>
-                <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
-              <div class="form-group form-group-year">
-                <label class="form-label" for="to_year">Year</label>
-                <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <div class="form-group">
-          <label for="journeys">
-            <span class="form-label">Number of Journeys per week</span>
+        <div class="form-group">  
+          <label for="sw-other-hours-cost">
+            <span class="form-label">Cost</span>
           </label>
-          <input class="form-control form-control-1-4" id="journeys" name="journeys" type="text"/>
+          £ <input class="form-control form-control-1-8" id="sw-other-hours-cost" name="sw-other-hours-cost" type="text"/>
         </div>
-        <div class="form-group">
-          <label for="journey-cost">
-            <span class="form-label">Cost per journey</span>
-          </label>
-          <input class="form-control form-control-1-4" id="journey-cost" name="journey-cost" type="text"/>
-        </div>
-        <form class="form">
-          
-          <div class="form-group">
-            <label class="form-label" for="cost-share">Will cost share be applied to this support?</label>
-            <div class="multiple-choice" data-target="support_yes_extra">
-              <input id="support_yes" name="support" type="radio" value="Yes">
-              <label for="support_yes"> Yes </label>
-            </div>
-            <div class="multiple-choice" data-target="support_no_extra">
-              <input id="support_no" name="support" type="radio" value="No">
-              <label for="support_no"> No </label>
-            </div>
-            <div class="panel panel-border-narrow js-hidden" id="support_yes_extra">
-              <div class="form-group">
-                <label class="form-label" for="reason">Enter cost share detail</label>
-                <input class="form-control form-control-1-4" id="cost-share-detail" name="cost-share-detail" type="text"/>
-              </div>
-            </div>
-          </div>
-        
-        <div class="form-group">
-          <label for="budget">
-            <span class="form-label">Budget</span>
-            <span class="error-message js-hidden">Budget can not exceed £42,000</span>
-          </label>
-          <input class="form-control form-control-1-4" id="budget" name="budget" type="text"/>
-        </div>
-        <div class="form-group">
-          <input type="submit" class="button" value="Continue" />
-        </div>
-  
-  
+      </div>
+    </fieldset>
+  </div>
+</fieldset>
+
+<h3 class="form-group heading-medium mt30">Gross total: £<span id="sw-gross">0.00</span></h3>
+<input class="hidden" name="sw-gross" type="text"/>
+
+<h2 class="heading-medium">Deductions</h2>
+
+<fieldset class="inline">
+  <legend>
+      <span class="form-label">Is there a voluntary employer deduction?</span>
+  </legend>
+  <div class="multiple-choice" data-target="sw-emp-deduction-panel">
+    <input id="sw-emp-deduction-yes" name="sw-emp-deduction" type="radio" value="Yes">
+    <label for="sw-emp-deduction-yes"> Yes </label>
+  </div>
+  <div class="multiple-choice" data-target="emp-cont-no">
+    <input id="sw-emp-deduction-no" name="sw-emp-deduction" type="radio" value="No">
+    <label for="sw-emp-deduction-no"> No </label>
+  </div>
+  <div class="panel panel-border-narrow js-hidden" id="sw-emp-deduction-panel">
+    <div class="form-group">  
+      <label for="sw-emp-deduction-amount">
+        <span class="form-label">Amount</span>
+      </label> 
+      £ <input class="form-control form-control-1-8" id="sw-emp-deduction-amount" name="sw-emp-deduction-amount" type="text"/>
+    </div>
+  </div>
+</fieldset>
+
+<h3 class="form-group heading-medium mt30">Net total: £<span id="sw-net">0.00</span></h3>
+<input class="hidden" name="sw-net" type="text"/>
+
+<div class="form-group">
+  <input type="submit" class="button" value="Continue" />
+</div>  

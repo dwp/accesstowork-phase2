@@ -1,10 +1,10 @@
 <div class="form-group">
-  <label class="form-label" for="description">Description of travel support</label>
-  <textarea class="form-control" id="description" name="tiw-description" rows="3"></textarea>
+  <label class="form-label" for="tiw-description">Description of travel support</label>
+  <textarea class="form-control" id="tiw-description" name="tiw-description" rows="3"></textarea>
 </div>
 
 <fieldset class="inline form-group">
-  <label class="form-label" for="cost-share">Will there be set journeys?</label>
+  <label class="form-label">Will there be set journeys?</label>
   <div class="multiple-choice" data-target="tiw-set-journeys-yes">
     <input id="tiw-set-journeys_yes" name="tiw-set-journeys" type="radio" value="Yes">
     <label for="tiw-set-journeys_yes">Yes</label>
@@ -41,7 +41,7 @@
 </fieldset>
 
 <fieldset class="inline">
-  <label class="form-label" for="cost-share">Will there be other journeys?</label>
+  <label class="form-label">Will there be other journeys?</label>
   <div class="multiple-choice" data-target="tiw-other-journeys-yes">
     <input id="tiw-other-journeys_yes" name="tiw-other-journeys" type="radio" value="Yes">
     <label for="tiw-other-journeys_yes">Yes</label>
@@ -146,7 +146,7 @@ window.addEventListener('load', function() {
       }
       
       if(tiwSetJourneyMiles){
-        var setMileCost = (parseFloat(tiwSetJourneyMiles) * 0.25).toFixed(2);
+        var setMileCost = (parseFloat(tiwSetJourneyMiles) * 0.45).toFixed(2);
         $('#tiw-set-journey-miles-cost').html(setMileCost);
         set = tiwSetJourneys*setMileCost*52*3;
       }
@@ -158,7 +158,7 @@ window.addEventListener('load', function() {
       }
       
       if(tiwOtherJourneyMiles){
-        var otherMileCost = (parseFloat(tiwOtherJourneyMiles) * 0.25).toFixed(2);
+        var otherMileCost = (parseFloat(tiwOtherJourneyMiles) * 0.45).toFixed(2);
         $('#tiw-other-journey-miles-cost').html(otherMileCost);
         other = tiwOtherJourneys*otherMileCost*52*3;
       }
@@ -180,7 +180,7 @@ window.addEventListener('load', function() {
     if($('input[name="tiw-emp-deduction"]').val() == "Yes"){
       if(empAmount) emp = empAmount;
       if(empMiles){
-        emp = empMilesCost = (parseFloat(empMiles) * 0.25).toFixed(2);
+        emp = empMilesCost = (parseFloat(empMiles) * 0.45).toFixed(2);
         $('#tiw-emp-deduction-mileage-cost').html(empMilesCost)
       }
     }
