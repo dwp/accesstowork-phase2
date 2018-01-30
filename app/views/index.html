@@ -1,89 +1,196 @@
-{% extends "layout.html" %}
+{% extends "index-layout.html" %}
 
 {% block page_title %}
   GOV.UK prototype kit
 {% endblock %}
 
 {% block content %}
+<div class="homepage-top">
+  <div class="homepage-top-content">
+    <h1 class="heading-xlarge">
+      {{serviceName}}
+      <span>Prototypes</span>
+    </h1>
+  </div>
+</div>
 
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-xlarge">
-        Access to work
-        <span class="heading-secondary">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
 
-	<h2 class="heading-xlarge">Prototypes</h2>
+			{# Start of most recent box #}
+      <div class="most-recent">
+
+				{# Start of prototype write up #}
+				<div class="prototype-write-up">
+					<div class="grid-row">
+						<div class="column-one-third">
+							<dl>
+								<dt class="heading-small">Date of release</dt>
+								<dd>1 January 2018</dd>
+							</dl>
+						</div>
+
+						<div class="column-one-third">
+							<dl>
+								<dt class="heading-small">Feature</dt>
+								<dd>Payment details</dd>
+							</dl>
+						</div>
+
+						<div class="column-one-third">
+							<dl>
+								<dt class="heading-small">Related stories</dt>
+								<dd>JIRA-123</dd>
+							</dl>
+						</div>
+					</div>
+
+					<h3 class="heading-small">Changes</h3>
+					<p>
+						In this version, we added the option to pay into a building society 
+						account, on the payment details page.
+					</p>
 
 
+					<h3 class="heading-small">Hypothesis</h3>
+					<p>
+						If we add the ability to pay into building society accounts, 
+						then we will see an increase in successful claims and a reduction in complaints, 
+						because users with building society accounts will be able to complete the online journey.
+					</p>
 
 
-	<h2 class="heading-large">Payments designs</h2>
-	<ul class="list-bullet">
-		<li> <a href="/payments-v2/start">Payments journey - Version 2;</a> new prototype including feedbak from UR session 13/03/17. Content review 03/05/17.</li>
+					<h3 class="heading-small">Research notes</h3>
+					<p>
+						Users did not see the button to switch to a building society account.
+					</p>
+					<p>
+						When asked what they would do next, 3 out of 4 users said they would 
+						phone up to complete their claim.
+					</p>
+					<p>
+						More work is needed to improve the design of this feature.
+					</p>
 
-		<li> <a href="/payments-v1/start">Payments journey - Version 1;</a> initial prototype for payments journey</li>
-		<li> <a href="/staff/v5/citizen/support">ATWIS payments screens</a> 3 new veriosn of ATWIS stff views for payments team</li>
-	</ul>
+					<a href="/link-to-prototype" class="button button-start">View prototype</a>
+				</div>
+				{# End of prototype write up #}
 
-	<h2 class="heading-large">Staff system UI</h2>
-		<h3 class="heading-medium">Updates for this version</h3>
-		<p class="text">
-          Version 5: This version has the award build screens added, iterations to the payments views
-        </p>
-		<p><a href="/staff/v5/your_cases" class="button">View prototype</a></p>
-		<p class="heading-medium">Previous versions</p>
-		<p><a href="/staff/v4/your_cases"><span class="heading-small">Version 4</span></a> Adding the notifications, alerts and MI filters. Added the Calendar control for creating Next Actions, added the condition input under Case tab.</p>
-		<p><a href="/staff/v3/"><span class="heading-small">Version 3</span></a> Change ot the Home screen view to show Adviser caseload, first iteration of Timeline ideas and adding MI banner.</p>
-		<p><a href="/staff/v2/unallocated"><span class="heading-small">Version 2</span></a> Access to Work staff system - allocater screen initial prototype for staff user interface. Information banner, case action interactions and Case details views.</p>
-		
+			</div>
+			{# End of most recent box #}
 
-	
 
-	<h2 class="heading-large">Payments Log in designs</h2>
-	<ul class="list-bullet">
-		<li> <a href="/payments_login_mobile_v1/start_page">Payments Log in mobile;</a> initial prototype for payments log in journey</li>
-	</ul>
-	<ul class="list-bullet">
-		<li> <a href="/Payments_login_desktop_v1/Start_page">Payments Log in desktop;</a> initial prototype for payments log in journey</li>
-	</ul>
+      <h2 class="heading-large">All versions</h2>
+			{# Start of hidden panel #}
+			<details>
+				<summary><span class="summary">Show all versions</span></summary>
+				<div class="panel panel-border-narrow">
+					
+					{# Start of prototype write up #}
+					<div class="prototype-write-up">
+						<div class="grid-row">
+							<div class="column-one-third">
+								<dl>
+									<dt class="heading-small">Date of release</dt>
+									<dd>14 December 2017</dd>
+								</dl>
+							</div>
 
-	<h2 class="heading-large">Verifier designs</h2>
-	<ul class="list-bullet">
-		<li> <a href="/employer-verify/employer-email">What the verifier would receive</a> initial prototype exploring what the named verifier would receive from a Payments claim</li>
-	</ul>
+							<div class="column-one-third">
+								<dl>
+									<dt class="heading-small">Feature</dt>
+									<dd>Eligibility knockout</dd>
+								</dl>
+							</div>
 
-    <h2 class="heading-medium">Examples and documentation</h2>
+							<div class="column-one-third">
+								<dl>
+									<dt class="heading-small">Related stories</dt>
+									<dd>JIRA-122</dd>
+								</dl>
+							</div>
+						</div>
 
-		<ul class="list list-bullet">
-			<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-			<li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
-		</ul>
+						<h3 class="heading-small">Changes</h3>
+						<p>
+							...
+						</p>
 
-    <h2 class="heading-medium">Other resources</h2>
 
-	<ul class="list list-bullet">
-		<li>
-			<a href="https://govuk-elements.herokuapp.com/snippets/">
-				Guide to GOV.UK Elements
-			</a>
-		</li>
-		<li>
-			<a href="https://www.gov.uk/service-manual">
-				Service design manual
-			</a>
-		</li>
-		<li>
-			<a href="https://www.gov.uk/design-principles">
-				Government Digital Service Design Principles
-			</a>
-		</li>
-	</ul>
+						<h3 class="heading-small">Hypothesis</h3>
+						<p>
+							If... then... because.
+						</p>
 
-    </div>
+
+						<h3 class="heading-small">Research notes</h3>
+						<p>
+							...
+						</p>
+
+						<a href="/link-to-prototype" class="button button-start">View prototype</a>
+					</div>
+					{# End of prototype write up #}
+					
+					<hr />
+
+					{# Start of prototype write up #}
+					<div class="prototype-write-up">
+						<div class="grid-row">
+							<div class="column-one-third">
+								<dl>
+									<dt class="heading-small">Date of release</dt>
+									<dd>1 December 2017</dd>
+								</dl>
+							</div>
+
+							<div class="column-one-third">
+								<dl>
+									<dt class="heading-small">Feature</dt>
+									<dd>Payment details</dd>
+								</dl>
+							</div>
+
+							<div class="column-one-third">
+								<dl>
+									<dt class="heading-small">Related stories</dt>
+									<dd>JIRA-121</dd>
+								</dl>
+							</div>
+						</div>
+
+						<h3 class="heading-small">Changes</h3>
+						<p>
+							...
+						</p>
+
+
+						<h3 class="heading-small">Hypothesis</h3>
+						<p>
+							If... then... because.
+						</p>
+
+
+						<h3 class="heading-small">Research notes</h3>
+						<p>
+							...
+						</p>
+
+						<a href="/link-to-prototype" class="button button-start">View prototype</a>
+					</div>
+					{# End of prototype write up #}
+
+				</div>
+			</details>
+			{# End of hidden panel #}
+
+
+		</div>
   </div>
 </main>
 
 {% endblock %}
+
+
