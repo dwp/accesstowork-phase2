@@ -1,0 +1,65 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+  
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h2 class="heading-large" id="onlineapp">Will you be offering support to this person?</h2>
+
+      <form class="form" action="/{{ PATH }}/citizen/support/add" method="post">
+        <div class="form-group">
+          <div class="multiple-choice" data-target="support_yes_extra">
+            <input id="support_yes" name="support" type="radio" value="Yes">
+            <label for="support_yes"> Yes </label>
+          </div>
+          <div class="multiple-choice" data-target="support_no_extra">
+            <input id="support_no" name="support" type="radio" value="No, redirect(/{{PATH}}/citizen/support/rejected)">
+            <label for="support_no"> No </label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="support_no_extra">
+            <div class="form-group">
+              {% set reasons = [
+                "",
+                "Advice only",
+                "Application withdrawn by customer",
+                "No agreement on employer/customer contribution",
+                "Disability does not effect job",
+                "Support is being provided by 3rd party"
+                ]
+              %}
+              <label class="heading-medium" for="reason">Why?</label>
+              <select class="form-control" name="reason" id="rejection_reason">
+                {% for reason in reasons %}
+                  <option name="{{ reason | slugify }}">{{ reason }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="form-group">
+              <span class="form-hint">This text will be included in a rejection letter and sent to this person.</span>
+              <textarea class="form-control" name="reason" id="reason" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+        <input type="submit" class="button" value="Continue" />
+      </form>
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+(<a href="add">add</a>
+| <a href="rejected">rejected</a>)
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+  <div class="grid-row">
+
+
+    <div class="bold-xlarge" style="padding-left:15px;padding-bottom:30px;">All advisers</div>
+
+    <div class="column-quarter">
+      <div class="form-group">
+        <ul>
+          <li><a href="">Sarah Andrews</a></li>
+          <li><a href="">Martin Armitage</a></li>
+          <li><a href="">Charlie Bennett</a></li>
+          <li><a href="">Beth Burd</a></li>
+          <li><a href="">Lamia Bzirkt</a></li>
+          <li><a href="">Peter Duval</a></li>
+          <li><a href="">Clémence Fabre</a></li>
+          <li><a href="">Elisse Farcens</a></li>
+          <li><a href="">Christoph Fernandez</a></li>
+          <li><a href="adviser">John Goldsmith</a></li>
+          <li><a href="">Julie Guichard</a></li>
+          <li><a href="">Jean Harrold</a></li>
+          <li><a href="">Jack Hastle</a></li>
+          <li><a href="">Anaëlle Herve</a></li>
+          <li><a href="">Colin Julien</a></li>
+          <li><a href="">Théo Langlois</a></li>
+          <li><a href="">Bruno Lefevre</a></li>
+          <li><a href="">Lou Marchal</a></li>
+          <li><a href="">Capucine Michel</a></li>
+       </ul>
+      </div> <!-- form-group -->
+    </div> <!-- clomun-quarter -->
+
+    <div class="column-quarter">
+      <div class=="form-group">
+        <ul>
+          <li><a href="">Sarah Micheals</a></li>
+          <li><a href="">Craig Morley</a></li>
+          <li><a href="">Petra Mutton</a></li>
+          <li><a href="">Celise Mutton</a></li>
+          <li><a href="">Petr Myzink</a></li>
+          <li><a href="">Paul Nuveau</a></li>
+          <li><a href="">Claire Nylon</a></li>
+          <li><a href="">Chantal Obsurf</a></li>
+          <li><a href="">Christopher Oddsicz</a></li>
+          <li><a href="adviser">John Ockley</a></li>
+          <li><a href="">Richard Oulton</a></li>
+          <li><a href="">Ed Oxley</a></li>
+          <li><a href="">Maria Oxley</a></li>
+          <li><a href="">Noel Oxley</a></li>
+          <li><a href="">Colin Partinigton</a></li>
+          <li><a href="">Brigit Pardeux</a></li>
+          <li><a href="">Cherise Peters</a></li>
+          <li><a href="">Lionel Phelps</a></li>
+          <li><a href="">Anne Pinkton</a></li>
+       </ul>
+      </div> <!-- form-group -->
+    </div> <!-- column-quarter -->
+
+    <div class="column-quarter">
+      <div class=="form-group">
+        <ul>
+          <li><a href="">Selwyn Prince</a></li>
+          <li><a href="">Lisa Punchton</a></li>
+          <li><a href="">Mark Rasp</a></li>
+          <li><a href="">Elizabeth Reed</a></li>
+          <li><a href="">Paul Rice</a></li>
+          <li><a href="">Peter Rodden</a></li>
+          <li><a href="">Sohail Rumdhan</a></li>
+          <li><a href="">Anne Runcie</a></li>
+          <li><a href="">Sarah Samples</a></li>
+          <li><a href="adviser">John Scholey</a></li>
+          <li><a href="">Russell Shusster</a></li>
+          <li><a href="">Jean Smith</a></li>
+          <li><a href="">Jack Smith</a></li>
+          <li><a href="">Duncan Taylor</a></li>
+          <li><a href="">Montgomerie Theales</a></li>
+          <li><a href="">Yvonne Timms</a></li>
+          <li><a href="">Alled Thonglure</a></li>
+          <li><a href="">Jesus Tripanti</a></li>
+          <li><a href="">Julien Umbro</a></li>
+       </ul>
+      </div> <!-- form-group -->
+    </div> <!-- column-quarter -->
+
+  </div> <!-- grid-row -->
+</div> <!-- container -->
+
+{% endblock %}
+
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{PATH}}/citizen/"+id;
+    });
+  });
+</script>
+{% endblock %}

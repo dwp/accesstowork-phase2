@@ -1,0 +1,48 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block staff_content %}
+
+  {# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+  {{ horizontal_nav('none') }}
+
+  {% include PATH + "/inc/app_top.html" %}
+
+  <div class="container">
+
+    {{ data | log }}
+    {#
+      this is a macro: pass the name of the selected item
+      and the number for the url.
+      Code in inc/layout_case.html
+    #}
+    {{ case_tabs("case",1) }}
+
+    <div class="grid-row">
+
+      <div class="column-third">
+          {% block case_nav_left %}{{ case_nav(picked) }}{% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+
+          {% block case_content %}{% endblock %}
+
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+
+{% endblock %}
+
+{% macro case_nav(active,extra) %}
+  <p class="mt30 mb10">Evidence collected so far:</p>
+  <ul class="case_nav mt0">
+    {# isActive() is a "Filter" found in app/filters.js #}
+    {% if extra %}
+      <li {{ active | isActive(active) }}><a href="#">{{ active }}</a></li>
+    {% endif %}
+    <li {{ active | isActive('assessment') }}><a href="/{{ PATH }}/citizen/case/assessment">Assessment report</a></li>
+    <li {{ active | isActive('medicalev') }}><a href="/{{ PATH }}/citizen/case/medicalev">Medical evidence</a></li>
+    <li {{ active | isActive('employer') }}><a href="/{{ PATH }}/citizen/case/employer">Employer contact</a></li>
+    <li {{ active | isActive('phonecall') }}><a href="/{{ PATH }}/citizen/case/phonecall">Phone call (further info)</a></li>
+    <li {{ active | isActive('onlineapp') }}><a href="/{{ PATH }}/citizen/case/onlineapp">Online application</a></li>
+  </ul>
+{% endmacro %}

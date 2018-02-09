@@ -1,0 +1,86 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+  
+  <div class="grid-row">
+    <div class="column-half">
+
+
+
+      <h2 class="heading-large" id="onlineapp">Review the claim</h2>
+
+
+      <table>
+        <tr>
+          <th>Period of claim</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+        <tr>
+          <td class="bold">From</td>
+          <td>01//10/2017</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+        <tr>
+          <td class="bold">To</td>
+          <td>10/12/2017</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+        <tr>
+          <td class="bold">Number of journeys used</td>
+          <td>32</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+        <tr>
+          <td class="bold">Amount claimed</td>
+          <td>160</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+        <tr>
+          <td class="bold">Is this an existing payee?</td>
+          <td>Yes</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+
+        <tr>
+          <td class="bold">Has this receipt been verified by the named contact?</td>
+          <td>Yes</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+
+        <tr>
+          <td class="bold">Action for this payment claim</td>
+          <td>Accept</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+        <tr>
+          <td class="bold">Notes</td>
+          <td>Here are some sample notes. I am going to keep typing because I need to fill this space out with lots of words, so I can show how wide this block can go. Also how is this going to fit into the table?</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+      </table>
+
+    <a href="payment-review-next-page-question" class="button">Continue</a>
+
+
+
+    </div><!-- COLUMN TWO-THIRDS -->
+
+  </div><!-- grid-row -->
+</div><!-- container -->
+{% endblock %}

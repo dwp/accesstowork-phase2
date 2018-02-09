@@ -1,0 +1,81 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <a href="1-4" class="link-back">Back</a>
+
+    <table>
+        <tr>
+          <th class="heading-small">Name</th>
+          <th class="heading-small">Bank</th>
+          <th class="heading-small">Sort code</th>
+          <th class="heading-small">Account number</th>
+          <th class="heading-small">Email</th>
+          <th class="heading-small">Status</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Freds Cabs</td>
+          <td>Nat West Bank</td>
+          <td>11-22-33</td>
+          <td>23456789</td>
+          <td>james.hair@fredscabs.com</td>
+          <td>live</td>
+          <td><a href="edit-payee-details">edit</a></td>
+        </tr>
+        <tr>
+          <td>Green Cars</td>
+          <td>Santander</td>
+          <td>12-34-56</td>
+          <td>12345678</td>
+          <td>craig.shoo@green.cars.co.uk</td>
+          <td>live</td>
+          <td><a href="edit-payee-details-1">edit</a></td>
+        </tr>
+        <tr>
+          <td>Toms Taxi</td>
+          <td>Yorkshire Bank</td>
+          <td>12-34-56</td>
+          <td>12345678</td>
+          <td>peter.piper@ytomstaxi.co.uk</td>
+          <td>live</td>
+          <td><a href="edit-payee-details-1">edit</a></td>
+        </tr>
+        <tr>
+          <td>A2B Cars</td>
+          <td>Halifax Bank</td>
+          <td>00-11-99</td>
+          <td>19283746</td>
+          <td>jenny.peat@a2b.com</td>
+          <td>dormant</td>
+          <td><a href="edit-payee-details-1">edit</a></td>
+        </tr>
+        <tr>
+          <td>Quickline</td>
+          <td>HSB</td>
+          <td>99-88-34</td>
+          <td>12345678</td>
+          <td>jane.roofe@quickline-cars.com</td>
+          <td>dormant</td>
+          <td><a href="edit-payee-details-1">edit</a></td>
+        </tr>
+      </table>
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+{% include PATH+"/citizen/footer_links.html" %}
+{% endblock %}

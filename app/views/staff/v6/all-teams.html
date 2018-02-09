@@ -1,0 +1,42 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+  <div class="grid-row">
+    <div class="column-half">
+
+    <div class="bold-xlarge" style="padding-bottom:30px;">All specialisms</div>
+
+      <div class="form-group">
+        <p><a href="team_national-2">Deaf</a></p>
+        <p><a href="#">Large employers</a></p>
+        <p><a href="team_national-1">Hidden impairments</a></p>
+        <p><a href="#">Pan disability</a></p>
+        <p><a href="#
+          ">Self employed</a></p>
+      </div> <!-- form-group -->
+
+    </div> <!-- clomun-half -->
+  </div> <!-- grid-row -->
+</div> <!-- container -->
+
+{% endblock %}
+
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var id = $(this).data('id');
+      window.location.href = "/{{PATH}}/citizen/"+id;
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+  {% set types = ["Adaptions to premises and equipment",
+                  "Adaptations to vehicles",
+                  "Extra employer support grant",
+                  "Mental health support worker",
+                  "Special aids and equipment",
+                  "Support worker",
+                  "Travel in work",
+                  "Travel to work"
+                   ] %}
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h2 class="heading-large" id="onlineapp">Add a support item</h2>
+
+      <form class="form" action="/{{ PATH }}/citizen/support/award-confirm" method="post" id="form-add">
+        <div class="form-group">
+          <label class="form-label" for="type_of_support">Type of support</label>
+          <select class="form-control" id="type_of_support" name="type_of_support">
+            <option name=""></option>
+            {% for type in types %}
+            <option name="{{ type | slugify }}">{{ type }}</option>
+          {% endfor %}
+          </select>
+        </div>
+        <div class="js-hidden" id="atv">{% include PATH+"/citizen/support/add-atv.html" %}</div>
+        <div class="js-hidden" id="ape">{% include PATH+"/citizen/support/add-ape.html" %}</div>
+        <div class="js-hidden" id="ees">{% include PATH+"/citizen/support/add-ees.html" %}</div>
+        <div class="js-hidden" id="mhs">{% include PATH+"/citizen/support/add-mhs.html" %}</div>
+        <div class="js-hidden" id="sae">{% include PATH+"/citizen/support/add-sae.html" %}</div>
+        <div class="js-hidden" id="sw">{% include PATH+"/citizen/support/add-sw.html" %}</div>
+        <div class="js-hidden" id="tiw">{% include PATH+"/citizen/support/add-tiw.html" %}</div>  
+        <div class="js-hidden" id="ttw">{% include PATH+"/citizen/support/add-ttw.html" %}</div>
+        
+        
+        
+      </form><!-- form-add --> 
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+{% endblock %}
+
+{% block footer_top %}
+<p>
+  <a href="/prototype-admin/clear-data">clear</a> |
+  <a href="#" id="fill">fill</a>
+  | (
+    <a href="initial">initial</a>
+    | <a href="rejected">rejected</a>
+    )
+</p>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+// $(document).on('ready',function() { $('#support_no').prop("checked", true) });
+$(document).on('ready',function()
+{
+
+  var selection = window.location.hash.replace('#', '');
+  $('option[name="'+selection+'"]').attr('selected', true);
+  
+
+  $('#fill').on('click',function(e)
+  {
+    e.preventDefault();
+    $('#type_of_support').val("Travel - One Off");
+    $('#description').val("Taxi to and from work 4 days a week (approx £5 per journey)");
+    $('#from_day').val(5);
+    $('#from_month').val(12);
+    $('#from_year').val(2017); 
+    $('#to_day').val(5);
+    $('#to_month').val(11);
+    $('#to_year').val(2018);
+    $('#budget').val('£1200');
+  });
+  // budget input validation
+
+  // support input selection
+  $('#type_of_support').on('change',function(e){
+    e.preventDefault ();
+    var award_choice = $(this).val()
+    
+    
+    if (award_choice == "Adaptations to vehicles") {
+      $('#atv').removeClass('js-hidden')
+    } else {
+      $('#atv').addClass('js-hidden')
+    }
+
+    if (award_choice == "Adaptions to premises and equipment") {
+      $('#ape').removeClass('js-hidden')
+    } else {
+      $('#ape').addClass('js-hidden')
+    }
+
+    if (award_choice == "Extra employer support grant") {
+      $('#ees').removeClass('js-hidden')
+    } else {
+      $('#ees').addClass('js-hidden')
+    }
+
+    if (award_choice == "Mental health support worker") {
+      $('#mhs').removeClass('js-hidden')
+    } else {
+      $('#mhs').addClass('js-hidden')
+    }
+
+    if (award_choice == "Special aids and equipment") {
+      $('#sae').removeClass('js-hidden')
+    } else {
+      $('#sae').addClass('js-hidden')
+    }
+
+    if (award_choice == "Support worker") {
+      $('#sw').removeClass('js-hidden')
+    } else {
+      $('#sw').addClass('js-hidden')
+    }
+
+    if (award_choice == "Travel in work") {
+      $('#tiw').removeClass('js-hidden')
+    } else {
+      $('#tiw').addClass('js-hidden')
+    }
+    
+    if (award_choice == "Travel to work") {
+      $('#ttw').removeClass('js-hidden')
+    } else {
+      $('#ttw').addClass('js-hidden')
+    }
+  })
+  
+  $('#type_of_support').trigger('change');
+});
+</script>
+{% endblock %}

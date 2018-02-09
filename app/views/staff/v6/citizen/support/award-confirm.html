@@ -1,0 +1,42 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+
+  <div class="grid-row">
+
+    <div class="column-full">
+    <!--   <a href="v4/citizen/support" class="link-back">Back</a> -->
+
+      <h2 class="heading-large" id="onlineapp">{{ data.type_of_support }}</h2>
+
+      <table class="zebra form-group">
+        <thead>
+          <tr>
+            <th width="45%"></th>
+            <th width="45%"></th>
+            <th width="100%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% include PATH+"/citizen/support/award-confirm-ttw.html" %}
+          {% include PATH+"/citizen/support/award-confirm-tiw.html" %}
+          {% include PATH+"/citizen/support/award-confirm-sae.html" %}
+          {% include PATH+"/citizen/support/award-confirm-sw.html" %}
+          
+        </tbody>
+      </table>
+
+      <div class="form-group">
+        <a href="/{{ PATH }}/citizen/support" class="button">Save and continue</a>
+      </div>
+    </div><!-- COLUMN ONE THIRD -->
+    <div class="column-two-thirds">
+    </div> <!-- COLUMN TWO THRIDS -->  
+
+  </div><!-- grid-row -->
+
+</div><!-- container -->
+
+{% endblock %}

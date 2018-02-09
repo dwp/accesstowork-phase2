@@ -1,0 +1,163 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-one-third">
+    <!--   <a href="v4/citizen/support" class="link-back">Back</a> -->
+
+      <h2 class="heading-large" id="onlineapp">Travel (Ongoing)</h2>
+      <h3 class="heading-medium">Award summary</h3>
+      <p>
+        <span class="label">Award dates</span><br />
+        <span class="font-small">From: 30th Apr 2016</span> <br />
+        <span class="font-small">To: 29th Apr 2019</span>
+      </p>
+      <p>
+        <span class="label">Award details</span><br />
+        <span class="font-small">Taxi to and from work 4 days a week</span><br />
+        <span class="font-small">£5.00 per journey</span><br />
+        <span class="font-small">8 journeys per week</span>
+      </p>
+      <p>
+        <span class="label">Deductions</span><br />
+        <span class="font-small">Employer £10.00 per week </span><br />
+        <span class="font-small">Customer Nil</span><br />
+        
+      </p>
+      <p>
+        <span class="label">Support</span><br />
+        <span class="font-small">Approved for £6,240</span><br />
+        <span class="font-small">Used to date £3,120</span><br />
+        <span class="font-small">Journeys approved for 2080</span><br />
+        <span class="font-small">Journeys used 624</span>
+      </p>
+      <p>
+        <span class="label">Payee details</span><br />
+        <span class="label">Payee 1</span><br />
+        <span class="font-small">Name: Freds Cabs</span><br />
+        <span class="font-small">Bank name: Nat West</span><br />
+        <span class="font-small">Status: live</span><br />
+        <span class="font-small">Sort code: 11-22-33</span><br />
+        <span class="font-small">Accunt number: 23456789</span><br />
+        <span class="font-small">Email: jason.hair@fredscabs.com</span>
+      </p>
+      <p>
+        <span class="label">Payee 2</span><br />
+        <span class="font-small">Name: Green Cars</span><br />
+        <span class="font-small">Bank name: Santander</span><br />
+        <span class="font-small">Status: live</span><br />
+        <span class="font-small">Sort code: 11-22-33</span><br />
+        <span class="font-small">Accunt number: 23456789</span><br />
+        <span class="font-small">Email: craig.shoo@green.cars.com</span>
+       </p>
+       <p>
+        <span class="label">Payee 3</span><br />
+        <span class="font-small">Name: Toms Taxis</span><br />
+        <span class="font-small">Bank name: Yorkshire Bank</span><br />
+        <span class="font-small">Status: live</span><br />
+        <span class="font-small">Sort code: 12-34-56</span><br />
+        <span class="font-small">Accunt number: 12345678</span><br />
+        <span class="font-small">Email: peter.piper@tomstaxi.com</span>
+       </p> 
+      <div class="form-group mt30">
+        <a href="payees" class="link">View payees</a>
+      </div>  
+
+    </div><!-- column-half -->
+
+    <div class="column-two-thirds">
+      <h2 class="heading-large" id="onlineapp">Payment claims</h2>
+
+      <p><a href="view-award">View full award</a></p>
+      <p><span class="bold">Remaining award</span><br />
+        &pound;3,120<br />
+        1,456 units
+      </p>
+
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Invoice <br />reference</th>
+          <th>SOP <br />reference</th>
+          <th>Units <br /> claimed</th>
+          <th>Amount <br /> claimed</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>30th October 2017</td>
+          <td>Freds 0005</td>
+          <td>SOP00005</td>
+          <td>128</td>
+          <td>£640</td>
+          <td>Paid</td>  
+          <td><a href="payment-claim-5-1-5">View payment</a></td>
+        </tr>
+        <tr> 
+          <td>17th July 2017</td>
+          <td>Freds 0004</td>
+          <td>SOP00004</td>
+          <td>208</td>
+          <td>£1,040</td>
+          <td>Paid</td>  
+          <td><a href="payment-claim-4-1-5">View payment</a></td>
+        </tr>
+        <tr>
+          <td>21st January 2017</td>
+          <td>Freds 0003</td>
+          <td>SOP00003</td>
+          <td>104</td>
+          <td>£520</td>
+          <td>Rejected</td>  
+          <td><a href="payment-claim-3-1-5">View payment</a></td>  
+        </tr>
+        <tr>
+          <td>13th October 2106</td>
+          <td>Freds 0002</td>
+          <td>SOP00002</td>
+          <td>168</td>
+          <td>£840</td>
+          <td>Paid</td>
+          <td><a href="payment-claim-2-1-5">View payment</a></td>
+        </tr>
+        <tr">
+          <td>18th May 2016</td>
+          <td>Freds 0001</td>
+          <td>SOP00001</td>
+          <td>16</td>
+          <td>£80</td>
+          <td>Paid</td>
+          <td><a href="payment-claim-1-1-5">View payment</a></td>
+        </tr>
+        <tr>
+          <td>30th April 2016</td>
+          <td>initial award</td>
+          <td>initial award</td>
+          <td>initial award</td>
+          <td>initial award</td>
+          <td>initial award</td>
+        </tr>
+      </table>
+
+      <div class="form-group mt30">
+        <a href="add-receipt" class="button">Add a payment</a>
+      </div>
+
+    </div><!-- COLUMN TWO THIRDS-->
+
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}

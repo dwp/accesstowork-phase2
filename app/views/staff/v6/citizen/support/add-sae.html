@@ -1,0 +1,206 @@
+<div>
+  <div class="form-group">
+    <label class="form-label" for="sae-description-1">Details of support item 1</label>
+    <textarea class="form-control" id="sae-description-1" name="sae-description-1" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="sae-cost-1">
+      <span class="form-label">Cost</span>
+    </label>
+    £ <input class="form-control form-control-1-8" id="sae-cost-1" name="sae-cost-1" type="text"/>
+  </div>
+  
+  <fieldset class="form-group inline">
+    <legend>
+      <label class="form-label">Is there a NHS voucher deduction?</label>
+    </legend>
+    <div class="multiple-choice" data-target="sae-nhs-panel-1">
+      <input id="sae-nhs-yes-1" name="sae-nhs-1" type="radio" value="Yes">
+      <label for="sae-nhs-yes-1">Yes</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="sae-nhs-no-1" name="sae-nhs-1" type="radio" value="No">
+      <label for="sae-nhs-no-1">No</label>
+    </div>
+    <div class="panel panel-border-narrow js-hidden" id="sae-nhs-panel-1">
+      <div class="form-group">
+        <label class="form-label" for="sae-nhs-amount-1">Amount</label>
+        £ <input class="form-control form-control-1-8" id="sae-nhs-amount-1" name="sae-nhs-amount-1" type="text"/>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="inline">
+    <legend>
+      <label class="form-label">Is there a customer contribution for social and domestic use?</label>
+    </legend>
+    <div class="multiple-choice" data-target="sae-social-panel-1">
+      <input id="sae-social-yes-1" name="sae-social-1" type="radio" value="Yes">
+      <label for="sae-social-yes-1">Yes</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="sae-social-no-1" name="sae-social-1" type="radio" value="No">
+      <label for="sae-social-no-1">No</label>
+    </div>
+    <div class="panel panel-border-narrow js-hidden" id="sae-social-panel-1">
+      <div>
+        <label class="form-label visually-hidden" for="sae-social-amount-1">Amount</label>
+        <input class="form-control form-control-1-8" id="sae-social-amount-1" name="sae-social-amount-1" type="text"/> / 7ths deduction
+      </div>
+    </div>
+  </fieldset>
+  <div>
+    <hr />
+  </div>
+</div>
+
+<div>
+  <button id="sae-add-another"class="button button-secondary">Add another item</button>
+</div>
+
+<h3 class="form-group heading-medium mt30">Gross total: £<span id="sae-gross">0.00</span></h3>
+<input class="hidden" name="sae-gross" type="text"/>
+
+<h2 class="heading-medium">Deductions</h2>
+
+<fieldset class="form-group inline">
+  <legend>
+    <label class="form-label">Is there a voluntary employer contribution?</label>
+  </legend>
+  <div class="multiple-choice" data-target="sae-emp-panel">
+    <input id="sae-emp-yes" name="sae-emp" type="radio" value="Yes">
+    <label for="sae-emp-yes">Yes</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="sae-emp-no" name="sae-emp" type="radio" value="No">
+    <label for="sae-emp-no">No</label>
+  </div>
+  <div class="panel panel-border-narrow js-hidden" id="sae-emp-panel">
+    <div class="form-group">
+      <label class="form-label visually-hidden" for="sae-emp-amount">Amount</label>
+      £ <input class="form-control form-control-1-8" id="sae-emp-amount" name="sae-emp-amount" type="text"/>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>
+    <label class="form-label">What size is the employer?</label>
+  </legend>
+  <div class="multiple-choice">
+    <input id="sae-size-s" name="sae-employer-size" type="radio" value="s">
+    <label for="sae-size-s">Small - no Cost Share</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="sae-size-m" name="sae-employer-size" type="radio" value="m">
+    <label for="sae-size-m">Medium - £500 + 20%</label>
+  </div>
+  <div class="multiple-choice">
+    <input id="sae-size-l" name="sae-employer-size" type="radio" value="l">
+    <label for="sae-size-l">Large - £1000 + 20%</label>
+  </div>
+</fieldset>
+
+<h3 class="form-group heading-medium mt30">Net total: £<span id="sae-net">0.00</span></h3>
+<input class="hidden" name="sae-net" type="text"/>
+  
+<div class="form-group">
+  <input type="submit" class="button" value="Continue" />
+</div>
+
+<script>
+var sae_tpl = '<div>'+
+  '<div class="form-group">'+
+  '<label class="form-label" for="sae-description-NUM">Details of support item NUM</label>'+
+  '<textarea class="form-control" id="sae-description-NUM" name="sae-description-NUM" rows="3"></textarea>'+
+'</div>'+
+'<div class="form-group">'+
+  '<label for="sae-cost-NUM">'+
+    '<span class="form-label">Cost</span>'+
+  '</label>'+
+  '£ <input class="form-control form-control-1-8" id="sae-cost-NUM" name="sae-cost-NUM" type="text"/>'+
+'</div>'+
+'<fieldset class="form-group inline">'+
+  '<legend>'+
+    '<label class="form-label">Is there a NHS voucher deduction?</label>'+
+  '</legend>'+
+  '<div class="multiple-choice" data-target="sae-nhs-panel-NUM">'+
+    '<input id="sae-nhs-yes-NUM" name="sae-nhs-NUM" type="radio" value="Yes">'+
+    '<label for="sae-nhs-yes-NUM">Yes</label>'+
+  '</div>'+
+  '<div class="multiple-choice">'+
+    '<input id="sae-nhs-no-NUM" name="sae-nhs-NUM" type="radio" value="No">'+
+    '<label for="sae-nhs-no-NUM">No</label>'+
+  '</div>'+
+  '<div class="panel panel-border-narrow js-hidden" id="sae-nhs-panel-NUM">'+
+    '<div class="form-group">'+
+      '<label class="form-label" for="sae-nhs-amount-NUM">Amount</label>'+
+      '£ <input class="form-control form-control-1-8" id="sae-nhs-amount-NUM" name="sae-nhs-amount-NUM" type="text"/>'+
+    '</div>'+
+  '</div>'+
+'</fieldset>'+
+'<fieldset class="form-group inline">'+
+  '<legend>'+
+    '<label class="form-label">Is there a customer contribution for social and domestic use?</label>'+
+  '</legend>'+
+  '<div class="multiple-choice" data-target="sae-social-panel-NUM">'+
+    '<input id="sae-social-yes-NUM" name="sae-social-NUM" type="radio" value="Yes">'+
+    '<label for="sae-social-yes-NUM">Yes</label>'+
+  '</div>'+
+  '<div class="multiple-choice">'+
+    '<input id="sae-social-no-NUM" name="sae-social-NUM" type="radio" value="No">'+
+    '<label for="sae-social-no-NUM">No</label>'+
+  '</div>'+
+  '<div class="panel panel-border-narrow js-hidden" id="sae-social-panel-NUM">'+
+    '<div class="form-group">'+
+      '<label class="form-label visually-hidden" for="sae-social-amount-NUM">Amount</label>'+
+      '<input class="form-control form-control-1-8" id="sae-social-amount-NUM" name="sae-social-amount-NUM" type="text"/> / 7ths deduction'+
+    '</div>'+
+  '</div>'+
+'</fieldset>'+
+'<a class="remove-list-item" href="#">Remove this</a>'+
+'<hr />'+
+'</div>';
+var num = 1;
+window.addEventListener('load', function(){
+  $(document).on('click', '#sae-add-another', function (e) {
+    e.preventDefault();
+    num++;
+    e.target.parentElement.insertAdjacentHTML('beforebegin', sae_tpl.replace(/NUM/g, num));
+  });
+
+  $(document).on('click', '.remove-list-item', function (e) {
+    e.preventDefault();
+    num--;
+    e.target.parentElement.remove();
+    calc();
+  });
+
+  $(document).on('input', 'input', calc);
+
+  function calc(){
+    var gross = 0;
+    var costs = $('input[name^="sae-cost-"]')
+
+    for(var i=0; i<costs.length; i++){
+      gross += parseFloat(costs[i].value);
+    }
+
+    if(gross != 0){
+      $('#sae-gross').html(gross.toFixed(2));
+      $('input[name="sae-gross"]').val(gross);
+    }
+
+    var tmp = 0;
+
+    var nhs = $('#sae-nhs-amount').val();
+    var emp = $('#sae-emp-amount').val();
+    var social = $('#sae-social-amount').val();
+
+    var size = $('input[name="sae-employer-size"]').val();
+    var offset = (size == 'l') ? 1000 : (size == 'm') ? 500 : 0;
+    var costShare = 0;
+
+  };
+})
+</script>

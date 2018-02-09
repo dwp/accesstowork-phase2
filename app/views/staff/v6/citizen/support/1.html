@@ -1,0 +1,129 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-one-quarter">
+    <!--   <a href="v4/citizen/support" class="link-back">Back</a> -->
+
+      <h2 class="heading-large" id="onlineapp">Travel (Ongoing)</h2>
+      <p>
+        <span class="label">Dates</span><br />
+        <span class="font-small">From: 30th Apr 2016</span> <br />
+        <span class="font-small">To: 29th Apr 2019</span>
+      </p>
+      <p>
+        <span class="label">Award details</span><br />
+        <span class="font-small">Taxi to and from work 4 days a week</span><br />
+        <span class="font-small">£5.00 per journey</span><br />
+        <span class="font-small">8 journeys per week</span>
+      </p>
+      <p>
+        <span class="label">Deductions</span><br />
+        <span class="font-small">Employer - </span><br />
+        <span class="font-small">Customer - </span><br />
+        
+      </p>
+      <p>
+        <span class="label">Support</span><br />
+        <span class="font-small">Approved for £6,240</span><br />
+        <span class="font-small">Used to date £3,120</span><br />
+        <span class="font-small">Journeys approved for 2080</span><br />
+        <span class="font-small">Journeys used 624</span>
+      </p>
+      <p>
+        <span class="label">Payee details</span><br />
+        <span class="font-small">Name: Freds Cabs</span><br />
+        <span class="font-small">Bank name: Nat West</span><br />
+        <span class="font-small">Status: live</span><br />
+        <span class="font-small">Sort code: 11-22-33</span><br />
+        <span class="font-small">Accunt number: 23456789</span><br />
+        <span class="font-small">Email: jason.hair@fredscabs.com</span>
+      </p>
+      <div class="form-group mt30">
+        <a href="payees" class="link">View payees</a>
+      </div>  
+
+    </div><!-- column-half -->
+
+    <div class="column-three-quarters">
+      <div class="form-group mt30">
+        <a href="add-receipt" class="button">Add a payment</a>
+      </div>
+      <h2 class="heading-large" id="onlineapp">Payment claims</h2>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Reference</th>
+          <th>Units</th>
+          <th>Remaining</th>
+          <th class="numeric">Amount</th>
+          <th class="numeric">Remaining</th>
+        </tr>
+        <tr>
+          <td>30th October 2017</td>
+          <td></td>
+          <td>128</td>
+          <td>1,456</td>
+          <td class="numeric">£640</tdclass>
+          <td class="numeric">£3,120</td>
+        </tr>
+        <tr>
+          <td>17th July 2017</td>
+          <td></td>
+          <td>208</td>
+          <td>1,584</td>
+          <td class="numeric">£1,040</tdclass>
+          <td class="numeric">£3,760</td>
+        </tr>
+        <tr>
+          <td>21st January 2017</td>
+          <td></td>
+          <td>104</td>
+          <td>1,792</td>
+          <td class="numeric">£520</tdclass>
+          <td class="numeric">£4,800</td>
+        </tr>
+        <tr>
+          <td>13th October 2106</td>
+          <td></td>
+          <td>168</td>
+          <td>1,896</td>
+          <td class="numeric">£840</td>
+          <td class="numeric">£5,320</td>
+        </tr>
+        <tr>
+          <td>18th May 2016</td>
+          <td></td>
+          <td>16</td>
+          <td>2,064</td>
+          <td class="numeric">£80</td>
+          <td class="numeric">£6,160</td>
+        </tr>
+        <tr>
+          <td>30th April 2016</td>
+          <td></td>
+          <td>initial award</td>
+          <td>initial award</td>
+          <td class="numeric">initial award</td>
+          <td class="numeric">£6,240</td>
+        </tr>
+      </table>
+
+    </div><!-- column-half -->
+
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}

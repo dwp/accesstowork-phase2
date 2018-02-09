@@ -1,0 +1,100 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+     
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Edit employer details</h1>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Name of employer</label>
+        <input class="form-control" id="full-name" name="full-name" type="text" value="McDonalds">
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <legend>
+            <span class="form-label-bold">How long have you been in your current job or role?</span>
+          </legend>
+          <div class="multiple-choice">
+            <input id="radio-1" type="radio" name="radio-group" value="More than 6 weeks">
+            <label for="radio-1">More than 6 weeks</label>
+          </div>
+          <div class="multiple-choice" data-target="start-date-less-than-6-weeks">
+            <input id="radio-2" type="radio" name="radio-group" value="Less than 6 weeks" checked>
+            <label for="radio-2">Less than 6 weeks</label>
+          </div>
+          <div class="multiple-choice" data-target="start-date-not-started">
+            <input id="radio-3" type="radio" name="radio-group" value="You have not yet started">
+            <label for="radio-3">You have not yet started</label>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="start-date-less-than-6-weeks">
+            <div class="form-group">
+              <fieldset>
+                <legend>
+                  <span class="form-label-bold">Work start date</span>
+                </legend>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label for="f-startDateLessThan6Weeks[dd]">Day</label>
+                    <input class="form-control" type="text" name="startDateLessThan6Weeks[dd]" value="8" id="f-startDateLessThan6Weeks[dd]" pattern="[0-9]*" maxlength="2">
+                  </div>
+                  <div class="form-group form-group-month allow-month-names">
+                    <label for="f-startDateLessThan6Weeks[mm]">Month</label>
+                    <input class="form-control" type="text" name="startDateLessThan6Weeks[mm]" value="8" id="f-startDateLessThan6Weeks[mm]" maxlength="20">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label for="f-startDateLessThan6Weeks[yyyy]">Year</label>
+                      <input class="form-control" type="text" name="startDateLessThan6Weeks[yyyy]" value="2017" id="f-startDateLessThan6Weeks[yyyy]" pattern="[0-9]*" maxlength="4">
+                  </div>
+                </div>
+              </fieldset>
+            </div>{# /form-group #}
+          </div>{# /panel #}
+        </fieldset>
+
+        <div class="panel panel-border-narrow js-hidden" id="start-date-not-started">
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">Work start date</span>
+                <span class="form-hint">
+                   </span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="f-startDateNotStarted[dd]">Day</label>
+                  <input class="form-control" type="text" name="startDateNotStarted[dd]" value="" id="f-startDateNotStarted[dd]" pattern="[0-9]*" maxlength="2">
+                </div>
+                <div class="form-group form-group-month allow-month-names">
+                  <label for="f-startDateNotStarted[mm]">Month</label>
+                  <input class="form-control" type="text" name="startDateNotStarted[mm]" value="" id="f-startDateNotStarted[mm]" maxlength="20">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="f-startDateNotStarted[yyyy]">Year</label>
+                    <input class="form-control" type="text" name="startDateNotStarted[yyyy]" value="" id="f-startDateNotStarted[yyyy]" pattern="[0-9]*" maxlength="4">
+                </div>
+              </div>
+            </fieldset>
+          </div>{# /form-group #}
+        </div>{# /panel #}
+
+      </div>{# /form-group #}
+
+      <div class="form-group">
+        <a href="/{{PATH}}/citizen/details" class="button">Save</a>
+        <a href="/{{PATH}}/citizen/details" class="button text">Cancel</a>
+      </div>
+
+    </div>{# /column-two-thirds #}
+
+  </div>{# /grid-row #}
+
+</div>
+
+{% endblock %}

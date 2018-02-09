@@ -1,0 +1,67 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+     
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Edit payee details</h1>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Name</label>
+        <input class="form-control" id="full-name" name="full-name" type="text" value="Green Cars">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="bank">Bank</label>
+        <input class="form-control" id="bank" name="bank" type="text" value="Santander Bank">        
+      </div>{# /form-group #}
+
+      <div class="form-group">
+        <label class="form-label-bold" for="sort-code">Sort code</label>
+        <input class="form-control" id="sort-code" name="sort-code" type="text" value="12-34-56">        
+      </div>{# /form-group #}
+
+      <div class="form-group">
+        <label class="form-label-bold" for="account-number">Accoutn number</label>
+        <input class="form-control" id="account-number" name="account-number" type="number" value="12345678">        
+      </div>{# /form-group #}
+
+      <div class="form-group">
+        <label class="form-label-bold" for="email">Email</label>
+        <input class="form-control" id="email" name="email" type="text" value="craig.shoo@green.cars.com">
+      </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <h1 class="heading-medium">
+                Payee status
+              </h1>
+            </legend>
+            <div class="multiple-choice">
+              <input id="radio-inline-1" type="radio" name="radio-inline-group" value="live">
+              <label for="radio-inline-1">Live</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-inline-2" type="radio" name="radio-inline-group" value="dormant">
+              <label for="radio-inline-2">Dormant</label>
+            </div>
+          </fieldset>
+        </div> <!-- FORM GROUP -->
+
+      <div class="form-group">
+        <a href="payees" class="button">Save</a>
+        <a href="payees" class="button text">Cancel</a>
+      </div>
+
+    </div>{# /column-two-thirds #}
+
+  </div>{# /grid-row #}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+
+
+    <div class="column-two-thirds">
+    <a href="1-2" class="link-back">Back</a>
+
+      <h2 class="heading-large" id="onlineapp">Travel to work payments claim</h2>
+
+      <table>
+        
+        <tbody>
+          <tr>
+            <td class="heading-small">Invoice reference</td>
+            <td>00003</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Dates of claim</td>
+            <td>From: 18th May 2016 to 13th October 2016</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Number of units claimed</td>
+            <td>168</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Amount claimed</td>
+            <td>£840</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Was this an exisitng payee?</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Was the receipt verified?</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Payment status</td>
+            <td>Paid</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Payment reference</td>
+            <td>SOP1113</td>
+          </tr>
+          <tr>
+            <td class="heading-small">Notes</td>
+            <td> Contact was made with Oliver to confirm the contact for verifying <br />
+              the receipts submitted.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div><!-- COLOMN TWO THIRDS -->
+
+    <div class="column-one-thrid">
+
+    </div> <!-- COLUMN ONE THIRD -->  
+
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
