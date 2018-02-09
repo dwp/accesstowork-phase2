@@ -8,7 +8,7 @@ var express     = require('express'),
 
 router.all('*',function(req,res,next)
 {
-  res.locals.PATH = 'staff/v5'
+  res.locals.PATH = 'staff/v6'
   next();
 });
 
@@ -32,12 +32,12 @@ router.get('/citizen/support', function(req,res,next)
 router.post('/citizen/case/eligibility', function(req,res,next)
 {
   return (req.body.support == 'No') ? 
-    res.redirect('/staff/v5/citizen/support/rejected') : 
-    res.redirect('/staff/v5/citizen/timeline');
+    res.redirect('/staff/v6/citizen/support/rejected') : 
+    res.redirect('/staff/v6/citizen/timeline');
 });
 
 router.post('/citizen/support/award-confirm', function(req,res,next) {
-  res.render('staff/v5/citizen/support/award-confirm', {data:req.body});
+  res.render('staff/v6/citizen/support/award-confirm', {data:req.body});
 });
 
 module.exports = router;
