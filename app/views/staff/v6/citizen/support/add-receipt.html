@@ -13,244 +13,301 @@
   <div class="grid-row">
     <div class="column-half">
 
-      <h2 class="heading-large" id="onlineapp">Add a Travel to Work payment</h2>
+      <h2 class="heading-large" id="onlineapp">Make a Travel to Work payment</h2>
 
-      <h3 class="heading-medium">Period of claim</h3>
-
-      <form class="form" action="" method="post" id="form-add-receipt">
-       <!-- <div class="form-group">
-          <label class="form-label" for="description">Description</label>
-          <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-        </div> <!-- FORM GROUP -->
-        <div class="form-group" style="width:100%">
-          <fieldset>
-            <legend>
-              <span class="form-label-bold">From</span>
-            </legend>
-            <div class="form-date">
-              <div class="form-group form-group-day">
-                <label class="form-label" for="from_day">Day</label>
-                <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
-              </div>
-              <div class="form-group form-group-month">
-                <label class="form-label" for="from_month">Month</label>
-                <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
-              <div class="form-group form-group-year">
-                <label class="form-label" for="from_year">Year</label>
-                <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-              </div>
-            </div>
-          </fieldset>
-        <!-- </div>
-        <div class="form-group" style="width:25%"> -->
-          <fieldset>
-            <legend>
-              <span class="form-label-bold">To</span>
-            </legend>
-            <div class="form-date">
-              <div class="form-group form-group-day">
-                <label class="form-label" for="to_day">Day</label>
-                <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
-              </div>
-              <div class="form-group form-group-month">
-                <label class="form-label" for="to_month">Month</label>
-                <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
-              </div>
-              <div class="form-group form-group-year">
-                <label class="form-label" for="to_year">Year</label>
-                <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-              </div>
-            </div>
-          </fieldset>
-        </div>
 
         <div class="form-group">
           <fieldset>
-            <label class="form-label" for="number-journeys">Number of journeys used</label>
+            <label class="form-label" for="number-journeys">Payment invoice reference</label>
             <input type="text" class="form-control form-control-1-4" id="number-journeys" name="number-journeys" value="" maxlength="10">
           </fieldset>
         </div>
 
-        <div class="form-group">
-          <label for="budget">
-            <span class="form-label">Amount claimed</span>
-          </label>
-          £<input class="form-control form-control-1-4" id="amount" name="amount" type="text"/>
-        </div>
-
-        
-          
         <div class="form-group">  
-          <label for="payee">
-            <span class="form-label">Is this an exisitng payee?</span>
-         </label>
-
-
-       
-        <fieldset class="in-line">
-          
-          <div class="multiple-choice" data-target="account-yes">
-                <input id="radio-1" type="radio" name="bank" value="acoountyes">
-                <label for="radio-1">Yes</label>
-             </div>
-
-             <div class="multiple-choice" data-target="account-no">
-               <input id="radio-2" type="radio" name="bank" value="accountno">
-               <label for="radio-2">No</label>
-             </div> 
-         </fieldset>    
-        
-
-        <div class="panel panel-border-narrow js-hidden" id="account-yes">
-
-              <div class="form-group">
-                <label class="js-visible-block form-label-bold" for="account-reference">Enter account name</label>
-                <label class="visually-hidden" for="account-reference">Account reference</label>
-                <input class="form-control form-control-1-4" id="account-reference" type="text">
-              </div>
-             
-          </div>{# /account-reference #}
-
-          <div class="panel panel-border-narrow js-hidden" id="account-no">
-
-            <div class="form-group">
-
-            <label class="visually-hidden" for="account-no">Add new account details</label>
-
-            <form>
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold label-no-hint" for="ba-account-holder">Account name</label>
-                  <input type="text" class="form-control form-control-1-4" id="ba-account-holder" name="ba-account-holder" value="">
-                </fieldset>
-              </div>
-
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="ba-account-reference">
-                    Bank or Building Society name
-                  </label>
-                  <input type="text" class="form-control form-control-1-4" id="ba-account-reference" name="ba-account-reference" value="">
-                </fieldset>
-              </div>
-
-              <legend class="form-label-bold">Sort code</legend>
-              <div class="form-date form-group">
-                <fieldset>
-                  <div class="form-group form-group-day">
-                    <label for="ba-sort1"></label>
-                    <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
-                  </div>
-
-                  <div class="form-group form-group-month">
-                    <label for="ba-sort2"></label>
-                    <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
-                  </div>
-
-                  <div class="form-group form-group-month">
-                    <label for="ba-sort3"></label>
-                    <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
-                  </div>
-                </fieldset>
-              </div>
-
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="ba-account-number">
-                    Account number
-                  </label>
-                  <input type="text" class="form-control form-control-1-4" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
-                </fieldset>
-              </div>
-
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="bs-society-roll">
-                    Building society roll or reference number (optional)
-                    <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook.</span>
-                  </label>
-                  <input type="text" class="form-control form-control-1-4" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
-                </fieldset>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label-bold" for="email">Email</label>
-                <input class="form-control form-control-1-4" id="email" name="email" type="text" value="">
-              </div>
-
-             </form>
-           </div>
-           </div>
-         </fieldset> 
-          </div>  {# /account-details #}
-
-        <div class="form-group">
-          <fieldset class="in-line">
-          <legend>
-            <span class="form-label">Has this receipt been verified by the named contact?</span>
-          </legend>
-          <div class="multiple-choice" data-target="verified_yes_extra">
-            <input id="verified_yes" name="verified" type="radio" value="Yes">
-            <label for="verified_yes"> Yes </label>
-          </div>
-          <div class="multiple-choice" data-target="verified_no_extra">
-            <input id="verified_no" name="verified" type="radio" value="No">
-            <label for="verified_no"> No </label>
-          </div>
-          <div class="panel panel-border-narrow js-hidden" id="verified_yes_extra">
-              <fieldset>
-                <legend>
-                  <span class="form-label">Date verified</span>
-                </legend>
-                <div class="form-date">
-                  <div class="form-group form-group-day">
-                    <label class="form-label" for="from_day">Day</label>
-                    <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
-                  </div>
-                  <div class="form-group form-group-month">
-                    <label class="form-label" for="from_month">Month</label>
-                    <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
-                  </div>
-                  <div class="form-group form-group-year">
-                    <label class="form-label" for="from_year">Year</label>
-                    <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-          <div class="panel panel-border-narrow js-hidden" id="verified_no_extra">
-            <div class="form-group">
-              <label class="heading-medium" for="reason">Why?</label>
-              <textarea class="form-control" name="reason" id="reason" rows="5"></textarea>
-            </div>
-          </div>
-          </fieldset>
-        </div>
-          <div class="form-group">  
             <label for="payee">
-              <span class="form-label">Action for this payment claim</span>
-           </label>       
-          <fieldset class="in-line">
-            
-            <div class="multiple-choice" data-target="accept">
+              <span class="form-label">Decision for this payment claim</span>
+            </label>       
+            <fieldset class="in-line">
+              
+              <div class="multiple-choice" data-target="accept">
                   <input id="radio-1" type="radio" name="bank" value="accept">
                   <label for="radio-1">Accept</label>
-            </div>
+              </div>
 
                <div class="multiple-choice" data-target="reject">
                  <input id="radio-2" type="radio" name="bank" value="reject">
                  <label for="radio-2">Reject</label>
                </div> 
-           </fieldset>    
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="textarea">Notes for this payment claim?</label>
-          <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
-        </div>  
-</div> <!-- FORM GROUP -->   
-        </div>
-        </form>
+            </fieldset>
+
+             <div class="panel panel-border-narrow js-hidden" id="reject">
+
+                <div class="form-group">
+                  <label class="form-label" for="textarea">Reason for rejecting this payment claim</label>
+                  <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+                </div> 
+             </div><!-- panel-border-narrow js-hidden reject-->   
+             <div class="panel panel-border-narrow js-hidden" id="accept">
+
+             <div class="form-group">
+                  
+              <h3 class="heading-medium">Details of payment claim</h3>
+
+             
+
+                  <form class="form" action="" method="post" id="form-add-receipt">
+                   
+                    <div class="form-group" style="width:100%">
+                      <fieldset>
+                        <legend>
+                          <span class="form-label-bold">From</span>
+                        </legend>
+                        <div class="form-date">
+                          <div class="form-group form-group-day">
+                            <label class="form-label" for="from_day">Day</label>
+                            <input class="form-control" id="from_day" name="from_day" type="number" pattern="[0-9]*" min="0" max="31">
+                          </div>
+                          <div class="form-group form-group-month">
+                            <label class="form-label" for="from_month">Month</label>
+                            <input class="form-control" id="from_month" name="from_month" type="number" pattern="[0-9]*" min="0" max="12">
+                          </div>
+                          <div class="form-group form-group-year">
+                            <label class="form-label" for="from_year">Year</label>
+                            <input class="form-control" id="from_year" name="from_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+                          </div>
+                        </div>
+                      </fieldset>
+                    <!-- </div>
+                    <div class="form-group" style="width:25%"> -->
+                      <fieldset>
+                        <legend>
+                          <span class="form-label-bold">To</span>
+                        </legend>
+                        <div class="form-date">
+                          <div class="form-group form-group-day">
+                            <label class="form-label" for="to_day">Day</label>
+                            <input class="form-control" id="to_day" name="to_day" type="number" pattern="[0-9]*" min="0" max="31">
+                          </div>
+                          <div class="form-group form-group-month">
+                            <label class="form-label" for="to_month">Month</label>
+                            <input class="form-control" id="to_month" name="to_month" type="number" pattern="[0-9]*" min="0" max="12">
+                          </div>
+                          <div class="form-group form-group-year">
+                            <label class="form-label" for="to_year">Year</label>
+                            <input class="form-control" id="to_year" name="to_year" type="number" pattern="[0-9]*" min="2017" max="2050">
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                      <fieldset>
+                        <label class="form-label" for="number-journeys">Number of journeys used</label>
+                        <input type="text" class="form-control form-control-1-4" id="number-journeys" name="number-journeys" value="" maxlength="10">
+                      </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="budget">
+                        <span class="form-label">Amount</span>
+                      </label>
+                      £<input class="form-control form-control-1-4" id="amount" name="amount" type="text"/>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="button" class="button button-secondary" value="Calculate deductions">
+                    </div>  
+
+                    <div class="form-group">
+                      <label for="budget">
+                        <span class="form-label">Total </span>
+                      </label>
+                      £<input class="form-control form-control-1-4" id="amount" name="amount" type="text"/>
+                    </div>
+
+                    <form>
+                      <h3 class="heading-medium">Enter Payee details</h3>
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label label-no-hint" for="ba-account-holder">Account name</label>
+                              <input type="text" class="form-control form-control-1-4" id="ba-account-holder" name="ba-account-holder" value="">
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label" for="ba-account-reference">
+                                Bank or Building Society name
+                              </label>
+                              <input type="text" class="form-control form-control-1-4" id="ba-account-reference" name="ba-account-reference" value="">
+                            </fieldset>
+                          </div>
+
+                          <legend class="form-label">Sort code</legend>
+                          <div class="form-date form-group">
+                            <fieldset>
+                              <div class="form-group form-group-day">
+                                <label for="ba-sort1"></label>
+                                <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+                              </div>
+
+                              <div class="form-group form-group-month">
+                                <label for="ba-sort2"></label>
+                                <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+                              </div>
+
+                              <div class="form-group form-group-month">
+                                <label for="ba-sort3"></label>
+                                <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+                              </div>
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label" for="ba-account-number">
+                                Account number
+                              </label>
+                              <input type="text" class="form-control form-control-1-4" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label" for="bs-society-roll">
+                                Building society roll or reference number (optional)
+                                <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook.</span>
+                              </label>
+                              <input type="text" class="form-control form-control-1-4" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label" for="email">Contact email for Payee</label>
+                            <input class="form-control form-control-1-4" id="email" name="email" type="text" value="">
+                          </div>
+
+                         </form>
+
+                    
+                      
+                    <!-- <div class="form-group">  
+                      <label for="payee">
+                        <span class="form-label">Is this an exisitng payee?</span>
+                     </label>
+
+
+                   
+                    <fieldset class="in-line">
+                      
+                      <div class="multiple-choice" data-target="account-yes">
+                            <input id="radio-1" type="radio" name="bank" value="acoountyes">
+                            <label for="radio-1">Yes</label>
+                         </div>
+
+                         <div class="multiple-choice" data-target="account-no">
+                           <input id="radio-2" type="radio" name="bank" value="accountno">
+                           <label for="radio-2">No</label>
+                         </div> 
+                     </fieldset>    
+                    
+
+                    <div class="panel panel-border-narrow js-hidden" id="account-yes">
+
+                          <div class="form-group">
+                            <label class="js-visible-block form-label-bold" for="account-reference">Enter account name</label>
+                            <label class="visually-hidden" for="account-reference">Account reference</label>
+                            <input class="form-control form-control-1-4" id="account-reference" type="text">
+                          </div>
+                         
+                      </div>{# /account-reference #}
+
+                      <div class="panel panel-border-narrow js-hidden" id="account-no">
+
+                        <div class="form-group">
+
+                        <label class="visually-hidden" for="account-no">Add new account details</label>
+
+                        <form>
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label-bold label-no-hint" for="ba-account-holder">Account name</label>
+                              <input type="text" class="form-control form-control-1-4" id="ba-account-holder" name="ba-account-holder" value="">
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label-bold" for="ba-account-reference">
+                                Bank or Building Society name
+                              </label>
+                              <input type="text" class="form-control form-control-1-4" id="ba-account-reference" name="ba-account-reference" value="">
+                            </fieldset>
+                          </div>
+
+                          <legend class="form-label-bold">Sort code</legend>
+                          <div class="form-date form-group">
+                            <fieldset>
+                              <div class="form-group form-group-day">
+                                <label for="ba-sort1"></label>
+                                <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+                              </div>
+
+                              <div class="form-group form-group-month">
+                                <label for="ba-sort2"></label>
+                                <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+                              </div>
+
+                              <div class="form-group form-group-month">
+                                <label for="ba-sort3"></label>
+                                <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+                              </div>
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label-bold" for="ba-account-number">
+                                Account number
+                              </label>
+                              <input type="text" class="form-control form-control-1-4" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <fieldset>
+                              <label class="form-label-bold" for="bs-society-roll">
+                                Building society roll or reference number (optional)
+                                <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook.</span>
+                              </label>
+                              <input type="text" class="form-control form-control-1-4" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+                            </fieldset>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-label-bold" for="email">Email</label>
+                            <input class="form-control form-control-1-4" id="email" name="email" type="text" value="">
+                          </div>
+
+                         </form>
+                       </div>
+                       </div>
+                     </fieldset> 
+                      </div>  {# /account-details #} -->
+
+                      
+                          <div class="form-group">
+                            <label class="form-label" for="textarea">Notes for this payment claim?</label>
+                            <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+                          </div>  
+                      </div> <!-- FORM GROUP -->   
+                    
+
+                      </form>
+                    </div>
+
+                    </div><!-- panel-border-narrow js-hidden acccpet-->   
+        </div> <!-- form-group -->
 
         <div class="form-group">
             <a href="/{{PATH}}/citizen/support/add-receipt-check-answers" class="button">Review payment</a>
