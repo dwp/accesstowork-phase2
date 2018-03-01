@@ -1,0 +1,39 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+  
+  <div class="grid-row">
+    <div class="column-half">
+
+    	<h2 class="heading-large">Update confirmation</h2>
+
+		  <h3 class="heading-medium">Your decision to reject the payments claim has been recorded</h2>
+
+      <a href="support-1-plus-1-new-item-rejected" class="button">Back to payments</a>  
+
+      
+    </div><!-- COLUMN HALF -->
+
+    <div class="column-half">
+    </div>  <!-- COLUMN HALF -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
