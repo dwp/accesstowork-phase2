@@ -1,0 +1,154 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+
+<div class="container">
+
+  {{ data | log }}
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+      <div class="admin-wrapper">
+       <a href="/{{ PATH }}/citizen/support" class="link-back">Back to award</a>
+        <div class="horizontal-admin-secondary-wrapper">
+          <div class="admin-content-wrapper-horizontalnav">
+            <div class="admin-content-horizontalnav">
+              <div class="admin-submenu-container">
+             <!--  <h1 class="heading-xlarge">Paymets history</h1> -->
+
+              <div class="admin-submenu">
+                <ul>
+                  <li class="active"><a href="#">Payments history</a></li>
+                  <li><a href="support-2">Element details</a></li>
+                  <li><a href="support-3">Payees</a></li>
+                </ul>
+              </div><!-- admin-submenu -->
+
+              <div class="admin-panes">
+               <!--  <h2 class="heading-medium">Previous payments</h2> -->
+                <div class="admin-pane">
+                  <p><span class="bold">Remaining award</span><br />
+                    &pound;3,120<br />
+                    1,456 units
+                  </p>
+                  <table>
+                    <tr>
+                      <th>Date paid</th>
+                      <th>Payment officer</th>
+                      <th>Invoice <br />reference</th>
+                      <th>Payment <br />reference</th>
+                      <th>Units <br /> claimed</th>
+                      <th>Amount <br /> claimed</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>06 March 2018</td>
+                      <td>Shaun Curtis</td>
+                      <td>Freds 0005</td>
+                      <td>ATWIS00006</td>
+                      <td>13</td>
+                      <td>£160</td>
+                      <td>Paid</td>  
+                      <td><a href="payment-claim-5-1-5">View payment</a></td>
+                    </tr>
+                    <tr>
+                      <td>30 October 2017</td>
+                      <td>Shaun Curtis</td>
+                      <td>Freds 0005</td>
+                      <td>ATWIS00005</td>
+                      <td>128</td>
+                      <td>£640</td>
+                      <td>Paid</td>  
+                      <td><a href="payment-claim-5-1-5">View payment</a></td>
+                    </tr>
+                    <tr> 
+                      <td>17 July 2017</td>
+                      <td>Marrianne Versaille</td>
+                      <td>Freds 0004</td>
+                      <td>ATWIS00004</td>
+                      <td>208</td>
+                      <td>£1,040</td>
+                      <td>Paid</td>  
+                      <td><a href="payment-claim-4-1-5">View payment</a></td>
+                    </tr>
+                    <tr>
+                      <td>21 January 2017</td>
+                      <td>Jacinda Kaur</td>
+                      <td>Freds 0003</td>
+                      <td>ATWIS00003</td>
+                      <td>104</td>
+                      <td>£520</td>
+                      <td>Rejected</td>  
+                      <td><a href="payment-claim-3-1-5">View payment</a></td>  
+                    </tr>
+                    <tr>
+                      <td>13 October 2106</td>
+                      <td>Marianne Versaille</td>
+                      <td>Freds 0002</td>
+                      <td>ATWIS00002</td>
+                      <td>168</td>
+                      <td>£840</td>
+                      <td>Paid</td>
+                      <td><a href="payment-claim-2-1-5">View payment</a></td>
+                    </tr>
+                    <tr>
+                      <td>18 May 2016</td>
+                      <td>Peter Fullsome</td>
+                      <td>Freds 0001</td>
+                      <td>ATWIS00001</td>
+                      <td>16</td>
+                      <td>£80</td>
+                      <td>Paid</td>
+                      <td><a href="payment-claim-1-1-5">View payment</a></td>
+                    </tr>
+                    <tr>
+                      <td>30 April 2016</td>
+                      <td>Initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                    </tr>
+                  </table>
+                </div><!-- admin-pane -->
+              </div><!-- admin-panes -->
+            </div><!-- admin-content-horizontalnav -->
+          </div><!-- admin-content-wrapper-horizantalnav -->
+        </div><!-- horizantal-admin-secondary-wrapper -->
+
+          
+      </div> <!-- admin-wrapper -->
+      <div class="form-group mt30">
+        <a href="add-receipt" class="button">Make a payment</a>
+      </div>
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

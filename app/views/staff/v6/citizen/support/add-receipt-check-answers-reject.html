@@ -1,0 +1,48 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+  
+  <div class="grid-row">
+    <div class="column-half">
+
+
+
+      <h2 class="heading-large" id="onlineapp">Review payment</h2>
+
+
+      <table>
+        <tr>
+          <td class="bold">Payment invoice reference</td>
+          <td>freds cabs 11987-12</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="bold">Decision on payment</td>
+          <td>Reject</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+        <tr>
+          <td class="bold">Reason for rejecting the payment claim</td>
+          <td>Here are some sample notes. I am going to keep typing because I need to fill this space out with lots of words, so I can show how wide this block can go. Also how is this going to fit into the table?</td>
+          <td><a href="add-receipt">edit/change</a></td>
+        </tr>
+
+      </table>
+
+    <a href="payment-review-next-page-question" class="button">Make payment</a>
+
+
+
+    </div><!-- COLUMN TWO-THIRDS -->
+
+  </div><!-- grid-row -->
+</div><!-- container -->
+{% endblock %}
