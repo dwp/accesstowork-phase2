@@ -1,0 +1,95 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+
+<div class="container">
+
+  {{ data | log }}
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+      <div class="admin-wrapper">
+        <a href="/{{ PATH }}/citizen/support" class="link-back">Back to award</a>
+          <div class="horizontal-admin-secondary-wrapper">
+           <div class="admin-content-wrapper-horizontalnav">
+            <div class="admin-content-horizontalnav">
+              <div class="admin-submenu-container">
+              
+
+              <div class="admin-submenu">
+                <ul>
+                  <li><a href="support-1">Payments history</a></li>
+                  <li class="active"><a href="#">Element details</a></li>
+                  <li><a href="support-3">Payees</a></li>
+                </ul>
+              </div><!-- admin-submenu -->
+
+              <div class="admin-panes">
+                <div class="admin-pane">
+                  
+                  <table>
+                    <tr>
+                      <th class="heading-small">Travel details</td>
+                      <td>Travel to and from work using a taxi, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    </tr>
+                    <tr> 
+                      <th class="heading-small">Award from</th>
+                      <td>30 April 2016</td>
+                    </tr>
+                    <tr>
+                      <th class="heading-small">Award to</th>
+                      <td>29 April 2109</td>
+                    </tr>
+                    <tr>
+                      <th class="heading-small">Number of journeys</td>
+                      <td>10 per week</td>
+                    </tr>
+                    <tr>
+                      <th class="heading-small">Cost per journey</td>
+                      <td>£7.50</td>
+                    </tr>
+                    <tr>
+                      <td>30th April 2016</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                      <td>initial award</td>
+                    </tr>
+                  </table>
+                </div><!-- admin-pane -->
+              </div><!-- admin-panes -->
+             </div><!-- admin-submenu-contaoner -->
+            </div><!-- admin-content-horizontalnav -->
+           </div><!-- admin-content-wrapper-horizontalnav --> 
+          </div><!-- horizontal-admin-secondary-wrapper -->    
+      </div><!-- admin-wrapper -->
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

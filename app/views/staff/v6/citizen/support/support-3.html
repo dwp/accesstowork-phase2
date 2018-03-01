@@ -1,0 +1,65 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+
+<div class="container">
+
+  {{ data | log }}
+  {#
+    this is a macro: pass the name of the selected item
+    and the number for the url.
+    Code in inc/layout_case.html
+  #}
+  {{ case_tabs("support",1) }}
+
+  <div class="grid-row">
+
+    <div class="column-full">
+
+      <div class="admin-wrapper">
+        <a href="/{{ PATH }}/citizen/support" class="link-back">Back to award</a>
+          <div class="horizontal-admin-secondary-wrapper">
+            <div class="admin-content-wrapper-horizontalnav">
+              <div class="admin-content-horizontalnav">
+                <div class="admin-submenu-container">
+                
+
+                <div class="admin-submenu">
+                  <ul>
+                    <li><a href="support-1">Payments history</a></li>
+                    <li><a href="support-2">Element detail</a></li>
+                    <li class="active"><a href="support-3">Payees</a></li>
+                  </ul>
+                </div><!-- admin-submenu -->
+
+                <div class="admin-panes">
+                  <div class="admin-pane">
+                    
+                  </div><!-- admin-pane -->
+                </div><!-- admin-panes -->
+               </div><!--admin-submenu-container -->
+              </div><!-- admin-content-horizontalnav -->
+            </div><!-- admin-content-wrapper-horizontalnav -->
+          </div><!-- horizotnal-admin-secondary-warpper -->   
+      </div><!-- admin-wrapper -->
+
+    </div><!-- column-full -->
+  </div><!-- grid-row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}
