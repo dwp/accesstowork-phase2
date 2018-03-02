@@ -40,4 +40,16 @@ router.post('/citizen/support/award-confirm', function(req,res,next) {
   res.render('staff/v6/citizen/support/award-confirm', {data:req.body});
 });
 
+router.post('/citizen/support/add-receipt-check-answers',function(req,res,next)
+{
+  var payment = req.session.data['payment']
+  if ( payment == 'accept'){
+    res.redirect('/staff/v6/citizen/support/add-receipt-check-answers')
+  }
+  else {
+    res.redirect('/staff/v6/citizen/support/add-receipt-check-answers-reject')
+  }
+
+});
+
 module.exports = router;
