@@ -15,7 +15,8 @@
 
       <h2 class="heading-large" id="onlineapp">Make a Travel to Work payment</h2>
 
-
+      <form class="form" action="/{{PATH}}/citizen/support/add-receipt-check-answers" method="post" id="form-add-receipt">
+                   
         <div class="form-group">
           <fieldset>
             <label class="form-label" for="number-journeys">Payment invoice reference</label>
@@ -30,12 +31,12 @@
             <fieldset class="in-line">
               
               <div class="multiple-choice" data-target="accept">
-                  <input id="radio-1" type="radio" name="bank" value="accept">
+                  <input id="radio-1" type="radio" name="payment" value="accept">
                   <label for="radio-1">Accept the claim</label>
               </div>
 
                <div class="multiple-choice" data-target="reject">
-                 <input id="radio-2" type="radio" name="bank" value="reject">
+                 <input id="radio-2" type="radio" name="payment" value="reject">
                  <label for="radio-2">Reject the claim</label>
                </div> 
             </fieldset>
@@ -55,8 +56,7 @@
 
              
 
-                  <form class="form" action="" method="post" id="form-add-receipt">
-                   
+                  
                     <div class="form-group" style="width:100%">
                       <fieldset>
                         <legend>
@@ -125,7 +125,6 @@
                       £<input class="form-control form-control-1-4" id="amount" name="amount" type="text"/>
                     </div>
 
-                    <form>
                       <h3 class="heading-medium">Enter Payee details</h3>
                           <div class="form-group">
                             <fieldset>
@@ -187,113 +186,6 @@
                             <input class="form-control form-control-1-4" id="email" name="email" type="text" value="">
                           </div>
 
-                         </form>
-
-                    
-                      
-                    <!-- <div class="form-group">  
-                      <label for="payee">
-                        <span class="form-label">Is this an exisitng payee?</span>
-                     </label>
-
-
-                   
-                    <fieldset class="in-line">
-                      
-                      <div class="multiple-choice" data-target="account-yes">
-                            <input id="radio-1" type="radio" name="bank" value="acoountyes">
-                            <label for="radio-1">Yes</label>
-                         </div>
-
-                         <div class="multiple-choice" data-target="account-no">
-                           <input id="radio-2" type="radio" name="bank" value="accountno">
-                           <label for="radio-2">No</label>
-                         </div> 
-                     </fieldset>    
-                    
-
-                    <div class="panel panel-border-narrow js-hidden" id="account-yes">
-
-                          <div class="form-group">
-                            <label class="js-visible-block form-label-bold" for="account-reference">Enter account name</label>
-                            <label class="visually-hidden" for="account-reference">Account reference</label>
-                            <input class="form-control form-control-1-4" id="account-reference" type="text">
-                          </div>
-                         
-                      </div>{# /account-reference #}
-
-                      <div class="panel panel-border-narrow js-hidden" id="account-no">
-
-                        <div class="form-group">
-
-                        <label class="visually-hidden" for="account-no">Add new account details</label>
-
-                        <form>
-                          <div class="form-group">
-                            <fieldset>
-                              <label class="form-label-bold label-no-hint" for="ba-account-holder">Account name</label>
-                              <input type="text" class="form-control form-control-1-4" id="ba-account-holder" name="ba-account-holder" value="">
-                            </fieldset>
-                          </div>
-
-                          <div class="form-group">
-                            <fieldset>
-                              <label class="form-label-bold" for="ba-account-reference">
-                                Bank or Building Society name
-                              </label>
-                              <input type="text" class="form-control form-control-1-4" id="ba-account-reference" name="ba-account-reference" value="">
-                            </fieldset>
-                          </div>
-
-                          <legend class="form-label-bold">Sort code</legend>
-                          <div class="form-date form-group">
-                            <fieldset>
-                              <div class="form-group form-group-day">
-                                <label for="ba-sort1"></label>
-                                <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
-                              </div>
-
-                              <div class="form-group form-group-month">
-                                <label for="ba-sort2"></label>
-                                <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
-                              </div>
-
-                              <div class="form-group form-group-month">
-                                <label for="ba-sort3"></label>
-                                <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
-                              </div>
-                            </fieldset>
-                          </div>
-
-                          <div class="form-group">
-                            <fieldset>
-                              <label class="form-label-bold" for="ba-account-number">
-                                Account number
-                              </label>
-                              <input type="text" class="form-control form-control-1-4" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
-                            </fieldset>
-                          </div>
-
-                          <div class="form-group">
-                            <fieldset>
-                              <label class="form-label-bold" for="bs-society-roll">
-                                Building society roll or reference number (optional)
-                                <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook.</span>
-                              </label>
-                              <input type="text" class="form-control form-control-1-4" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
-                            </fieldset>
-                          </div>
-
-                          <div class="form-group">
-                            <label class="form-label-bold" for="email">Email</label>
-                            <input class="form-control form-control-1-4" id="email" name="email" type="text" value="">
-                          </div>
-
-                         </form>
-                       </div>
-                       </div>
-                     </fieldset> 
-                      </div>  {# /account-details #} -->
 
                       
                           <div class="form-group">
@@ -301,20 +193,23 @@
                             <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
                           </div>  
                       </div> <!-- FORM GROUP -->   
-                    
+                         </div><!-- panel-border-narrow js-hidden acccpet-->   
+                          </div> <!-- form-group -->
+
+                        <div class="form-group">
+                            <input class="button" type="submit" value="Review payment">
+                            <a href="/{{PATH}}/citizen/support/support-1" class="button text">Cancel</a>
+                          <!-- <input type="submit" class="button" value="Continue" /> -->
+                        </div>
 
                       </form>
                     </div>
 
-                    </div><!-- panel-border-narrow js-hidden acccpet-->   
-        </div> <!-- form-group -->
+                   
+       
 
-        <div class="form-group">
-            <a href="/{{PATH}}/citizen/support/add-receipt-check-answers" class="button">Review payment</a>
-            <a href="/{{PATH}}/citizen/support/1-5" class="button text">Cancel</a>
-          <!-- <input type="submit" class="button" value="Continue" /> -->
-        </div>
-      </form>
+        
+  
 
     </div><!-- COLUMN HALF -->
 
