@@ -1,0 +1,32 @@
+{% extends "index-layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<div class="homepage-top">
+  <div class="homepage-top-content">
+    <h1 class="heading-xlarge">
+      {{serviceName}}
+      <span>Prototypes</span>
+    </h1>
+  </div>
+</div>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    	<h4>Other prototpyes:</h4>
+          <ul class="list list-bullet">
+            <!-- <li><a href="/application/current/index">Application</a></li> -->
+            <li><a href="/payments-v2/start">Online payments version 2</a></li>
+            <li><a href="/payments-v1/start">Online payments version 1</a></li>
+            <li><a href="/employer-verify/employer-email">Online Employer verifying payment claims</a></li>
+            <!-- <li><a href="/Payments_login_desktop_v1/Start-page">Payemnts login for a desktop device - version 1</a></li> -->
+          </ul>
+	</div> <!-- COLUMN-TWO-THRIRDS -->
+  </div> <!-- GRID-ROW -->
+</main>
+
+{% endblock %}

@@ -61,3 +61,24 @@
     top: 0;
   }
 }
+
+.other-prototypes {
+  border: 1px solid $border-colour;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-color: $border-colour;
+    color: $page-colour;
+    content: 'OTHER PROTOTYPES';
+    font-family: 'nta', Arial, sans-serif;
+    font-weight: 400;
+    left: 0;
+    padding: .2105263158em .7894736842em;
+    position: absolute;
+    text-transform: none;
+    top: 0;
+  }
+}
