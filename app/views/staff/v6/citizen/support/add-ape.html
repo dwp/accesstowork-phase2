@@ -1,24 +1,146 @@
 
     <div class="form-group">
-      <label class="form-label" for="ape-description">Details of adaptation</label>
+      <label class="form-label" for="ape-description">Details of item</label>
       <textarea class="form-control" id="ape-description" name="ape-description" style="height:100px"></textarea>
     </div> <!-- FROM-GROUP -->
 
-    <div class="form-group form-label-bold">
+    <div class="form-group form-label">
       <label for="ape-cost">
-        <span class="form-label-bold">Cost of item</span>
+        <span class="form-label">Cost</span>
       </label>
       £
       <input class="form-control form-control-1-8" id="ape-cost" name="ape-cost" type="text"/>
     </div> <!-- FORM-GROUP -->
 
-    
-    
-    <div class="form-group form-label-bold">Deductions</div>
-    
-    
-    
+    <div>
+        <button id="ape-add-another"class="button button-secondary">Add another item</button>
+    </div>
+
+    <fieldset>
+    <div class="form-group">
+        <h3 class="form-group heading-medium mt30">Gross total</h3>
+        £ <input class="form-control form-control-1-8" id="ape-emp-cost" name="ape-emp-cost" type="text"/>
+    </div>
+    </fieldset>
+
+
+    <h3 class="heading-medium">Apply deductions</h3>
+
+    <fieldset class="form-group inline">
+        <legend>
+            <label class="form-label">Is there a voluntary employer contribution?</label>
+        </legend>
+        <div class="multiple-choice" data-target="ape-emp-panel">
+            <input id="ape-emp-yes" name="ape-emp" type="radio" value="Yes">
+            <label for="ape-emp-yes">Yes</label>
+        </div>
+        <div class="multiple-choice">
+            <input id="ape-emp-no" name="ape-emp" type="radio" value="No">
+            <label for="ape-emp-no">No</label>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="ape-emp-panel">
+            <div class="form-group form-label-bold">
+                <label for="ape-emp-cont">
+                    <span class="form-label-bold">Cost</span>
+                </label>
+                £
+                <input class="form-control form-control-1-8" id="ape-emp-cont" name="ape-emp-cont" type="text"/>
+
+            </div> <!-- FORM-GROUP -->
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <label class="form-label">What size is the employer?</label>
+        </legend>
+        <div class="multiple-choice">
+            <input id="ape-size-n" name="ape-employer-size" type="radio" value="n">
+            <label for="ape-size-n">Employed less than 6 weeks - no Cost Share</label>
+        </div>
+        <div class="multiple-choice">
+            <input id="ape-size-s" name="ape-employer-size" type="radio" value="s">
+            <label for="ape-size-s">Small - no Cost Share</label>
+        </div>
+        <div class="multiple-choice">
+            <input id="ape-size-m" name="ape-employer-size" type="radio" value="m">
+            <label for="ape-size-m">Medium - £500 + 20%</label>
+        </div>
+        <div class="multiple-choice">
+            <input id="ape-size-l" name="ape-employer-size" type="radio" value="l">
+            <label for="ape-size-l">Large - £1000 + 20%</label>
+        </div>
+    </fieldset>
+
+    <br>
+    <fieldset>
+        <div class="form-group">
+            <label class="form-label-bold" for="ape-emp-amount">Net total</label>
+            £ <input class="form-control form-control-1-8" id="ape-emp-amount" name="ape-emp-amount" type="text"/>
+        </div>
+    </fieldset>
+
     <div class="form-group">
       <input type="submit" class="button" value="Continue" />
     </div>
- 
+
+
+    <script>
+        var ape_tpl = '<div>'+
+            '<div class="form-group">'+
+            '<label class="form-label" for="ape-description-NUM">Details of support item NUM</label>'+
+            '<textarea class="form-control" id="ape-description-NUM" name="ape-description-NUM" rows="3"></textarea>'+
+            '</div>'+
+            '<div class="form-group">'+
+            '<label for="ape-cost-NUM">'+
+            '<span class="form-label">Cost</span>'+
+            '</label>'+
+            '£ <input class="form-control form-control-1-8" id="ape-cost-NUM" name="ape-cost-NUM" type="text"/>'+
+            '</div>'+
+
+            '<a class="remove-list-item" href="#">Remove this</a>'+
+            '<hr />'+
+            '</div>';
+        var num = 1;
+        window.addEventListener('load', function(){
+            $(document).on('click', '#ape-add-another', function (e) {
+                e.preventDefault();
+                num++;
+                e.target.parentElement.insertAdjacentHTML('beforebegin', ape_tpl.replace(/NUM/g, num));
+            });
+
+            $(document).on('click', '.remove-list-item', function (e) {
+                e.preventDefault();
+                num--;
+                e.target.parentElement.remove();
+                calc();
+            });
+
+            $(document).on('input', 'input', calc);
+
+            function calc(){
+                var gross = 0;
+                var costs = $('input[name^="ape-cost-"]')
+
+                for(var i=0; i<costs.length; i++){
+                    gross += parseFloat(costs[i].value);
+                }
+
+                if(gross != 0){
+                    $('#sae-gross').html(gross.toFixed(2));
+                    $('input[name="ape-gross"]').val(gross);
+                }
+
+                var tmp = 0;
+
+                var nhs = $('#sae-nhs-amount').val();
+                var emp = $('#sae-emp-amount').val();
+                var social = $('#sae-social-amount').val();
+
+                var size = $('input[name="ape-employer-size"]').val();
+                var offset = (size == 'l') ? 1000 : (size == 'm') ? 500 : 0;
+                var costShare = 0;
+
+            };
+        })
+    </script>
