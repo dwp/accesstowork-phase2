@@ -1,28 +1,31 @@
-
+<div>
     <div class="form-group">
       <label class="form-label" for="ape-description">Details of item</label>
       <textarea class="form-control" id="ape-description" name="ape-description" style="height:100px"></textarea>
     </div> <!-- FROM-GROUP -->
 
     <div class="form-group form-label">
-      <label for="ape-cost">
+      <label for="ape-cost-1">
         <span class="form-label">Cost</span>
       </label>
       £
-      <input class="form-control form-control-1-8" id="ape-cost" name="ape-cost" type="text"/>
+      <input class="form-control form-control-1-8" id="ape-cost-1" name="ape-cost-1" type="text"/>
     </div> <!-- FORM-GROUP -->
+</div>
 
     <div>
         <button id="ape-add-another"class="button button-secondary">Add another item</button>
     </div>
 
     <fieldset>
-    <div class="form-group">
-        <h3 class="form-group heading-medium mt30">Gross total</h3>
-        £ <input class="form-control form-control-1-8" id="ape-emp-cost" name="ape-emp-cost" type="text"/>
-    </div>
+        <div class="form-group heading-medium">
+            <label for="ape-gross">
+                <span>Gross</span>
+            </label> <br>
+            £
+            <input class="form-control form-control-1-8" id="ape-gross" name="ape-gross" type="text"/>
+        </div> <!-- FORM-GROUP -->
     </fieldset>
-
 
     <h3 class="heading-medium">Apply deductions</h3>
 
@@ -81,7 +84,7 @@
     </fieldset>
 
     <div class="form-group">
-      <input type="submit" class="button" value="Continue" />
+      <input type="submit" class="button" value="Review element" />
     </div>
 
 
@@ -133,8 +136,7 @@
 
                 var tmp = 0;
 
-                var nhs = $('#sae-nhs-amount').val();
-                var emp = $('#sae-emp-amount').val();
+                var emp = $('#ape-emp-amount').val();
                 var social = $('#sae-social-amount').val();
 
                 var size = $('input[name="ape-employer-size"]').val();
