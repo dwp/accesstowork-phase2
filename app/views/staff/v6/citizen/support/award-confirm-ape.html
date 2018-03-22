@@ -1,0 +1,17 @@
+<!--   ADAPTIONS TO PREMISES AND EQUIPMENT    -->
+{% set nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] %}
+{% for num in nums %}
+{% if (data['ape-description-'+num]) or (data['ape-cost-'+num]) %}
+        <tr>
+            <td>Description of item {{num}}</td>
+            <td>{{ data['ape-description-'+num] }}</td>
+            <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+        </tr>
+        <tr>
+            <td>Cost of item {{num}}</td>
+            <td>{{ data['ape-cost-'+num] }}</td>
+            <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+        </tr>
+    {% endif %}
+{% endfor %}
+

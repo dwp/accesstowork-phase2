@@ -1,7 +1,7 @@
 <div>
     <div class="form-group">
-      <label class="form-label" for="ape-description">Details of item</label>
-      <textarea class="form-control" id="ape-description" name="ape-description" style="height:100px"></textarea>
+      <label class="form-label" for="ape-description-1">Details of item 1</label>
+      <textarea class="form-control" id="ape-description-1" name="ape-description-1" style="height:100px"></textarea>
     </div> <!-- FROM-GROUP -->
 
     <div class="form-group form-label">
@@ -94,7 +94,7 @@
     <script>
         var ape_tpl = '<div>'+
             '<div class="form-group">'+
-            '<label class="form-label" for="ape-description-NUM">Details of support item NUM</label>'+
+            '<label class="form-label" for="ape-description-NUM">Details of item NUM</label>'+
             '<textarea class="form-control" id="ape-description-NUM" name="ape-description-NUM" rows="3"></textarea>'+
             '</div>'+
             '<div class="form-group">'+
@@ -124,6 +124,9 @@
 
             $(document).on('input', 'input', calc);
 
+            $(document).on('click', 'input[type="radio"]', calc);
+
+
             function calc(){
                 var gross = 0;
                 var costs = $('input[name^="ape-cost-"]')
@@ -137,13 +140,12 @@
                     $('input[name="ape-gross"]').val(gross);
                 }
 
-                var tmp = 0;
-
-                var empVoluntary = $('#ape-emp-cont').val();
-                var size = $('input[id=ape-size-m]:checked').val();
-
+                var empVoluntary = $('#ape-emp-cont').val() || 0;
+                var size = $('input[name="ape-employer-size"]:checked').val();
                 var offset = (size == 'l') ? 1000 : (size == 'm') ? 500 : 0;
-                var net = gross - empVoluntary - offset - (offset * 20/100);
+                var percentageToApply = (size == 'l' || size == 'm') ? 0.2 : 0;
+                var percentageOfInterimNet = (gross - empVoluntary - offset) * percentageToApply;
+                var net = (gross - empVoluntary - offset) - percentageOfInterimNet;
                 $('input[name="ape-emp-amount"]').val(net);
             };
         })
