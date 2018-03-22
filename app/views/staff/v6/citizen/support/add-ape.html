@@ -77,12 +77,12 @@
             </div>
         </fieldset>
     </div>
-
+    <div class="hidden" name="ape-emp-amount" id="ape-emp-amount"></div>
     <br>
     <fieldset>
         <div class="form-group">
-            <label class="form-label-bold" for="ape-emp-amount">Net total</label>
-            £ <input class="form-control form-control-1-8" id="ape-emp-amount" name="ape-emp-amount" type="text"/>
+            <label class="form-label-bold" for="ape-net-amount">Net total</label>
+            £ <input class="form-control form-control-1-8" id="ape-net-amount" name="ape-net-amount" type="text"/>
         </div>
     </fieldset>
 
@@ -145,8 +145,10 @@
                 var offset = (size == 'l') ? 1000 : (size == 'm') ? 500 : 0;
                 var percentageToApply = (size == 'l' || size == 'm') ? 0.2 : 0;
                 var percentageOfInterimNet = (gross - empVoluntary - offset) * percentageToApply;
+                var empMandatory = offset + percentageOfInterimNet;
                 var net = (gross - empVoluntary - offset) - percentageOfInterimNet;
-                $('input[name="ape-emp-amount"]').val(net);
+                $('input[name="ape-emp-amount"]').val(empMandatory);
+                $('input[name="ape-net-amount"]').val(net);
             };
         })
     </script>

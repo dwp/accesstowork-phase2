@@ -9,9 +9,48 @@
         </tr>
         <tr>
             <td>Cost of item {{num}}</td>
-            <td>{{ data['ape-cost-'+num] }}</td>
+            <td>£{{ data['ape-cost-'+num] }}</td>
             <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
         </tr>
     {% endif %}
 {% endfor %}
+
+{% if data['ape-gross'] != '' %}
+    <tr>
+        <td class="bold">Gross total</td>
+        <td class="bold">£{{ data['ape-gross'] }}</td>
+    </tr>
+{% endif %}
+
+{% if data['ape-emp'] != '' %}
+<tr>
+    <td>Deductions - Employer voluntary contribution ?</td>
+    <td>{% if data['ape-emp'] == 'Yes' %}Yes{% else %}No{% endif %}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ape-emp-cont'] %}
+<tr>
+    <td>Amount</td>
+    <td>£{{ data['ape-emp-cont'] }}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ape-employer-size'] %}
+<tr>
+    <td>Deductions - {% if data['ape-emp-size'] == "l" %} Large employer contribution {% elif data['ape-emp-size'] == "m" %} Medium employer contribution {% else %} No mandatory employer contribution {% endif %}</td>
+    <td>£{% if (data['ape-emp-size'] == "l") or (data['ape-emp-size'] == "m") %}{{ data['ape-emp-amount'] }}{% else %}0{% endif %}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ape-net-amount'] %}
+<tr>
+    <td class="bold">Net total</td>
+    <td class="bold">£{{ data['ape-net-amount'] }}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
 
