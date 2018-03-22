@@ -28,52 +28,55 @@
     </fieldset>
 
     <h3 class="heading-medium">Apply deductions</h3>
+    <div class="container_status deductions_container">
+        <fieldset class="form-group inline">
+            <legend>
+                <label class="form-label">Is there a voluntary employer contribution?</label>
+            </legend>
+            <div class="multiple-choice multiple-choice-radio" data-target="ape-emp-panel">
+                <input id="ape-emp-yes" name="ape-emp" type="radio" value="Yes">
+                <label for="ape-emp-yes">Yes</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-emp-no" name="ape-emp" type="radio" value="No">
+                <label for="ape-emp-no">No</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="ape-emp-panel">
+                <div class="form-group form-label-bold">
+                    <label for="ape-emp-cont">
+                        <span class="form-label-bold">Cost</span>
+                    </label>
+                    £
+                    <input class="form-control form-control-1-8" id="ape-emp-cont" name="ape-emp-cont" type="text"/>
 
-    <fieldset class="form-group inline">
-        <legend>
-            <label class="form-label">Is there a voluntary employer contribution?</label>
-        </legend>
-        <div class="multiple-choice" data-target="ape-emp-panel">
-            <input id="ape-emp-yes" name="ape-emp" type="radio" value="Yes">
-            <label for="ape-emp-yes">Yes</label>
-        </div>
-        <div class="multiple-choice">
-            <input id="ape-emp-no" name="ape-emp" type="radio" value="No">
-            <label for="ape-emp-no">No</label>
-        </div>
-        <div class="panel panel-border-narrow js-hidden" id="ape-emp-panel">
-            <div class="form-group form-label-bold">
-                <label for="ape-emp-cont">
-                    <span class="form-label-bold">Cost</span>
-                </label>
-                £
-                <input class="form-control form-control-1-8" id="ape-emp-cont" name="ape-emp-cont" type="text"/>
-
-            </div> <!-- FORM-GROUP -->
-        </div>
-    </fieldset>
-
-    <fieldset>
-        <legend>
-            <label class="form-label">What size is the employer?</label>
-        </legend>
-        <div class="multiple-choice">
-            <input id="ape-size-n" name="ape-employer-size" type="radio" value="n">
-            <label for="ape-size-n">Employed less than 6 weeks - no Cost Share</label>
-        </div>
-        <div class="multiple-choice">
-            <input id="ape-size-s" name="ape-employer-size" type="radio" value="s">
-            <label for="ape-size-s">Small - no Cost Share</label>
-        </div>
-        <div class="multiple-choice">
-            <input id="ape-size-m" name="ape-employer-size" type="radio" value="m">
-            <label for="ape-size-m">Medium - £500 + 20%</label>
-        </div>
-        <div class="multiple-choice">
-            <input id="ape-size-l" name="ape-employer-size" type="radio" value="l">
-            <label for="ape-size-l">Large - £1000 + 20%</label>
-        </div>
-    </fieldset>
+                </div> <!-- FORM-GROUP -->
+            </div>
+        </fieldset>
+    </div>
+    <div><br></div>
+    <div class="container_status deductions_container">
+        <fieldset>
+            <legend>
+                <label class="form-label">What size is the employer?</label>
+            </legend>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-n" name="ape-employer-size" type="radio" value="n">
+                <label for="ape-size-n">Employed less than 6 weeks - no Cost Share</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-s" name="ape-employer-size" type="radio" value="s">
+                <label for="ape-size-s">Small - no Cost Share</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-m" name="ape-employer-size" type="radio" value="m">
+                <label for="ape-size-m">Medium - £500 + 20%</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-l" name="ape-employer-size" type="radio" value="l">
+                <label for="ape-size-l">Large - £1000 + 20%</label>
+            </div>
+        </fieldset>
+    </div>
 
     <br>
     <fieldset>
@@ -136,13 +139,12 @@
 
                 var tmp = 0;
 
-                var emp = $('#ape-emp-amount').val();
-                var social = $('#sae-social-amount').val();
+                var empVoluntary = $('#ape-emp-cont').val();
+                var size = $('input[id=ape-size-m]:checked').val();
 
-                var size = $('input[name="ape-employer-size"]').val();
                 var offset = (size == 'l') ? 1000 : (size == 'm') ? 500 : 0;
-                var costShare = 0;
-
+                var net = gross - empVoluntary - offset - (offset * 20/100);
+                $('input[name="ape-emp-amount"]').val(net);
             };
         })
     </script>

@@ -561,3 +561,6 @@ hr {
   font-size: 16px;
 }
 
+.multiple-choice-radio [type=radio] + label::before {
+  background : white;
+}
