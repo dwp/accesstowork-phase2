@@ -17,6 +17,9 @@
         <button id="ape-add-another"class="button button-secondary">Add another item</button>
     </div>
 
+<!--<h3 class="form-group heading-medium mt30">Gross total: £<span id="ape-gross">0.00</span> for 3 years</h3>-->
+<!--<input class="hidden" name="ape-gross" type="text"/>-->
+
     <fieldset>
         <div class="form-group heading-medium">
             <label for="ape-gross">
@@ -137,7 +140,7 @@
 
                 if(gross != 0){
                     $('#sae-gross').html(gross.toFixed(2));
-                    $('input[name="ape-gross"]').val(gross);
+                    $('input[name="ape-gross"]').val(gross.toLocaleString());
                 }
 
                 var empVoluntary = $('#ape-emp-cont').val() || 0;
@@ -147,8 +150,8 @@
                 var percentageOfInterimNet = (gross - empVoluntary - offset) * percentageToApply;
                 var empMandatory = offset + percentageOfInterimNet;
                 var net = gross - empVoluntary - empMandatory;
-                $('input[name="ape-emp-amount"]').val(empMandatory);
-                $('input[name="ape-net-amount"]').val(net);
+                $('input[name="ape-emp-amount"]').val(empMandatory.toLocaleString());
+                $('input[name="ape-net-amount"]').val(net.toLocaleString());
             };
         })
     </script>
