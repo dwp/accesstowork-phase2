@@ -77,7 +77,7 @@
             </div>
         </fieldset>
     </div>
-    <div class="hidden" name="ape-emp-amount" id="ape-emp-amount"></div>
+    <input class="hidden" name="ape-emp-amount" id="ape-emp-amount" type="text"></input>
     <br>
     <fieldset>
         <div class="form-group">
@@ -146,7 +146,7 @@
                 var percentageToApply = (size == 'l' || size == 'm') ? 0.2 : 0;
                 var percentageOfInterimNet = (gross - empVoluntary - offset) * percentageToApply;
                 var empMandatory = offset + percentageOfInterimNet;
-                var net = (gross - empVoluntary - offset) - percentageOfInterimNet;
+                var net = gross - empVoluntary - empMandatory;
                 $('input[name="ape-emp-amount"]').val(empMandatory);
                 $('input[name="ape-net-amount"]').val(net);
             };

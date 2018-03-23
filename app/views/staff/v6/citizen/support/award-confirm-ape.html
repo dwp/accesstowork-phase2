@@ -40,8 +40,8 @@
 
 {% if data['ape-employer-size'] %}
 <tr>
-    <td>Deductions - {% if data['ape-emp-size'] == "l" %} Large employer contribution {% elif data['ape-emp-size'] == "m" %} Medium employer contribution {% else %} No mandatory employer contribution {% endif %}</td>
-    <td>£{% if (data['ape-emp-size'] == "l") or (data['ape-emp-size'] == "m") %}{{ data['ape-emp-amount'] }}{% else %}0{% endif %}</td>
+    <td>Deductions - {% if data['ape-employer-size'] == "l" %} Large employer contribution {% elif data['ape-employer-size'] == "m" %} Medium employer contribution {% else %} No mandatory employer contribution {% endif %}</td>
+    <td>£{% if (data['ape-employer-size'] == "l") or (data['ape-employer-size'] == "m") %}{{ data['ape-emp-amount'] }}{% else %}0{% endif %}</td>
     <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
 </tr>
 {% endif %}
