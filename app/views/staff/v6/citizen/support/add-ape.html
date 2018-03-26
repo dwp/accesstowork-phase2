@@ -22,11 +22,8 @@
 
     <fieldset>
         <div class="form-group heading-medium">
-            <label for="ape-gross">
-                <span>Gross</span>
-            </label> <br>
-            £
-            <input class="form-control form-control-1-8" id="ape-gross" name="ape-gross" type="text"/>
+            Gross total: <span id="ape-gross">£0.00</span>
+            <input class="form-control form-control-1-8" id="ape-gross" name="ape-gross" type="hidden"/>
         </div> <!-- FORM-GROUP -->
     </fieldset>
 
@@ -83,9 +80,9 @@
     <input class="hidden" name="ape-emp-amount" id="ape-emp-amount" type="text"></input>
     <br>
     <fieldset>
-        <div class="form-group">
-            <label class="form-label-bold" for="ape-net-amount">Net total</label>
-            £ <input class="form-control form-control-1-8" id="ape-net-amount" name="ape-net-amount" type="text"/>
+        <div class="form-group heading-medium">
+            Net total: <span id="ape-net">£0.00</span>
+            <input class="form-control form-control-1-8" id="ape-net-amount" name="ape-net-amount" type="hidden"/>
         </div>
     </fieldset>
 
@@ -139,8 +136,8 @@
                 }
 
                 if(gross != 0){
-                    $('#sae-gross').html(gross.toFixed(2));
-                    $('input[name="ape-gross"]').val(gross.toLocaleString());
+                    $('#ape-gross').html(gross.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                    $('input[name="ape-gross"]').val(gross.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
                 }
 
                 var empVoluntary = $('#ape-emp-cont').val() || 0;
@@ -150,8 +147,9 @@
                 var percentageOfInterimNet = (gross - empVoluntary - offset) * percentageToApply;
                 var empMandatory = offset + percentageOfInterimNet;
                 var net = gross - empVoluntary - empMandatory;
-                $('input[name="ape-emp-amount"]').val(empMandatory.toLocaleString());
-                $('input[name="ape-net-amount"]').val(net.toLocaleString());
+                $('input[name="ape-emp-amount"]').val(empMandatory.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                $('#ape-net').html(net.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                $('input[name="ape-net-amount"]').val(net.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
             };
         })
     </script>
