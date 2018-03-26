@@ -1,0 +1,55 @@
+<!--   ADAPTIONS TO PREMISES AND EQUIPMENT    -->
+{% set nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] %}
+{% for num in nums %}
+{% if (data['ape-description-'+num]) or (data['ape-cost-'+num]) %}
+        <tr>
+            <td>Description of item {{num}}</td>
+            <td>{{ data['ape-description-'+num] }}</td>
+            <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+        </tr>
+        <tr>
+            <td>Cost of item {{num}}</td>
+            <td>{{ data['ape-cost-'+num] | currency }}</td>
+            <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+        </tr>
+    {% endif %}
+{% endfor %}
+
+{% if data['ape-gross'] != '' %}
+    <tr>
+        <td class="bold">Gross total</td>
+        <td colspan="2" class="bold">{{ data['ape-gross'] | currency }}</td>
+    </tr>
+{% endif %}
+
+{% if data['ape-emp'] != '' %}
+<tr>
+    <td>Deductions - Employer voluntary contribution ?</td>
+    <td>{% if data['ape-emp'] == 'Yes' %}Yes{% else %}No{% endif %}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ape-emp-cont'] %}
+<tr>
+    <td>Amount</td>
+    <td>{{ data['ape-emp-cont'] | currency }}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ape-employer-size'] %}
+<tr>
+    <td>Deductions - {% if data['ape-employer-size'] == "l" %} Large employer contribution {% elif data['ape-employer-size'] == "m" %} Medium employer contribution {% else %} No mandatory employer contribution {% endif %}</td>
+    <td>{% if (data['ape-employer-size'] == "l") or (data['ape-employer-size'] == "m") %}{{ data['ape-emp-amount'] | currency }}{% else %}£0{% endif %}</td>
+    <td><a href="add#adaptions_to_premises_and_equipment">Change</a></td>
+</tr>
+{% endif %}
+
+{% if data['ape-net-amount'] %}
+<tr>
+    <td class="bold">Net total</td>
+    <td colspan="2" class="bold">{{ data['ape-net-amount'] | currency }}</td>
+</tr>
+{% endif %}
+

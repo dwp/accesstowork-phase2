@@ -1,24 +1,152 @@
-
+<div>
     <div class="form-group">
-      <label class="form-label" for="ape-description">Details of adaptation</label>
-      <textarea class="form-control" id="ape-description" name="ape-description" style="height:100px"></textarea>
+      <label class="form-label" for="ape-description-1">Details of item 1</label>
+      <textarea class="form-control" id="ape-description-1" name="ape-description-1" style="height:100px"></textarea>
     </div> <!-- FROM-GROUP -->
 
-    <div class="form-group form-label-bold">
-      <label for="ape-cost">
-        <span class="form-label-bold">Cost of item</span>
+    <div class="form-group form-label">
+      <label for="ape-cost-1">
+        <span class="form-label">Cost</span>
       </label>
       £
-      <input class="form-control form-control-1-8" id="ape-cost" name="ape-cost" type="text"/>
+      <input class="form-control form-control-1-8" id="ape-cost-1" name="ape-cost-1" type="text"/>
     </div> <!-- FORM-GROUP -->
+</div>
 
-    
-    
-    <div class="form-group form-label-bold">Deductions</div>
-    
-    
-    
-    <div class="form-group">
-      <input type="submit" class="button" value="Continue" />
+    <div>
+        <button id="ape-add-another"class="button button-secondary">Add another item</button>
     </div>
- 
+
+    <fieldset>
+        <div class="form-group heading-medium">
+            Gross total: <span id="ape-gross">£0.00</span>
+            <input class="form-control form-control-1-8" id="ape-gross" name="ape-gross" type="hidden"/>
+        </div> <!-- FORM-GROUP -->
+    </fieldset>
+
+    <h3 class="heading-medium">Apply deductions</h3>
+    <div class="container_status deductions_container">
+        <fieldset class="form-group inline">
+            <legend>
+                <label class="form-label">Is there a voluntary employer contribution?</label>
+            </legend>
+            <div class="multiple-choice multiple-choice-radio" data-target="ape-emp-panel">
+                <input id="ape-emp-yes" name="ape-emp" type="radio" value="Yes">
+                <label for="ape-emp-yes">Yes</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-emp-no" name="ape-emp" type="radio" value="No">
+                <label for="ape-emp-no">No</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="ape-emp-panel">
+                <div class="form-group form-label-bold">
+                    <label for="ape-emp-cont">
+                        <span class="form-label-bold">Cost</span>
+                    </label>
+                    £
+                    <input class="form-control form-control-1-8" id="ape-emp-cont" name="ape-emp-cont" type="text"/>
+
+                </div> <!-- FORM-GROUP -->
+            </div>
+        </fieldset>
+    </div>
+    <div><br></div>
+    <div class="container_status deductions_container">
+        <fieldset>
+            <legend>
+                <label class="form-label">What size is the employer?</label>
+            </legend>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-n" name="ape-employer-size" type="radio" value="n">
+                <label for="ape-size-n">Employed less than 6 weeks - no Cost Share</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-s" name="ape-employer-size" type="radio" value="s">
+                <label for="ape-size-s">Small - no Cost Share</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-m" name="ape-employer-size" type="radio" value="m">
+                <label for="ape-size-m">Medium - £500 + 20%</label>
+            </div>
+            <div class="multiple-choice multiple-choice-radio">
+                <input id="ape-size-l" name="ape-employer-size" type="radio" value="l">
+                <label for="ape-size-l">Large - £1000 + 20%</label>
+            </div>
+        </fieldset>
+    </div>
+    <input class="hidden" name="ape-emp-amount" id="ape-emp-amount" type="text"></input>
+    <br>
+    <fieldset>
+        <div class="form-group heading-medium">
+            Net total: <span id="ape-net">£0.00</span>
+            <input class="form-control form-control-1-8" id="ape-net-amount" name="ape-net-amount" type="hidden"/>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Review element" />
+    </div>
+
+
+    <script>
+        var ape_tpl = '<div>'+
+            '<div class="form-group">'+
+            '<label class="form-label" for="ape-description-NUM">Details of item NUM</label>'+
+            '<textarea class="form-control" id="ape-description-NUM" name="ape-description-NUM" rows="3"></textarea>'+
+            '</div>'+
+            '<div class="form-group">'+
+            '<label for="ape-cost-NUM">'+
+            '<span class="form-label">Cost</span>'+
+            '</label>'+
+            '£ <input class="form-control form-control-1-8" id="ape-cost-NUM" name="ape-cost-NUM" type="text"/>'+
+            '</div>'+
+
+            '<a class="remove-list-item" href="#">Remove this</a>'+
+            '<hr />'+
+            '</div>';
+        var num = 1;
+        window.addEventListener('load', function(){
+            $(document).on('click', '#ape-add-another', function (e) {
+                e.preventDefault();
+                num++;
+                e.target.parentElement.insertAdjacentHTML('beforebegin', ape_tpl.replace(/NUM/g, num));
+            });
+
+            $(document).on('click', '.remove-list-item', function (e) {
+                e.preventDefault();
+                num--;
+                e.target.parentElement.remove();
+                calc();
+            });
+
+            $(document).on('input', 'input', calc);
+
+            $(document).on('click', 'input[type="radio"]', calc);
+
+
+            function calc(){
+                var gross = 0;
+                var costs = $('input[name^="ape-cost-"]')
+
+                for(var i=0; i<costs.length; i++){
+                    gross += parseFloat(costs[i].value);
+                }
+
+                if(gross != 0){
+                    $('#ape-gross').html(gross.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                    $('input[name="ape-gross"]').val(gross.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                }
+
+                var empVoluntary = $('#ape-emp-cont').val() || 0;
+                var size = $('input[name="ape-employer-size"]:checked').val();
+                var offset = (size == 'l') ? 1000 : (size == 'm') ? 500 : 0;
+                var percentageToApply = (size == 'l' || size == 'm') ? 0.2 : 0;
+                var percentageOfInterimNet = (gross - empVoluntary - offset) * percentageToApply;
+                var empMandatory = offset + percentageOfInterimNet;
+                var net = gross - empVoluntary - empMandatory;
+                $('input[name="ape-emp-amount"]').val(empMandatory.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                $('#ape-net').html(net.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+                $('input[name="ape-net-amount"]').val(net.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }));
+            };
+        })
+    </script>
