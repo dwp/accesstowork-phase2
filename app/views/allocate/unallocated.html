@@ -1,0 +1,123 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+
+{{ horizontal_nav('nav-unallocated') }}
+
+  <div class="container">
+
+  <h1 class="bold-xlarge mb30">Unallocated cases</h1>
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra">
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Specialism</th>
+              <th>Status</th>
+              <th class="numeric">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="change-specialism" class="click_row">
+                <td>Oliver Reed</a></td>
+                <td>Large Employer</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Martin Short</td>
+                <td>Hidden impairment</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Cheryl Cook</td>
+                <td>Hidden impairment</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Paul John-Jones</td>
+                <td>Deaf</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Marcus Oliver</td>
+                <td>Hidden impairment</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Pauline McCallum</td>
+                <td>Unknown</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Jonty Lee</td>
+                <td>Visually impaired</td>
+                <td>New application</td>
+                <td class="numeric">22 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Peter Keil</td>
+                <td>Director</td>
+                <td>New application</td>
+                <td class="numeric">21 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Seamus Murphy</td>
+                <td>Large employer</td>
+                <td>New application</td>
+                <td class="numeric">21 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Martin Smith</td>
+                <td>Deaf</td>
+                <td>New application</td>
+                <td class="numeric">21 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Caitlin Rose</td>
+                <td>Visually impaired</td>
+                <td>New application</td>
+                <td class="numeric">21 March 2018</td>
+              </tr>
+              <tr class="click_row" href="change-specialism">
+                <td>Scott Moore</td>
+                <td>Self employed</td>
+                <td>New application</td>
+                <td class="numeric">21 March 2018</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = "/{{PATH}}/"+href;
+    });
+  });
+</script>
+{% endblock %}

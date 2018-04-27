@@ -1,0 +1,51 @@
+{% extends PATH+"/inc/layout.html" %}
+
+{% block staff_content %}
+
+  {# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+  {{ horizontal_nav('none') }}
+
+  {% include PATH + "/inc/app_top.html" %}
+
+  {% block case_content %}{% endblock %}
+
+{% endblock %}
+
+{% macro case_tabs(selected,num) %}
+<div class="section-tabs js-tabs clearfix">
+  <ul>
+
+    {% if "change-specialism" == selected %}
+      <li class="active"><a href="change-specialsim">Administration</a></li>
+    {% else %}
+      <li><a href="change-specialsim">Administration</a></li>
+    {% endif %}
+
+    {% if "application" == selected %}
+      <li class="active"><a href="application">Application</a></li>
+    {% else %}
+      <li><a href="application">Application</a></li>
+    {% endif %}
+
+  </ul>
+</div>
+{% endmacro %}
+
+{% macro case_nav(active) %}
+  <ul class="case_nav">
+    <li {{ active | isActive('onlineapp') }}><a href="/{{ PATH }}/citizen/case/onlineapp">Application</a></li>
+    <li {{ active | isActive('eligibility') }}><a href="/{{ PATH }}/citizen/case/eligibility">Eligibility</a></li>
+    <li {{ active | isActive('condition') }}><a href="/{{ PATH }}/citizen/case/condition_dropdown">Condition</a></li>
+  </ul>
+  <div class="mt30">
+    <a class="button" href="add">Record new evidence</a>
+  </div>
+  <p class="mt30 mb10">Evidence collected so far:</p>
+  <ul class="case_nav mt0">
+    {# isActive() is a "Filter" found in app/filters.js #}
+    <li {{ active | isActive('assessment') }}><a href="/{{ PATH }}/citizen/case/assessment">Assessment report</a></li>
+    <li {{ active | isActive('medicalev') }}><a href="/{{ PATH }}/citizen/case/medicalev">Medical evidence</a></li>
+    <li {{ active | isActive('employer') }}><a href="/{{ PATH }}/citizen/case/employer">Employer contact</a></li>
+    <li {{ active | isActive('phonecall') }}><a href="/{{ PATH }}/citizen/case/phonecall">Phone call (further info)</a></li>
+  </ul>
+{% endmacro %}

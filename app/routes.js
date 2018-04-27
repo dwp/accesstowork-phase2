@@ -1,6 +1,14 @@
 var express = require('express')
 var router = express.Router()
 
+// Unalloctad routes //
+router.all('/allocate/*',function(req,res,next)
+{
+  // res.send('rich');
+  res.locals.PATH = 'allocate'
+  next();
+});
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
