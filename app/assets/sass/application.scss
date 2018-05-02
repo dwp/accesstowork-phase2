@@ -473,6 +473,11 @@ details {
     .admin-submenu a {
       font-size: 16px;
     }
+
+    // missng column 3/4
+    .column-three-quarters {
+      @include grid-column(3 / 4);
+    }
                 
 
 @import 'layout-index';
