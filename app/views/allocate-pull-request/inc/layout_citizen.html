@@ -1,0 +1,39 @@
+{% extends PATH+"/inc/layout.html" %}
+
+{% block staff_content %}
+
+  {# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+  {{ horizontal_nav('none') }}
+
+  {% include PATH + "/inc/app_top.html" %}
+
+  {% block case_content %}{% endblock %}
+
+{% endblock %}
+
+{% macro case_tabs(selected,num) %}
+<div class="section-tabs js-tabs clearfix">
+  <ul>
+
+    {% if "change-specialism" == selected %}
+      <li class="active"><a href="change-specialism">Case management</a></li>
+    {% else %}
+      <li><a href="change-specialism">Case management</a></li>
+    {% endif %}
+
+    {% if "application" == selected %}
+      <li class="active"><a href="application">Evidence</a></li>
+    {% else %}
+      <li><a href="application">Evidence</a></li>
+    {% endif %}
+
+  </ul>
+</div>
+{% endmacro %}
+
+{% macro case_nav(active) %}
+  <ul class="case_nav">
+    <li {{ active | isActive('onlineapp') }}><a href="/{{ PATH }}/citizen/case/onlineapp">Application</a></li>
+ </ul>   
+  
+{% endmacro %}

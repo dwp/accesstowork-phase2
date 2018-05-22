@@ -1,0 +1,35 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block staff_content %}
+
+  {# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+  {{ horizontal_nav('none') }}
+
+  {% include PATH + "/inc/app_top.html" %}
+
+  <div class="container">
+
+    {{ data | log }}
+    {#
+      this is a macro: pass the name of the selected item
+      and the number for the url.
+      Code in inc/layout_case.html
+    #}
+    {{ case_tabs("application",1) }}
+
+    <div class="grid-row">
+
+      <div class="column-third">
+          {% block case_nav_left %}{{ case_nav(picked) }}{% endblock %}
+      </div><!-- column -->
+      <div class="column-two-thirds">
+
+          {% block case_content %}{% endblock %}
+
+      </div><!-- column-full -->
+    </div><!-- grid-row -->
+  </div><!-- container -->
+
+{% endblock %}
+
+

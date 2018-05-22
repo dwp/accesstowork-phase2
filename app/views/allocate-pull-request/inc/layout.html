@@ -1,0 +1,76 @@
+{% extends PATH + "/inc/govuk_template-staff.html" %}
+
+{% block head %}
+  <link href="/public/stylesheets/staff/v6.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block page_title %}
+	Access To Work - Staff Access
+{% endblock %}
+
+{% block full_header %}
+{{ data | log }}
+
+<header role="banner" id="global-header">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="/" title="Go to the homepage" id="logo" class="content">
+          <img src="{{asset_path}}images/gov.uk_logotype_crown_invert_trans.png" width="35" height="31" alt="" style=>
+        </a>
+        
+      </div>
+      <div class="header-proposition">
+        <div class="content">
+          <nav id="proposition-menu">
+            
+            <div style="float:right;color:white;font-size:16px;font-weight:bold;padding-top:7px;padding-right:25px">John Goldsmith</div>
+            <a href="/" id="proposition-name">{{serviceName}}</a>
+          </nav>
+          <strong class="phase-tag">PROTOTYPE</strong><span style="color:white;font-size:16px">This version is used for testing only</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--end header-->
+{% endblock %}
+
+
+{% block header_class%}with-proposition{% endblock %}
+
+{% block body_end %}
+  {% include PATH + "/inc/scripts.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% block staff_content %}{% endblock %}
+
+</main>
+
+{% endblock %}
+
+{% macro horizontal_nav(selected) %}
+<div class="nav-horizontal">
+  <div class="main-nav-wrapper">
+    <ul class="main-nav">
+
+      {% if "nav-unallocated" == selected %}
+        <li id="nav-unallocated" class="selected"><a href="/{{ PATH }}/unallocated">Unallocated</a></li>
+      {% else %}
+        <li id="nav-unallocated"><a href="/{{ PATH }}/unallocated">Unallocated</a></li>
+      {% endif %}
+
+    </ul>
+  </div>
+ <!-- <div class="external-links-wrapper">
+    <ul class="external-links">
+      <li class="main-nav-link" style="margin-right:20px"><a href="/{{ PATH }}/all-teams">All specialisms</a></li>
+      <li class="main-nav-link"><a href="/{{ PATH }}/all-advisers">All advisers</a></li>
+    </ul>
+  </div> -->
+</div>
+{% endmacro %}

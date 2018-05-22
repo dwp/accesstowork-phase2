@@ -1,0 +1,41 @@
+{% extends PATH+"/inc/layout_citizen.html" %}
+
+{% block case_content %}
+
+<div class="container">
+
+  {{ case_tabs("change-specialism",1) }} 
+  {# this is a macro: pass the name of the selected item and the number for the url. Code in inc/layout_citizen.html #}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <h1 class="heading-medium">Application summary</h1>
+      <br />
+      <p><span class="bold-small">Application reference:</span> KDJ1234</p>
+      <p><span class="bold-small">Submission date:</span> 16/05/2018</p>
+      <br />
+      <p><span class="bold-small">Name:</span> Oliver Reed</p>
+      <p><span class="bold-small">Employer:</span> MacDonalds</p>
+      <p><span class="bold-small">Condition:</span> Deaf and Autism</p>
+    </div><!-- column 2 thirds -->
+
+    <div class="column-one-third">
+      {% include PATH + "/inc/edit/team.html" %}
+    </div><!-- column -->
+
+  </div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#status_status').combobox();
+      $('#app_adviser').combobox();
+      $('#app_team').combobox();
+      $('#action_app').combobox();
+    });
+  </script>
+{% endblock %}
