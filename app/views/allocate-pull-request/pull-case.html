@@ -17,40 +17,27 @@
                         <thead>
                             <tr>
                                 <th scope="col">
-                                    <span>Time left to clear</span>
+                                    <span>Name</span>
                                 </th>
                                 <th scope="col">
-                                    <span>Name & NINO</span>
+                                    <span>Specialism</span>
                                 </th>
                                 <th scope="col">
-                                    <span>Date/time raised</span>
+                                    <span>Case type</span>
                                 </th>
                                 <th scope="col">
-                                    <span>Benefit type</span>
+                                    <span>Date</span>
                                 </th>
-                                <th scope="col">
-                                    <span>Handover type</span>
-                                </th>
-                                <th scope="col">
-                                    <span>Status</span>
-                                </th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            {% if data[ 'callbackRequired']==='cleared' %}
-                            <td>
-                                <span class="bold">45 mins
-                                    <br />
-                                </span>
-                                <span class="badge badge-danger">ESCALATED</span>
-                            </td>
-                            <td>
-                                <span class="font-small">Paul Smith</span>
-                                <br>
-                                <span class="secondary-color">AA345678B</span>
-                            </td>
+                        	<tr ref="change-specialism" class="click_row">
+	                            <td>Oliver Reed</td>
+	                            <td>Pan disability</td>
+	                            <td>New application</td>
+	                            <td>22/05/2018</td>
+                            </tr>
+                            
                             <td>{% include "includes/v2/date.html" %}
                                 <br>
                                 <span class="secondary-color">11:06am</span>
@@ -95,7 +82,7 @@
                                 </td>
                             </tr>
 
-                            {% elif data['edit']==='editHand' %} 
+                            
                             <tr>
                             <td>
                                     <span class="bold">45 mins
