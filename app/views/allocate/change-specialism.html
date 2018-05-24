@@ -22,6 +22,7 @@
 
     <div class="column-one-third">
       {% include PATH + "/inc/edit/team.html" %}
+      {% include PATH + "/inc/edit/adviser.html" %}
     </div><!-- column -->
 
   </div><!-- row -->
@@ -29,13 +30,3 @@
 
 {% endblock %}
 
-{% block page_script %}
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#status_status').combobox();
-      $('#app_adviser').combobox();
-      $('#app_team').combobox();
-      $('#action_app').combobox();
-    });
-  </script>
-{% endblock %}
