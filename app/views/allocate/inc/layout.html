@@ -58,6 +58,12 @@
   <div class="main-nav-wrapper">
     <ul class="main-nav">
 
+      {% if "nav-cases" == selected %}
+        <li id="nav-cases" class="selected"><a href="/{{ PATH }}/your_cases">Your cases</a></li>
+      {% else %}
+        <li id="nav-cases"><a href="/{{ PATH }}/your_cases">Your cases</a></li>
+      {% endif %}
+
       {% if "nav-unallocated" == selected %}
         <li id="nav-unallocated" class="selected"><a href="/{{ PATH }}/unallocated">Unallocated</a></li>
       {% else %}
