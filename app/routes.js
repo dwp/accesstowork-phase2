@@ -9,6 +9,15 @@ router.all('/allocate/*',function(req,res,next)
   next();
 });
 
+// Unallocated routes pull request //
+router.all('/allocate-pull-request/*',function(req,res,next)
+{
+  // res.send('rich');
+  res.locals.PATH = 'allocate-pull-request'
+  next();
+});
+
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
