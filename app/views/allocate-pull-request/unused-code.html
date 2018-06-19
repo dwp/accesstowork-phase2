@@ -1,0 +1,353 @@
+<tbody>
+              <tr href="change-specialism" class="click_row">
+                <td>Oliver Reed</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Mavis Prince</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Malcolm Rifind</td>
+                <td>Pan disablity</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Martin Short</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Cheryl Cooke</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Faberge' Le Coix</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+          </tbody>
+
+
+          <td>{% include "includes/v2/date.html" %}
+                    <br>
+                    <span class="secondary-color">11:06am</span>
+                </td>
+                {% if data[ 'scenario']==='IS' %}
+                <td>IS</td>
+                {% else %}
+                <td>ESA</td>
+                {% endif %} {% if data['scenario']==='IS'%}
+                <td>Maintenance</td>
+                {% else %}
+                <td>STBA - New Claim</td>
+                {% endif %}
+                <td>Allocated</td>
+                <td>
+                    <a href="#">View and update</a>
+                </td>
+                </tr>
+
+
+<!-- CODE TO PULL A PIECE OF WORK INTO AND ADVISERS WORK LIST -->
+
+<div class="grid-row">
+            <div class="column-full">
+                <form class="form" action="edit" method="post">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span>Time left to clear</span>
+                                </th>
+                                <th scope="col">
+                                    <span>Name & NINO</span>
+                                </th>
+                                <th scope="col">
+                                    <span>Date/time raised</span>
+                                </th>
+                                <th scope="col">
+                                    <span>Benefit type</span>
+                                </th>
+                                <th scope="col">
+                                    <span>Handover type</span>
+                                </th>
+                                <th scope="col">
+                                    <span>Status</span>
+                                </th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% if data[ 'callbackRequired']==='cleared' %}
+                            <td>
+                                <span class="bold">45 mins
+                                    <br />
+                                </span>
+                                <span class="badge badge-danger">ESCALATED</span>
+                            </td>
+                            <td>
+                                <span class="font-small">Paul Smith</span>
+                                <br>
+                                <span class="secondary-color">AA345678B</span>
+                            </td>
+                            <td>{% include "includes/v2/date.html" %}
+                                <br>
+                                <span class="secondary-color">11:06am</span>
+                            </td>
+                            {% if data[ 'scenario']==='IS' %}
+                            <td>IS</td>
+                            {% else %}
+                            <td>ESA</td>
+                            {% endif %} {% if data['scenario']==='IS'%}
+                            <td>Maintenance</td>
+                            {% else %}
+                            <td>STBA - New Claim</td>
+                            {% endif %}
+                            <td>Allocated</td>
+                            <td>
+                                <a href="#">View and update</a>
+                            </td>
+                            </tr>
+
+                            <tr class="data3">
+                                <td>
+                                    <span class="bold">1 hours 10mins</span>
+                                </td>
+                                <td>
+                                    <span class="font-small">Paul Smith</span>
+                                    <br>
+                                    <span class="secondary-color">AA345678B</span>
+                                </td>
+                                <td>{% include "includes/v2/date.html" %}
+                                    <br>
+                                    <span class="secondary-color">11:06am</span>
+                                </td>
+                                {% if data[ 'scenario']==='IS' %}
+                                <td>IS</td>
+                                {% else %}
+                                <td>ESA</td>
+                                {% endif %}
+                                <td>Ongoing appeal</td>
+                                <td>Allocated</td>
+                                <td>
+                                    <a href="#">View and update</a>
+                                </td>
+                            </tr>
+
+                            {% elif data['edit']==='editHand' %} 
+                            <tr>
+                            <td>
+                                    <span class="bold">45 mins
+                                        <br />
+                                    </span>
+                                    <span class="badge badge-danger">ESCALATED</span>
+                                </td>
+                                <td>
+                                    <span class="font-small">Paul Smith</span>
+                                    <br>
+                                    <span class="secondary-color">AA345678B</span>
+                                </td>
+                                <td>{% include "includes/v2/date.html" %}
+                                    <br>
+                                    <span class="secondary-color">11:06am</span>
+                                </td>
+                                {% if data[ 'scenario']==='IS' %}
+                                <td>IS</td>
+                                {% else %}
+                                <td>ESA</td>
+                                {% endif %} {% if data['scenario']==='IS'%}
+                                <td>Maintenance</td>
+                                {% else %}
+                                <td>STBA - New Claim</td>
+                                {% endif %}
+                                <td>Allocated</td>
+                                <td>
+                                    <a href="#">View and update</a>
+                                </td>
+                                </tr>
+
+                            <tr>
+                                    <td>
+                                        <span class="bold">59 mins</span>
+                                    </td>
+                                    <td>
+                                        <span class="font-small">Christine Dixon</span>
+                                        <br>
+                                        <span class="secondary-color">ZZ123456A</span>
+                                    </td>
+                                    <td>{% include "includes/v2/date.html" %}
+                                        <br>
+                                        <span class="secondary-color">10:56am</span>
+                                    </td>
+                                    {% if data[ 'scenario']==='IS' %}
+                                    <td>IS</td>
+                                    {% else %}
+                                    <td>ESA</td>
+                                    {% endif %} {% if data['scenario']==='IS'%}
+                                    <td>Maintenance</td>
+                                    {% else %}
+                                    <td>STBA - New Claim</td>
+                                    {% endif %} {% if data['callbackRequired']==='Yes' and data['callBackStatus'] !== 'First call failed - engaged' or data[
+                                    'scenario']==='agentChangeStatus'and data['callBackStatus'] !== 'First call failed - engaged'
+                                    %}
+                                    <td>First call pending</td>
+                                    {% elif data['callBackStatus']==='First call failed - engaged' %}
+                                    
+                                    <td>Second call pending</td>
+                                    {% elif data['edit']==='editHand' %}
+                                    <td>In Progress</td>
+                                    {% else %}
+                                    <td>Allocated</td>
+                                    {% endif %}
+                                    <td>
+                                        <a href="edit">View and update</a>
+                                    </td>
+                                </tr>
+    
+    
+                                <tr class="data2">
+                                    <td>
+                                        <span class="bold">1 hours 10mins</span>
+                                    </td>
+                                    <td>
+                                        <span class="font-small">Ian Jackson</span>
+                                        <br>
+                                        <span class="secondary-color">AA345678B</span>
+                                    </td>
+                                    <td>{% include "includes/v2/date.html" %}
+                                        <br>
+                                        <span class="secondary-color">11:06am</span>
+                                    </td>
+                                    {% if data[ 'scenario']==='IS' %}
+                                    <td>IS</td>
+                                    {% else %}
+                                    <td>ESA</td>
+                                    {% endif %}
+                                    <td>Ongoing appeal</td>
+                                    <td>Allocated</td>
+                                    <td>
+                                        <a href="#">View and update</a>
+                                    </td>
+                                </tr>
+                            
+                            
+                            
+                            
+                            
+                            {% else %}
+                            <tr class="data1">
+                                <td>
+                                    <span class="bold">59 mins</span>
+                                </td>
+                                <td>
+                                    <span class="font-small">Christine Dixon</span>
+                                    <br>
+                                    <span class="secondary-color">ZZ123456A</span>
+                                </td>
+                                <td>{% include "includes/v2/date.html" %}
+                                    <br>
+                                    <span class="secondary-color">10:56am</span>
+                                </td>
+                                {% if data[ 'scenario']==='IS' %}
+                                <td>IS</td>
+                                {% else %}
+                                <td>ESA</td>
+                                {% endif %} {% if data['scenario']==='IS' %}
+                                <td>Maintenance</td>
+                                {% else %}
+                                <td>New Claim</td>
+                                {% endif %} {% if data['callbackRequired']==='Yes' and data['callBackStatus'] !== 'First call failed - engaged' or data[
+                                'scenario']==='agentChangeStatus'and data['callBackStatus'] !== 'First call failed - engaged'
+                                %}
+                                <td>First call pending</td>
+                                {% elif data['callBackStatus']==='First call failed - engaged' %}
+                                <td>Second call pending</td>
+                                {% else %}
+                                <td>Allocated</td>
+                                {% endif %}
+                                <td>
+                                    <a href="edit">View and update</a>
+                                </td>
+                            </tr>
+
+
+                            <tr class="data2">
+                                <td>
+                                    <span class="bold">1 hours 10mins</span>
+                                </td>
+                                <td>
+                                    <span class="font-small">Ian Jackson</span>
+                                    <br>
+                                    <span class="secondary-color">AA345678B</span>
+                                </td>
+                                <td>{% include "includes/v2/date.html" %}
+                                    <br>
+                                    <span class="secondary-color">11:06am</span>
+                                </td>
+                                {% if data[ 'scenario']==='IS' %}
+                                <td>IS</td>
+                                {% else %}
+                                <td>ESA</td>
+                                {% endif %}
+                                <td>Ongoing appeal</td>
+                                <td>Allocated</td>
+                                <td>
+                                    <a href="#">View and update</a>
+                                </td>
+                            </tr>
+
+
+                            {% endif%}
+
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="column-full" data-target="fetchWorkItem">
+                <br>
+
+                <button href="#" class="button append">Fetch next work item</button>
+            </div>
+        </div>
+</main>
+
+<script src="/public/javascripts/vendor/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/vendor/datatables.min.js"></script>
+
+<script>
+    var count = 0,
+        $allDivs = $('.data1, .data2, .data3');
+    $($allDivs).hide();
+    $('.button').click(function () {
+        if (count < $allDivs.length) {
+            $allDivs.eq(count).show('slow');
+            count++;
+        }
+    });
+</script> {% endblock %}
+                

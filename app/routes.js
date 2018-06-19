@@ -270,6 +270,18 @@ router.post('/payments_login_mobile_v1/self_claim_type', function (req, res) {
 
 /// DESKTOP LOGIN END ///
 
+/// ALLOCATE V1 ROUTES ///
+
+router.post('/allocate/confirm-copy-application', function (req, res) {
+        if (req.body.appcopy === 'Yes') {
+          res.redirect('/allocate/your_cases')
+        } else {
+          res.redirect('/allocate/application')
+        }
+      });
+
+/// ALLOCATE V1 ROUTES END ///
+
 /// DESKTOP pull data ///
 
 
