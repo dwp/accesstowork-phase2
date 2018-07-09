@@ -1,0 +1,112 @@
+{% extends PATH + "/inc/layout.html" %}
+
+{% block staff_content %}
+
+{# this is a macro: pass the id of the selected iteam. Code in inc/layout.html #}
+{{ horizontal_nav('nav-cases') }}
+
+<div class="container">
+
+     <div class="grid-row">
+         <div class="column-full">
+     
+          
+              <div class="govuk-box-highlight">
+                  <span class="heading-large"><img class="icon-confirm" src="/images/icon-tick@2x.png" alt="">Task completed</span>
+              </div>
+          </div> <!-- COLUMN FULL-->
+      </div> <!-- GRID ROW -->
+     <div class="grid-row"> 
+         <div class="column-one-third">
+            <div class="font-large mb30"><span class="bold-large">Adviser:</span> John Goldsmith</div>
+         </div> <!-- CLOUMN ONE THIRD -->
+
+         <div class="column-two-thrids"> 
+        </div> <!-- COMUN TWO THIRDS -->
+     </div> <!-- GRID ROW  -->
+
+      <hr>
+
+    <div class="grid-row">
+      <div class="column-full">
+
+        <table class="zebra" sortable>
+          <thead>
+            <tr>
+              <th style="padding-left:15px;">Name</th>
+              <th>Specialism</th>
+              <th>Case type</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr href="change-specialism" class="click_row">
+                <td>Mavis Prince</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Malcolm Rifind</td>
+                <td>Pan disablity</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Martin Short</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Cheryl Cooke</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Paul John-Jones</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Faberge' Le Coix</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+              <tr href="change-specialism" class="click_row">
+                <td>Pauline McCallum</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                <td>25 May 2018</td>
+              </tr>
+          </tbody>
+        </table>
+
+     </div><!-- column -->
+
+    </div><!-- row -->
+
+</div><!-- container -->
+
+{% endblock %}
+
+{% block page_script %}
+{% include PATH + "/inc/table-sorting.html" %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('a').on('click', function(e){
+      e.stopPropagation();
+    });
+    $('.click_row').on('click',function(e)
+    {
+      e.preventDefault();
+      var href = $(this).attr('href');
+      window.location.href = href;
+    });
+  });
+</script>
+{% endblock %}

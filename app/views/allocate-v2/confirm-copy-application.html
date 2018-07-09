@@ -1,0 +1,49 @@
+{% extends PATH+"/inc/layout_case.html" %}
+
+{% block case_nav_left %} {% endblock %}
+
+{% block case_content %}
+
+<div class="container">
+      <div class="grid-row">
+            <div class="column-two-thirds">
+                <form class="form" action="" method="post">
+                  <div class="form-group">
+                    <fieldset >
+
+                      <legend>
+                        <h1 class="heading-medium">
+                          Are you sure you have completely copied this application to DiSC?
+                        </h1>
+                        <p>This will remove the application from ATWIS</p>
+                      </legend>
+
+                      <div class="multiple-choice">
+                        <input id="radio-inline-1" type="radio" name="appcopy" value="Yes">
+                        <label for="radio-inline-1">Yes, remove this application from ATWIS</label>
+                      </div>
+                      <div class="multiple-choice">
+                        <input id="radio-inline-2" type="radio" name="appcopy" value="No">
+                        <label for="radio-inline-2">No, continue copying the application to DiSC</label>
+                      </div>
+
+                    </fieldset>
+                  </div> <!-- FORM GROUP -->
+
+                  <button class="button" type="submit">Confirm</button>
+                </form> <!-- FORM -->  
+            </div> <!-- COLUMN TWO THIRDS -->
+            <div class="column-one-third">
+                  
+            </div> <!-- COLUMN ONE THIRD -->
+      </div> <!-- GRID ROW-->
+</div> <!-- CONTAINER -->
+      
+
+{% endblock %}
+
+{% block footer_top %}
+{{ super() }}
+
+{% endblock %}
+
