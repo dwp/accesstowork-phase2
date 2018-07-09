@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
 }
 
+
 .icon-calendar {
   background-image: file-url("icons/icon-calendar.png");
   @include device-pixel-ratio() {

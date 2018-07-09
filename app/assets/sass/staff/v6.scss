@@ -564,3 +564,30 @@ hr {
 .multiple-choice-radio [type=radio] + label::before {
   background : white;
 }
+
+.icon-confirm {
+  height: 1em;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+  vertical-align: top;
+}
+
+.icon-confirm {
+  display: inline-block;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.govuk-box-highlight {
+    text-align: left;
+}
+
+.govuk-box-highlight {
+  margin: 1em 0;
+  padding: 2em 1em;
+  color: #fff;
+  background: #28a197;
+}
+
