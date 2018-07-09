@@ -1,11 +1,19 @@
 var express = require('express')
 var router = express.Router()
 
-// Unalloctad routes //
+// allocate routes //
 router.all('/allocate/*',function(req,res,next)
 {
   // res.send('rich');
   res.locals.PATH = 'allocate'
+  next();
+});
+
+// allocate-v2 routes //
+router.all('/allocate-v2/*',function(req,res,next)
+{
+  // res.send('rich');
+  res.locals.PATH = 'allocate-v2'
   next();
 });
 
@@ -274,7 +282,7 @@ router.post('/payments_login_mobile_v1/self_claim_type', function (req, res) {
 
 router.post('/allocate/confirm-copy-application', function (req, res) {
         if (req.body.appcopy === 'Yes') {
-          res.redirect('/allocate/your_cases')
+          res.redirect('/allocate/your_cases_confirmation')
         } else {
           res.redirect('/allocate/application')
         }
