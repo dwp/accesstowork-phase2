@@ -45,7 +45,160 @@
                   <td>Pan disability</td>
                   <td>New application</td>
                   <td>22/05/2018</td>
-              </tr>  
+              </tr>
+   
+              <tr href="change-specialism" class="">
+                <td>Marcia Scholer</td>
+                <td>Pan disability</td>
+                <td>New application</td>
+                    {% if data[ 'scenario']==='IS' %}
+                    <td>IS</td>
+                    {% else %}
+                    <td>ESA</td>
+                    {% endif %} {% if data['scenario']==='IS'%}
+                    <td>Maintenance</td>
+                    {% else %}
+                    <td>STBA - New Claim</td>
+                    {% endif %}
+                    <td>Allocated</td>
+                    <td>
+                        <a href="#">View and update</a>
+                    </td>
+                    </tr>
+
+                  <tr>
+                        <td>
+                            <span class="bold">59 mins</span>
+                        </td>
+                        <td>
+                            <span class="font-small">Christine Dixon</span>
+                            <br>
+                            <span class="secondary-color">ZZ123456A</span>
+                        </td>
+                        <td>{% include "includes/v2/date.html" %}
+                            <br>
+                            <span class="secondary-color">10:56am</span>
+                        </td>
+                        {% if data[ 'scenario']==='IS' %}
+                        <td>IS</td>
+                        {% else %}
+                        <td>ESA</td>
+                        {% endif %} {% if data['scenario']==='IS'%}
+                        <td>Maintenance</td>
+                        {% else %}
+                        <td>STBA - New Claim</td>
+                        {% endif %} {% if data['callbackRequired']==='Yes' and data['callBackStatus'] !== 'First call failed - engaged' or data[
+                        'scenario']==='agentChangeStatus'and data['callBackStatus'] !== 'First call failed - engaged'
+                        %}
+                        <td>First call pending</td>
+                        {% elif data['callBackStatus']==='First call failed - engaged' %}
+                        
+                        <td>Second call pending</td>
+                        {% elif data['edit']==='editHand' %}
+                        <td>In Progress</td>
+                        {% else %}
+                        <td>Allocated</td>
+                        {% endif %}
+                        <td>
+                            <a href="edit">View and update</a>
+                        </td>
+                    </tr>
+
+
+                    <tr class="data2">
+                        <td>
+                            <span class="bold">1 hours 10mins</span>
+                        </td>
+                        <td>
+                            <span class="font-small">Ian Jackson</span>
+                            <br>
+                            <span class="secondary-color">AA345678B</span>
+                        </td>
+                        <td>{% include "includes/v2/date.html" %}
+                            <br>
+                            <span class="secondary-color">11:06am</span>
+                        </td>
+                        {% if data[ 'scenario']==='IS' %}
+                        <td>IS</td>
+                        {% else %}
+                        <td>ESA</td>
+                        {% endif %}
+                        <td>Ongoing appeal</td>
+                        <td>Allocated</td>
+                        <td>
+                            <a href="#">View and update</a>
+                        </td>
+                    </tr>
+                
+                
+                
+                
+                
+                    {% else %}
+                    <tr class="data1">
+                        <td>
+                            <span class="bold">59 mins</span>
+                        </td>
+                        <td>
+                            <span class="font-small">Christine Dixon</span>
+                            <br>
+                            <span class="secondary-color">ZZ123456A</span>
+                        </td>
+                        <td>{% include "includes/v2/date.html" %}
+                            <br>
+                            <span class="secondary-color">10:56am</span>
+                        </td>
+                        {% if data[ 'scenario']==='IS' %}
+                        <td>IS</td>
+                        {% else %}
+                        <td>ESA</td>
+                        {% endif %} {% if data['scenario']==='IS' %}
+                        <td>Maintenance</td>
+                        {% else %}
+                        <td>New Claim</td>
+                        {% endif %} {% if data['callbackRequired']==='Yes' and data['callBackStatus'] !== 'First call failed - engaged' or data[
+                        'scenario']==='agentChangeStatus'and data['callBackStatus'] !== 'First call failed - engaged'
+                        %}
+                        <td>First call pending</td>
+                        {% elif data['callBackStatus']==='First call failed - engaged' %}
+                        <td>Second call pending</td>
+                        {% else %}
+                        <td>Allocated</td>
+                        {% endif %}
+                        <td>
+                            <a href="edit">View and update</a>
+                        </td>
+                    </tr>
+
+
+                    <tr class="data2">
+                        <td>
+                            <span class="bold">1 hours 10mins</span>
+                        </td>
+                        <td>
+                            <span class="font-small">Ian Jackson</span>
+                            <br>
+                            <span class="secondary-color">AA345678B</span>
+                        </td>
+                        <td>{% include "includes/v2/date.html" %}
+                            <br>
+                            <span class="secondary-color">11:06am</span>
+                        </td>
+                        {% if data[ 'scenario']==='IS' %}
+                        <td>IS</td>
+                        {% else %}
+                        <td>ESA</td>
+                        {% endif %}
+                        <td>Ongoing appeal</td>
+                        <td>Allocated</td>
+                        <td>
+                            <a href="#">View and update</a>
+                        </td>
+                    </tr>
+
+
+                    {% endif%}
+
             </tbody>
         </table>
       </form> 
