@@ -290,6 +290,18 @@ router.post('/allocate/confirm-copy-application', function (req, res) {
 
 /// ALLOCATE V1 ROUTES END ///
 
+/// ALLOCATE V2 ROUTES ///
+
+router.post('/allocate-v2/confirm-copy-application', function (req, res) {
+        if (req.body.appcopy === 'Yes') {
+          res.redirect('/allocate-v2/your_cases_confirmation')
+        } else {
+          res.redirect('/allocate-v2/application')
+        }
+      });
+
+/// ALLOCATE V2 ROUTES END ///
+      
 /// DESKTOP pull data ///
 
 
